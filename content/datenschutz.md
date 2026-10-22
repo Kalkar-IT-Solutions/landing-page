@@ -13,9 +13,9 @@ schreiben.
 
 ## Verantwortlich
 
-[AUSFÜLLEN: Name bzw. Firma wie im Impressum]  
-[AUSFÜLLEN: Straße und Hausnummer]  
-[AUSFÜLLEN: PLZ] Kalkar  
+Kalkar IT Solutions, Inhaber Daniel Bocksteger  
+Kirchstraße 42  
+47546 Kalkar  
 E-Mail: [hi@kalkar-it.de](mailto:hi@kalkar-it.de)
 
 ## Hosting und Server-Protokolle

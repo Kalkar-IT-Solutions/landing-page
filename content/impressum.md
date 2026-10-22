@@ -7,22 +7,15 @@ draft: true
 
 ## Angaben gemäß § 5 DDG
 
-[AUSFÜLLEN: Vor- und Nachname, bei einer Firma der volle Name mit Rechtsform, etwa „Kalkar IT Solutions, Inhaber Max Muster“ oder „Kalkar IT Solutions GmbH“]  
-[AUSFÜLLEN: Straße und Hausnummer, kein Postfach]  
-[AUSFÜLLEN: PLZ] Kalkar
+Kalkar IT Solutions  
+Inhaber: Daniel Bocksteger  
+Kirchstraße 42  
+47546 Kalkar
 
 ## Kontakt
 
 E-Mail: [hi@kalkar-it.de](mailto:hi@kalkar-it.de)  
-Telefon: [AUSFÜLLEN: Telefonnummer, oder die Zeile löschen]
-
-## Vertreten durch
-
-[AUSFÜLLEN: nur bei GmbH, UG oder ähnlichem: Name der Geschäftsführung; sonst den Abschnitt löschen]
-
-## Registereintrag
-
-[AUSFÜLLEN: nur bei Eintrag ins Handelsregister, etwa „Amtsgericht Kleve, HRB 12345“; sonst den Abschnitt löschen]
+Telefon: [+49 157 81286921](tel:+4915781286921)
 
 ## Umsatzsteuer
 
