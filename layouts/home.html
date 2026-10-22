@@ -1,24 +1,18 @@
 {{ define "main" }}
 {{- /*
-  The teaser as a Feldseite: the hero with the promise, on the right the
-  state of things as facts, then the numbered sections. All words live in
+  The teaser as a Feldseite: the hero with the promise and, standing on the
+  horizon line, a picture of what is built here; then the numbered
+  sections, the last one with the contact form. All words live in
   content/_index.md.
 */ -}}
 {{- $p := .Params -}}
-{{- $primary := dict -}}
-{{- with site.Params.contactMail }}{{ $primary = dict "label" "Kontakt aufnehmen" "url" (printf "mailto:%s" .) }}{{ end -}}
-{{- $aside := printf `<div class="kit-status">%s%s</div>`
-  (partial "horizont/badge.html" (dict "status" "info" "label" $p.status.label))
-  (partial "horizont/facts.html" (dict "items" $p.status.facts "term" "5.5rem")) -}}
 {{ partial "horizont/feld/hero.html" (dict
   "kennung" $p.hero.kennung
   "title" $p.hero.title
   "text" $p.hero.text
-  "primary" $primary
-  "secondary" (dict "label" "Was kommt" "url" "#vorhaben")
-  "aside" $aside
-  "asideCenter" true) }}
+  "aside" (partial "scene.html" .)) }}
 {{- range $p.sections }}
 {{ partial "horizont/feld/section.html" (dict "id" .id "kennung" .kennung "title" .title "text" .text "facts" .facts) }}
+{{- if eq .id "kontakt" }}{{ partial "kontakt.html" $p.form }}{{ end }}
 {{- end }}
 {{ end }}

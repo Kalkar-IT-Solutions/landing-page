@@ -9,9 +9,9 @@ defaultContentLanguage = 'de'
 disableKinds = ['taxonomy', 'term', 'section', 'rss']
 
 [params]
-  # Where the contact button points. Empty until there is an address; the
-  # hero then shows only the way to the sections below.
-  contactMail = ''
+  # Where the contact form sends its mail. A placeholder until the real
+  # address is set up.
+  contactMail = 'kontakt@kalkar-it.de'
 
 [module]
   [[module.mounts]]

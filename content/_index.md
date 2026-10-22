@@ -10,12 +10,6 @@ hero:
     Betriebe, Vereine und Menschen in der Region, mit kurzen Wegen und
     ohne Fachchinesisch.
 
-status:
-  label: In Vorbereitung
-  facts:
-    - { term: Sitz, value: Kalkar }
-    - { term: Region, value: Kreis Kleve und Umgebung }
-    - { term: Start, value: bald }
 
 sections:
   - id: vorhaben
@@ -43,4 +37,13 @@ sections:
     text: >-
       Die Seite wächst mit dem Büro. Wer schon jetzt ein Vorhaben hat,
       ist herzlich eingeladen, sich zu melden.
+
+form:
+  subject: Anfrage über die Webseite
+  name: Name
+  message: Worum geht es?
+  placeholder: Ein paar Sätze zu Ihrem Vorhaben genügen.
+  help: Der Knopf öffnet Ihr Mailprogramm mit der fertigen Nachricht. Diese Seite speichert und sendet nichts.
+  submit: E-Mail schreiben
+  direct: Oder direkt an
 ---

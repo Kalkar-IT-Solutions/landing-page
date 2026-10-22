@@ -1,0 +1,30 @@
+{{- /*
+  The contact form under its section. The page has no server, so the form
+  only writes the mail: the script opens the visitor's mail app with
+  subject and text filled in. Without JavaScript the browser's own mailto
+  form takes over (enctype text/plain), plainer but working. Nothing is
+  stored or sent by the page.
+*/ -}}
+{{- $mail := site.Params.contactMail -}}
+{{- if not $mail }}{{ errorf "kontakt: params.contactMail is empty in hugo.toml" }}{{ end -}}
+<div class="kit-extend">
+  <form class="kit-form" action="mailto:{{ $mail }}" method="post" enctype="text/plain"
+    data-kit-mail="{{ $mail }}" data-kit-subject="{{ .subject }}">
+    <div class="hz-field kit-form-name">
+      <label for="kit-name">{{ .name }}</label>
+      <input class="hz-input" id="kit-name" name="Name" autocomplete="name" required>
+    </div>
+    <div class="hz-field">
+      <label for="kit-message">{{ .message }}</label>
+      <textarea class="hz-input kit-form-message" id="kit-message" name="Nachricht" rows="6" required
+        placeholder="{{ .placeholder }}"></textarea>
+      <span class="hz-help">{{ .help }}</span>
+    </div>
+    <div>
+      <button class="hz-button hz-button--primary" type="submit">{{ .submit }}{{ partial "horizont/symbol.html" "arrow_forward" }}</button>
+    </div>
+    <p class="kit-form-direct t-caption">{{ .direct }} <a href="mailto:{{ $mail }}">{{ $mail }}</a></p>
+  </form>
+</div>
+{{- $js := resources.Get "js/kontakt.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

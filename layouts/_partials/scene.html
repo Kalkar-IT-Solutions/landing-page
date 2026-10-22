@@ -1,0 +1,88 @@
+{{- /*
+  The picture of the hero: what Kalkar IT builds, standing on the horizon
+  line. A laptop with a website, a phone with an app (after KNX Monitor, so
+  it wears the Bus green) and a single-board computer lying in front. The
+  screens are drawn, not photographed: their sizes follow the real screen
+  (1280 px wide for the laptop, 393 pt for the phone) through container
+  units, so bars and type have the size they would have on the device.
+  Purely decorative; the hero text says the same in words.
+*/ -}}
+<div class="kit-scene" aria-hidden="true">
+
+  <figure class="hz-device hz-device--laptop kit-scene-laptop">
+    <div class="hz-device-screen kit-web">
+      <div class="kit-web-bar"><i></i><i></i><i></i><span>hofladen-am-deich.de</span></div>
+      <div class="kit-web-nav"><b></b></div>
+      <div class="kit-web-hero">
+        <div>
+          <span class="kit-web-kennung">01 — Hofladen · Kalkar</span>
+          <span class="kit-web-title">Frisch vom Feld, direkt ab Hof.</span>
+          <span class="kit-web-text"></span>
+          <span class="kit-web-text kit-web-text--short"></span>
+          <span class="kit-web-button">Öffnungszeiten</span>
+        </div>
+        <div class="kit-web-field"></div>
+      </div>
+      <div class="kit-web-horizon"></div>
+      <div class="kit-web-rows">
+        <span class="kit-web-kennung">02 — Sortiment</span>
+        <span><b></b><b></b></span>
+        <span><b></b><b></b></span>
+      </div>
+    </div>
+  </figure>
+
+  <figure class="hz-device hz-device--iphone kit-scene-phone">
+    <div class="hz-device-screen kit-app" data-product="knx">
+      <div class="kit-app-status"><span>9:41</span></div>
+      <div class="kit-app-head">
+        <span class="kit-app-kennung">Wohnung · 12 Geräte</span>
+        <span class="kit-app-title">Übersicht</span>
+      </div>
+      <ul class="kit-app-list">
+        <li aria-selected="true">{{ partial "horizont/symbol.html" "lightbulb" }}<span>Licht Wohnzimmer</span><em>An</em></li>
+        <li>{{ partial "horizont/symbol.html" "thermostat" }}<span>Küche</span><em>21,4 °C</em></li>
+        <li>{{ partial "horizont/symbol.html" "blinds" }}<span>Rollladen Süd</span><em>60 %</em></li>
+        <li>{{ partial "horizont/symbol.html" "sensors" }}<span>Fenster Bad</span><em>zu</em></li>
+        <li>{{ partial "horizont/symbol.html" "bolt" }}<span>Verbrauch</span><em>412 W</em></li>
+      </ul>
+      <span class="kit-app-fab">{{ partial "horizont/symbol.html" "add" }}</span>
+      <div class="kit-app-tabs">
+        <span class="is-current">{{ partial "horizont/symbol.html" "dashboard" }}Übersicht</span>
+        <span>{{ partial "horizont/symbol.html" "lightbulb" }}Geräte</span>
+        <span>{{ partial "horizont/symbol.html" "settings" }}Menü</span>
+      </div>
+    </div>
+  </figure>
+
+  {{- /* A single-board computer from above, in millimetres times two:
+     holes, pin header, chips and ports at their usual places, no brand.
+     The darker strip below is the edge of the board it stands on. */}}
+  <svg class="kit-scene-board" viewBox="0 0 178 120">
+    <g transform="translate(1 1)">
+      <rect class="kit-board-edge" x="0" y="4" width="170" height="112" rx="6"/>
+      <rect class="kit-board" x="0" y="0" width="170" height="112" rx="6"/>
+      <g class="kit-board-hole">
+        <circle cx="7" cy="7" r="3"/><circle cx="123" cy="7" r="3"/>
+        <circle cx="7" cy="105" r="3"/><circle cx="123" cy="105" r="3"/>
+      </g>
+      <g class="kit-board-pins">
+        {{- range $i := seq 0 19 }}
+        <rect x="{{ add 18 (mul $i 5) }}" y="3" width="3" height="3"/>
+        <rect x="{{ add 18 (mul $i 5) }}" y="8" width="3" height="3"/>
+        {{- end }}
+      </g>
+      <rect class="kit-board-chip" x="48" y="38" width="30" height="30" rx="1"/>
+      <rect class="kit-board-chip" x="88" y="42" width="16" height="22" rx="1"/>
+      <rect class="kit-board-chip kit-board-chip--small" x="22" y="48" width="12" height="12" rx="1"/>
+      <rect class="kit-board-port" x="138" y="4" width="36" height="28" rx="1"/>
+      <rect class="kit-board-port" x="138" y="40" width="36" height="28" rx="1"/>
+      <rect class="kit-board-port" x="136" y="76" width="38" height="32" rx="1"/>
+      <rect class="kit-board-port" x="14" y="104" width="18" height="10" rx="2"/>
+      <rect class="kit-board-port" x="42" y="104" width="14" height="8" rx="1"/>
+      <rect class="kit-board-port" x="62" y="104" width="14" height="8" rx="1"/>
+      <circle class="kit-board-port" cx="92" cy="108" r="5"/>
+      <circle class="kit-board-led" cx="10" cy="88" r="1.6"/>
+    </g>
+  </svg>
+</div>

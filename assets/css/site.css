@@ -4,6 +4,7 @@
 
 html { background: var(--bg); scroll-behavior: smooth; }
 body { margin: 0; }
+body.hz { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* Skip link, visible on focus. */
@@ -16,23 +17,185 @@ body { margin: 0; }
 }
 .kit-skip:focus { transform: none; }
 
-/* A teaser has no product to show yet: the aside is the state of things,
-   a status and three facts, quiet on the right of the hero. */
-.kit-status { display: grid; gap: var(--s-16); justify-items: start; min-width: 16rem; }
+/* ---- Hero ----------------------------------------------------------- */
 
-/* The hero carries the whole page: give the sky some room. */
-.hz-feld-hero { padding-top: var(--s-96); }
+/* The hero fills the first screen (below the horizon nav, 62 px); the
+   sections follow on scrolling. The picture gets the wider column and
+   stands on the horizon line, the words sit in the middle of the sky. */
+.hz-feld-hero {
+  grid-template-columns: 1fr 1.25fr;
+  box-sizing: border-box;
+  min-height: calc(100svh - 62px - var(--s-48));
+  padding-top: var(--s-48);
+}
+.hz-feld-hero > div:first-child { align-self: center; padding-bottom: var(--s-48); }
+.hz-feld-hero p { margin-bottom: 0; }
+.hz-feld-aside { justify-self: stretch; width: 100%; }
+
+/* ---- The scene: laptop, phone and board on one line ----------------- */
+
+.kit-scene {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: 100 / 50;
+}
+.kit-scene > * { position: absolute; bottom: 0; }
+.kit-scene-laptop { --w: 58cqw; left: 21cqw; }
+.kit-scene-phone { --w: 17cqw; right: 0; }
+.kit-scene-board { left: 0; width: 19cqw; height: auto; }
+
+/* The board: line drawing in the neutrals, one green LED as the sign of
+   life (the phone's app colour, so the picture keeps to one accent). */
+.kit-board { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.2; }
+.kit-board-edge { fill: var(--line-strong); }
+.kit-board-hole circle { fill: var(--bg); stroke: var(--line-strong); stroke-width: 1; }
+.kit-board-pins rect { fill: var(--line-strong); }
+.kit-board-chip { fill: var(--text-muted); }
+.kit-board-chip--small { fill: var(--line-strong); }
+.kit-board-port { fill: var(--sunken); stroke: var(--text-muted); stroke-width: 1; }
+.kit-board-led { fill: var(--positive); }
+
+/* Screens are drawn at their real size: --px is one CSS pixel of the
+   1280 px wide laptop screen, --pt one point of the 393 pt wide phone. */
+.kit-web, .kit-app { container-type: inline-size; }
+.kit-web { --px: calc(100cqw / 1280); }
+.kit-app { --pt: calc(100cqw / 393); }
+
+/* The website: a browser bar, the horizon nav, a Feldseite in small. */
+.kit-web { display: flex; flex-direction: column; background: var(--bg); }
+.kit-web-bar {
+  display: flex; align-items: center; gap: calc(var(--px) * 8);
+  height: calc(var(--px) * 38); padding: 0 calc(var(--px) * 16);
+  background: var(--sunken); border-bottom: 1px solid var(--line);
+}
+.kit-web-bar i { width: calc(var(--px) * 12); height: calc(var(--px) * 12); border-radius: 50%; background: var(--line-strong); }
+.kit-web-bar span {
+  margin: 0 auto; padding: 0 calc(var(--px) * 64);
+  font: calc(var(--px) * 13) / calc(var(--px) * 24) var(--font-sans); color: var(--text-muted);
+  background: var(--bg); border-radius: calc(var(--px) * 6);
+}
+.kit-web-nav { position: relative; height: calc(var(--px) * 56); margin: 0 calc(var(--px) * 48); border-bottom: 1px solid var(--line-strong); }
+.kit-web-nav b { position: absolute; left: 0; bottom: -1px; width: 22%; border-bottom: 2px solid var(--accent); }
+.kit-web-hero {
+  flex: 1; display: grid; grid-template-columns: 1fr 0.8fr; gap: calc(var(--px) * 48);
+  align-items: end; padding: calc(var(--px) * 72) calc(var(--px) * 48) 0;
+}
+.kit-web-hero > div { display: grid; justify-items: start; gap: calc(var(--px) * 16); padding-bottom: calc(var(--px) * 56); }
+.kit-web-kennung {
+  font: 600 calc(var(--px) * 13) / 1.4 var(--font-mono); letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.kit-web-title { font: 300 calc(var(--px) * 64) / 1.06 var(--font-serif); letter-spacing: -0.01em; color: var(--text); }
+.kit-web-text { width: 92%; height: calc(var(--px) * 14); border-radius: calc(var(--px) * 3); background: var(--line); }
+.kit-web-text--short { width: 64%; }
+.kit-web-button {
+  margin-top: calc(var(--px) * 16); padding: 0 calc(var(--px) * 20);
+  font: 500 calc(var(--px) * 17) / calc(var(--px) * 48) var(--font-sans);
+  background: var(--accent); color: var(--on-accent); border-radius: calc(var(--px) * 6);
+}
+/* The picture on the website: a field from above, its furrows. */
+.kit-web-field {
+  height: calc(var(--px) * 380);
+  border: 1px solid var(--line-strong); border-bottom: 0;
+  border-radius: calc(var(--px) * 10) calc(var(--px) * 10) 0 0;
+  background: repeating-linear-gradient(60deg, var(--line) 0 2px, transparent 2px 14px), var(--surface);
+}
+.kit-web-horizon { border-top: 2px solid var(--accent); }
+.kit-web-rows {
+  display: grid; grid-template-columns: calc(var(--px) * 220) 1fr 1fr; gap: calc(var(--px) * 40);
+  padding: calc(var(--px) * 40) calc(var(--px) * 48);
+}
+.kit-web-rows > span:not(.kit-web-kennung) { display: grid; gap: calc(var(--px) * 12); }
+.kit-web-rows b { height: calc(var(--px) * 14); border-radius: calc(var(--px) * 3); background: var(--line); }
+.kit-web-rows b:first-child { width: 70%; height: calc(var(--px) * 22); background: var(--line-strong); }
+
+/* The app: after KNX Monitor, Kennung over a small title, rows with
+   values in mono, the selection as a line, FAB and tab bar. */
+.kit-app { display: flex; flex-direction: column; font-family: var(--font-sans); color: var(--text); }
+.kit-app .hz-symbol { font-size: calc(var(--pt) * 22); color: var(--text-muted); }
+.kit-app-status {
+  height: calc(var(--pt) * 54); padding: 0 calc(var(--pt) * 36);
+  display: flex; align-items: center;
+  font: 600 calc(var(--pt) * 16) / 1 var(--font-sans);
+}
+.kit-app-head { display: grid; gap: calc(var(--pt) * 2); padding: calc(var(--pt) * 12) calc(var(--pt) * 20) calc(var(--pt) * 16); }
+.kit-app-kennung {
+  font: 600 calc(var(--pt) * 11) / calc(var(--pt) * 16) var(--font-mono); letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.kit-app-title { font: 600 calc(var(--pt) * 22) / 1.25 var(--font-sans); }
+.kit-app-list { list-style: none; margin: 0; padding: 0; background: var(--surface); border-block: 1px solid var(--line); }
+.kit-app-list li {
+  position: relative; display: flex; align-items: center; gap: calc(var(--pt) * 12);
+  min-height: calc(var(--pt) * 52); padding: 0 calc(var(--pt) * 20);
+  font-size: calc(var(--pt) * 16);
+}
+.kit-app-list li + li::before {
+  content: ""; position: absolute; top: 0; right: 0; left: calc(var(--pt) * 54);
+  border-top: 1px solid var(--line);
+}
+.kit-app-list li span { flex: 1; }
+.kit-app-list li em {
+  font: normal calc(var(--pt) * 14) / 1 var(--font-mono); font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+.kit-app-list li[aria-selected="true"] { background: var(--accent-tint); box-shadow: inset 2px 0 0 var(--accent); }
+.kit-app-list li[aria-selected="true"] .hz-symbol { color: var(--accent-text); }
+.kit-app-fab {
+  align-self: flex-end; margin: auto calc(var(--pt) * 20) calc(var(--pt) * 16);
+  width: calc(var(--pt) * 56); height: calc(var(--pt) * 56);
+  display: grid; place-items: center;
+  background: var(--accent); border-radius: calc(var(--pt) * 16);
+}
+.kit-app .kit-app-fab .hz-symbol { color: var(--on-accent); font-size: calc(var(--pt) * 24); }
+.kit-app-tabs {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  padding: calc(var(--pt) * 8) calc(var(--pt) * 12) calc(var(--pt) * 34);
+  background: var(--surface); border-top: 1px solid var(--line);
+}
+.kit-app-tabs span {
+  display: grid; justify-items: center; gap: calc(var(--pt) * 2);
+  margin: 0 auto; padding: calc(var(--pt) * 4) calc(var(--pt) * 12);
+  font: 500 calc(var(--pt) * 11) / 1.2 var(--font-sans); color: var(--text-muted);
+  border-radius: calc(var(--pt) * 6);
+}
+.kit-app-tabs .hz-symbol { font-size: calc(var(--pt) * 24); }
+.kit-app-tabs .is-current { background: var(--accent-tint); color: var(--text); font-weight: 600; }
+.kit-app-tabs .is-current .hz-symbol { color: var(--accent-text); }
+
+/* ---- Sections and contact ------------------------------------------- */
 
 /* Links in running text and facts: the accent's text colour. */
-.hz-feld-section p a, .hz-facts dd a, .kit-page a {
+.hz-feld-section p a, .hz-facts dd a, .kit-page a, .kit-form-direct a {
   color: var(--accent-text);
   text-underline-offset: 0.2em;
 }
 
+/* The form under the contact section, from the start of its middle
+   column (the Kennung column is 180 px in components.css). */
+.hz-feld-section:has(+ .kit-extend) { border-bottom: 0; padding-bottom: var(--s-32); }
+.kit-extend {
+  padding: 0 var(--s-32) var(--s-64) calc(var(--s-32) + 180px + var(--s-32));
+  border-bottom: var(--line-hairline) solid var(--line);
+}
+.kit-form { display: grid; gap: var(--s-24); max-width: var(--size-text-column); }
+.kit-form-name { max-width: var(--size-form); }
+.kit-form-message {
+  min-height: calc(var(--size-touch) * 3); padding-block: var(--s-12);
+  font: 1rem/1.5 var(--font-sans); resize: vertical;
+}
+.kit-form-message::placeholder { color: var(--text-muted); }
+.kit-form-direct { margin: 0; color: var(--text-muted); }
+
 .kit-page { max-width: var(--size-text-column); padding: var(--s-64) var(--s-32); }
 .kit-page h1 { margin: var(--s-16) 0 var(--s-32); }
 
+/* Narrow: the picture comes back below the words (Horizont hides the
+   aside), smaller and still standing on the line. */
 @container (max-width: 720px) {
-  .hz-feld-hero { padding-top: var(--s-64); }
+  .hz-feld-hero { grid-template-columns: 1fr; min-height: 0; padding-top: var(--s-48); gap: var(--s-32); }
+  .hz-feld-hero > div:first-child { padding-bottom: 0; }
+  .hz-feld-aside { display: block; }
+  .kit-extend { padding: 0 var(--s-16) var(--s-48); }
   .kit-page { padding: var(--s-48) var(--s-16); }
 }
