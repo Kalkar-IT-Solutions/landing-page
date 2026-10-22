@@ -1,8 +1,21 @@
 ---
 title: Kalkar IT Solutions
-description: IT-Lösungen vom Niederrhein für den Niederrhein. Kalkar IT Solutions entsteht gerade.
+description: IT-Lösungen vom Niederrhein für den Niederrhein. Kalkar IT Solutions ist im Aufbau.
+
+# While true, the page shows only the hero: the sections and the contact
+# form below stay written but hidden until there is more to say.
+aufbau: true
 
 hero:
+  kennung: Im Aufbau · Kalkar · Niederrhein
+  title: IT-Lösungen vom Niederrhein für den Niederrhein.
+  text: >-
+    Hier entsteht Kalkar IT Solutions. Die Seite ist noch im Aufbau, mehr
+    folgt bald. Wer schon jetzt ein Anliegen hat, schreibt an
+    [hi@kalkar-it.de](mailto:hi@kalkar-it.de).
+
+# The hero once the page is complete (aufbau: false).
+heroFull:
   kennung: 01 — Bald da · Kalkar · Niederrhein
   title: IT-Lösungen vom Niederrhein für den Niederrhein.
   text: >-

@@ -2,17 +2,21 @@
 {{- /*
   The teaser as a Feldseite: the hero with the promise and, standing on the
   horizon line, a picture of what is built here; then the numbered
-  sections, the last one with the contact form. All words live in
+  sections, the last one with the contact form. While "aufbau" is set the
+  page is the hero alone, in more open words. All words live in
   content/_index.md.
 */ -}}
 {{- $p := .Params -}}
+{{- $hero := cond $p.aufbau $p.hero $p.heroFull -}}
 {{ partial "horizont/feld/hero.html" (dict
-  "kennung" $p.hero.kennung
-  "title" $p.hero.title
-  "text" $p.hero.text
+  "kennung" $hero.kennung
+  "title" $hero.title
+  "text" $hero.text
   "aside" (partial "scene.html" .)) }}
+{{- if not $p.aufbau }}
 {{- range $p.sections }}
 {{ partial "horizont/feld/section.html" (dict "id" .id "kennung" .kennung "title" .title "text" .text "facts" .facts) }}
 {{- if eq .id "kontakt" }}{{ partial "kontakt.html" $p.form }}{{ end }}
+{{- end }}
 {{- end }}
 {{ end }}

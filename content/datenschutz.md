@@ -1,8 +1,5 @@
 ---
 title: Datenschutz
-# Erst freigeben (draft entfernen), wenn kein „AUSFÜLLEN“ mehr im Text
-# steht; sonst bricht der Build ab (layouts/page.html).
-draft: true
 ---
 
 Diese Seite ist bewusst schlicht gebaut: keine Cookies, keine Analyse- oder
@@ -28,7 +25,7 @@ Dabei können Daten in die USA übermittelt werden. Der Hoster ist unter dem EU-
 
 ## Kontakt per E-Mail
 
-Das Kontaktformular sendet nichts selbst: Es öffnet Ihr Mailprogramm mit einer vorbereiteten Nachricht, die Sie dort prüfen und abschicken. Erst dann erhalten wir Ihre E-Mail-Adresse, Ihren Namen und Ihre Nachricht.
+Wenn Sie uns eine E-Mail schreiben, erhalten wir Ihre E-Mail-Adresse, Ihren Namen und Ihre Nachricht. Ein Kontaktformular auf dieser Seite sendet nichts selbst: Es öffnet nur Ihr Mailprogramm mit einer vorbereiteten Nachricht, die Sie dort prüfen und abschicken.
 
 Wir nutzen diese Angaben nur, um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Auftrag oder dessen Anbahnung geht, sonst unser berechtigtes Interesse an der Beantwortung (Art. 6 Abs. 1 lit. f DSGVO). Wir löschen die Nachricht, sobald die Anfrage erledigt ist, es sei denn, gesetzliche Aufbewahrungspflichten stehen dem entgegen.
 

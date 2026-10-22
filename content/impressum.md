@@ -1,8 +1,8 @@
 ---
 title: Impressum
-# Erst freigeben (draft entfernen), wenn kein „AUSFÜLLEN“ mehr im Text
-# steht; sonst bricht der Build ab (layouts/page.html).
-draft: true
+# Sobald es eine USt-IdNr. gibt, kommt sie hier dazu:
+#   ## Umsatzsteuer
+#   Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: DE…
 ---
 
 ## Angaben gemäß § 5 DDG
@@ -16,11 +16,6 @@ Kirchstraße 42
 
 E-Mail: [hi@kalkar-it.de](mailto:hi@kalkar-it.de)  
 Telefon: [+49 157 81286921](tel:+4915781286921)
-
-## Umsatzsteuer
-
-Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:  
-[AUSFÜLLEN: USt-IdNr., etwa DE123456789. Ohne USt-IdNr. den Abschnitt löschen; die Steuernummer gehört nicht ins Impressum.]
 
 ## Verbraucherstreitbeilegung
 

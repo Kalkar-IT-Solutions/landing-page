@@ -166,10 +166,13 @@ body.hz { overflow-x: clip; }
 /* ---- Sections and contact ------------------------------------------- */
 
 /* Links in running text and facts: the accent's text colour. */
-.hz-feld-section p a, .hz-facts dd a, .kit-page a, .kit-form-direct a {
+.hz-feld-hero p a, .hz-feld-section p a, .hz-facts dd a, .kit-page a, .kit-form-direct a {
   color: var(--accent-text);
   text-underline-offset: 0.2em;
 }
+
+/* An address in the hero stays whole instead of breaking at the hyphen. */
+.hz-feld-hero p a[href^="mailto:"] { white-space: nowrap; }
 
 /* The form under the contact section, from the start of its middle
    column (the Kennung column is 180 px in components.css). */
