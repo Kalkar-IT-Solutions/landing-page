@@ -1,5 +1,10 @@
 {{ define "main" }}
-{{- /* Legal pages: a Kennung and the text in the reading column. */ -}}
+{{- /* Legal pages: a Kennung and the text in the reading column. A page
+   that still holds a placeholder stops a release build, so no half-filled
+   Impressum goes live; the dev server (hugo server -D) shows it anyway. */ -}}
+{{- if and hugo.IsProduction (strings.Contains .RawContent "[AUSFÜLLEN") }}
+  {{- errorf "%s: placeholders [AUSFÜLLEN …] left, fill them in before release" .File.Path }}
+{{- end }}
 <article class="kit-page">
   {{ partial "horizont/kennung.html" site.Title }}
   <h1 class="t-headline">{{ .Title }}</h1>

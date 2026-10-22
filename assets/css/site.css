@@ -189,6 +189,9 @@ body.hz { overflow-x: clip; }
 
 .kit-page { max-width: var(--size-text-column); padding: var(--s-64) var(--s-32); }
 .kit-page h1 { margin: var(--s-16) 0 var(--s-32); }
+/* Headings in the legal text like those of the Feldseite sections. */
+.kit-page h2 { margin: var(--s-32) 0 var(--s-8); font: 300 1.5rem/1.25 var(--font-serif); }
+.kit-page p { margin: 0 0 var(--s-16); }
 
 /* Narrow: the picture comes back below the words (Horizont hides the
    aside), smaller and still standing on the line. */
