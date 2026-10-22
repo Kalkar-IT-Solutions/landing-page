@@ -2,7 +2,9 @@
    components.css from the module, docs/web.md there). Only what the
    Feldseite does not have, every value from the tokens. */
 
-html { background: var(--bg); scroll-behavior: smooth; }
+/* No text inflation on iOS: Safari enlarges small type in narrow boxes,
+   which blew the drawn screens of the scene out of their frames. */
+html { background: var(--bg); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; }
 body.hz { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -85,6 +87,9 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 
 /* Screens are drawn at their real size: --px is one CSS pixel of the
    1280 px wide laptop screen, --pt one point of the 393 pt wide phone. */
 .kit-web, .kit-app { container-type: inline-size; }
+/* A small base, so no line box in a drawn screen keeps the page's 16/24
+   strut; every text inside sets its own size in --px or --pt. */
+.kit-web, .kit-app, .kit-watch { font-size: 4px; line-height: 1.2; }
 .kit-web { --px: calc(100cqw / 1280); }
 .kit-app { --pt: calc(100cqw / 393); }
 
@@ -200,8 +205,13 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 
   position: absolute; inset: 0;
   display: flex; flex-direction: column; justify-content: space-between;
   padding: calc(var(--wp) * 14) calc(var(--wp) * 18) calc(var(--wp) * 18);
+  /* Line boxes in here would otherwise keep the page's 16/24 strut and push
+     the value out of a small watch. */
+  font-size: calc(var(--wp) * 13); line-height: 1.2;
 }
+.kit-watch-reading { display: grid; gap: calc(var(--wp) * 2); }
 .kit-watch-time { align-self: flex-end; font: 600 calc(var(--wp) * 17) / 1 var(--font-sans); }
+.kit-watch-reading > * { display: block; }
 .kit-watch-kennung {
   font: 600 calc(var(--wp) * 13) / 1.3 var(--font-mono); letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--text-muted);
