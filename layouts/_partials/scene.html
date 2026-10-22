@@ -1,7 +1,8 @@
 {{- /*
   The picture of the hero: what Kalkar IT builds, standing on the horizon
   line. A laptop with a website, a phone with an app (after KNX Monitor, so
-  it wears the Bus green) and a single-board computer lying in front. The
+  it wears the Bus green), a watch with one value from that app and a
+  single-board computer in front. The
   screens are drawn, not photographed: their sizes follow the real screen
   (1280 px wide for the laptop, 393 pt for the phone) through container
   units, so bars and type have the size they would have on the device.
@@ -51,6 +52,21 @@
         <span class="is-current">{{ partial "horizont/symbol.html" "dashboard" }}Übersicht</span>
         <span>{{ partial "horizont/symbol.html" "lightbulb" }}Geräte</span>
         <span>{{ partial "horizont/symbol.html" "settings" }}Menü</span>
+      </div>
+    </div>
+  </figure>
+
+  {{- /* The watch on the far right: the kitchen temperature from the app,
+     one value large, one action. Always dark, as a watch face is. */}}
+  <figure class="hz-device hz-device--watch kit-scene-watch" data-theme="dark">
+    <div class="hz-device-screen kit-watch" data-product="knx">
+      <div class="kit-watch-face">
+        <span class="kit-watch-time">9:41</span>
+        <span>
+          <span class="kit-watch-kennung">Küche</span><br>
+          <span class="kit-watch-value">21,4<small> °C</small></span>
+        </span>
+        <span class="kit-watch-action">Heizen</span>
       </div>
     </div>
   </figure>
