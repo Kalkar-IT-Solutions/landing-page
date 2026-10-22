@@ -9,9 +9,11 @@
 <meta property="og:title" content="{{ site.Title }}">
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:url" content="{{ .Permalink }}">
-{{- /* Favicon: the glyph below 32 px, the app icon for larger sizes. */}}
-{{- $glyph := partial "horizont/mark.html" (dict "product" "regetskcob" "size" 32) | resources.FromString "favicon.svg" | minify | fingerprint }}
-<link rel="icon" type="image/svg+xml" href="{{ $glyph.RelPermalink }}">
+{{- /* Favicon: Kalkar IT's avatar image from Horizont, the same as on
+       GitHub. As SVG it holds at any size and brings its own ground, so
+       it shows on light and dark tabs alike. */}}
+{{- $icon := partial "horizont/app-icon.html" (dict "product" "kalkar-it" "size" 64) | resources.FromString "favicon.svg" | minify | fingerprint }}
+<link rel="icon" type="image/svg+xml" href="{{ $icon.RelPermalink }}">
 {{- /* Tokens, components, own rules (docs/web.md of Horizont). The CSS lands
        in css/, one level below fonts/, so components.css finds ../fonts/. */}}
 {{- $css := slice

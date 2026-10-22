@@ -3,7 +3,8 @@
   the horizon line as the navigation, its marks read from the numbered
   sections, then the page and the foot with the sender. Kalkar IT is no
   field of the regetskcob family, so the mark is a plain link home instead
-  of opening the Flurkarte. The accent is Tinte, the neutral ink.
+  of opening the Flurkarte. The walker is Kalkar IT's own glyph, the prompt
+  in willow green; the accent of the page stays Tinte, the neutral ink.
 */ -}}
 {{- /* Legal pages appear in the foot once they are written and no longer
        drafts (content/impressum.md, content/datenschutz.md). */}}
@@ -22,6 +23,7 @@
 <a class="kit-skip" href="#main">Zum Inhalt</a>
 {{ partial "horizont/nav/horizon.html" (dict
     "product" "regetskcob"
+    "mark" "kalkar-it"
     "place" (cond .IsHome site.Title (printf "%s / %s" site.Title .Title))
     "marks" "auto"
     "link" (dict "url" ("" | relURL) "hint" site.Title)) }}
