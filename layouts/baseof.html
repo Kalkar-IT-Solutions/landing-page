@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   {{ partial "head.html" . }}
 </head>
-<body class="hz">
+<body class="hz{{ if .Params.aufbau }} kit-aufbau{{ end }}">
 <a class="kit-skip" href="#main">Zum Inhalt</a>
 {{ partial "horizont/nav/horizon.html" (dict
     "product" "regetskcob"

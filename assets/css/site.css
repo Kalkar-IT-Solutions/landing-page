@@ -32,6 +32,15 @@ body.hz { overflow-x: clip; }
 .hz-feld-hero p { margin-bottom: 0; }
 .hz-feld-aside { justify-self: stretch; width: 100%; }
 
+/* While the page is only the hero ("aufbau"), nav, hero and foot share
+   exactly one screen: the hero takes what is left, so there is nothing to
+   scroll at any zoom. A fixed min-height would add up with the foot and
+   overshoot by a few pixels. */
+body.kit-aufbau { box-sizing: border-box; min-height: 100svh; display: flex; flex-direction: column; }
+body.kit-aufbau > .hz-feld { flex: 1; display: flex; flex-direction: column; width: 100%; }
+body.kit-aufbau main { flex: 1; display: flex; flex-direction: column; }
+body.kit-aufbau .hz-feld-hero { flex: 1; min-height: 0; }
+
 /* ---- The scene: laptop, phone and board on one line ----------------- */
 
 .kit-scene {
