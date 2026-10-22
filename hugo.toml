@@ -9,9 +9,8 @@ defaultContentLanguage = 'de'
 disableKinds = ['taxonomy', 'term', 'section', 'rss']
 
 [params]
-  # Where the contact form sends its mail. A placeholder until the real
-  # address is set up.
-  contactMail = 'kontakt@kalkar-it.de'
+  # Where the contact form sends its mail.
+  contactMail = 'hi@kalkar-it.de'
 
 [module]
   [[module.mounts]]
