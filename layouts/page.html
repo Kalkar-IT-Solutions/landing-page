@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{- /* Legal pages: a Kennung and the text in the reading column. */ -}}
+<article class="kit-page">
+  {{ partial "horizont/kennung.html" site.Title }}
+  <h1 class="t-headline">{{ .Title }}</h1>
+  <div class="t-reading">{{ .Content }}</div>
+</article>
+{{ end }}

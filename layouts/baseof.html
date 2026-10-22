@@ -1,0 +1,36 @@
+{{- /*
+  The page is a "Feldseite" of Horizont (docs/web.md in the design system):
+  the horizon line as the navigation, its marks read from the numbered
+  sections, then the page and the foot with the sender. Kalkar IT is no
+  field of the regetskcob family, so the mark is a plain link home instead
+  of opening the Flurkarte. The accent is Tinte, the neutral ink.
+*/ -}}
+{{- /* Legal pages appear in the foot once they are written and no longer
+       drafts (content/impressum.md, content/datenschutz.md). */}}
+{{- $links := slice -}}
+{{- range slice "impressum" "datenschutz" }}
+  {{- with site.GetPage . }}{{ $links = $links | append (dict "name" .Title "url" .RelPermalink) }}{{ end }}
+{{- end -}}
+<!doctype html>
+<html lang="{{ site.LanguageCode }}" data-product="regetskcob">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {{ partial "head.html" . }}
+</head>
+<body class="hz">
+<a class="kit-skip" href="#main">Zum Inhalt</a>
+{{ partial "horizont/nav/horizon.html" (dict
+    "product" "regetskcob"
+    "place" (cond .IsHome site.Title (printf "%s / %s" site.Title .Title))
+    "marks" "auto"
+    "link" (dict "url" ("" | relURL) "hint" site.Title)) }}
+<div class="hz-feld">
+<main id="main">
+{{ block "main" . }}{{ end }}
+</main>
+{{ partial "horizont/feld/foot.html" (dict "links" $links) }}
+</div>
+{{ partial "horizont/nav/script.html" . }}
+</body>
+</html>

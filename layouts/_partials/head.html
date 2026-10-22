@@ -1,0 +1,22 @@
+{{- $hz := site.Data.horizont -}}
+{{- $desc := .Description | default site.Home.Description -}}
+<title>{{ if .IsHome }}{{ site.Title }} – bald da{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ $desc }}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ $hz.color.neutral.light.bg }}">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ $hz.color.neutral.dark.bg }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ site.Title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- /* Favicon: the glyph below 32 px, the app icon for larger sizes. */}}
+{{- $glyph := partial "horizont/mark.html" (dict "product" "regetskcob" "size" 32) | resources.FromString "favicon.svg" | minify | fingerprint }}
+<link rel="icon" type="image/svg+xml" href="{{ $glyph.RelPermalink }}">
+{{- /* Tokens, components, own rules (docs/web.md of Horizont). The CSS lands
+       in css/, one level below fonts/, so components.css finds ../fonts/. */}}
+{{- $css := slice
+  (resources.Get "css/horizont/tokens.css" | resources.ExecuteAsTemplate "css/horizont-tokens.css" $hz)
+  (resources.Get "css/horizont/components.css")
+  (resources.Get "css/site.css")
+  | resources.Concat "css/site.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

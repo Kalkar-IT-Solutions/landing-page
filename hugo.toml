@@ -1,0 +1,44 @@
+# The teaser page of Kalkar IT Solutions until the real site is ready. One
+# page, a "Feldseite" of Horizont, the design system of regetskcob: tokens,
+# CSS, partials and fonts come in as a Hugo module pinned to a tag (go.mod,
+# go.sum). Bump it with: hugo mod get github.com/regetskcob/horizont@vX.Y.Z
+baseURL = 'https://kalkar-it.de/'
+title = 'Kalkar IT Solutions'
+languageCode = 'de'
+defaultContentLanguage = 'de'
+disableKinds = ['taxonomy', 'term', 'section', 'rss']
+
+[params]
+  # Where the contact button points. Empty until there is an address; the
+  # hero then shows only the way to the sections below.
+  contactMail = ''
+
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  # The mounts of docs/web.md in Horizont.
+  [[module.imports]]
+    path = 'github.com/regetskcob/horizont'
+    [[module.imports.mounts]]
+      source = 'tokens'
+      target = 'data'
+    [[module.imports.mounts]]
+      source = 'icons'
+      target = 'data/horizont_icons'
+      includeFiles = ['*.json']
+    [[module.imports.mounts]]
+      source = 'web/css'
+      target = 'assets/css/horizont'
+    [[module.imports.mounts]]
+      source = 'web/partials'
+      target = 'layouts/_partials/horizont'
+    [[module.imports.mounts]]
+      source = 'web/shortcodes'
+      target = 'layouts/_shortcodes'
+    [[module.imports.mounts]]
+      source = 'web/js'
+      target = 'assets/js/horizont'
+    [[module.imports.mounts]]
+      source = 'web/fonts'
+      target = 'static/fonts'

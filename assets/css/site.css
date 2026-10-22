@@ -1,0 +1,38 @@
+/* Kalkar IT teaser: own rules on top of Horizont (tokens.css and
+   components.css from the module, docs/web.md there). Only what the
+   Feldseite does not have, every value from the tokens. */
+
+html { background: var(--bg); scroll-behavior: smooth; }
+body { margin: 0; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Skip link, visible on focus. */
+.kit-skip {
+  position: absolute; left: var(--s-16); top: var(--s-8); z-index: 10;
+  padding: var(--s-8) var(--s-12);
+  background: var(--surface); color: var(--text);
+  border: var(--line-hairline) solid var(--line-strong); border-radius: var(--r-6);
+  transform: translateY(-200%);
+}
+.kit-skip:focus { transform: none; }
+
+/* A teaser has no product to show yet: the aside is the state of things,
+   a status and three facts, quiet on the right of the hero. */
+.kit-status { display: grid; gap: var(--s-16); justify-items: start; min-width: 16rem; }
+
+/* The hero carries the whole page: give the sky some room. */
+.hz-feld-hero { padding-top: var(--s-96); }
+
+/* Links in running text and facts: the accent's text colour. */
+.hz-feld-section p a, .hz-facts dd a, .kit-page a {
+  color: var(--accent-text);
+  text-underline-offset: 0.2em;
+}
+
+.kit-page { max-width: var(--size-text-column); padding: var(--s-64) var(--s-32); }
+.kit-page h1 { margin: var(--s-16) 0 var(--s-32); }
+
+@container (max-width: 720px) {
+  .hz-feld-hero { padding-top: var(--s-64); }
+  .kit-page { padding: var(--s-48) var(--s-16); }
+}
