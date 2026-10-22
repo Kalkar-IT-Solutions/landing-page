@@ -20,11 +20,11 @@ E-Mail: [hi@kalkar-it.de](mailto:hi@kalkar-it.de)
 
 ## Hosting und Server-Protokolle
 
-Die Seite wird bei [AUSFÜLLEN: Hoster, etwa „GitHub Pages, einem Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA“] gehostet. Bei jedem Aufruf verarbeitet der Hoster technisch notwendige Daten, um die Seite auszuliefern und den Betrieb abzusichern: IP-Adresse, Datum und Uhrzeit, aufgerufene Adresse, übertragene Datenmenge, Browser und Betriebssystem sowie die zuvor besuchte Seite, soweit Ihr Browser sie übermittelt.
+Die Seite wird bei GitHub Pages, einem Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, gehostet. Bei jedem Aufruf verarbeitet der Hoster technisch notwendige Daten, um die Seite auszuliefern und den Betrieb abzusichern: IP-Adresse, Datum und Uhrzeit, aufgerufene Adresse, übertragene Datenmenge, Browser und Betriebssystem sowie die zuvor besuchte Seite, soweit Ihr Browser sie übermittelt.
 
-Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverlässigen Auslieferung der Seite (Art. 6 Abs. 1 lit. f DSGVO). Auf diese Protokolle haben wir selbst keinen Zugriff; wie lange der Hoster sie aufbewahrt, regelt seine Datenschutzerklärung: [AUSFÜLLEN: Link, bei GitHub https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement].
+Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverlässigen Auslieferung der Seite (Art. 6 Abs. 1 lit. f DSGVO). Auf diese Protokolle haben wir selbst keinen Zugriff; wie lange der Hoster sie aufbewahrt, regelt seine Datenschutzerklärung: [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
 
-[AUSFÜLLEN: nur bei einem Hoster außerhalb der EU, sonst den Absatz löschen: „Dabei können Daten in die USA übermittelt werden. Der Hoster ist unter dem EU-US Data Privacy Framework zertifiziert, für das ein Angemessenheitsbeschluss der EU-Kommission besteht (Art. 45 DSGVO).“ Die Zertifizierung vorher unter https://www.dataprivacyframework.gov prüfen.]
+Dabei können Daten in die USA übermittelt werden. Der Hoster ist unter dem EU-US Data Privacy Framework zertifiziert, für das ein Angemessenheitsbeschluss der EU-Kommission besteht (Art. 45 DSGVO).
 
 ## Kontakt per E-Mail
 
@@ -32,7 +32,7 @@ Das Kontaktformular sendet nichts selbst: Es öffnet Ihr Mailprogramm mit einer 
 
 Wir nutzen diese Angaben nur, um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Auftrag oder dessen Anbahnung geht, sonst unser berechtigtes Interesse an der Beantwortung (Art. 6 Abs. 1 lit. f DSGVO). Wir löschen die Nachricht, sobald die Anfrage erledigt ist, es sei denn, gesetzliche Aufbewahrungspflichten stehen dem entgegen.
 
-E-Mails an diese Adresse werden über [AUSFÜLLEN: Mailanbieter des Postfachs, etwa „iCloud Mail der Apple Inc.“] empfangen und gespeichert.
+E-Mails an diese Adresse werden über do.de, einen Dienst der Greenmark IT GmbH, Leinstraße 3, 31061 Alfeld (Leine), Deutschland, empfangen und gespeichert.
 
 ## Ihre Rechte
 
@@ -42,4 +42,4 @@ Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, e
 
 ## Stand
 
-[AUSFÜLLEN: Datum der Freigabe, etwa „November 2026“]
+Oktober 2026
