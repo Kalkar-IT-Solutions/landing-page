@@ -30,7 +30,7 @@ sections:
       kennt die Betriebe, die Wege und die Menschen, und ist schnell vor
       Ort, wenn es darauf ankommt.
     facts:
-      - { term: Vor Ort, value: "Kalkar, Kleve, Goch, Emmerich, Rees" }
+      - { term: Vor Ort, value: Kalkar und Umgebung }
   - id: kontakt
     kennung: 04 — Kontakt
     title: Noch nicht ganz fertig.
