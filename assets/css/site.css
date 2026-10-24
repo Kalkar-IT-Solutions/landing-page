@@ -58,20 +58,21 @@ body.kit-aufbau .hz-feld-aside {
   display: flex; align-items: flex-end; justify-content: flex-end;
   container-type: size; min-height: 0; margin: 0; align-self: stretch;
 }
-body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 320px)); }
+body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 320px)); }
 
 /* ---- The scene: laptop, phone and board on one line ----------------- */
 
 .kit-scene {
   container-type: inline-size;
   position: relative;
-  aspect-ratio: 100 / 36;
+  aspect-ratio: 100 / 32;
 }
 .kit-scene > * { position: absolute; bottom: 0; }
-.kit-scene-board { left: 0; width: 15cqw; height: auto; }
-.kit-scene-laptop { --w: 50cqw; left: 16.5cqw; }
-.kit-scene-phone { --w: 14cqw; left: 69cqw; }
-.kit-scene-watch { --w: 10cqw; right: 0; }
+/* Each device with room around it: about 6 % of the width between them. */
+.kit-scene-board { left: 0; width: 13cqw; height: auto; }
+.kit-scene-laptop { --w: 46cqw; left: 19cqw; }
+.kit-scene-phone { --w: 13cqw; left: 71cqw; }
+.kit-scene-watch { --w: 9.5cqw; right: 0; }
 
 /* The board: line drawing in the neutrals, one green LED as the sign of
    life (the phone's app colour, so the picture keeps to one accent). */
@@ -85,13 +86,12 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 
 .kit-board-led { fill: var(--positive); }
 
 /* Screens are drawn at their real size: --px is one CSS pixel of the
-   1280 px wide laptop screen, --pt one point of the 393 pt wide phone. */
-.kit-web, .kit-app { container-type: inline-size; }
+   1280 px wide laptop screen. */
+.kit-web { container-type: inline-size; }
 /* A small base, so no line box in a drawn screen keeps the page's 16/24
-   strut; every text inside sets its own size in --px or --pt. */
-.kit-web, .kit-app, .kit-watch { font-size: 4px; line-height: 1.2; }
+   strut; every text inside sets its own size in --px or --wp. */
+.kit-web, .kit-watch { font-size: 4px; line-height: 1.2; }
 .kit-web { --px: calc(100cqw / 1280); }
-.kit-app { --pt: calc(100cqw / 393); }
 
 /* The website: a browser bar, the horizon nav, a Feldseite in small. */
 .kit-web { display: flex; flex-direction: column; background: var(--bg); }
@@ -141,59 +141,8 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 
 .kit-web-rows b { height: calc(var(--px) * 14); border-radius: calc(var(--px) * 3); background: var(--line); }
 .kit-web-rows b:first-child { width: 70%; height: calc(var(--px) * 22); background: var(--line-strong); }
 
-/* The app: after KNX Monitor, Kennung over a small title, rows with
-   values in mono, the selection as a line, FAB and tab bar. */
-.kit-app { display: flex; flex-direction: column; font-family: var(--font-sans); color: var(--text); }
-.kit-app .hz-symbol { font-size: calc(var(--pt) * 22); color: var(--text-muted); }
-.kit-app-status {
-  height: calc(var(--pt) * 54); padding: 0 calc(var(--pt) * 36);
-  display: flex; align-items: center;
-  font: 600 calc(var(--pt) * 16) / 1 var(--font-sans);
-}
-.kit-app-head { display: grid; gap: calc(var(--pt) * 2); padding: calc(var(--pt) * 12) calc(var(--pt) * 20) calc(var(--pt) * 16); }
-.kit-app-kennung {
-  font: 600 calc(var(--pt) * 11) / calc(var(--pt) * 16) var(--font-mono); letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-muted);
-}
-.kit-app-title { font: 600 calc(var(--pt) * 22) / 1.25 var(--font-sans); }
-.kit-app-list { list-style: none; margin: 0; padding: 0; background: var(--surface); border-block: 1px solid var(--line); }
-.kit-app-list li {
-  position: relative; display: flex; align-items: center; gap: calc(var(--pt) * 12);
-  min-height: calc(var(--pt) * 52); padding: 0 calc(var(--pt) * 20);
-  font-size: calc(var(--pt) * 16);
-}
-.kit-app-list li + li::before {
-  content: ""; position: absolute; top: 0; right: 0; left: calc(var(--pt) * 54);
-  border-top: 1px solid var(--line);
-}
-.kit-app-list li span { flex: 1; }
-.kit-app-list li em {
-  font: normal calc(var(--pt) * 14) / 1 var(--font-mono); font-variant-numeric: tabular-nums;
-  color: var(--text-muted);
-}
-.kit-app-list li[aria-selected="true"] { background: var(--accent-tint); box-shadow: inset 2px 0 0 var(--accent); }
-.kit-app-list li[aria-selected="true"] .hz-symbol { color: var(--accent-text); }
-.kit-app-fab {
-  align-self: flex-end; margin: auto calc(var(--pt) * 20) calc(var(--pt) * 16);
-  width: calc(var(--pt) * 56); height: calc(var(--pt) * 56);
-  display: grid; place-items: center;
-  background: var(--accent); border-radius: calc(var(--pt) * 16);
-}
-.kit-app .kit-app-fab .hz-symbol { color: var(--on-accent); font-size: calc(var(--pt) * 24); }
-.kit-app-tabs {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  padding: calc(var(--pt) * 8) calc(var(--pt) * 12) calc(var(--pt) * 34);
-  background: var(--surface); border-top: 1px solid var(--line);
-}
-.kit-app-tabs span {
-  display: grid; justify-items: center; gap: calc(var(--pt) * 2);
-  margin: 0 auto; padding: calc(var(--pt) * 4) calc(var(--pt) * 12);
-  font: 500 calc(var(--pt) * 11) / 1.2 var(--font-sans); color: var(--text-muted);
-  border-radius: calc(var(--pt) * 6);
-}
-.kit-app-tabs .hz-symbol { font-size: calc(var(--pt) * 24); }
-.kit-app-tabs .is-current { background: var(--accent-tint); color: var(--text); font-weight: 600; }
-.kit-app-tabs .is-current .hz-symbol { color: var(--accent-text); }
+/* The phone: the screenshot fills the screen, cut by its rounded corners. */
+.kit-shot { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
 /* The watch: one value large in mono, as Horizont has it for the wrist.
    --wp is one point of the 198 pt wide screen of a large watch. */
