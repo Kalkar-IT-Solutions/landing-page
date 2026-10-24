@@ -16,9 +16,18 @@
 <link rel="icon" type="image/svg+xml" href="{{ $icon.RelPermalink }}">
 {{- /* Tokens, components, own rules (docs/web.md of Horizont). The CSS lands
        in css/, one level below fonts/, so components.css finds ../fonts/. */}}
+{{- /* The large beech behind the hero, once per colour scheme, its faint
+       tones from the neutrals of the tokens. site.css is a template for
+       their addresses. */}}
+{{- $nl := $hz.color.neutral.light }}{{ $nd := $hz.color.neutral.dark }}
+{{- /* The content hash in the name keeps the dev server from serving an
+       older drawing: resources.FromString caches by name. */}}
+{{- $bl := partial "beech.html" (dict "crown" $nl.sunken) }}{{ $bd := partial "beech.html" (dict "crown" $nd.surface) }}
+{{- $beechLight := $bl | resources.FromString (printf "img/beech-light-%s.svg" (md5 $bl)) | minify }}
+{{- $beechDark := $bd | resources.FromString (printf "img/beech-dark-%s.svg" (md5 $bd)) | minify }}
 {{- $css := slice
   (resources.Get "css/horizont/tokens.css" | resources.ExecuteAsTemplate "css/horizont-tokens.css" $hz)
   (resources.Get "css/horizont/components.css")
-  (resources.Get "css/site.css")
+  (resources.Get "css/site.css" | resources.ExecuteAsTemplate "css/site-own.css" (dict "beechLight" $beechLight.RelPermalink "beechDark" $beechDark.RelPermalink))
   | resources.Concat "css/site.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

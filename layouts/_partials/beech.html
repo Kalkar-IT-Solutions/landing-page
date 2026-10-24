@@ -1,0 +1,15 @@
+{{- /*
+  The large beech behind the hero: the regetskcob beech of the Horizont app
+  icon (web/partials/app-icon.html) as a flat silhouette in one faint
+  tone, standing on the horizon line. One tone on purpose: lit leaf masses
+  made the crown read as bubbles. Returned as an SVG string, so the head
+  can turn it into a background image per colour scheme.
+
+    partial "beech.html" (dict "crown" "#F1F1EC")
+*/ -}}
+{{- $c := .crown -}}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 0 72 66.7">
+  <path d="M48 52l-8-6M52 52l8-7" stroke="{{ $c }}" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  <path d="M42 66.7c2.6-1 3.6-3.4 3.6-7.6V45h8.8v14.1c0 4.2 1 6.6 3.6 7.6z" fill="{{ $c }}"/>
+  <g fill="{{ $c }}"><circle cx="33" cy="40" r="10"/><circle cx="46" cy="43" r="10"/><circle cx="58" cy="42" r="11"/><circle cx="70" cy="38" r="9"/><circle cx="25" cy="32" r="9"/><circle cx="76" cy="29" r="8"/><circle cx="36" cy="26" r="12"/><circle cx="52" cy="22" r="13"/><circle cx="66" cy="26" r="11"/><circle cx="48" cy="33" r="13"/><circle cx="42" cy="15" r="8"/><circle cx="60" cy="14" r="7"/></g>
+</svg>
