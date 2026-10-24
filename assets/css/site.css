@@ -1,12 +1,16 @@
 /* Kalkar IT teaser: own rules on top of Horizont (tokens.css and
    components.css from the module, docs/web.md there). Only what the
-   Feldseite does not have, every value from the tokens. */
+   Feldseite does not have, every value from the tokens. A template: the
+   addresses of the beech images come from the head. */
 
 /* No text inflation on iOS: Safari enlarges small type in narrow boxes,
    which blew the drawn screens of the scene out of their frames. */
 html { background: var(--bg); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; }
-body.hz { overflow-x: clip; }
+/* Nothing may widen the page sideways, the beech reaching past the frame
+   least of all: on html, because mobile browsers grow the layout viewport
+   to fit overflow that only the body clips. */
+html, body.hz { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* Skip link, visible on focus. */
@@ -58,20 +62,53 @@ body.kit-aufbau .hz-feld-aside {
   display: flex; align-items: flex-end; justify-content: flex-end;
   container-type: size; min-height: 0; margin: 0; align-self: stretch;
 }
-body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 320px)); }
+/* A large beech fills the sky on the right, faint in the neutrals, standing
+   on the horizon line behind the scene: the sender, regetskcob's tree. Its
+   trunk stands just right of the watch, outside the page frame, so it reads
+   as a tree and not as a cloud behind the devices; the window edge may cut
+   the crown. */
+body.kit-aufbau .hz-feld-hero { position: relative; isolation: isolate; }
+body.kit-aufbau .hz-feld-hero::before {
+  content: ""; position: absolute; z-index: -1; bottom: 0;
+  /* The trunk 64 px right of the page frame where the window has room,
+     else just inside the window edge. */
+  right: calc(-1 * clamp(-48px, (100vw - 100%) / 2 - 48px, 64px)); transform: translateX(50%);
+  height: 92%; aspect-ratio: 72 / 66.7;
+  background: url("{{ .beechLight }}") no-repeat center bottom / contain;
+  opacity: 0.6; pointer-events: none;
+}
+/* On the left, the technology side: someone at a desk with a laptop and
+   someone with a phone, in the same faint tones, standing on the line
+   behind the board, at most 140 px past the page frame and never past the
+   window edge. */
+body.kit-aufbau .hz-feld-hero::after {
+  content: ""; position: absolute; z-index: -1; bottom: 0;
+  left: max(calc((100% - 100vw) / 2 + var(--s-16)), -140px);
+  height: 40%; aspect-ratio: 55 / 66.7;
+  background: url("{{ .peopleLight }}") no-repeat center bottom / contain;
+  opacity: 0.45; pointer-events: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body.kit-aufbau .hz-feld-hero::before { background-image: url("{{ .beechDark }}"); }
+  :root:not([data-theme="light"]) body.kit-aufbau .hz-feld-hero::after { background-image: url("{{ .peopleDark }}"); }
+}
+:root[data-theme="dark"] body.kit-aufbau .hz-feld-hero::before { background-image: url("{{ .beechDark }}"); }
+:root[data-theme="dark"] body.kit-aufbau .hz-feld-hero::after { background-image: url("{{ .peopleDark }}"); }
+body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 320px)); }
 
 /* ---- The scene: laptop, phone and board on one line ----------------- */
 
 .kit-scene {
   container-type: inline-size;
   position: relative;
-  aspect-ratio: 100 / 36;
+  aspect-ratio: 100 / 32;
 }
 .kit-scene > * { position: absolute; bottom: 0; }
-.kit-scene-board { left: 0; width: 15cqw; height: auto; }
-.kit-scene-laptop { --w: 50cqw; left: 16.5cqw; }
-.kit-scene-phone { --w: 14cqw; left: 69cqw; }
-.kit-scene-watch { --w: 10cqw; right: 0; }
+/* Each device with room around it: about 6 % of the width between them. */
+.kit-scene-board { left: 0; width: 13cqw; height: auto; }
+.kit-scene-laptop { --w: 46cqw; left: 19cqw; }
+.kit-scene-phone { --w: 13cqw; left: 71cqw; }
+.kit-scene-watch { --w: 9.5cqw; right: 0; }
 
 /* The board: line drawing in the neutrals, one green LED as the sign of
    life (the phone's app colour, so the picture keeps to one accent). */
@@ -85,13 +122,12 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 
 .kit-board-led { fill: var(--positive); }
 
 /* Screens are drawn at their real size: --px is one CSS pixel of the
-   1280 px wide laptop screen, --pt one point of the 393 pt wide phone. */
-.kit-web, .kit-app { container-type: inline-size; }
+   1280 px wide laptop screen. */
+.kit-web { container-type: inline-size; }
 /* A small base, so no line box in a drawn screen keeps the page's 16/24
-   strut; every text inside sets its own size in --px or --pt. */
-.kit-web, .kit-app, .kit-watch { font-size: 4px; line-height: 1.2; }
+   strut; every text inside sets its own size in --px or --wp. */
+.kit-web, .kit-watch { font-size: 4px; line-height: 1.2; }
 .kit-web { --px: calc(100cqw / 1280); }
-.kit-app { --pt: calc(100cqw / 393); }
 
 /* The website: a browser bar, the horizon nav, a Feldseite in small. */
 .kit-web { display: flex; flex-direction: column; background: var(--bg); }
@@ -141,59 +177,8 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 
 .kit-web-rows b { height: calc(var(--px) * 14); border-radius: calc(var(--px) * 3); background: var(--line); }
 .kit-web-rows b:first-child { width: 70%; height: calc(var(--px) * 22); background: var(--line-strong); }
 
-/* The app: after KNX Monitor, Kennung over a small title, rows with
-   values in mono, the selection as a line, FAB and tab bar. */
-.kit-app { display: flex; flex-direction: column; font-family: var(--font-sans); color: var(--text); }
-.kit-app .hz-symbol { font-size: calc(var(--pt) * 22); color: var(--text-muted); }
-.kit-app-status {
-  height: calc(var(--pt) * 54); padding: 0 calc(var(--pt) * 36);
-  display: flex; align-items: center;
-  font: 600 calc(var(--pt) * 16) / 1 var(--font-sans);
-}
-.kit-app-head { display: grid; gap: calc(var(--pt) * 2); padding: calc(var(--pt) * 12) calc(var(--pt) * 20) calc(var(--pt) * 16); }
-.kit-app-kennung {
-  font: 600 calc(var(--pt) * 11) / calc(var(--pt) * 16) var(--font-mono); letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-muted);
-}
-.kit-app-title { font: 600 calc(var(--pt) * 22) / 1.25 var(--font-sans); }
-.kit-app-list { list-style: none; margin: 0; padding: 0; background: var(--surface); border-block: 1px solid var(--line); }
-.kit-app-list li {
-  position: relative; display: flex; align-items: center; gap: calc(var(--pt) * 12);
-  min-height: calc(var(--pt) * 52); padding: 0 calc(var(--pt) * 20);
-  font-size: calc(var(--pt) * 16);
-}
-.kit-app-list li + li::before {
-  content: ""; position: absolute; top: 0; right: 0; left: calc(var(--pt) * 54);
-  border-top: 1px solid var(--line);
-}
-.kit-app-list li span { flex: 1; }
-.kit-app-list li em {
-  font: normal calc(var(--pt) * 14) / 1 var(--font-mono); font-variant-numeric: tabular-nums;
-  color: var(--text-muted);
-}
-.kit-app-list li[aria-selected="true"] { background: var(--accent-tint); box-shadow: inset 2px 0 0 var(--accent); }
-.kit-app-list li[aria-selected="true"] .hz-symbol { color: var(--accent-text); }
-.kit-app-fab {
-  align-self: flex-end; margin: auto calc(var(--pt) * 20) calc(var(--pt) * 16);
-  width: calc(var(--pt) * 56); height: calc(var(--pt) * 56);
-  display: grid; place-items: center;
-  background: var(--accent); border-radius: calc(var(--pt) * 16);
-}
-.kit-app .kit-app-fab .hz-symbol { color: var(--on-accent); font-size: calc(var(--pt) * 24); }
-.kit-app-tabs {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  padding: calc(var(--pt) * 8) calc(var(--pt) * 12) calc(var(--pt) * 34);
-  background: var(--surface); border-top: 1px solid var(--line);
-}
-.kit-app-tabs span {
-  display: grid; justify-items: center; gap: calc(var(--pt) * 2);
-  margin: 0 auto; padding: calc(var(--pt) * 4) calc(var(--pt) * 12);
-  font: 500 calc(var(--pt) * 11) / 1.2 var(--font-sans); color: var(--text-muted);
-  border-radius: calc(var(--pt) * 6);
-}
-.kit-app-tabs .hz-symbol { font-size: calc(var(--pt) * 24); }
-.kit-app-tabs .is-current { background: var(--accent-tint); color: var(--text); font-weight: 600; }
-.kit-app-tabs .is-current .hz-symbol { color: var(--accent-text); }
+/* The phone: the screenshot fills the screen, cut by its rounded corners. */
+.kit-shot { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
 /* The watch: one value large in mono, as Horizont has it for the wrist.
    --wp is one point of the 198 pt wide screen of a large watch. */
@@ -263,6 +248,8 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.36), min(100cqw, 
   .hz-feld-hero { grid-template-columns: 1fr; min-height: 0; padding-top: var(--s-48); gap: var(--s-32); }
   .hz-feld-hero > div:first-child { padding-bottom: 0; }
   .hz-feld-aside { display: block; }
+  /* On a phone people and beech would overlap; the beech alone stays. */
+  body.kit-aufbau .hz-feld-hero::after { display: none; }
   .kit-extend { padding: 0 var(--s-16) var(--s-48); }
   .kit-page { padding: var(--s-48) var(--s-16); }
 }

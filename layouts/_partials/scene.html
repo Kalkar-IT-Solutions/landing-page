@@ -1,11 +1,11 @@
 {{- /*
   The picture of the hero: what Kalkar IT builds, standing on the horizon
-  line. A laptop with a website, a phone with an app (after KNX Monitor, so
-  it wears the Bus green), a watch with one value from that app and a
-  single-board computer in front. The
-  screens are drawn, not photographed: their sizes follow the real screen
-  (1280 px wide for the laptop, 393 pt for the phone) through container
-  units, so bars and type have the size they would have on the device.
+  line. A laptop with a website, a phone with KNX Monitor, a watch with one
+  value from that app and a single-board computer in front. The phone
+  carries a real screenshot; laptop and watch are drawn, their sizes
+  following the real screen (1280 px for the laptop, 198 pt for the watch)
+  through container units, so bars and type have the size they would have
+  on the device.
   Purely decorative; the hero text says the same in words.
 */ -}}
 <div class="kit-scene" aria-hidden="true">
@@ -17,7 +17,7 @@
       <div class="kit-web-hero">
         <div>
           <span class="kit-web-kennung">01 — Hofladen · Kalkar</span>
-          <span class="kit-web-title">Frisch vom Feld, direkt ab Hof.</span>
+          <span class="kit-web-title">Direkt vom Feld auf die eigene Webseite.</span>
           <span class="kit-web-text"></span>
           <span class="kit-web-text kit-web-text--short"></span>
           <span class="kit-web-button">Öffnungszeiten</span>
@@ -33,26 +33,15 @@
     </div>
   </figure>
 
+  {{- /* The phone shows the real thing: the overview of KNX Monitor from
+     its landing page (KNX-Monitor-Source, site/static/images/screens),
+     resized to twice the drawn width. */}}
+  {{- $shot := resources.Get "screens/knx-overview-phone.png" }}
+  {{- $s1 := $shot.Resize "300x webp" }}{{ $s2 := $shot.Resize "600x webp" }}
   <figure class="hz-device hz-device--iphone kit-scene-phone">
-    <div class="hz-device-screen kit-app" data-product="knx">
-      <div class="kit-app-status"><span>9:41</span></div>
-      <div class="kit-app-head">
-        <span class="kit-app-kennung">Wohnung · 12 Geräte</span>
-        <span class="kit-app-title">Übersicht</span>
-      </div>
-      <ul class="kit-app-list">
-        <li aria-selected="true">{{ partial "horizont/symbol.html" "lightbulb" }}<span>Licht Wohnzimmer</span><em>An</em></li>
-        <li>{{ partial "horizont/symbol.html" "thermostat" }}<span>Küche</span><em>21,4 °C</em></li>
-        <li>{{ partial "horizont/symbol.html" "blinds" }}<span>Rollladen Süd</span><em>60 %</em></li>
-        <li>{{ partial "horizont/symbol.html" "sensors" }}<span>Fenster Bad</span><em>zu</em></li>
-        <li>{{ partial "horizont/symbol.html" "bolt" }}<span>Verbrauch</span><em>412 W</em></li>
-      </ul>
-      <span class="kit-app-fab">{{ partial "horizont/symbol.html" "add" }}</span>
-      <div class="kit-app-tabs">
-        <span class="is-current">{{ partial "horizont/symbol.html" "dashboard" }}Übersicht</span>
-        <span>{{ partial "horizont/symbol.html" "lightbulb" }}Geräte</span>
-        <span>{{ partial "horizont/symbol.html" "settings" }}Menü</span>
-      </div>
+    <div class="hz-device-screen">
+      <img class="kit-shot" src="{{ $s1.RelPermalink }}" srcset="{{ $s1.RelPermalink }} 300w, {{ $s2.RelPermalink }} 600w"
+        sizes="(max-width: 720px) 14vw, 160px" width="{{ $s1.Width }}" height="{{ $s1.Height }}" alt="" loading="eager" decoding="async">
     </div>
   </figure>
 
