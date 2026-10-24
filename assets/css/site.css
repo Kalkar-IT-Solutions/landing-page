@@ -77,10 +77,23 @@ body.kit-aufbau .hz-feld-hero::before {
   background: url("{{ .beechLight }}") no-repeat center bottom / contain;
   opacity: 0.6; pointer-events: none;
 }
+/* On the left, the technology side: someone at a desk with a laptop and
+   someone with a phone, in the same faint tones, standing on the line
+   behind the board, at most 140 px past the page frame and never past the
+   window edge. */
+body.kit-aufbau .hz-feld-hero::after {
+  content: ""; position: absolute; z-index: -1; bottom: 0;
+  left: max(calc((100% - 100vw) / 2 + var(--s-16)), -140px);
+  height: 40%; aspect-ratio: 55 / 66.7;
+  background: url("{{ .peopleLight }}") no-repeat center bottom / contain;
+  opacity: 0.45; pointer-events: none;
+}
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) body.kit-aufbau .hz-feld-hero::before { background-image: url("{{ .beechDark }}"); }
+  :root:not([data-theme="light"]) body.kit-aufbau .hz-feld-hero::after { background-image: url("{{ .peopleDark }}"); }
 }
 :root[data-theme="dark"] body.kit-aufbau .hz-feld-hero::before { background-image: url("{{ .beechDark }}"); }
+:root[data-theme="dark"] body.kit-aufbau .hz-feld-hero::after { background-image: url("{{ .peopleDark }}"); }
 body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 320px)); }
 
 /* ---- The scene: laptop, phone and board on one line ----------------- */
@@ -235,6 +248,8 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
   .hz-feld-hero { grid-template-columns: 1fr; min-height: 0; padding-top: var(--s-48); gap: var(--s-32); }
   .hz-feld-hero > div:first-child { padding-bottom: 0; }
   .hz-feld-aside { display: block; }
+  /* On a phone people and beech would overlap; the beech alone stays. */
+  body.kit-aufbau .hz-feld-hero::after { display: none; }
   .kit-extend { padding: 0 var(--s-16) var(--s-48); }
   .kit-page { padding: var(--s-48) var(--s-16); }
 }
