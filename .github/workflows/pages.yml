@@ -39,17 +39,18 @@ jobs:
         run: hugo --gc --minify --baseURL "${BASE_URL}/"
         env:
           BASE_URL: ${{ steps.pages.outputs.base_url }}
-      # Kalkar Kompakt (Kalkar-IT-Solutions/kalkar-kompakt) builds its web
-      # version into the release "web"; it is served at /kompakt/.
-      # Without that file the site still deploys, just without the app.
+      # Kalkar Kompakt (private repo Kalkar-IT-Solutions/kalkar-kompakt)
+      # pushes its web build to the branch kompakt-build of this repo; it
+      # is served at /kompakt/. Without that branch the site still deploys.
       - name: Add Kalkar Kompakt
         run: |
-          mkdir -p public/kompakt
-          if curl -fsSL "https://github.com/Kalkar-IT-Solutions/kalkar-kompakt/releases/download/web/web.tar.gz" -o kompakt.tar.gz; then
-            tar -xzf kompakt.tar.gz -C public/kompakt
+          if git fetch --depth 1 origin kompakt-build; then
+            mkdir -p public/kompakt
+            git --work-tree=public/kompakt checkout FETCH_HEAD -- .
+            # The branch carries the workflow that started this run.
+            rm -rf public/kompakt/.github
           else
-            echo "::warning::No web build of Kalkar Kompakt found, deploying without /kompakt/."
-            rmdir public/kompakt
+            echo "::warning::No branch kompakt-build, deploying without /kompakt/."
           fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
