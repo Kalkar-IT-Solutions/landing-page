@@ -39,17 +39,17 @@ jobs:
         run: hugo --gc --minify --baseURL "${BASE_URL}/"
         env:
           BASE_URL: ${{ steps.pages.outputs.base_url }}
-      # Kalkar informiert (Kalkar-IT-Solutions/kalkar-informiert) builds its
-      # web version into the release "web"; it is served at /informiert/.
+      # Kalkar Kompakt (Kalkar-IT-Solutions/kalkar-kompakt) builds its web
+      # version into the release "web"; it is served at /kompakt/.
       # Without that file the site still deploys, just without the app.
-      - name: Add Kalkar informiert
+      - name: Add Kalkar Kompakt
         run: |
-          mkdir -p public/informiert
-          if curl -fsSL "https://github.com/Kalkar-IT-Solutions/kalkar-informiert/releases/download/web/web.tar.gz" -o informiert.tar.gz; then
-            tar -xzf informiert.tar.gz -C public/informiert
+          mkdir -p public/kompakt
+          if curl -fsSL "https://github.com/Kalkar-IT-Solutions/kalkar-kompakt/releases/download/web/web.tar.gz" -o kompakt.tar.gz; then
+            tar -xzf kompakt.tar.gz -C public/kompakt
           else
-            echo "::warning::No web build of Kalkar informiert found, deploying without /informiert/."
-            rmdir public/informiert
+            echo "::warning::No web build of Kalkar Kompakt found, deploying without /kompakt/."
+            rmdir public/kompakt
           fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
