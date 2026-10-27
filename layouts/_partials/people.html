@@ -6,9 +6,12 @@
   phone a tone darker, so they read. Returned as an SVG string for a
   background image per colour scheme, like beech.html.
 
-    partial "people.html" (dict "body" "#F1F1EC" "device" "#E3E3DC")
+    partial "people.html" (dict "body" "#E3E3DC" "device" "#8A8B84" "deviceOpacity" 0.35)
+
+  deviceOpacity  how much of the device tone shows (default 1), for a
+                 tone between two neutrals
 */ -}}
-{{- $b := .body -}}{{- $d := .device -}}
+{{- $b := .body -}}{{- $d := .device -}}{{- $o := .deviceOpacity | default 1 -}}
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 0 55 66.7">
   <g fill="{{ $b }}" stroke="{{ $b }}" stroke-linecap="round" stroke-linejoin="round">
     {{- /* chair */}}
@@ -28,7 +31,7 @@
     <path d="M53.8 19.4L55.4 37" stroke-width="3.4" fill="none"/>
     <path d="M42.2 19.4L39.6 29L38 23.4" stroke-width="3.2" fill="none"/>
   </g>
-  <g fill="{{ $d }}">
+  <g fill="{{ $d }}" fill-opacity="{{ $o }}">
     {{- /* laptop: base on the desk, the screen tilted towards the seated */}}
     <rect x="21.6" y="38.4" width="9.8" height="1.4" rx=".4"/>
     <path d="M30.2 39.6h1.5l-1.3-9.2h-1.5z"/>
