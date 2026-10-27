@@ -18,13 +18,15 @@
        in css/, one level below fonts/, so components.css finds ../fonts/. */}}
 {{- /* The large beech behind the hero (the land, right) and the people at
        desk and phone (technology, left), once per colour scheme, their
-       faint tones from the neutrals of the tokens. site.css is a template
+       faint tones from the neutrals of the tokens: line in the light (one
+       step darker than sunken, which was too pale there), surface in the
+       dark. site.css is a template
        for their addresses. */}}
 {{- $nl := $hz.color.neutral.light }}{{ $nd := $hz.color.neutral.dark }}
 {{- /* The content hash in the name keeps the dev server from serving an
        older drawing: resources.FromString caches by name. */}}
-{{- $bl := partial "beech.html" (dict "crown" $nl.sunken) }}{{ $bd := partial "beech.html" (dict "crown" $nd.surface) }}
-{{- $pl := partial "people.html" (dict "body" $nl.sunken "device" $nl.line) }}{{ $pd := partial "people.html" (dict "body" $nd.surface "device" $nd.line) }}
+{{- $bl := partial "beech.html" (dict "crown" $nl.line) }}{{ $bd := partial "beech.html" (dict "crown" $nd.surface) }}
+{{- $pl := partial "people.html" (dict "body" $nl.line "device" (index $nl "line-strong") "deviceOpacity" 0.35) }}{{ $pd := partial "people.html" (dict "body" $nd.surface "device" $nd.line) }}
 {{- $peopleLight := $pl | resources.FromString (printf "img/people-light-%s.svg" (md5 $pl)) | minify }}
 {{- $peopleDark := $pd | resources.FromString (printf "img/people-dark-%s.svg" (md5 $pd)) | minify }}
 {{- $beechLight := $bl | resources.FromString (printf "img/beech-light-%s.svg" (md5 $bl)) | minify }}
