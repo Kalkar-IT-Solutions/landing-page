@@ -4,9 +4,11 @@ title: Datenschutz
 
 Diese Seite ist bewusst schlicht gebaut: keine Cookies, keine Analyse- oder
 Werbedienste, keine eingebetteten Inhalte Dritter. Schriften und Symbole
-liegen auf demselben Server wie die Seite. Personenbezogene Daten fallen nur
-an zwei Stellen an: beim Aufruf der Seite durch den Hoster und wenn Sie uns
-schreiben.
+liegen auf demselben Server wie die Seite. Personenbezogene Daten fallen auf
+der Seite selbst nur an zwei Stellen an: beim Aufruf der Seite durch den
+Hoster und wenn Sie uns schreiben. Für die Web-App Kalkar Kompakt unter
+[kalkar-it.de/kompakt](/kompakt/) und die gleichnamigen Apps gilt zusätzlich
+der Abschnitt „Kalkar Kompakt“ weiter unten.
 
 ## Verantwortlich
 
@@ -30,6 +32,42 @@ Wenn Sie uns eine E-Mail schreiben, erhalten wir Ihre E-Mail-Adresse, Ihren Name
 Wir nutzen diese Angaben nur, um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Auftrag oder dessen Anbahnung geht, sonst unser berechtigtes Interesse an der Beantwortung (Art. 6 Abs. 1 lit. f DSGVO). Wir löschen die Nachricht, sobald die Anfrage erledigt ist, es sei denn, gesetzliche Aufbewahrungspflichten stehen dem entgegen.
 
 E-Mails an diese Adresse werden über do.de, einen Dienst der Greenmark IT GmbH, Leinstraße 3, 31061 Alfeld (Leine), Deutschland, empfangen und gespeichert.
+
+## Kalkar Kompakt
+
+Kalkar Kompakt bündelt Termine, Warnungen, Wetter, Verkehr und weitere
+Informationen für Kalkar und seine Ortsteile, im Browser unter
+[kalkar-it.de/kompakt](/kompakt/) und als App.
+
+**Inhalte und Server.** Die Inhalte holt ein Dienst von uns bei Supabase
+(Supabase, Inc.; Rechenzentrum in Frankfurt am Main, EU) aus öffentlichen
+Quellen, etwa der Stadt Kalkar, dem Deutschen Wetterdienst oder der
+Autobahn GmbH. Ihr Gerät spricht dabei nur mit Supabase und mit kalkar-it.de,
+nicht mit diesen Quellen; Supabase verarbeitet technisch notwendig Ihre
+IP-Adresse. Die Karte stammt aus OpenStreetMap-Daten und liegt auf
+kalkar-it.de selbst. Rechtsgrundlage ist unser berechtigtes Interesse,
+die Informationen zuverlässig bereitzustellen (Art. 6 Abs. 1 lit. f DSGVO).
+
+**Darstellung im Browser.** Die Web-App lädt zur Darstellung Programmteile
+und Schriften von Servern von Google (gstatic.com); dabei wird Ihre
+IP-Adresse an Google (Google LLC, USA) übermittelt. Rechtsgrundlage ist
+Art. 6 Abs. 1 lit. f DSGVO; Google stützt sich für die Übermittlung in die
+USA auf das EU-US Data Privacy Framework. Die Apps laden nichts von Google.
+
+**Melden und Prüfen.** Wenn Sie einen Termin oder einen Hinweis melden oder
+die Meldung eines anderen bestätigen, schickt die App eine zufällige
+Gerätenummer mit, die nur auf Ihrem Gerät entsteht. Gespeichert werden ein
+Hash dieser Nummer, Ihre Meldung und die Antworten; Ihre IP-Adresse wird
+nur als Hash gespeichert, der sich täglich ändert, um Missbrauch zu
+begrenzen (höchstens 5 Meldungen pro Gerät und 10 pro Adresse am Tag).
+Bestätigte Meldungen sind für alle sichtbar. Rechtsgrundlage ist Art. 6
+Abs. 1 lit. f DSGVO. Auf Wunsch löschen wir Ihre Meldungen; schreiben Sie
+dazu an [hi@kalkar-it.de](mailto:hi@kalkar-it.de).
+
+**Auf Ihrem Gerät.** Einstellungen wie Ihr Ortsteil und die Gerätenummer
+liegen nur im Speicher Ihres Browsers bzw. der App. Erinnerungen erzeugt die
+App selbst auf dem Gerät, ohne Push-Dienst. Es gibt keine Cookies, keine
+Analyse und keine Werbung.
 
 ## Ihre Rechte
 
