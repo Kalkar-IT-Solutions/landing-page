@@ -11,16 +11,18 @@ AddType application/manifest+json .webmanifest
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # www.kalkar-it.de leads to kalkar-it.de, as it did on GitHub Pages.
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^ %{REQUEST_SCHEME}://%1%{REQUEST_URI} [R=301,L]
+  # do.de ends TLS in a proxy in front of Apache, which tells the scheme in
+  # X-Forwarded-Proto (do.de wiki, "Umstellung einer Webseite auf HTTPS");
+  # %{HTTPS} covers TLS ending in Apache itself. The ACME challenge stays
+  # reachable over plain HTTP for the renewals.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+  RewriteRule ^ https://kalkar-it.de%{REQUEST_URI} [R=301,L]
 
-  # HTTPS: switch on once the Let's Encrypt certificate is issued. Before
-  # the DNS switch it cannot be, and the redirect would lock the site out.
-  # The ACME challenge stays reachable over plain HTTP for renewals.
-  #RewriteCond %{HTTPS} !=on
-  #RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
-  #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  # www.kalkar-it.de leads to kalkar-it.de, as it did on GitHub Pages.
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://kalkar-it.de%{REQUEST_URI} [R=301,L]
 
   # The FTP upload keeps its state in this file; nobody needs to read it.
   RewriteRule ^\.ftp-deploy-sync-state\.json$ - [R=404,L]
