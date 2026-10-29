@@ -6,10 +6,8 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: false
 jobs:
   build:
@@ -23,9 +21,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v6
       - name: Install Hugo
         run: |
           mkdir -p "${HOME}/.local/hugo"
@@ -33,12 +28,8 @@ jobs:
           tar -C "${HOME}/.local/hugo" -xf "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           rm "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
-      # The base URL follows the Pages settings: the github.io address until
-      # the custom domain is set there, then kalkar-it.de.
       - name: Build the site
-        run: hugo --gc --minify --baseURL "${BASE_URL}/"
-        env:
-          BASE_URL: ${{ steps.pages.outputs.base_url }}
+        run: hugo --gc --minify
       # Kalkar Kompakt (private repo Kalkar-IT-Solutions/kalkar-kompakt)
       # pushes its web build to the branch kompakt-build of this repo; it
       # is served at /kompakt/app/, below the teaser page at /kompakt/.
@@ -60,31 +51,23 @@ jobs:
           else
             echo "::warning::No branch kompakt-build, deploying without /kompakt/."
           fi
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+      - name: Keep the site for the upload
+        uses: actions/upload-artifact@v7
         with:
+          name: site
           path: ./public
-          # The upload job takes the site from this artifact, and do.de
-          # needs the .htaccess; Pages ignores it.
+          # The .htaccess is a hidden file and must go along.
           include-hidden-files: true
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
-  # The move to the webspace at do.de: until the DNS switch the site goes to
-  # both, Pages and do.de. The FTP secrets live in the environment
-  # github-pages, which only main may use. The FTP user only sees the
+          retention-days: 1
+  # The site lives on the webspace at do.de (Greenmark IT GmbH). The FTP
+  # secrets sit in the environment github-pages, a name left from the time
+  # on GitHub Pages; only main may use it. The FTP user only sees the
   # directory of kalkar-it.de, so the site lands in its root. Only changed
   # files go up; the action keeps its state in .ftp-deploy-sync-state.json.
   upload:
-    environment: github-pages
+    environment:
+      name: github-pages
+      url: https://kalkar-it.de/
     runs-on: ubuntu-latest
     timeout-minutes: 15
     needs: build
@@ -92,9 +75,8 @@ jobs:
       - name: Fetch the built site
         uses: actions/download-artifact@v8
         with:
-          name: github-pages
-      - name: Unpack
-        run: mkdir public && tar -xf artifact.tar -C public
+          name: site
+          path: public
       - name: Upload to do.de
         # The server (ProFTPD) wants the data connection to reuse the TLS
         # session of the control connection. Node does not manage that
