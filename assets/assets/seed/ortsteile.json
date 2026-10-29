@@ -1,0 +1,999 @@
+{
+ "comment": "Ortsteile der Stadt Kalkar mit Kirchen, Märkten, Vereinen und Treffpunkten; recherchiert am 26.10.2026, Quelle je Eintrag. Vereine aus dem Vereinsverzeichnis auf kalkar.de, ohne Privatpersonen.",
+ "asOf": "2026-10-26",
+ "ortsteile": [
+  {
+   "id": "kalkar",
+   "name": "Kalkar"
+  },
+  {
+   "id": "altkalkar",
+   "name": "Altkalkar"
+  },
+  {
+   "id": "appeldorn",
+   "name": "Appeldorn"
+  },
+  {
+   "id": "bylerward",
+   "name": "Bylerward"
+  },
+  {
+   "id": "emmericher-eyland",
+   "name": "Emmericher Eyland"
+  },
+  {
+   "id": "grieth",
+   "name": "Grieth"
+  },
+  {
+   "id": "hanselaer",
+   "name": "Hanselaer"
+  },
+  {
+   "id": "hoennepel",
+   "name": "Hönnepel"
+  },
+  {
+   "id": "kehrum",
+   "name": "Kehrum"
+  },
+  {
+   "id": "neulouisendorf",
+   "name": "Neulouisendorf"
+  },
+  {
+   "id": "niedermoermter",
+   "name": "Niedermörmter"
+  },
+  {
+   "id": "wissel",
+   "name": "Wissel"
+  },
+  {
+   "id": "wisselward",
+   "name": "Wisselward"
+  }
+ ],
+ "parishes": [
+  {
+   "name": "Kath. Kirchengemeinde Heilig Geist Kalkar",
+   "website": "https://www.katholisch-kalkar.de/",
+   "office": "Pfarrbüro Jan-Joest-Straße 6, 47546 Kalkar, Tel. 02824 9765-10, heiliggeist-kalkar@bistum-muenster.de",
+   "churches": [
+    {
+     "name": "St. Nicolai",
+     "ortsteil": "kalkar",
+     "address": "Jan-Joest-Str. 1"
+    },
+    {
+     "name": "St. Pankratius",
+     "ortsteil": "altkalkar",
+     "address": "Karl-Leisner-Platz 10"
+    },
+    {
+     "name": "Kapelle im Marienstift",
+     "ortsteil": "kalkar",
+     "address": "Grabenstr. 6-8"
+    },
+    {
+     "name": "Kapelle im Krankenhaus (St.-Nikolaus-Hospital)",
+     "ortsteil": "kalkar",
+     "address": "Grabenstr. 88"
+    },
+    {
+     "name": "St. Lambertus",
+     "ortsteil": "appeldorn",
+     "address": "St.-Lambertus-Str. 19"
+    },
+    {
+     "name": "Fatima-Kapelle",
+     "ortsteil": "appeldorn",
+     "address": "Fatima-Weg 79"
+    },
+    {
+     "name": "St. Hubertus",
+     "ortsteil": "kehrum",
+     "address": "St.-Hubertus-Weg 1"
+    },
+    {
+     "name": "St. Barnabas",
+     "ortsteil": "niedermoermter",
+     "address": "Kerkend 9"
+    },
+    {
+     "name": "St. Antonius",
+     "ortsteil": "hanselaer",
+     "address": "Spickstr. 83"
+    }
+   ],
+   "source": "https://www.katholisch-kalkar.de/kirchen-einrichtungen/kirchen-kapellen"
+  },
+  {
+   "name": "Kath. Kirchengemeinde St. Clemens Kalkar",
+   "website": "https://www.katholisch-kalkar.de/",
+   "office": "Pfarrbüro Dorfstraße 19, 47546 Kalkar, Tel. 02824 6587, stclemens-kalkar@bistum-muenster.de",
+   "churches": [
+    {
+     "name": "St. Clemens",
+     "ortsteil": "wissel",
+     "address": "Köstersdick 33"
+    },
+    {
+     "name": "St. Peter und Paul",
+     "ortsteil": "grieth",
+     "address": "Griether Markt 16a"
+    },
+    {
+     "name": "Kapelle St. Marien",
+     "ortsteil": "grieth",
+     "address": "Griether Markt 30"
+    },
+    {
+     "name": "St. Regenfledis",
+     "ortsteil": "hoennepel",
+     "address": "Griether Str. 45"
+    }
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-kulturinteressierte/kirchen-kalkar"
+  },
+  {
+   "name": "Evangelische Kirchengemeinde Kalkar",
+   "website": "https://www.ev-kirche-kalkar.de/",
+   "office": "Kesselstraße 3, 47546 Kalkar, Tel. 02824 2376, kalkar@ekir.de",
+   "churches": [
+    {
+     "name": "Ev. Kirche Kalkar",
+     "ortsteil": "kalkar",
+     "address": "Kesselstr. 9"
+    },
+    {
+     "name": "Ev. Kirche Neulouisendorf",
+     "ortsteil": "neulouisendorf",
+     "address": "Neulouisendorfer Str. 72 (Gemeindehaus: Neulouisendorfer Str. 74)"
+    }
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-kulturinteressierte/kirchen-kalkar"
+  },
+  {
+   "name": "Neuapostolische Kirche Kalkar",
+   "website": "https://www.nak-niederrhein.de/kalkar",
+   "office": "Tiller Straße 1, 47546 Kalkar, info@nak-kalkar.de",
+   "churches": [
+    {
+     "name": "NAK Kalkar",
+     "address": "Tiller Straße 1"
+    }
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-kulturinteressierte/kirchen-kalkar"
+  },
+  {
+   "name": "Evangeliumschristen-Baptisten Brüdergemeinde Kalkar / Bruderschaft Eben-Ezer",
+   "office": "Bahnhofstraße 74, 47546 Kalkar",
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-kulturinteressierte/kirchen-kalkar"
+  }
+ ],
+ "services": {
+  "catholic": "https://www.katholisch-kalkar.de/neuigkeiten-termine/gottesdienstzeiten",
+  "protestant": "https://www.ev-kirche-kalkar.de/"
+ },
+ "markets": [
+  {
+   "name": "Wochenmarkt Kalkar",
+   "ortsteil": "kalkar",
+   "when": "wöchentlich donnerstags",
+   "time": "14:00–19:00 (Satzung)",
+   "place": "Marktplatz Kalkar",
+   "note": "Marktsatzung vom 31.03.2009 (§5: jeden Donnerstag auf dem Marktplatz; §6: 14–19 Uhr; Feiertag → Verlegung durch Bürgermeister). Das Marktverzeichnis Kreis Kleve 2019 nennt abweichend \"Do. 14–18 Uhr\". Keine aktuelle kalkar.de-Infoseite zum Wochenmarkt gefunden – tatsächliche Zeiten/Fortbestand vor Veröffentlichung bestätigen lassen.",
+   "source": "https://www.kalkar.de/system/files/2024-11/72-01___satzung_wochenmaerkte.pdf"
+  },
+  {
+   "name": "Feierabendmarkt Kalkar (Kalkar aKtiv)",
+   "ortsteil": "kalkar",
+   "when": "unregelmäßig, freitags 17–22 Uhr (2026: 17.04., 29.05., 07.08., 11.09. geplant)",
+   "place": "Marktplatz Kalkar",
+   "note": "Kein Termin nach 2026-10-26 gefunden.",
+   "source": "https://www.kalkar-aktiv.com/nachrichten/feierabendmarkt-in-kalkar-ein-format-das-menschen-zusammenbringt/"
+  },
+  {
+   "name": "Nikolausmarkt Kalkar",
+   "ortsteil": "kalkar",
+   "when": "2026-11-28/2026-11-29",
+   "time": "Sa ab 14:00, So ab 12:00, Ende So 19:00",
+   "place": "Kirchplatz St. Nicolai / Marktplatz",
+   "note": "Kalkars Weihnachtsmarkt ist der Nikolausmarkt.",
+   "source": "https://www.kalkar.de/veranstaltungen/nikolausmarkt-kalkar-0"
+  },
+  {
+   "name": "Weihnachtsdeko-Tauschmarkt im Beginenhof",
+   "ortsteil": "kalkar",
+   "when": "2026-11-05",
+   "time": "17:00",
+   "place": "Beginenhof, Kesselstraße 20",
+   "source": "https://www.kalkar.de/veranstaltungen/weihnachtsdeko-tauschmarkt-im-beginenhof"
+  },
+  {
+   "name": "St. Clemens Markt (Selbstgemachtes)",
+   "ortsteil": "wissel",
+   "when": "2026-11-08",
+   "time": "10:30–17:00",
+   "place": "Mehrzweckhalle Wissel, Dorfstraße 19",
+   "source": "https://www.katholisch-kalkar.de/neuigkeiten-termine/aktuelles/detailseite/st-clemens-markt"
+  }
+ ],
+ "places": {
+  "kalkar": {
+   "items": [
+    "Bücherei St. Nicolai (Kirchlich-Öffentliche Bücherei, Stadtbücherei-Funktion), Jan-Joest-Straße 12, Di–Fr 9–12 und 14:30–18, So 10–13",
+    "Gemeindezentrum St. Nicolai, Jan-Joest-Straße 12",
+    "Altenstube im Beginenhof, Kesselstraße 20"
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-schulen-gruppen/buechereien"
+  },
+  "appeldorn": {
+   "items": [
+    "Bücherei St. Lambertus, St.-Lambertus-Straße 9 (nach Vereinbarung für Kita/Grundschule)",
+    "Gemeindezentrum St. Lambertus, St. Lambertus-Straße 9",
+    "Altenstube St. Lambertus"
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-eventorganisation/gemeindezentren"
+  },
+  "niedermoermter": {
+   "items": [
+    "Bücherei St. Barnabas, Kerkend 7, So 10:30–12",
+    "Gemeindezentrum St. Barnabas, Kerkend 7",
+    "Altenstube St. Barnabas"
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-schulen-gruppen/buechereien"
+  },
+  "hoennepel": {
+   "items": [
+    "Bücherei St. Regenfledis, Kirchfeld 30, So 10–11:30",
+    "Ritter-Elbert-Zentrum (Gemeindezentrum), Kirchfeld 30",
+    "Altenstube St. Regenfledis, Kirchfeld 22",
+    "Dorf-Website hoennepel.de (Dorfrunde, RSS)",
+    "Freizeitpark Wunderland Kalkar (laut kalkar.de in Hönnepel)"
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-eventorganisation/gemeindezentren"
+  },
+  "wissel": {
+   "items": [
+    "Bücherei St. Clemens, Dorfstraße 19, So 10:30–12",
+    "Gemeindezentrum St. Clemens, Dorfstraße 19",
+    "Sport- und Spiel-Halle Wissel, Zum Wisseler See 15 (verwaltet vom Campingpark)",
+    "Altenstube St. Clemens",
+    "Stiftsmuseum Wissel, Köstersdick 22",
+    "Freizeitpark/Naturfreibad Wisseler See (wisseler-see.de)",
+    "Dorf-Website duenendorf-wissel.de (Koordinierungsausschuss, Jahreskalender-PDF)"
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-eventorganisation/gemeindezentren"
+  },
+  "grieth": {
+   "items": [
+    "Bürgerhalle Grieth am Rhein (\"Narrenburg\"), Kirchhofstraße 3",
+    "Pfarrheim St. Peter und Paul, Griether Markt 10 (Belegung über Pfarrbüro Wissel)",
+    "Altenstube St. Peter und Paul, Griether Markt 6",
+    "Stadt- und Vereinsportal grieth.eu mit ICS-Kalender"
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-eventorganisation/gemeindezentren"
+  },
+  "kehrum": {
+   "items": [
+    "Gemeindezentrum St. Hubertus Kehrum, St. Hubertusweg 1 (in Kirche integriert)"
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-eventorganisation/gemeindezentren"
+  },
+  "neulouisendorf": {
+   "items": [
+    "Gemeindehaus Neulouisendorf (ev. Kirchengemeinde), Neulouisendorfer Straße 74"
+   ],
+   "source": "https://www.kalkar.de/kultur-tourismus/fuer-eventorganisation/gemeindezentren"
+  }
+ },
+ "vereine": [
+  {
+   "name": "Angelsportverein \"Gut Bitt\" Wissel e.V.",
+   "category": "Sport",
+   "ortsteile": [
+    "wissel"
+   ],
+   "page": "https://www.kalkar.de/vereine/angelsportverein-gut-bitt-wissel-ev"
+  },
+  {
+   "name": "Beaglefreilauf Kalkar e. V.",
+   "category": "Sonstiges",
+   "website": "https://beaglefreilauf-kalkar.com/",
+   "email": "beaglefreilauf.kalkar@gmail.com",
+   "page": "https://www.kalkar.de/vereine/beaglefreilauf-kalkar-e-v"
+  },
+  {
+   "name": "Beginenhof Sozialwerk e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "kalkar"
+   ],
+   "page": "https://www.kalkar.de/vereine/beginenhof-sozialwerk-e-v"
+  },
+  {
+   "name": "Bundesschützen-Tambourcorps Hönnepel",
+   "category": "Musik/Tambourcorps",
+   "ortsteile": [
+    "hoennepel"
+   ],
+   "website": "https://www.btc-hoennepel.de/index.php",
+   "email": "Vorsitzender@BTC-Hoennepel.de",
+   "page": "https://www.kalkar.de/vereine/bundesschuetzen-tambourcorps-hoennepel"
+  },
+  {
+   "name": "BV \"Sturm\" Wissel e. V.",
+   "category": "Sport",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://www.bvsturm-wissel.de/",
+   "email": "1.vors@bvsturm.de",
+   "page": "https://www.kalkar.de/vereine/bv-sturm-wissel-e-v"
+  },
+  {
+   "name": "Bündnis 90/Die Grünen - Ortsverband Kalkar -",
+   "category": "Politik",
+   "page": "https://www.kalkar.de/vereine/buendnis-90die-gruenen-ortsverband-kalkar"
+  },
+  {
+   "name": "Bürger-Schützen Grieth e.V.",
+   "category": "Schützen",
+   "ortsteile": [
+    "grieth"
+   ],
+   "website": "https://buergerschuetzen.grieth.eu/",
+   "page": "https://www.kalkar.de/vereine/buerger-schuetzen-grieth-ev"
+  },
+  {
+   "name": "Bürgerbus Kalkar e. V.",
+   "category": "Sonstiges",
+   "website": "https://buergerbus-kalkar.de/",
+   "email": "info@buergerbus-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/buergerbus-kalkar-e-v"
+  },
+  {
+   "name": "Bürgerschützenverein Altkalkar e. V.",
+   "category": "Schützen",
+   "ortsteile": [
+    "altkalkar"
+   ],
+   "website": "https://www.bsv-altkalkar.de/",
+   "email": "info@bsv-altkalkar.de",
+   "page": "https://www.kalkar.de/vereine/buergerschuetzenverein-altkalkar-e-v"
+  },
+  {
+   "name": "Bürgerschützenverein Kalkar 1953 e.V.",
+   "category": "Schützen",
+   "website": "https://bsvkalkar.de/",
+   "email": "bsv@bsvkalkar.de",
+   "page": "https://www.kalkar.de/vereine/buergerschuetzenverein-kalkar-1953-ev"
+  },
+  {
+   "name": "CDU-Stadtverband Kalkar",
+   "category": "Politik",
+   "website": "https://www.cdu-kalkar.de/",
+   "email": "info@cdu-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/cdu-stadtverband-kalkar"
+  },
+  {
+   "name": "Chorgemeinschaft Hönnepel-Wissel",
+   "category": "Musik/Chor",
+   "ortsteile": [
+    "hoennepel",
+    "wissel"
+   ],
+   "website": "http://www.xn--chorgemeinschaft-hnnepel-wissel-odd.de/",
+   "email": "info@xn--chorgemeinschaft-hnnepel-wissel-odd.de",
+   "page": "https://www.kalkar.de/vereine/chorgemeinschaft-hoennepel-wissel"
+  },
+  {
+   "name": "Deutsche Pfadfinderschaft Sankt Georg, Stamm St. Benedikt Kalkar, im Bund der Deutschen Katholischen Jugend",
+   "category": "Sonstiges",
+   "website": "https://www.facebook.com/IptKalkar",
+   "email": "bookings@ipt-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/deutsche-pfadfinderschaft-sankt-georg-stamm-st-benedikt-kalkar-im-bund-der-deutschen"
+  },
+  {
+   "name": "DJK Grün-Weiß Appeldorn e. V.",
+   "category": "Sport",
+   "ortsteile": [
+    "appeldorn"
+   ],
+   "website": "https://djk-appeldorn.de/",
+   "email": "info@djk-appeldorn.de",
+   "page": "https://www.kalkar.de/vereine/djk-gruen-weiss-appeldorn-e-v"
+  },
+  {
+   "name": "Dorfrunde Hönnepel e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "hoennepel"
+   ],
+   "website": "https://hoennepel.de/",
+   "email": "Dorfrunde@hoennepel.de",
+   "page": "https://www.kalkar.de/vereine/dorfrunde-hoennepel-e-v"
+  },
+  {
+   "name": "Dünenorchester Wissel e. V.",
+   "category": "Musik/Tambourcorps",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://jow-wissel.de/",
+   "email": "info@duenenorchester-wissel.de",
+   "page": "https://www.kalkar.de/vereine/duenenorchester-wissel-e-v"
+  },
+  {
+   "name": "Erntedankgemeinschaft Wissel e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "wissel"
+   ],
+   "email": "vorstand@erntedankgemeinschaft-wissel.de",
+   "page": "https://www.kalkar.de/vereine/erntedankgemeinschaft-wissel-e-v"
+  },
+  {
+   "name": "FDP-Ortsverband Kalkar",
+   "category": "Politik",
+   "website": "https://fdp-kle.de/kalkar/vorstand/",
+   "email": "info@fdp-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/fdp-ortsverband-kalkar"
+  },
+  {
+   "name": "Freie Bürger für Kalkar e.V. (FBK)",
+   "category": "Politik",
+   "website": "https://www.xn--freie-brger-kalkar-s6b.de/index.html#start",
+   "page": "https://www.kalkar.de/vereine/freie-buerger-fuer-kalkar-ev-fbk"
+  },
+  {
+   "name": "Freiwillige Feuerwehr Kalkar (7 Löschgruppen: Appeldorn, Emmericher-Eyland mit Gerätehaus Huisberden, Grieth am Rhein, Hönnepel, Kalkar, Niedermörmter, Wissel)",
+   "category": "Feuerwehr",
+   "website": "https://www.feuerwehr-kalkar.de/",
+   "email": "wehrfuehrung@feuerwehr-kalkar.de",
+   "page": "https://www.kalkar.de/leben-gesellschaft/fuer-jugendliche/die-feuerwehr-im-bereich-der-stadt-kalkar"
+  },
+  {
+   "name": "Förderkreis Stiftsmuseum Wissel e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "wissel"
+   ],
+   "page": "https://www.kalkar.de/vereine/foerderkreis-stiftsmuseum-wissel-e-v"
+  },
+  {
+   "name": "Förderverein der katholischen öffentlichen Bücherei St. Nicolai Kalkar e. V.",
+   "category": "Sonstiges",
+   "website": "https://www.buecherei-kalkar.de",
+   "email": "buecherei-kalkar@bistum-muenster.de",
+   "page": "https://www.kalkar.de/vereine/foerderverein-der-katholischen-oeffentlichen-buecherei-st-nicolai-kalkar-e-v"
+  },
+  {
+   "name": "Förderverein Haus Haan e. V.",
+   "category": "Sonstiges",
+   "website": "https://haus-haan.de/foerderverein",
+   "page": "https://www.kalkar.de/vereine/foerderverein-haus-haan-e-v"
+  },
+  {
+   "name": "Förderverein Kindergarten Dünennest Wissel e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://förderverein-dünennest.de",
+   "email": "info@foerderverein-duenennest.de",
+   "page": "https://www.kalkar.de/vereine/foerderverein-kindergarten-duenennest-wissel-e-v"
+  },
+  {
+   "name": "Förderverein Kindergarten St. Barnabas Niedermörmter e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "niedermoermter"
+   ],
+   "website": "https://kitaverbund-kalkar.de/kindergaerten/kindergarten-st-barnabas-niedermoermter",
+   "email": "kita.stbarnabas-niedermoermter@bistum-muenster.de",
+   "page": "https://www.kalkar.de/vereine/foerderverein-kindergarten-st-barnabas-niedermoermter-e-v"
+  },
+  {
+   "name": "Förderverein Nagayhajmás Subsidiaritas e. V.",
+   "category": "Sonstiges",
+   "website": "http://www.subsidiaritas.de/",
+   "page": "https://www.kalkar.de/vereine/foerderverein-nagayhajmas-subsidiaritas-e-v"
+  },
+  {
+   "name": "Förderverein St. Lambertus Kindergarten Appeldorn e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "appeldorn"
+   ],
+   "website": "https://kitaverbund-kalkar.de/kindergaerten/kindergarten-st-lambertus/#foerder",
+   "email": "kita.stlambertus-appeldorn@bistum-muenster.de",
+   "page": "https://www.kalkar.de/vereine/foerderverein-st-lambertus-kindergarten-appeldorn-e-v"
+  },
+  {
+   "name": "Griether Karnevalsgesellschaft 1971 e. V.",
+   "category": "Karneval",
+   "ortsteile": [
+    "grieth"
+   ],
+   "website": "https://gkg.grieth.eu/",
+   "page": "https://www.kalkar.de/vereine/griether-karnevalsgesellschaft-1971-e-v"
+  },
+  {
+   "name": "Heimat- und Verschönerungsverein Appeldorn/Kehrum 1961 e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "appeldorn",
+    "kehrum"
+   ],
+   "page": "https://www.kalkar.de/vereine/heimat-und-verschoenerungsverein-appeldornkehrum-1961-e-v"
+  },
+  {
+   "name": "Internationaler Pfadfinder-Treffpunkt Kalkar e. V.",
+   "category": "Sonstiges",
+   "website": "https://www.facebook.com/IptKalkar",
+   "email": "bookings@ipt-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/internationaler-pfadfinder-treffpunkt-kalkar-e-v"
+  },
+  {
+   "name": "Judo-Club Grieth e. V.",
+   "category": "Sport",
+   "ortsteile": [
+    "grieth"
+   ],
+   "website": "https://www.jc-grieth.de/",
+   "page": "https://www.kalkar.de/vereine/judo-club-grieth-e-v"
+  },
+  {
+   "name": "Kalkar aKtiv e. V.",
+   "category": "Sonstiges",
+   "website": "https://www.kalkar-aktiv.com",
+   "email": "info@kalkar-aktiv.com",
+   "page": "https://www.kalkar.de/vereine/kalkar-aktiv-e-v"
+  },
+  {
+   "name": "Kalkarer Karnevals Gesellschaft",
+   "category": "Karneval",
+   "email": "info@kkg-kalkar.com",
+   "page": "https://www.kalkar.de/vereine/kalkarer-karnevals-gesellschaft"
+  },
+  {
+   "name": "Kalkarer Mühle am Hanselaer Tor e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "kalkar"
+   ],
+   "website": "https://www.kalkarer-muehle.de/",
+   "email": "info@kalkarer-muehle.de",
+   "page": "https://www.kalkar.de/vereine/kalkarer-muehle-am-hanselaer-tor-e-v"
+  },
+  {
+   "name": "Keiko-Dojo Niederrhein e. V.",
+   "category": "Sport",
+   "website": "https://www.keiko-dojo.de/",
+   "page": "https://www.kalkar.de/vereine/keiko-dojo-niederrhein-e-v"
+  },
+  {
+   "name": "KJS Kleve im Landesjagdverband Nordrhein-Westfalen e. V., Hegering Kalkar",
+   "category": "Sonstiges",
+   "website": "https://kleve.ljv-nrw.de/kalkar/",
+   "page": "https://www.kalkar.de/vereine/kjs-kleve-im-landesjagdverband-nordrhein-westfalen-e-v-hegering-kalkar"
+  },
+  {
+   "name": "Koordinierungsausschuss Wisseler Vereine",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://www.duenendorf-wissel.de/koordinierungsausschuss/",
+   "email": "koordinierung@duenendorf-wissel.de",
+   "page": "https://www.kalkar.de/vereine/koordinierungsausschuss-wisseler-vereine"
+  },
+  {
+   "name": "Landfrauen Altkalkar – Hanselaer",
+   "category": "Landfrauen",
+   "ortsteile": [
+    "altkalkar",
+    "hanselaer"
+   ],
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/landfrauen",
+   "page": "https://www.katholisch-kalkar.de/gruppen-vereine/landfrauen"
+  },
+  {
+   "name": "LORD 'N' JOY - Ökumenischer Gospelchor",
+   "category": "Musik/Chor",
+   "website": "https://www.lord-n-joy.de/impressum.html",
+   "email": "chorleiter@lord-n-joy.de",
+   "page": "https://www.kalkar.de/vereine/lord-n-joy-oekumenischer-gospelchor"
+  },
+  {
+   "name": "MGV Abendstern Niedermörmter 1922 e. V.",
+   "category": "Musik/Chor",
+   "ortsteile": [
+    "niedermoermter"
+   ],
+   "website": "http://www.mgv-abendstern.de/",
+   "page": "https://www.kalkar.de/vereine/mgv-abendstern-niedermoermter-1922-e-v"
+  },
+  {
+   "name": "Modellflug-Gemeinschaft-Niederrhein e. V. / Kalkar-Neulouisendorf",
+   "category": "Sport",
+   "ortsteile": [
+    "neulouisendorf"
+   ],
+   "website": "https://www.mfg-niederrhein.de/",
+   "page": "https://www.kalkar.de/vereine/modellflug-gemeinschaft-niederrhein-e-v-kalkar-neulouisendorf"
+  },
+  {
+   "name": "Monterburg e. V.",
+   "category": "Sonstiges",
+   "website": "https://www.monterburg.de/",
+   "email": "info@monterburg.de",
+   "page": "https://www.kalkar.de/vereine/monterburg-e-v"
+  },
+  {
+   "name": "Motorradfreunde Grieth e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "grieth"
+   ],
+   "website": "https://grieth.eu/griether-vereine/mf-grieth/",
+   "page": "https://www.kalkar.de/vereine/motorradfreunde-grieth-e-v"
+  },
+  {
+   "name": "Musikverein von Calcar e. V.",
+   "category": "Musik/Tambourcorps",
+   "website": "https://musikverein-kalkar.de/",
+   "email": "vorstand@musikverein-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/musikverein-von-calcar-e-v"
+  },
+  {
+   "name": "Mühle Wissel e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://www.muehle-wissel.de/",
+   "email": "muehle-wissel@t-online.de",
+   "page": "https://www.kalkar.de/vereine/muehle-wissel-e-v"
+  },
+  {
+   "name": "NABU Kreisverband Kleve e. V., Ortsgruppe Kevelaer, Weeze, Kalkar",
+   "category": "Sonstiges",
+   "website": "https://www.nabu-kleve.de/gruppen/ortsgruppe-kevelaer/",
+   "page": "https://www.kalkar.de/vereine/nabu-kreisverband-kleve-e-v-ortsgruppe-kevelaer-weeze-kalkar"
+  },
+  {
+   "name": "Nikolaus Kantorei Kalkar",
+   "category": "Musik/Chor",
+   "website": "https://www.katholisch-kalkar.de/gottesdienste-kirchenmusik/kirchenmusikalische-gruppen",
+   "page": "https://www.kalkar.de/vereine/nikolaus-kantorei-kalkar"
+  },
+  {
+   "name": "Pankratiuschor Altkalkar",
+   "category": "Musik/Chor",
+   "ortsteile": [
+    "altkalkar"
+   ],
+   "website": "https://www.katholisch-kalkar.de/gottesdienste-kirchenmusik/kirchenmusikalische-gruppen",
+   "page": "https://www.kalkar.de/vereine/pankratiuschor-altkalkar"
+  },
+  {
+   "name": "Quibbles Tanzsportgemeinschaft Niederrhein e.V.",
+   "category": "Sport",
+   "website": "https://www.tsgn.de/index.asp",
+   "page": "https://www.kalkar.de/vereine/quibbles-tanzsportgemeinschaft-niederrhein-ev"
+  },
+  {
+   "name": "Reiterverein Seydlitz Kalkar e. V.",
+   "category": "Sport",
+   "website": "https://www.reiterverein-kalkar.de/",
+   "email": "info@reiterverein-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/reiterverein-seydlitz-kalkar-e-v"
+  },
+  {
+   "name": "Sankt-Antonius-Bruderschaft",
+   "category": "Bruderschaft (kirchlich)",
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/bruderschaften",
+   "page": "https://www.kalkar.de/vereine/sankt-antonius-bruderschaft"
+  },
+  {
+   "name": "Sankt-Clemens-Gilde Wissel",
+   "category": "Gilde (kirchlich)",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/gilden",
+   "page": "https://www.kalkar.de/vereine/sankt-clemens-gilde-wissel"
+  },
+  {
+   "name": "Sankt-Crispinus- und Crispinianus-Gilde",
+   "category": "Gilde (kirchlich)",
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/gilden",
+   "page": "https://www.kalkar.de/vereine/sankt-crispinus-und-crispinianus-gilde"
+  },
+  {
+   "name": "Sankt-Eligius-Gilde",
+   "category": "Gilde (kirchlich)",
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/gilden",
+   "page": "https://www.kalkar.de/vereine/sankt-eligius-gilde"
+  },
+  {
+   "name": "Sankt-Georgi-Bruderschaft",
+   "category": "Bruderschaft (kirchlich)",
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/bruderschaften",
+   "page": "https://www.kalkar.de/vereine/sankt-georgi-bruderschaft"
+  },
+  {
+   "name": "Sankt-Jakobus-Bruderschaft",
+   "category": "Bruderschaft (kirchlich)",
+   "ortsteile": [
+    "kalkar"
+   ],
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/bruderschaften",
+   "email": "jakobus-bruderschaft@online.ms",
+   "page": "https://www.kalkar.de/vereine/sankt-jakobus-bruderschaft"
+  },
+  {
+   "name": "Sankt-Josef-Gilde",
+   "category": "Gilde (kirchlich)",
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/gilden",
+   "email": "info@goertzen-ingenieure.de",
+   "page": "https://www.kalkar.de/vereine/sankt-josef-gilde"
+  },
+  {
+   "name": "Sankt-Nikolaus-Bruderschaft",
+   "category": "Bruderschaft (kirchlich)",
+   "ortsteile": [
+    "kalkar"
+   ],
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/bruderschaften",
+   "page": "https://www.kalkar.de/vereine/sankt-nikolaus-bruderschaft"
+  },
+  {
+   "name": "Sankt-Pankratius-Bruderschaft",
+   "category": "Bruderschaft (kirchlich)",
+   "ortsteile": [
+    "altkalkar"
+   ],
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/bruderschaften",
+   "page": "https://www.kalkar.de/vereine/sankt-pankratius-bruderschaft"
+  },
+  {
+   "name": "Sankt-Sebastianus-Bruderschaft",
+   "category": "Bruderschaft (kirchlich)",
+   "website": "https://www.katholisch-kalkar.de/gruppen-vereine/bruderschaften",
+   "email": "kontakt@lemm.info",
+   "page": "https://www.kalkar.de/vereine/sankt-sebastianus-bruderschaft"
+  },
+  {
+   "name": "Sankt-Stephanus-Gilde",
+   "category": "Gilde (kirchlich)",
+   "page": "https://www.kalkar.de/vereine/sankt-stephanus-gilde"
+  },
+  {
+   "name": "Schifferverein Grieth e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "grieth"
+   ],
+   "page": "https://www.kalkar.de/vereine/schifferverein-grieth-e-v"
+  },
+  {
+   "name": "Seglergemeinschaft Wisseler See e. V.",
+   "category": "Sport",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://www.sgws-wisseler-see.de/index.php#",
+   "email": "vorsitzender@sgws-wisseler-see.de",
+   "page": "https://www.kalkar.de/vereine/seglergemeinschaft-wisseler-see-e-v"
+  },
+  {
+   "name": "Shanty-Chor \"Die Hanseaten Grieth\"",
+   "category": "Musik/Chor",
+   "ortsteile": [
+    "grieth"
+   ],
+   "website": "https://www.shantychor-grieth.de/",
+   "page": "https://www.kalkar.de/vereine/shanty-chor-die-hanseaten-grieth"
+  },
+  {
+   "name": "Sozialverband VdK - Nordrhein-Westfalen e. V., Ortsverband Kalkar",
+   "category": "Sonstiges",
+   "website": "https://nrw.vdk.de/vor-ort/ov-kalkar/",
+   "page": "https://www.kalkar.de/vereine/sozialverband-vdk-nordrhein-westfalen-e-v-ortsverband-kalkar"
+  },
+  {
+   "name": "SPD-Ortsverein Kalkar",
+   "category": "Politik",
+   "website": "https://spd-kalkar.de/",
+   "email": "info@spd-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/spd-ortsverein-kalkar"
+  },
+  {
+   "name": "Spielvereinigung Hönnepel-Niedermörmter e. V.",
+   "category": "Sport",
+   "ortsteile": [
+    "hoennepel",
+    "niedermoermter"
+   ],
+   "website": "https://sv-hoe-nie.de/",
+   "email": "info@sv-hoe-nie.de",
+   "page": "https://www.kalkar.de/vereine/spielvereinigung-hoennepel-niedermoermter-e-v"
+  },
+  {
+   "name": "Sportverein Grieth 1949 e. V.",
+   "category": "Sport",
+   "ortsteile": [
+    "grieth"
+   ],
+   "website": "https://sv.grieth.eu/",
+   "email": "info@sv-grieth.de",
+   "page": "https://www.kalkar.de/vereine/sportverein-grieth-1949-e-v"
+  },
+  {
+   "name": "St. Antonius-Schützenbruderschaft Hönnepel e. V.",
+   "category": "Schützen",
+   "ortsteile": [
+    "hoennepel"
+   ],
+   "website": "https://www.schuetzenhoennepel.de/",
+   "email": "Brudermeister@schuetzenhoennepel.de",
+   "page": "https://www.kalkar.de/vereine/st-antonius-schuetzenbruderschaft-hoennepel-e-v"
+  },
+  {
+   "name": "St. Hubertus-Schützenbruderschaft Kehrum e. V.",
+   "category": "Schützen",
+   "ortsteile": [
+    "kehrum"
+   ],
+   "website": "https://www.schuetzen-kehrum.de/",
+   "page": "https://www.kalkar.de/vereine/st-hubertus-schuetzenbruderschaft-kehrum-e-v"
+  },
+  {
+   "name": "St. Johannes-Schützenbruderschaft Wissel e. V.",
+   "category": "Schützen",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "http://schuetzen-wissel.de/",
+   "page": "https://www.kalkar.de/vereine/st-johannes-schuetzenbruderschaft-wissel-e-v"
+  },
+  {
+   "name": "St. Viktor-Schützengesellschaft 1726 Grieth e. V.",
+   "category": "Schützen",
+   "ortsteile": [
+    "grieth"
+   ],
+   "website": "https://st-viktor-schuetzen.grieth.eu/",
+   "page": "https://www.kalkar.de/vereine/st-viktor-schuetzengesellschaft-1726-grieth-e-v"
+  },
+  {
+   "name": "Stiftsmuseum Wissel e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://www.stiftsmuseum-wissel.de/",
+   "page": "https://www.kalkar.de/vereine/stiftsmuseum-wissel-e-v"
+  },
+  {
+   "name": "SuS 1920 Grün-Weiß Kalkar e. V.",
+   "category": "Sport",
+   "website": "https://www.sus-kalkar.de/",
+   "email": "vorsitzender@sus-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/sus-1920-gruen-weiss-kalkar-e-v"
+  },
+  {
+   "name": "Tafel Kalkar e. V.",
+   "category": "Sonstiges",
+   "website": "https://www.tafel-kalkar.de/",
+   "email": "kontakt@tafel-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/tafel-kalkar-e-v"
+  },
+  {
+   "name": "Tambourcorps Altkalkar",
+   "category": "Musik/Tambourcorps",
+   "ortsteile": [
+    "altkalkar"
+   ],
+   "page": "https://www.kalkar.de/vereine/tambourcorps-altkalkar"
+  },
+  {
+   "name": "Tambourcorps Kehrum",
+   "category": "Musik/Tambourcorps",
+   "ortsteile": [
+    "kehrum"
+   ],
+   "page": "https://www.kalkar.de/vereine/tambourcorps-kehrum"
+  },
+  {
+   "name": "Tambourcorps Wissel",
+   "category": "Musik/Tambourcorps",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://www.duenendorf-wissel.de/tambourcorps-wissel/",
+   "email": "Tambourcorps-Wissel@t-online.de",
+   "page": "https://www.kalkar.de/vereine/tambourcorps-wissel"
+  },
+  {
+   "name": "Tennisclub Kalkar e. V.",
+   "category": "Sport",
+   "website": "https://www.tc-kalkar.de/",
+   "email": "info@tc-kalkar.de",
+   "page": "https://www.kalkar.de/vereine/tennisclub-kalkar-e-v"
+  },
+  {
+   "name": "Tischtennisverein Blau-Weiß Kalkar-Niedermörmter e. V.",
+   "category": "Sport",
+   "ortsteile": [
+    "niedermoermter"
+   ],
+   "website": "http://www.ttvkalkar-niedermoermter.de/",
+   "email": "info@ttvkalkar-niedermoermter.de",
+   "page": "https://www.kalkar.de/vereine/tischtennisverein-blau-weiss-kalkar-niedermoermter-e-v"
+  },
+  {
+   "name": "Turnverein 1863 Kalkar e. V.",
+   "category": "Sport",
+   "website": "https://www.tvkalkar.de/",
+   "page": "https://www.kalkar.de/vereine/turnverein-1863-kalkar-e-v"
+  },
+  {
+   "name": "Verein der Freunde Kalkars e. V.",
+   "category": "Sonstiges",
+   "website": "https://freunde-kalkars.de/",
+   "email": "info@freunde-kalkars.de",
+   "page": "https://www.kalkar.de/vereine/verein-der-freunde-kalkars-e-v"
+  },
+  {
+   "name": "Verein der Freunde und Förderer der St. Luthard-Grundschule Wissel e. V.",
+   "category": "Sonstiges",
+   "ortsteile": [
+    "wissel"
+   ],
+   "website": "https://grundschule-wissel.de/foerderverein/",
+   "email": "foerderverein-gs-wissel@web.de",
+   "page": "https://www.kalkar.de/vereine/verein-der-freunde-und-foerderer-der-st-luthard-grundschule-wissel-e-v"
+  },
+  {
+   "name": "Verein für Körper- und Mehrfachbehinderte  e. V., Kreisverband Kleve",
+   "category": "Sonstiges",
+   "website": "https://www.kvkm-kleve.de/",
+   "email": "info@kvkm-kleve.de",
+   "page": "https://www.kalkar.de/vereine/verein-fuer-koerper-und-mehrfachbehinderte-e-v-kreisverband-kleve"
+  },
+  {
+   "name": "Verein für Voltigiersport Kalkar e.V.",
+   "category": "Sport",
+   "website": "https://www.vvs-kalkar.de/",
+   "email": "Voltigieren.Kalkar@web.de",
+   "page": "https://www.kalkar.de/vereine/verein-fuer-voltigiersport-kalkar-ev"
+  },
+  {
+   "name": "Verkehrswacht Kreis Kleve e. V.",
+   "category": "Sonstiges",
+   "page": "https://www.kalkar.de/vereine/verkehrswacht-kreis-kleve-e-v"
+  },
+  {
+   "name": "Wählergemeinschaft FORUM Kalkar",
+   "category": "Politik",
+   "website": "https://www.forum-kalkar.org/",
+   "email": "info@forum-kalkar.org",
+   "page": "https://www.kalkar.de/vereine/waehlergemeinschaft-forum-kalkar"
+  },
+  {
+   "name": "„Große für Kleine“ Verein zur Förderung des Nikolaus-Kindergartens Kalkar e. V.",
+   "category": "Sonstiges",
+   "website": "https://kitaverbund-kalkar.de/kindergaerten/nikolaus-kindergarten-kalkar",
+   "email": "kita.stnikolaus-kalkar@bistum-muenster.de",
+   "page": "https://www.kalkar.de/vereine/grosse-fuer-kleine-verein-zur-foerderung-des-nikolaus-kindergartens-kalkar-e-v"
+  }
+ ],
+ "vereinePage": "https://www.kalkar.de/vereine"
+}

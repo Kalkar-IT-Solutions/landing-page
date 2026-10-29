@@ -1,0 +1,766 @@
+{
+ "comment": "Restaurants, Cafés, Imbisse und Kneipen in Kalkar. Lage aus OpenStreetMap (© OpenStreetMap-Mitwirkende, ODbL), Angaben und Zeiten von den Seiten der Lokale (research/gastro.json).",
+ "retrievedAt": "2026-10-27",
+ "license": "Lage aus OpenStreetMap, ODbL; Namensnennung in der App.",
+ "shops": [
+  {
+   "name": "Amjad's Pizzeria & Kneipe",
+   "kind": "kneipe",
+   "ortsteil": "kalkar",
+   "address": "Altkalkarer Straße 16, 47546 Kalkar",
+   "lat": 51.73807,
+   "lon": 6.29073,
+   "products": [
+    "Pizza"
+   ],
+   "phone": "02824 8079107",
+   "sources": [
+    "https://www.kalkar.de/gastronomie/amjads-pizzeria-kneipe"
+   ]
+  },
+  {
+   "name": "Beckmanns Tellerrand",
+   "kind": "restaurant",
+   "ortsteil": "kehrum",
+   "address": "Römerstraße 1, 47546 Kalkar",
+   "lat": 51.70679,
+   "lon": 6.32024,
+   "products": [
+    "regional, viel pflanzlich"
+   ],
+   "hoursText": "Mo–Sa 16–22, So 12–22 Uhr",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "from": "16:00",
+      "to": "22:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "12:00",
+      "to": "22:00"
+     }
+    ]
+   },
+   "website": "https://www.landhaus-beckmann.de/beckmanns-tellerrand/",
+   "phone": "02824 96256666",
+   "osm": "node/5060542921",
+   "sources": [
+    "https://www.landhaus-beckmann.de/beckmanns-tellerrand/",
+    "https://www.openstreetmap.org/node/5060542921"
+   ]
+  },
+  {
+   "name": "Brauhaus Kalkarer Mühle",
+   "kind": "restaurant",
+   "ortsteil": "kalkar",
+   "address": "Mühlenstege 8, 47546 Kalkar",
+   "lat": 51.73963,
+   "lon": 6.29555,
+   "products": [
+    "regional, Brauhaus"
+   ],
+   "phone": "02824 93230",
+   "osm": "node/8989514044",
+   "sources": [
+    "https://www.openstreetmap.org/node/8989514044"
+   ]
+  },
+  {
+   "name": "Café Kemnade",
+   "kind": "cafe",
+   "ortsteil": "wissel",
+   "address": "Dorfstraße 39, 47546 Kalkar",
+   "lat": 51.77475,
+   "lon": 6.29085,
+   "products": [
+    "Kuchen, Waffeln"
+   ],
+   "season": "am Wochenende",
+   "facebook": "https://www.facebook.com/p/Caf%C3%A9-Kemnade-100095654737809/",
+   "phone": "0174 4937634",
+   "osm": "node/12851458403",
+   "sources": [
+    "https://www.kalkar.de/gastronomie/cafe-kemnade",
+    "https://www.openstreetmap.org/node/12851458403"
+   ]
+  },
+  {
+   "name": "COR-Restaurant am Wisseler See",
+   "kind": "restaurant",
+   "ortsteil": "wissel",
+   "address": "Zum Wisseler See 15, 47546 Kalkar",
+   "lat": 51.76094,
+   "lon": 6.28561,
+   "products": [
+    "Pinsa, saisonal"
+   ],
+   "hoursText": "Mi–So ab 17 Uhr, Küche bis 21 Uhr; Reservierung empfohlen",
+   "website": "https://wisseler-see.de/bar-restaurant/",
+   "phone": "02824 963113",
+   "osm": "node/5008075471",
+   "sources": [
+    "https://wisseler-see.de/bar-restaurant/",
+    "https://www.openstreetmap.org/node/5008075471"
+   ]
+  },
+  {
+   "name": "De Deichgräf",
+   "kind": "restaurant",
+   "ortsteil": "grieth",
+   "address": "Durchlaß 6, 47546 Kalkar",
+   "lat": 51.78742,
+   "lon": 6.31744,
+   "products": [
+    "Balkan, Grill"
+   ],
+   "hoursText": "Di–So 11–22 Uhr, Küche Di–Sa 12–14:30 und 17–21, So 11–22 Uhr; Mo Ruhetag",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "from": "11:00",
+      "to": "22:00"
+     }
+    ]
+   },
+   "website": "https://www.dedeichgraef.de/",
+   "instagram": "https://www.instagram.com/restaurant_de_deichgraef/",
+   "phone": "02824 6357",
+   "osm": "node/413764710",
+   "sources": [
+    "https://www.dedeichgraef.de/kontakt/",
+    "https://www.kalkar.de/gastronomie/cafe-restaurant-de-deichgraef",
+    "https://www.openstreetmap.org/node/413764710"
+   ]
+  },
+  {
+   "name": "Eis Café Venezia",
+   "kind": "eiscafe",
+   "ortsteil": "kalkar",
+   "address": "Markt 9, 47546 Kalkar",
+   "lat": 51.73895,
+   "lon": 6.29185,
+   "products": [
+    "Eis"
+   ],
+   "season": "nur in der Sommersaison",
+   "phone": "02824 4127",
+   "osm": "node/4537530805",
+   "sources": [
+    "https://www.kalkar.de/gastronomie/eis-cafe-venezia-familie-cason",
+    "https://www.openstreetmap.org/node/4537530805"
+   ]
+  },
+  {
+   "name": "Gasthaus Alt Grieth",
+   "kind": "restaurant",
+   "ortsteil": "grieth",
+   "address": "Legestraße 1, 47546 Kalkar",
+   "lat": 51.78728,
+   "lon": 6.31431,
+   "products": [
+    "deutsch, regional"
+   ],
+   "hoursText": "im Winter täglich ab 17 Uhr, Mi und Do geschlossen",
+   "website": "https://www.altgrieth.de/",
+   "phone": "02824 7079963",
+   "sources": [
+    "https://www.altgrieth.de/kontakt",
+    "https://www.kalkar.de/gastronomie/gasthaus-alt-grieth"
+   ]
+  },
+  {
+   "name": "Gaststätte Perau",
+   "kind": "kneipe",
+   "ortsteil": "kehrum",
+   "address": "Reeser Straße 2, 47546 Kalkar",
+   "lat": 51.70999,
+   "lon": 6.34192,
+   "phone": "02824 2352",
+   "sources": [
+    "https://www.kalkar.de/gastronomie/gaststaette-perau"
+   ]
+  },
+  {
+   "name": "GIANNI'S Restaurant & Pizzeria",
+   "kind": "restaurant",
+   "ortsteil": "kalkar",
+   "address": "Markt 17–18, 47546 Kalkar",
+   "lat": 51.73907,
+   "lon": 6.29282,
+   "products": [
+    "italienisch, Pizza"
+   ],
+   "hoursText": "Mo, Di, Do–Sa 16:30–22, So 12:30–22 Uhr; Mi Ruhetag",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       4,
+       5,
+       6
+      ],
+      "from": "16:30",
+      "to": "22:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "12:30",
+      "to": "22:00"
+     }
+    ]
+   },
+   "website": "https://www.giannis-restaurant.de/",
+   "phone": "02824 9778957",
+   "osm": "node/5867325986",
+   "sources": [
+    "https://www.openstreetmap.org/node/5867325986"
+   ]
+  },
+  {
+   "name": "Glüxxklee",
+   "kind": "cafe",
+   "ortsteil": "kalkar",
+   "address": "Markt 11, 47546 Kalkar",
+   "lat": 51.73899,
+   "lon": 6.29221,
+   "products": [
+    "vegetarisch, vegan"
+   ],
+   "hoursText": "Mo, Di, Do–So 11–22 Uhr; Mi Ruhetag",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       4,
+       5,
+       6,
+       7
+      ],
+      "from": "11:00",
+      "to": "22:00"
+     }
+    ]
+   },
+   "osm": "node/4537530807",
+   "sources": [
+    "https://www.openstreetmap.org/node/4537530807"
+   ]
+  },
+  {
+   "name": "Goldenes Horn",
+   "kind": "imbiss",
+   "ortsteil": "kalkar",
+   "address": "Grabenstraße 70, 47546 Kalkar",
+   "lat": 51.73898,
+   "lon": 6.2934,
+   "products": [
+    "türkisch, Döner"
+   ],
+   "phone": "02824 8467",
+   "osm": "node/11185219541",
+   "sources": [
+    "https://www.openstreetmap.org/node/11185219541"
+   ]
+  },
+  {
+   "name": "Griether Hanselädchen",
+   "kind": "cafe",
+   "ortsteil": "grieth",
+   "address": "Markt 28, 47546 Kalkar",
+   "lat": 51.78716,
+   "lon": 6.31683,
+   "products": [
+    "Frühstück, Kuchen"
+   ],
+   "hoursText": "ab 1.11.: Mo, Mi, Fr 6:30–18, Do 6:30–13, Sa 7–17, So 8–17 Uhr; Mai–Okt länger; Di Ruhetag",
+   "website": "https://grieth.eu/hanselaedchen/",
+   "phone": "02824 9399866",
+   "osm": "node/6703009287",
+   "sources": [
+    "https://grieth.eu/hanselaedchen/",
+    "https://www.openstreetmap.org/node/6703009287"
+   ]
+  },
+  {
+   "name": "Imbiss Zum Holländer",
+   "kind": "imbiss",
+   "ortsteil": "wissel",
+   "address": "Dorfstraße 6, 47546 Kalkar",
+   "lat": 51.77053,
+   "lon": 6.2882,
+   "phone": "01523 7773324",
+   "sources": [
+    "https://www.kalkar.de/gastronomie/imbiss-zum-hollaender"
+   ]
+  },
+  {
+   "name": "Mahlzeit",
+   "kind": "imbiss",
+   "ortsteil": "kalkar",
+   "address": "Bahnhofstraße 25, 47546 Kalkar",
+   "lat": 51.73577,
+   "lon": 6.28959,
+   "osm": "way/254691498",
+   "sources": [
+    "Hinweis vor Ort, 27.10.2026: früher Traberstübchen",
+    "https://www.openstreetmap.org/way/254691498"
+   ]
+  },
+  {
+   "name": "Marktstübchen",
+   "kind": "kneipe",
+   "ortsteil": "kalkar",
+   "address": "Markt 25, 47546 Kalkar",
+   "lat": 51.73847,
+   "lon": 6.29256,
+   "products": [
+    "deutsch"
+   ],
+   "hoursText": "Mo, Mi–Fr 17–24, Sa und So 11–24 Uhr; Küche 18–21, Sa/So auch 12–15 Uhr; Di Ruhetag",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       1,
+       3,
+       4,
+       5
+      ],
+      "from": "17:00",
+      "to": "24:00"
+     },
+     {
+      "days": [
+       6,
+       7
+      ],
+      "from": "11:00",
+      "to": "24:00"
+     }
+    ]
+   },
+   "phone": "02824 9762246",
+   "osm": "node/603559257",
+   "sources": [
+    "https://marktstuebchen-kalkar.eatbu.com/?lang=de",
+    "https://www.kalkar.de/gastronomie/marktstuebchen",
+    "https://www.openstreetmap.org/node/603559257"
+   ]
+  },
+  {
+   "name": "Meier's Restaurant und Café Mango",
+   "kind": "restaurant",
+   "ortsteil": "kalkar",
+   "address": "Markt 14, 47546 Kalkar",
+   "lat": 51.73904,
+   "lon": 6.29248,
+   "products": [
+    "Restaurant, Café"
+   ],
+   "instagram": "https://www.instagram.com/meiersmangosmaries/",
+   "phone": "02824 3277",
+   "osm": "node/860046857",
+   "sources": [
+    "https://www.openstreetmap.org/node/860046857"
+   ]
+  },
+  {
+   "name": "Mühlenhof",
+   "kind": "restaurant",
+   "ortsteil": "niedermoermter",
+   "address": "Greilack 33, 47546 Kalkar",
+   "lat": 51.74383,
+   "lon": 6.36095,
+   "products": [
+    "regional, Bio"
+   ],
+   "website": "https://muehlenhof.net/",
+   "phone": "02824 924092",
+   "osm": "node/1317493718",
+   "sources": [
+    "https://www.kalkar.de/gastronomie/muehlenhof-restaurant",
+    "https://www.openstreetmap.org/node/1317493718"
+   ]
+  },
+  {
+   "name": "Neue Mitte Appeldorn",
+   "kind": "cafe",
+   "ortsteil": "appeldorn",
+   "address": "St.-Lambertus-Straße 3, 47546 Kalkar",
+   "lat": 51.72395,
+   "lon": 6.35245,
+   "products": [
+    "Bäckerei, Café, Kiosk"
+   ],
+   "hoursText": "Mo–Fr 6–13 und 15–18, Sa und So 7–14 Uhr; mit Büdchen und DHL-Paketshop",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "06:00",
+      "to": "13:00"
+     },
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "15:00",
+      "to": "18:00"
+     },
+     {
+      "days": [
+       6,
+       7
+      ],
+      "from": "07:00",
+      "to": "14:00"
+     }
+    ]
+   },
+   "instagram": "https://www.instagram.com/neuemitteappeldorn/",
+   "facebook": "https://www.facebook.com/people/Neue-Mitte-Appeldorn/61561775924731/",
+   "phone": "01514 4251389",
+   "sources": [
+    "https://www.instagram.com/neuemitteappeldorn/",
+    "https://www.nrz.de/lokales/kleve-und-umland/ (29.12.2024: eröffnet)"
+   ]
+  },
+  {
+   "name": "Pizzeria Derya",
+   "kind": "imbiss",
+   "ortsteil": "kalkar",
+   "address": "Grabenstraße 34, 47546 Kalkar",
+   "lat": 51.73737,
+   "lon": 6.2944,
+   "products": [
+    "Pizza"
+   ],
+   "phone": "02824 8485",
+   "osm": "node/678863107",
+   "sources": [
+    "Hinweis vor Ort, 27.10.2026",
+    "https://www.kalkar.de/gastronomie/pizzeria-derya",
+    "https://www.openstreetmap.org/node/678863107"
+   ]
+  },
+  {
+   "name": "Pizzeria Rialto",
+   "kind": "imbiss",
+   "ortsteil": "kalkar",
+   "address": "Gocher Straße 9, 47546 Kalkar",
+   "lat": 51.7358,
+   "lon": 6.28616,
+   "products": [
+    "Pizza"
+   ],
+   "website": "https://www.pizzeriarialto-kalkar.de/",
+   "sources": [
+    "https://www.kalkar.de/gastronomie/pizzeria-rialto-kalkar"
+   ]
+  },
+  {
+   "name": "Ratskeller im Rathaus",
+   "kind": "restaurant",
+   "ortsteil": "kalkar",
+   "address": "Markt 20, 47546 Kalkar",
+   "lat": 51.73875,
+   "lon": 6.29301,
+   "products": [
+    "deutsch, regional"
+   ],
+   "hoursText": "Di–Sa 11:30–13:30 und 17:15–20:30, So und Feiertage 11–20 Uhr; Mo Ruhetag",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "from": "11:30",
+      "to": "13:30"
+     },
+     {
+      "days": [
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "from": "17:15",
+      "to": "20:30"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "11:00",
+      "to": "20:00"
+     }
+    ]
+   },
+   "phone": "02824 2460",
+   "osm": "node/365509579",
+   "sources": [
+    "https://www.openstreetmap.org/node/365509579"
+   ]
+  },
+  {
+   "name": "Restaurant Zum Schwan",
+   "kind": "restaurant",
+   "ortsteil": "wissel",
+   "address": "Dorfstraße 17, 47546 Kalkar",
+   "lat": 51.7724,
+   "lon": 6.28809,
+   "products": [
+    "deutsch, regional"
+   ],
+   "hoursText": "Di, Mi, Fr, Sa 16–23, So und Feiertage 11–14 und 17–22 Uhr; Mo und Do Ruhetag",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       2,
+       3,
+       5,
+       6
+      ],
+      "from": "16:00",
+      "to": "23:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "11:00",
+      "to": "14:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "17:00",
+      "to": "22:00"
+     }
+    ]
+   },
+   "website": "https://www.zumschwan-wissel.de/",
+   "phone": "02824 9997010",
+   "osm": "node/683068190",
+   "sources": [
+    "https://www.zumschwan-wissel.de/oeffnungszeiten.html",
+    "https://www.openstreetmap.org/node/683068190"
+   ]
+  },
+  {
+   "name": "SOL-Strandbar",
+   "kind": "imbiss",
+   "ortsteil": "wissel",
+   "address": "Zum Wisseler See 15, 47546 Kalkar",
+   "lat": 51.76258,
+   "lon": 6.29029,
+   "products": [
+    "Snacks, Eis"
+   ],
+   "season": "Sommer, mit dem Naturbad; Saison 2026 beendet",
+   "website": "https://wisseler-see.de/sol-strandbar/",
+   "osm": "node/5008075642",
+   "sources": [
+    "https://wisseler-see.de/sol-strandbar/",
+    "https://www.openstreetmap.org/node/5008075642"
+   ]
+  },
+  {
+   "name": "VINASIA",
+   "kind": "restaurant",
+   "ortsteil": "kalkar",
+   "lat": 51.73838,
+   "lon": 6.29261,
+   "products": [
+    "vietnamesisch"
+   ],
+   "hoursText": "Di–Fr 11–15 und 17–21, Sa 15–21, So 12–20 Uhr; Mo Ruhetag",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "11:00",
+      "to": "15:00"
+     },
+     {
+      "days": [
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "17:00",
+      "to": "21:00"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "15:00",
+      "to": "21:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "12:00",
+      "to": "20:00"
+     }
+    ]
+   },
+   "osm": "node/12988004496",
+   "sources": [
+    "https://www.openstreetmap.org/node/12988004496"
+   ]
+  },
+  {
+   "name": "Wisseler Schnitzelhäuschen",
+   "kind": "restaurant",
+   "ortsteil": "wissel",
+   "address": "Dorfstraße 26, 47546 Kalkar",
+   "lat": 51.77187,
+   "lon": 6.28854,
+   "products": [
+    "Schnitzel"
+   ],
+   "hoursText": "Mi–Fr 11:30–14 und 17–20, Sa 17–20, So 11:30–14 und 17–20 Uhr; Mo und Di Ruhetag",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       3,
+       4,
+       5,
+       7
+      ],
+      "from": "11:30",
+      "to": "14:00"
+     },
+     {
+      "days": [
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "from": "17:00",
+      "to": "20:00"
+     }
+    ]
+   },
+   "website": "https://www.wisseler-schnitzelhaeuschen.de/",
+   "phone": "02824 999733",
+   "osm": "way/236994509",
+   "sources": [
+    "https://www.wisseler-schnitzelhaeuschen.de/",
+    "https://www.openstreetmap.org/way/236994509"
+   ]
+  },
+  {
+   "name": "Zum Apfelbaum",
+   "kind": "kneipe",
+   "ortsteil": "appeldorn",
+   "address": "St.-Lambertus-Straße 2, 47546 Kalkar",
+   "lat": 51.72369,
+   "lon": 6.35262,
+   "products": [
+    "Burger, Schnitzel"
+   ],
+   "hoursText": "Do 17–21, Fr und Sa 17–24, So 10–21 Uhr; Küche bis 20 bzw. 21 Uhr; Mo–Mi geschlossen; Kegelbahn, Festsaal, Biergarten",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       4
+      ],
+      "from": "17:00",
+      "to": "21:00"
+     },
+     {
+      "days": [
+       5,
+       6
+      ],
+      "from": "17:00",
+      "to": "24:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "10:00",
+      "to": "21:00"
+     }
+    ]
+   },
+   "website": "https://www.zumapfelbaum.de/",
+   "phone": "02824 8078394",
+   "osm": "node/282902874",
+   "sources": [
+    "https://www.zumapfelbaum.de/",
+    "https://www.kalkar.de/gastronomie/zum-apfelbaum",
+    "https://www.openstreetmap.org/node/282902874"
+   ]
+  }
+ ]
+}

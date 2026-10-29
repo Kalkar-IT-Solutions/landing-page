@@ -1,0 +1,745 @@
+{
+ "comment": "Museen und Sehenswürdigkeiten in Kalkar und Umgebung für die Karte. Koordinaten aus OpenStreetMap (ODbL) und Wikidata (CC0); Beschreibungen eigene; Zeiten von den Websites der Häuser, Stand 27.10.2026.",
+ "places": [
+  {
+   "name": "Museum Schloss Moyland",
+   "category": "museum",
+   "town": "Bedburg-Hau",
+   "address": "Am Schloss 4, 47551 Bedburg-Hau",
+   "lat": 51.75532,
+   "lon": 6.2368,
+   "description": "Kunstmuseum im neugotischen Wasserschloss mit großer Beuys-Sammlung und Skulpturenpark.",
+   "description_en": "Art museum in a neo-Gothic moated castle with a major Beuys collection and sculpture park.",
+   "hoursText": "Sommer (1.4.–31.10.): Di.–Fr. 11–18 Uhr, Sa., So. und Feiertage 10–18 Uhr; Winter (1.11.–31.3.): Di.–So. 11–17 Uhr; Mo. nur Parkanlage 11–17 Uhr",
+   "website": "https://www.moyland.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/245832951",
+    "https://www.wikidata.org/wiki/Q531028",
+    "https://www.moyland.de/information/oeffnungszeiten"
+   ],
+   "osm": "way/245832951"
+  },
+  {
+   "name": "Städtisches Museum Kalkar",
+   "category": "museum",
+   "town": "Kalkar",
+   "address": "Grabenstraße 66, 47546 Kalkar",
+   "lat": 51.73882,
+   "lon": 6.2935,
+   "description": "Stadtmuseum in einem spätgotischen Giebelhaus mit Exponaten zur Geschichte der Hansestadt.",
+   "description_en": "Town museum in a late-Gothic gabled house covering the history of the Hanseatic town.",
+   "hoursText": "April–Oktober: Mo. 10–13 Uhr, Di.–So. 10–17 Uhr; November–März: Mo.–Di. 11–13 Uhr, Mi.–So. 11–17 Uhr",
+   "website": "https://www.kalkar.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/678774929",
+    "https://www.wikidata.org/wiki/Q29138458",
+    "https://www.kalkar.de/system/files/2025-05/Flyer%20Stadtrundgang_2025.pdf"
+   ],
+   "osm": "node/678774929"
+  },
+  {
+   "name": "Museum Kurhaus Kleve",
+   "category": "museum",
+   "town": "Kleve",
+   "address": "Tiergartenstraße 41, 47533 Kleve",
+   "lat": 51.79561,
+   "lon": 6.12534,
+   "description": "Museum für Kunst vom Mittelalter bis zur Gegenwart im ehemaligen Kurhaus am Tiergarten.",
+   "description_en": "Art museum spanning medieval to contemporary works in Kleve's former spa building.",
+   "hoursText": "Di.–So. 11–17 Uhr, an Feiertagen 11–17 Uhr; jeden ersten Freitag im Monat bis 20 Uhr; geschlossen 24., 25., 31.12., 1.1. und Rosenmontag",
+   "website": "https://www.mkk.art",
+   "sources": [
+    "https://www.openstreetmap.org/way/57732576",
+    "https://www.wikidata.org/wiki/Q1954460",
+    "https://www.mkk.art/besuch/9-oeffnungszeiten"
+   ],
+   "osm": "way/57732576"
+  },
+  {
+   "name": "B.C. Koekkoek-Haus",
+   "category": "museum",
+   "town": "Kleve",
+   "address": "Koekkoekplatz 1, 47533 Kleve",
+   "lat": 51.78991,
+   "lon": 6.13777,
+   "description": "Ehemaliges Wohnhaus des Landschaftsmalers Koekkoek mit Gemälden der Romantik.",
+   "description_en": "Former home of landscape painter B.C. Koekkoek, showing Romantic-era paintings.",
+   "hoursText": "Di.–Sa. 14–17 Uhr, Sonn- und Feiertage 11–17 Uhr",
+   "website": "https://www.koekkoek-haus.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/109084185",
+    "https://www.wikidata.org/wiki/Q1590279"
+   ],
+   "osm": "way/109084185"
+  },
+  {
+   "name": "LVR-RömerMuseum Xanten",
+   "category": "museum",
+   "town": "Xanten",
+   "address": "Siegfriedstraße 39, 46509 Xanten",
+   "lat": 51.6663,
+   "lon": 6.44007,
+   "description": "Museum über der römischen Thermenhalle, zeigt Funde aus der Colonia Ulpia Traiana.",
+   "description_en": "Museum built over the Roman baths hall, showing finds from Colonia Ulpia Traiana.",
+   "hoursText": "1. März bis Ende Sommerzeit 9–18 Uhr; Beginn Winterzeit bis 28. Februar 10–16 Uhr; geschlossen 24., 25. und 31.12.",
+   "website": "https://www.lvr.de/archaeologischer-park-xanten/",
+   "sources": [
+    "https://www.openstreetmap.org/way/130888830",
+    "https://www.lvr.de/archaeologischer-park-xanten/ihr-besuch/eintrittspreise-und-oeffnungszeiten/"
+   ],
+   "osm": "way/130888830"
+  },
+  {
+   "name": "StiftsMuseum Xanten",
+   "category": "museum",
+   "town": "Xanten",
+   "address": "Kapitel 21, 46509 Xanten",
+   "lat": 51.66264,
+   "lon": 6.45265,
+   "description": "Domschatz und kirchliche Kunst neben dem Xantener Dom.",
+   "description_en": "Cathedral treasury and religious art next to Xanten Cathedral.",
+   "hoursText": "Di.–Sa. 10–17 Uhr, Sonn- und Feiertage 11–18 Uhr; montags geschlossen",
+   "website": "https://www.stiftsmuseum-xanten.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/4963212022",
+    "https://www.wikidata.org/wiki/Q15130510"
+   ],
+   "osm": "node/4963212022"
+  },
+  {
+   "name": "SiegfriedMuseum Xanten",
+   "category": "museum",
+   "town": "Xanten",
+   "address": "Kurfürstenstraße 9, 46509 Xanten",
+   "lat": 51.66151,
+   "lon": 6.45259,
+   "description": "Ausstellung zur Nibelungensage und ihrem Helden Siegfried, der aus Xanten stammen soll.",
+   "description_en": "Exhibition on the Nibelung saga and Siegfried, its hero said to come from Xanten.",
+   "hoursText": "Mo.–Di. 12–17 Uhr, Mi.–So. 10–17 Uhr (auch an Feiertagen)",
+   "website": "https://www.siegfriedmuseum-xanten.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/3118367538"
+   ],
+   "osm": "node/3118367538"
+  },
+  {
+   "name": "Stiftsmuseum Wissel",
+   "category": "museum",
+   "town": "Kalkar",
+   "address": "Köstersdick 22, 47546 Kalkar-Wissel",
+   "lat": 51.77124,
+   "lon": 6.28779,
+   "description": "Kleines Museum am romanischen Stift Wissel mit wechselnden Ausstellungen aus dem Ort.",
+   "description_en": "Small museum by Wissel's Romanesque collegiate church with changing local exhibitions.",
+   "hoursText": "Während Ausstellungen meist Sa. und So. 14–17 Uhr",
+   "website": "http://www.stiftsmuseum-wissel.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/683249006"
+   ],
+   "osm": "node/683249006"
+  },
+  {
+   "name": "Koenraad-Bosman-Museum",
+   "category": "museum",
+   "town": "Rees",
+   "address": "Am Bär 1, 46459 Rees",
+   "lat": 51.75956,
+   "lon": 6.39939,
+   "description": "Städtisches Museum in den Kasematten der Stadtmauer mit Kunst und Stadtgeschichte.",
+   "description_en": "Municipal museum in the town wall casemates featuring art and local history.",
+   "hoursText": "Sa. 14–17 Uhr, So. 11–13 und 14–17 Uhr",
+   "website": "https://www.stadt-rees.de/tourismus/sehenswuerdigkeiten/museen/staedt-koenraad-bosman-museum-rees/",
+   "sources": [
+    "https://www.openstreetmap.org/way/108686283",
+    "https://www.wikidata.org/wiki/Q27938135"
+   ],
+   "osm": "way/108686283"
+  },
+  {
+   "name": "Rheinmuseum Emmerich",
+   "category": "museum",
+   "town": "Emmerich am Rhein",
+   "address": "Martinikirchgang 2, 46446 Emmerich am Rhein",
+   "lat": 51.83128,
+   "lon": 6.23737,
+   "description": "Museum zu Rheinschifffahrt und Stadtgeschichte direkt an der Emmericher Promenade.",
+   "description_en": "Museum of Rhine shipping and town history right on Emmerich's riverside promenade.",
+   "hoursText": "So., Di., Mi., Do. 10–12:30 und 14–16:30 Uhr; Winterpause 23.12.2026–13.02.2027",
+   "website": "https://www.rheinmuseum-emmerich.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/237237143",
+    "https://www.wikidata.org/wiki/Q61718175"
+   ],
+   "osm": "way/237237143"
+  },
+  {
+   "name": "PAN kunstforum niederrhein",
+   "category": "museum",
+   "town": "Emmerich am Rhein",
+   "address": "Agnetenstraße 2, 46446 Emmerich am Rhein",
+   "lat": 51.83386,
+   "lon": 6.24194,
+   "description": "Kunstforum mit Plakatsammlung und Ausstellungen zu Grafik und Gestaltung.",
+   "description_en": "Art forum with a poster collection and exhibitions on graphic design.",
+   "hoursText": "Do.–So. 11–16 Uhr",
+   "website": "https://www.pan-kunstforum.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/1234843098",
+    "https://www.wikidata.org/wiki/Q76634574"
+   ],
+   "osm": "node/1234843098"
+  },
+  {
+   "name": "Klever Schuhmuseum",
+   "category": "museum",
+   "town": "Kleve",
+   "address": "Siegertstraße 3, 47533 Kleve",
+   "lat": 51.77928,
+   "lon": 6.12747,
+   "description": "Vereinsmuseum zur einst bedeutenden Klever Schuhindustrie.",
+   "description_en": "Volunteer-run museum on Kleve's once important shoe industry.",
+   "hoursText": "Jeden ersten Sonntag im Monat 14–17 Uhr; Führungen nach Vereinbarung",
+   "website": "https://www.klever-schuhmuseum.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/4307164590",
+    "https://www.klever-schuhmuseum.de/oeffnungszeiten-fuehrungen/"
+   ],
+   "osm": "node/4307164590"
+  },
+  {
+   "name": "Museum Goch",
+   "category": "museum",
+   "town": "Goch",
+   "address": "Kastellstraße 9, 47574 Goch",
+   "lat": 51.67529,
+   "lon": 6.16169,
+   "description": "Kunstmuseum mit Wechselausstellungen zeitgenössischer Kunst und Stadtgeschichte.",
+   "description_en": "Art museum with changing contemporary exhibitions and local history.",
+   "hoursText": "Di.–Fr. 10–17 Uhr, Sa./So. 11–17 Uhr, Mo. geschlossen",
+   "website": "https://museum-goch.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/163405293",
+    "https://www.wikidata.org/wiki/Q1954438"
+   ],
+   "osm": "way/163405293"
+  },
+  {
+   "name": "Forum Arenacum",
+   "category": "museum",
+   "town": "Kleve",
+   "address": "Hohe Straße 116, 47533 Kleve-Rindern",
+   "lat": 51.81319,
+   "lon": 6.12696,
+   "description": "Kleines Museum zur römischen Vergangenheit von Rindern, dem antiken Arenacum.",
+   "description_en": "Small museum on the Roman past of Rindern, ancient Arenacum.",
+   "hoursText": "sonntags 14–17 Uhr und nach Vereinbarung",
+   "sources": [
+    "https://www.openstreetmap.org/node/12649409644",
+    "https://www.forum-arenacum.de/"
+   ],
+   "osm": "node/12649409644"
+  },
+  {
+   "name": "Museum rund ums Geld",
+   "category": "museum",
+   "town": "Xanten",
+   "address": "Xanten-Wardt",
+   "lat": 51.68742,
+   "lon": 6.43365,
+   "description": "Vereinsmuseum zur Geschichte von Münzen, Scheinen und Sparen.",
+   "description_en": "Club-run museum on the history of coins, banknotes and saving.",
+   "hoursText": "Jedes 1. Wochenende im Monat Sa. und So. 14–17 Uhr; an Feiertagen geschlossen",
+   "website": "https://www.geldmuseum-xanten-wardt.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/8265218519"
+   ],
+   "osm": "node/8265218519"
+  },
+  {
+   "name": "NaturForum Bislicher Insel",
+   "category": "museum",
+   "town": "Xanten",
+   "address": "Bislicher Insel 11, 46509 Xanten",
+   "lat": 51.65416,
+   "lon": 6.50192,
+   "description": "Infozentrum zur Rheinaue mit Ausstellung über Auenlandschaft und Vogelwelt.",
+   "description_en": "Visitor centre on the Rhine floodplain with exhibits on wetlands and birds.",
+   "hoursText": "April–Oktober Di.–So. 10–18 Uhr, November–März Di.–So. 10–17 Uhr (laut OSM)",
+   "website": "https://www.rvr.ruhr/themen/oekologie-umwelt/startseite-bislicher-insel/ueber-uns-das-naturforum/",
+   "sources": [
+    "https://www.openstreetmap.org/node/325662590"
+   ],
+   "osm": "node/325662590"
+  },
+  {
+   "name": "St. Nicolai Kalkar",
+   "category": "sight",
+   "town": "Kalkar",
+   "address": "Jan-Joest-Straße 1, 47546 Kalkar",
+   "lat": 51.73793,
+   "lon": 6.2919,
+   "description": "Spätgotische Hallenkirche mit berühmten geschnitzten Altären der Kalkarer Schule.",
+   "description_en": "Late-Gothic hall church famed for its carved altarpieces of the Kalkar school.",
+   "sources": [
+    "https://www.openstreetmap.org/way/238128817",
+    "https://www.wikidata.org/wiki/Q530594"
+   ],
+   "osm": "way/238128817"
+  },
+  {
+   "name": "Historisches Rathaus Kalkar",
+   "category": "sight",
+   "town": "Kalkar",
+   "lat": 51.73887,
+   "lon": 6.29304,
+   "description": "Backsteinrathaus aus dem 15. Jahrhundert am Kalkarer Marktplatz.",
+   "description_en": "15th-century brick town hall on Kalkar's market square.",
+   "sources": [
+    "https://www.openstreetmap.org/way/53265304",
+    "https://de.wikipedia.org/wiki/Rathaus_Kalkar"
+   ],
+   "osm": "way/53265304"
+  },
+  {
+   "name": "Kalkarer Mühle",
+   "category": "sight",
+   "town": "Kalkar",
+   "lat": 51.7396,
+   "lon": 6.29569,
+   "description": "Hohe Turmwindmühle am Stadtrand, eine der größten am Niederrhein.",
+   "description_en": "Tall tower windmill at the edge of town, one of the largest on the Lower Rhine.",
+   "sources": [
+    "https://www.openstreetmap.org/node/5191207655",
+    "https://www.wikidata.org/wiki/Q3916184"
+   ],
+   "osm": "node/5191207655"
+  },
+  {
+   "name": "Gerichtslinde Kalkar",
+   "category": "sight",
+   "town": "Kalkar",
+   "address": "Markt, 47546 Kalkar",
+   "lat": 51.73874,
+   "lon": 6.29243,
+   "description": "Mächtige Linde auf dem Markt, gepflanzt im 16. Jahrhundert als Gerichtsbaum.",
+   "description_en": "Mighty linden on the market square, planted in the 16th century as a court tree.",
+   "sources": [
+    "https://www.openstreetmap.org/node/603734135"
+   ],
+   "osm": "node/603734135"
+  },
+  {
+   "name": "Haus Kemnade",
+   "category": "sight",
+   "town": "Kalkar",
+   "address": "Kalkar-Wissel",
+   "lat": 51.77482,
+   "lon": 6.29064,
+   "description": "Historischer Herrensitz bei Wissel, von außen zu besichtigen.",
+   "description_en": "Historic manor near Wissel, viewable from outside.",
+   "sources": [
+    "https://www.openstreetmap.org/node/683068192",
+    "https://www.wikidata.org/wiki/Q112115154"
+   ],
+   "osm": "node/683068192"
+  },
+  {
+   "name": "Burg Boetzelaer",
+   "category": "sight",
+   "town": "Kalkar",
+   "address": "Reeser Straße 247, 47546 Kalkar-Appeldorn",
+   "lat": 51.7287,
+   "lon": 6.34813,
+   "description": "Wiederaufgebaute Wasserburg mit Hotel, Café und Veranstaltungen.",
+   "description_en": "Restored moated castle with hotel, café and events.",
+   "website": "https://www.burgboetzelaer.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/157046234",
+    "https://www.wikidata.org/wiki/Q1011106"
+   ],
+   "osm": "way/157046234"
+  },
+  {
+   "name": "Wisseler See",
+   "category": "sight",
+   "town": "Kalkar",
+   "lat": 51.76055,
+   "lon": 6.29981,
+   "description": "Badesee mit Strand, Campingpark und Rundweg im Norden von Kalkar.",
+   "description_en": "Swimming lake with beach, campsite and circular path north of Kalkar.",
+   "website": "https://www.wisseler-see.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/9247092",
+    "https://www.wikidata.org/wiki/Q17128031"
+   ],
+   "osm": "way/9247092"
+  },
+  {
+   "name": "Wisseler Dünen",
+   "category": "sight",
+   "town": "Kalkar",
+   "address": "Kalkar-Wissel",
+   "lat": 51.77199,
+   "lon": 6.30446,
+   "description": "Seltene Binnendünen mit Heide und Aussichtspunkt am Rand von Wissel.",
+   "description_en": "Rare inland dunes with heath and a lookout near Wissel.",
+   "sources": [
+    "https://www.openstreetmap.org/node/13861336034",
+    "https://www.openstreetmap.org/way/434804049"
+   ],
+   "osm": "node/13861336034"
+  },
+  {
+   "name": "Rheinfähre Grieth–Grietherort",
+   "category": "sight",
+   "town": "Kalkar",
+   "address": "Grieth, 47546 Kalkar",
+   "lat": 51.78742,
+   "lon": 6.31906,
+   "description": "Kleine Personen- und Radfähre über den Rhein zwischen Grieth und Grietherort.",
+   "description_en": "Small foot and bike ferry across the Rhine between Grieth and Grietherort.",
+   "website": "https://www.niederrheinfaehre.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/748111335",
+    "https://www.openstreetmap.org/way/130408234"
+   ],
+   "osm": "node/748111335"
+  },
+  {
+   "name": "Rheinfähre Reeserschanz–Rees",
+   "category": "sight",
+   "town": "Kalkar",
+   "address": "Reeserschanz, 47546 Kalkar",
+   "lat": 51.75211,
+   "lon": 6.39511,
+   "description": "Saisonfähre für Fußgänger und Radfahrer von Reeserschanz nach Rees.",
+   "description_en": "Seasonal foot and bike ferry from Reeserschanz across to Rees.",
+   "website": "https://www.niederrheinfaehre.de",
+   "sources": [
+    "https://www.openstreetmap.org/node/288537061",
+    "https://www.openstreetmap.org/way/41332420"
+   ],
+   "osm": "node/288537061"
+  },
+  {
+   "name": "Wunderland Kalkar",
+   "category": "sight",
+   "town": "Kalkar",
+   "address": "Griether Straße 110-120, 47546 Kalkar",
+   "lat": 51.76355,
+   "lon": 6.32604,
+   "description": "Freizeitpark und Hotel im nie in Betrieb gegangenen Schnellen Brüter.",
+   "description_en": "Amusement park and hotel inside a fast-breeder reactor that never went online.",
+   "website": "https://www.wunderlandkalkar.eu",
+   "sources": [
+    "https://www.openstreetmap.org/way/83890521",
+    "https://www.wikidata.org/wiki/Q442538"
+   ],
+   "osm": "way/83890521"
+  },
+  {
+   "name": "Schwanenburg",
+   "category": "sight",
+   "town": "Kleve",
+   "address": "Schloßberg 1, 47533 Kleve",
+   "lat": 51.78659,
+   "lon": 6.13881,
+   "description": "Wahrzeichen Kleves mit Schwanenturm, Sitz des Landgerichts und Aussicht übers Land.",
+   "description_en": "Kleve's landmark castle with the Swan Tower, now a court, with wide views.",
+   "website": "https://kleve.de/de/sehenswuerdigkeiten/schwanenburg/",
+   "sources": [
+    "https://www.openstreetmap.org/relation/310422",
+    "https://www.wikidata.org/wiki/Q316178"
+   ],
+   "osm": "relation/310422"
+  },
+  {
+   "name": "Stiftskirche Kleve",
+   "category": "sight",
+   "town": "Kleve",
+   "address": "Kapitelstraße 5, 47533 Kleve",
+   "lat": 51.78471,
+   "lon": 6.1368,
+   "description": "Gotische Backsteinkirche mit Grabmälern der Grafen und Herzöge von Kleve.",
+   "description_en": "Gothic brick church holding tombs of the counts and dukes of Cleves.",
+   "sources": [
+    "https://www.openstreetmap.org/way/43836209",
+    "https://www.wikidata.org/wiki/Q2348792"
+   ],
+   "osm": "way/43836209"
+  },
+  {
+   "name": "Amphitheater und Forstgarten Kleve",
+   "category": "sight",
+   "town": "Kleve",
+   "address": "Tiergartenstraße, 47533 Kleve",
+   "lat": 51.7955,
+   "lon": 6.12375,
+   "description": "Barocke Gartenanlage des Prinzen Moritz mit Amphitheater und Sichtachsen.",
+   "description_en": "Baroque gardens laid out by Prince Maurice, with amphitheatre and vistas.",
+   "sources": [
+    "https://www.openstreetmap.org/node/595683117",
+    "https://www.openstreetmap.org/way/40277927"
+   ],
+   "osm": "node/595683117"
+  },
+  {
+   "name": "Tiergarten Kleve",
+   "category": "sight",
+   "town": "Kleve",
+   "address": "Tiergartenstraße 74, 47533 Kleve",
+   "lat": 51.79838,
+   "lon": 6.1238,
+   "description": "Kleiner Zoo mit Haus- und Wildtieren am Klever Berg.",
+   "description_en": "Small zoo with domestic and wild animals at the foot of the Klever Berg.",
+   "hoursText": "Täglich ab 9 Uhr; Sommer (1.3.–31.10.) 9–18 Uhr, Winter (1.11.–28.2.) 9–17 Uhr",
+   "website": "https://www.tiergarten-kleve.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/37014591",
+    "https://www.wikidata.org/wiki/Q2432183",
+    "https://tiergarten-kleve.de/besuch-planen/offnungszeiten/"
+   ],
+   "osm": "way/37014591"
+  },
+  {
+   "name": "Aussichtsturm Klever Berg",
+   "category": "sight",
+   "town": "Kleve",
+   "lat": 51.78867,
+   "lon": 6.11541,
+   "description": "Aussichtsturm auf dem Klever Berg mit Blick über Stadt und Niederrhein.",
+   "description_en": "Lookout tower on the Klever Berg with views over the town and Lower Rhine.",
+   "sources": [
+    "https://www.openstreetmap.org/way/232628470"
+   ],
+   "osm": "way/232628470"
+  },
+  {
+   "name": "Personenfähre Düffelward–Schenkenschanz",
+   "category": "sight",
+   "town": "Kleve",
+   "address": "Düffelward, 47533 Kleve",
+   "lat": 51.83093,
+   "lon": 6.10917,
+   "description": "Kleine Fähre zum Festungsdorf Schenkenschanz auf der Rheininsel.",
+   "description_en": "Small ferry to the fortress village of Schenkenschanz on a Rhine island.",
+   "sources": [
+    "https://www.openstreetmap.org/node/253777596"
+   ],
+   "osm": "node/253777596"
+  },
+  {
+   "name": "Xantener Dom St. Viktor",
+   "category": "sight",
+   "town": "Xanten",
+   "address": "Kapitel 24, 46509 Xanten",
+   "lat": 51.66229,
+   "lon": 6.45329,
+   "description": "Gotischer Dom mit reicher Ausstattung, Wahrzeichen der Stadt Xanten.",
+   "description_en": "Richly furnished Gothic cathedral, the landmark of Xanten.",
+   "website": "https://www.sankt-viktor-xanten.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/45053062",
+    "https://www.wikidata.org/wiki/Q566680"
+   ],
+   "osm": "way/45053062"
+  },
+  {
+   "name": "LVR-Archäologischer Park Xanten",
+   "category": "sight",
+   "town": "Xanten",
+   "address": "Am Rheintor, 46509 Xanten",
+   "lat": 51.66665,
+   "lon": 6.44372,
+   "description": "Großes Freilichtmuseum mit rekonstruierten Bauten der Römerstadt.",
+   "description_en": "Large open-air museum with reconstructed buildings of the Roman city.",
+   "hoursText": "1. März bis Ende Sommerzeit 9–18 Uhr; Beginn Winterzeit bis 28. Februar 10–16 Uhr; geschlossen 24., 25. und 31.12.",
+   "website": "https://www.lvr.de/archaeologischer-park-xanten/",
+   "sources": [
+    "https://www.openstreetmap.org/way/475037411",
+    "https://www.wikidata.org/wiki/Q316385",
+    "https://www.lvr.de/archaeologischer-park-xanten/ihr-besuch/eintrittspreise-und-oeffnungszeiten/"
+   ],
+   "osm": "way/475037411"
+  },
+  {
+   "name": "Kriemhildmühle Xanten",
+   "category": "sight",
+   "town": "Xanten",
+   "address": "Nordwall 5, 46509 Xanten",
+   "lat": 51.66358,
+   "lon": 6.4506,
+   "description": "Turmwindmühle auf der Stadtmauer, die noch Mehl mahlt, mit Mühlenbäckerei.",
+   "description_en": "Tower windmill on the town wall that still grinds flour, with bakery.",
+   "website": "https://www.kriemhild-muehle.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/254906717",
+    "https://www.wikidata.org/wiki/Q881485"
+   ],
+   "osm": "way/254906717"
+  },
+  {
+   "name": "Klever Tor Xanten",
+   "category": "sight",
+   "town": "Xanten",
+   "address": "Klever Straße 39, 46509 Xanten",
+   "lat": 51.66285,
+   "lon": 6.44972,
+   "description": "Mittelalterliches Doppeltor der Xantener Stadtbefestigung.",
+   "description_en": "Medieval double gate of Xanten's town fortifications.",
+   "sources": [
+    "https://www.openstreetmap.org/way/254906670",
+    "https://www.wikidata.org/wiki/Q1774290"
+   ],
+   "osm": "way/254906670"
+  },
+  {
+   "name": "Amphitheater Birten",
+   "category": "sight",
+   "town": "Xanten",
+   "address": "Xanten-Birten",
+   "lat": 51.63751,
+   "lon": 6.47312,
+   "description": "Reste eines römischen Amphitheaters, heute Freilichtbühne.",
+   "description_en": "Remains of a Roman amphitheatre, now an open-air stage.",
+   "sources": [
+    "https://www.openstreetmap.org/way/34402869",
+    "https://www.wikidata.org/wiki/Q2234744"
+   ],
+   "osm": "way/34402869"
+  },
+  {
+   "name": "Artenschutzturm Bislicher Insel",
+   "category": "sight",
+   "town": "Xanten",
+   "address": "Bislicher Insel, 46509 Xanten",
+   "lat": 51.6543,
+   "lon": 6.50099,
+   "description": "Beobachtungsturm in der Rheinaue, gut für Vogelbeobachtung.",
+   "description_en": "Observation tower in the Rhine floodplain, good for birdwatching.",
+   "sources": [
+    "https://www.openstreetmap.org/way/416799667",
+    "https://www.wikidata.org/wiki/Q866395"
+   ],
+   "osm": "way/416799667"
+  },
+  {
+   "name": "St. Mariä Himmelfahrt Marienbaum",
+   "category": "sight",
+   "town": "Xanten",
+   "address": "Xanten-Marienbaum",
+   "lat": 51.69946,
+   "lon": 6.3765,
+   "description": "Wallfahrtskirche mit Gnadenbild, ältester Marienwallfahrtsort am Niederrhein.",
+   "description_en": "Pilgrimage church with a revered Marian image, among the oldest on the Lower Rhine.",
+   "sources": [
+    "https://www.openstreetmap.org/way/27165595",
+    "https://www.wikidata.org/wiki/Q2320986"
+   ],
+   "osm": "way/27165595"
+  },
+  {
+   "name": "Rheinpromenade Rees",
+   "category": "sight",
+   "town": "Rees",
+   "lat": 51.75696,
+   "lon": 6.39601,
+   "description": "Uferpromenade mit Zollturm, Skulpturen und Blick auf den Rhein.",
+   "description_en": "Riverside promenade with the old toll tower, sculptures and Rhine views.",
+   "website": "https://www.stadt-rees.de/tourismus/sehenswuerdigkeiten/",
+   "sources": [
+    "https://www.openstreetmap.org/way/254415465",
+    "https://www.openstreetmap.org/way/230145962"
+   ],
+   "osm": "way/254415465"
+  },
+  {
+   "name": "Schloss Hueth",
+   "category": "sight",
+   "town": "Rees",
+   "address": "Alter Deichweg 1, 46459 Rees",
+   "lat": 51.81384,
+   "lon": 6.37375,
+   "description": "Ehemaliges Wasserschloss bei Bienen, nur von außen zu sehen.",
+   "description_en": "Former moated castle near Bienen, viewable from outside only.",
+   "sources": [
+    "https://www.openstreetmap.org/way/434583710",
+    "https://www.wikidata.org/wiki/Q1436490"
+   ],
+   "osm": "way/434583710"
+  },
+  {
+   "name": "Uedemer Hochwald",
+   "category": "sight",
+   "town": "Uedem",
+   "lat": 51.6728,
+   "lon": 6.35823,
+   "description": "Waldgebiet mit Rundwanderwegen und Naturschutzflächen südlich von Uedem.",
+   "description_en": "Forest with circular trails and nature reserve areas south of Uedem.",
+   "sources": [
+    "https://www.openstreetmap.org/way/458776745",
+    "https://www.wikidata.org/wiki/Q61712543"
+   ],
+   "osm": "way/458776745"
+  },
+  {
+   "name": "Wasserburg Anholt",
+   "category": "sight",
+   "town": "Isselburg",
+   "lat": 51.84426,
+   "lon": 6.42724,
+   "description": "Wasserburg mit Museum, Barockgarten und Schlosspark.",
+   "description_en": "Moated castle with museum, baroque garden and park.",
+   "sources": [
+    "https://www.openstreetmap.org/relation/2101561",
+    "https://www.wikidata.org/wiki/Q880788"
+   ],
+   "osm": "relation/2101561"
+  },
+  {
+   "name": "Biotopwildpark Anholter Schweiz",
+   "category": "sight",
+   "town": "Isselburg",
+   "lat": 51.83543,
+   "lon": 6.42974,
+   "description": "Wildpark mit heimischen Tieren in einer nachgebauten Schweizer Landschaft.",
+   "description_en": "Wildlife park with native animals in a mock Swiss landscape.",
+   "website": "https://www.anholter-schweiz.de",
+   "sources": [
+    "https://www.openstreetmap.org/way/45873340",
+    "https://www.wikidata.org/wiki/Q545428"
+   ],
+   "osm": "way/45873340"
+  },
+  {
+   "name": "St. Martini Emmerich",
+   "category": "sight",
+   "town": "Emmerich am Rhein",
+   "address": "Martinikirchgang 9, 46446 Emmerich am Rhein",
+   "lat": 51.83059,
+   "lon": 6.23668,
+   "description": "Romanisch-gotische Kirche direkt am Rhein mit wertvollem Kirchenschatz.",
+   "description_en": "Romanesque-Gothic church right on the Rhine with a precious treasury.",
+   "sources": [
+    "https://www.openstreetmap.org/way/108298512",
+    "https://www.wikidata.org/wiki/Q1624832"
+   ],
+   "osm": "way/108298512"
+  },
+  {
+   "name": "Steintor Goch",
+   "category": "sight",
+   "town": "Goch",
+   "address": "Am Steintor 20, 47574 Goch",
+   "lat": 51.67607,
+   "lon": 6.15854,
+   "description": "Mittelalterliches Stadttor an der Niers, heute mit kleinem Museum.",
+   "description_en": "Medieval town gate on the Niers river, now housing a small museum.",
+   "sources": [
+    "https://www.openstreetmap.org/way/163405292",
+    "https://www.wikidata.org/wiki/Q1725054"
+   ],
+   "osm": "way/163405292"
+  }
+ ]
+}

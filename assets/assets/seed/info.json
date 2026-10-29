@@ -1,0 +1,595 @@
+{
+ "comment": "Zusammengestellt aus kalkar.de, abi.kalkar.de und niederrheinfaehre.de am 26. und 27.10.2026; Quellen je Abschnitt.",
+ "asOf": "2026-10-27",
+ "sections": [
+  {
+   "title": "Notfall",
+   "title_en": "Emergency",
+   "pinned": true,
+   "sources": [
+    "https://patienten.kvno.de/service/notdienst/kleve",
+    "https://www.kkle.de/klinikum/zentrale-notaufnahmen-ambulanzen-2",
+    "https://gizbonn.de/",
+    "https://www.zahnaerztekammernordrhein.de/patienten/zahnaerztlicher-notdienst/zahnaerztlicher-notdienst/",
+    "https://www.tieraerztekammer-nordrhein.de/informationen-zum-tieraerztlichen-notdienst/",
+    "https://www.aponet.de/notdienstsuche/47546-Kalkar"
+   ],
+   "facts": [
+    {
+     "term": "Notruf",
+     "value": "112 · Feuerwehr und Rettungsdienst",
+     "link": "tel:112",
+     "term_en": "Emergency",
+     "value_en": "112 · fire brigade and ambulance"
+    },
+    {
+     "term": "Polizei",
+     "value": "110",
+     "link": "tel:110",
+     "term_en": "Police"
+    },
+    {
+     "term": "Arzt",
+     "value": "116 117 · ärztlicher Bereitschaftsdienst, wenn die Praxis zu hat",
+     "link": "tel:116117",
+     "term_en": "Doctor",
+     "value_en": "116 117 · on-call doctor when practices are closed"
+    },
+    {
+     "term": "Notdienstpraxis",
+     "value": "St.-Antonius-Hospital Kleve, Albersallee 5-7 · Mo, Di, Do 19–21, Mi, Fr 15–21, Sa, So und Feiertage 9–21 Uhr",
+     "link": "https://www.openstreetmap.org/search?query=Albersallee%205%2C%2047533%20Kleve",
+     "term_en": "Out-of-hours clinic",
+     "value_en": "St.-Antonius-Hospital Kleve, Albersallee 5-7 · Mon, Tue, Thu 19–21, Wed, Fri 15–21, Sat, Sun and public holidays 9–21"
+    },
+    {
+     "term": "Notaufnahme",
+     "value": "St.-Antonius-Hospital Kleve, rund um die Uhr · 02821 4900",
+     "link": "tel:+4928214900",
+     "term_en": "Emergency department",
+     "value_en": "St.-Antonius-Hospital Kleve, 24/7 · 02821 4900"
+    },
+    {
+     "term": "Apotheke",
+     "value": "Notdienst: 0800 00 22 8 33 (Festnetz, kostenlos) · Suche bei aponet.de",
+     "link": "https://www.aponet.de/notdienstsuche/47546-Kalkar",
+     "term_en": "Pharmacy",
+     "value_en": "On duty: 0800 00 22 8 33 (landline, free) · search on aponet.de"
+    },
+    {
+     "term": "Zahnarzt",
+     "value": "01805 98 67 00 · zahnärztlicher Notdienst Nordrhein",
+     "link": "tel:+491805986700",
+     "term_en": "Dentist",
+     "value_en": "01805 98 67 00 · dental emergency service"
+    },
+    {
+     "term": "Giftnotruf",
+     "value": "0228 19240 · rund um die Uhr",
+     "link": "tel:+4922819240",
+     "term_en": "Poison control",
+     "value_en": "0228 19240 · 24/7"
+    },
+    {
+     "term": "Tierarzt",
+     "value": "0800 0060107 · Notdienst Kreis Kleve und Wesel",
+     "link": "tel:+498000060107",
+     "term_en": "Vet",
+     "value_en": "0800 0060107 · emergency service, districts of Kleve and Wesel"
+    }
+   ]
+  },
+  {
+   "title": "Rathaus",
+   "sources": [
+    "https://www.kalkar.de/impressum",
+    "https://www.kalkar.de/service-rathaus/fuer-buergerinnen-buerger/oeffnungszeiten"
+   ],
+   "facts": [
+    {
+     "term": "Adresse",
+     "value": "Markt 20, 47546 Kalkar",
+     "link": "https://www.openstreetmap.org/search?query=Markt%2020%2C%2047546%20Kalkar",
+     "term_en": "Address"
+    },
+    {
+     "term": "Telefon",
+     "value": "02824 13-0",
+     "link": "tel:+492824130",
+     "term_en": "Phone"
+    },
+    {
+     "term": "E-Mail",
+     "value": "info@kalkar.de",
+     "link": "mailto:info@kalkar.de",
+     "term_en": "Email"
+    },
+    {
+     "term": "Geöffnet",
+     "value": "Mo–Fr 8:00–12:30, Mo 14:00–16:00, Do 14:00–18:00",
+     "term_en": "Opening hours",
+     "value_en": "Mon–Fri 8:00–12:30, Mon 14:00–16:00, Thu 14:00–18:00"
+    },
+    {
+     "term": "Bürgerbüro",
+     "value": "02824 13-200, zusätzlich 1. Samstag im Monat 9:00–12:00",
+     "link": "tel:+49282413200",
+     "term_en": "Citizens' office",
+     "value_en": "02824 13-200, also on the first Saturday of the month 9:00–12:00"
+    },
+    {
+     "term": "Termin",
+     "value": "Online-Terminvergabe",
+     "link": "https://tevis.krzn.de/tevisweb530/",
+     "term_en": "Appointment",
+     "value_en": "Book an appointment online"
+    }
+   ],
+   "hours": {
+    "note": "Verwaltung; an Feiertagen geschlossen. Samstage des Bürgerbüros nicht enthalten.",
+    "closedOnHolidays": true,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "08:00",
+      "to": "12:30"
+     },
+     {
+      "days": [
+       1
+      ],
+      "from": "14:00",
+      "to": "16:00"
+     },
+     {
+      "days": [
+       4
+      ],
+      "from": "14:00",
+      "to": "18:00"
+     }
+    ]
+   },
+   "title_en": "Town hall"
+  },
+  {
+   "title": "Tourist-Information",
+   "sources": [
+    "https://www.kalkar.de/kultur-tourismus/fuer-gaeste/tourist-information-kalkar",
+    "https://www.kalkar.de/kultur-tourismus/fuer-kulturinteressierte/staedtisches-museum-kalkar",
+    "https://www.kalkar.de/veranstaltungen/thementour-juden-kalkar-juedische-traditionen"
+   ],
+   "facts": [
+    {
+     "term": "Ort",
+     "value": "Foyer des Städtischen Museums, Grabenstraße 66, 47546 Kalkar",
+     "link": "https://www.openstreetmap.org/search?query=Grabenstra%C3%9Fe%2066%2C%2047546%20Kalkar",
+     "term_en": "Location",
+     "value_en": "Foyer of the Städtisches Museum, Grabenstraße 66, 47546 Kalkar"
+    },
+    {
+     "term": "Telefon",
+     "value": "02824 13-120",
+     "link": "tel:+49282413120",
+     "term_en": "Phone"
+    },
+    {
+     "term": "Sep–März",
+     "value": "Di 11:00–13:00, Mi–So 11:00–17:00, Mo geschlossen",
+     "term_en": "Sep–Mar",
+     "value_en": "Tue 11:00–13:00, Wed–Sun 11:00–17:00, closed on Mondays"
+    },
+    {
+     "term": "Apr–Aug",
+     "value": "Mo und Di 10:00–13:00, Mi–So 10:00–17:00",
+     "term_en": "Apr–Aug",
+     "value_en": "Mon and Tue 10:00–13:00, Wed–Sun 10:00–17:00"
+    },
+    {
+     "term": "Geschlossen",
+     "value": "24.–26.12., 31.12., 1.1. und Rosenmontag",
+     "term_en": "Closed",
+     "value_en": "24–26 Dec, 31 Dec, 1 Jan and Rose Monday (carnival)"
+    }
+   ],
+   "hours": {
+    "closedDates": [
+     "12-24",
+     "12-25",
+     "12-26",
+     "12-31",
+     "01-01"
+    ],
+    "closedOnRosenmontag": true,
+    "slots": [
+     {
+      "months": [
+       4,
+       5,
+       6,
+       7,
+       8
+      ],
+      "days": [
+       1,
+       2
+      ],
+      "from": "10:00",
+      "to": "13:00"
+     },
+     {
+      "months": [
+       4,
+       5,
+       6,
+       7,
+       8
+      ],
+      "days": [
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "from": "10:00",
+      "to": "17:00"
+     },
+     {
+      "months": [
+       9,
+       10,
+       11,
+       12,
+       1,
+       2,
+       3
+      ],
+      "days": [
+       2
+      ],
+      "from": "11:00",
+      "to": "13:00"
+     },
+     {
+      "months": [
+       9,
+       10,
+       11,
+       12,
+       1,
+       2,
+       3
+      ],
+      "days": [
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "from": "11:00",
+      "to": "17:00"
+     }
+    ]
+   },
+   "title_en": "Tourist information"
+  },
+  {
+   "title": "Bücherei St. Nicolai",
+   "title_en": "Library St. Nicolai",
+   "sources": [
+    "https://www.buecherei-kalkar.de/",
+    "https://www.kalkar.de/kultur-tourismus/fuer-schulen-gruppen/buechereien"
+   ],
+   "facts": [
+    {
+     "term": "Adresse",
+     "value": "Jan-Joest-Straße 12, 47546 Kalkar",
+     "link": "https://www.openstreetmap.org/search?query=Jan-Joest-Stra%C3%9Fe%2012%2C%2047546%20Kalkar",
+     "term_en": "Address"
+    },
+    {
+     "term": "Telefon",
+     "value": "02824 9765120",
+     "link": "tel:+4928249765120",
+     "term_en": "Phone"
+    },
+    {
+     "term": "Geöffnet",
+     "value": "Di–Fr 9:00–12:00 und 14:30–18:00, So 10:00–13:00",
+     "link": "https://www.buecherei-kalkar.de/",
+     "term_en": "Opening hours",
+     "value_en": "Tue–Fri 9:00–12:00 and 14:30–18:00, Sun 10:00–13:00"
+    },
+    {
+     "term": "Hinweis",
+     "value": "Kirchliche öffentliche Bücherei; kleine Büchereien in den Ortsteilen sonntags vormittags",
+     "term_en": "Note",
+     "value_en": "Parish public library; small libraries in the villages on Sunday mornings"
+    }
+   ],
+   "hours": {
+    "note": "An Feiertagen geschlossen (angenommen).",
+    "closedOnHolidays": true,
+    "slots": [
+     {
+      "days": [
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "09:00",
+      "to": "12:00"
+     },
+     {
+      "days": [
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "14:30",
+      "to": "18:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "10:00",
+      "to": "13:00"
+     }
+    ]
+   }
+  },
+  {
+   "title": "Wertstoffhof Moyland",
+   "title_en": "Recycling centre Moyland",
+   "sources": [
+    "https://kkagmbh.de/standort-entsorgungszentrum-moyland/",
+    "https://www.kalkar.de/service-rathaus/fuer-buergerinnen-buerger/muellabfuhr-abfallbeseitigung-und-verwertung"
+   ],
+   "facts": [
+    {
+     "term": "Adresse",
+     "value": "Entsorgungszentrum Moyland (KKA), Alte Bahn 133, 47551 Bedburg-Hau",
+     "link": "https://www.openstreetmap.org/search?query=Alte%20Bahn%20133%2C%2047551%20Bedburg-Hau",
+     "term_en": "Address"
+    },
+    {
+     "term": "Telefon",
+     "value": "02824 92603",
+     "link": "tel:+49282492603",
+     "term_en": "Phone"
+    },
+    {
+     "term": "Geöffnet",
+     "value": "Mo–Fr 8:00–16:15, Sa 8:30–12:15",
+     "term_en": "Opening hours",
+     "value_en": "Mon–Fri 8:00–16:15, Sat 8:30–12:15"
+    },
+    {
+     "term": "Kostenlos",
+     "value": "Sperrgut (mit Personalausweis), Kühlgeräte, Elektrogeräte, Batterien in kleinen Mengen",
+     "term_en": "Free of charge",
+     "value_en": "Bulky waste (show your ID card), fridges, electrical appliances, small amounts of batteries"
+    },
+    {
+     "term": "Was wohin?",
+     "value": "Abfall-ABC der KKA",
+     "link": "https://kkagmbh.de/abfall-a-z/",
+     "term_en": "Which bin?",
+     "value_en": "Waste A to Z (KKA)"
+    }
+   ],
+   "hours": {
+    "note": "Zeiten des Betreibers KKA; die Stadt nennt 16:30 und 12:30.",
+    "closedOnHolidays": true,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "08:00",
+      "to": "16:15"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "08:30",
+      "to": "12:15"
+     }
+    ]
+   }
+  },
+  {
+   "title": "Baden",
+   "title_en": "Swimming",
+   "sources": [
+    "https://wisseler-see.de/aloha-wissel/",
+    "https://www.kalkar.de/service-rathaus/fuer-vereine-organisationen/sportanlagen"
+   ],
+   "facts": [
+    {
+     "term": "Naturfreibad",
+     "value": "Wisseler See, Mühlenstraße 30, Kalkar-Wissel · Saison 2026 beendet, wieder ab Sommer 2027",
+     "link": "https://wisseler-see.de/aloha-wissel/",
+     "term_en": "Lido",
+     "value_en": "Lake Wisseler See, Mühlenstraße 30, Kalkar-Wissel · season 2026 over, open again from summer 2027"
+    },
+    {
+     "term": "Wann",
+     "value": "Bei Sonne ab 13 Uhr, am Wochenende und in den Sommerferien ab 10 Uhr",
+     "term_en": "When",
+     "value_en": "On sunny days from 1 pm, at weekends and in the summer holidays from 10 am"
+    },
+    {
+     "term": "Hallenbad",
+     "value": "Kalkar hat keins; nächste: Bedburg-Hau, Kleve, Rees, Goch",
+     "term_en": "Indoor pool",
+     "value_en": "None in Kalkar; nearest in Bedburg-Hau, Kleve, Rees and Goch"
+    }
+   ]
+  },
+  {
+   "title": "Fähre Grieth – Grietherort",
+   "sources": [
+    "https://www.niederrheinfaehre.de/"
+   ],
+   "facts": [
+    {
+     "term": "Fähre",
+     "value": "Inseltreue B, für Fußgänger und Räder",
+     "term_en": "Ferry",
+     "value_en": "Inseltreue B, for pedestrians and bicycles"
+    },
+    {
+     "term": "Saison",
+     "value": "Palmsonntag bis 31. Oktober",
+     "term_en": "Season",
+     "value_en": "Palm Sunday to 31 October"
+    },
+    {
+     "term": "Fahrten",
+     "value": "Mi, Fr, Sa, So und feiertags 10:00–19:00, im Oktober bis 18:00; in den NRW-Sommerferien täglich außer Mo und Di. Letzte Fahrt 15 Minuten vor Schluss.",
+     "term_en": "Crossings",
+     "value_en": "Wed, Fri, Sat, Sun and public holidays 10:00–19:00, in October until 18:00; during the NRW summer holidays daily except Mon and Tue. Last crossing 15 minutes before closing."
+    },
+    {
+     "term": "Betrieb",
+     "value": "Fährbetrieb Heinz Hell, 02824 6171",
+     "link": "tel:+4928246171",
+     "term_en": "Operator"
+    },
+    {
+     "term": "Web",
+     "value": "niederrheinfaehre.de",
+     "link": "https://www.niederrheinfaehre.de/",
+     "term_en": "Web"
+    }
+   ],
+   "title_en": "Ferry Grieth – Grietherort"
+  },
+  {
+   "title": "Fähre Reeserschanz – Rees",
+   "sources": [
+    "https://www.niederrheinfaehre.de/"
+   ],
+   "facts": [
+    {
+     "term": "Fähre",
+     "value": "Rääße Pöntje, für Fußgänger und Räder",
+     "term_en": "Ferry",
+     "value_en": "Rääße Pöntje, for pedestrians and bicycles"
+    },
+    {
+     "term": "Stand",
+     "value": "Laut Betreiber zurzeit kein Fährbetrieb.",
+     "term_en": "Status",
+     "value_en": "According to the operator, not running at the moment."
+    },
+    {
+     "term": "Web",
+     "value": "niederrheinfaehre.de",
+     "link": "https://www.niederrheinfaehre.de/",
+     "term_en": "Web"
+    }
+   ],
+   "title_en": "Ferry Reeserschanz – Rees"
+  }
+ ],
+ "gazette": {
+  "url": "https://abi.kalkar.de/termine",
+  "issues": [
+   {
+    "title": "Amtsblatt 17/2026",
+    "date": "2026-10-13",
+    "url": "https://abi.kalkar.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZdJLEdXHgJrfwhdYbQKqDhPeh7IWY4J4Sf4vxtj9jSYg/Amtsblatt_Amtsblatt_13.10.2026.pdf"
+   },
+   {
+    "title": "Amtsblatt 16/2026",
+    "date": "2026-09-30",
+    "url": "https://abi.kalkar.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZX_5-OK_Q9YRvf3Apc8CygAO8caqN3hRi6FN9i1jl0tE/Amtsblatt_Amtsblatt_30.09.2026.pdf"
+   },
+   {
+    "title": "Amtsblatt 15/2026",
+    "date": "2026-09-23",
+    "url": "https://abi.kalkar.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZSObHEj3ZO-yONB8f7mN1gs0Nh_9EkrfntriPpzrcGP9/Amtsblatt_Amtsblatt_23.09.2026.pdf"
+   },
+   {
+    "title": "Amtsblatt 14/2026",
+    "date": "2026-09-18",
+    "url": "https://abi.kalkar.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZUgCyfFFUWM8Vxa6Xgdn_7amWiVZvs-Lgc3ndoOqkaxc/Amtsblatt_Amtsblatt_18.09.2026.pdf"
+   },
+   {
+    "title": "Amtsblatt 13/2026",
+    "date": "2026-07-23",
+    "url": "https://abi.kalkar.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZTh6ziNkg5Zm5IgcmiUeuPNLtlFlCq_Iznp5rVPSYRYg/Amtsblatt_Amtsblatt_23.07.2026.pdf"
+   }
+  ]
+ },
+ "links": [
+  {
+   "title": "Stadt Kalkar",
+   "url": "https://www.kalkar.de/",
+   "title_en": "Town of Kalkar"
+  },
+  {
+   "title": "Serviceportal (Online-Dienstleistungen)",
+   "url": "https://www.kalkar.de/service-rathaus/fuer-buergerinnen-buerger/serviceportal",
+   "title_en": "Service portal (online services)"
+  },
+  {
+   "title": "Bürgerbüro",
+   "url": "https://www.kalkar.de/service-rathaus/fuer-buergerinnen-buerger/buergerbuero",
+   "title_en": "Citizens' office"
+  },
+  {
+   "title": "Online-Terminvergabe",
+   "url": "https://tevis.krzn.de/tevisweb530/",
+   "title_en": "Book an appointment online"
+  },
+  {
+   "title": "Ratsportal (Sitzungen, Vorlagen)",
+   "url": "https://ris.kalkar.de/",
+   "title_en": "Council portal (meetings, documents)"
+  },
+  {
+   "title": "Mängelmelder der Stadt Kalkar",
+   "url": "https://beteiligung.nrw.de/portal/kalkar/beteiligung/themen/1008170",
+   "title_en": "Report a problem to the town"
+  },
+  {
+   "title": "Müllabfuhr und Abfall (Stadt Kalkar)",
+   "url": "https://www.kalkar.de/service-rathaus/fuer-buergerinnen-buerger/muellabfuhr-abfallbeseitigung-und-verwertung",
+   "title_en": "Waste collection (town of Kalkar)"
+  },
+  {
+   "title": "Stadtwerke Kalkar",
+   "url": "https://stadtwerke-kalkar.de/",
+   "title_en": "Stadtwerke Kalkar (utilities)"
+  },
+  {
+   "title": "Kreis Kleve",
+   "url": "https://www.kreis-kleve.de/",
+   "title_en": "District of Kleve"
+  },
+  {
+   "title": "KKA – Abfall A-Z (Kreis Kleve Abfallwirtschaft)",
+   "url": "https://kkagmbh.de/abfall-a-z/",
+   "title_en": "KKA – waste A to Z (district of Kleve)"
+  }
+ ]
+}

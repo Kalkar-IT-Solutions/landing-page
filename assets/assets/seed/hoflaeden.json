@@ -1,0 +1,859 @@
+{
+ "comment": "Hofläden, Selbstbedienung und Automaten von Höfen in Kalkar und knapp außerhalb (bis Uedem, Sonsbeck, Bedburg-Hau) (ortsteil \"umgebung\"). Recherche 27.10.2026: OpenStreetMap (© OpenStreetMap-Mitwirkende, ODbL), Landwirtschaftskammer NRW (Landservice, Automatenliste), Websites der Höfe. Nur Einträge mit aktueller Quelle; unsichere stehen in docs/daten.md.",
+ "retrievedAt": "2026-10-27",
+ "license": "Teilweise aus OpenStreetMap, ODbL; Namensnennung in der App.",
+ "shops": [
+  {
+   "name": "Geflügelhof Reuvers",
+   "kind": "hofladen",
+   "ortsteil": "emmericher-eyland",
+   "address": "Eyland 27, 47546 Kalkar",
+   "products": [
+    "Eier",
+    "Freilandeier",
+    "Bio-Eier",
+    "Gänseeier",
+    "bunte Eier"
+   ],
+   "hoursText": "Mo–Fr 9–13 Uhr",
+   "hours": {
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "09:00",
+      "to": "13:00"
+     }
+    ],
+    "closedOnHolidays": true
+   },
+   "website": "https://www.eyland-ei.de/",
+   "phone": "02824 6004",
+   "sources": [
+    "https://www.eyland-ei.de/",
+    "https://www.openstreetmap.org/node/11618346510"
+   ],
+   "osm": "node/11618346510",
+   "lat": 51.8053,
+   "lon": 6.26618
+  },
+  {
+   "name": "Geflügelhof Schellenberger",
+   "kind": "hofladen",
+   "ortsteil": "altkalkar",
+   "address": "Xantener Straße 91, 47546 Kalkar",
+   "products": [
+    "Eier",
+    "Geflügel"
+   ],
+   "hoursText": "Mo–Fr 8–18:30, Sa 8–13 Uhr; Geflügel Do–Sa",
+   "hours": {
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "08:00",
+      "to": "18:30"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "08:00",
+      "to": "13:00"
+     }
+    ],
+    "closedOnHolidays": true
+   },
+   "website": "https://gefluegel-schellenberger.jimdofree.com/",
+   "phone": "02824 2552",
+   "sources": [
+    "https://gefluegel-schellenberger.jimdofree.com/hofladen/",
+    "https://www.werkenntdenbesten.de/e/27454593/gefluegelzuechter/kalkar-niederrhein/volker-schellenberger-gefluegelhof-bewertungen.html"
+   ],
+   "lat": 51.72571,
+   "lon": 6.30229
+  },
+  {
+   "name": "Kartoffelhof Franken",
+   "kind": "hofladen",
+   "ortsteil": "altkalkar",
+   "address": "Heseler Weg 6, 47546 Kalkar",
+   "products": [
+    "Kartoffeln"
+   ],
+   "hoursText": "Zeiten nicht veröffentlicht; vorher anrufen",
+   "phone": "02824 5442",
+   "sources": [
+    "https://www.openstreetmap.org/node/11618322992",
+    "Besuch vor Ort, 26.10.2026"
+   ],
+   "osm": "node/11618322992",
+   "lat": 51.73379,
+   "lon": 6.25397
+  },
+  {
+   "name": "Milchtankstelle Kniesthof",
+   "kind": "automat",
+   "ortsteil": "appeldorn",
+   "address": "Oyweg 93a, 47546 Kalkar",
+   "products": [
+    "Rohmilch",
+    "Hofeis",
+    "Softeis",
+    "Eier",
+    "Kartoffeln"
+   ],
+   "hoursText": "täglich 6–22 Uhr; Automaten geben kein Wechselgeld",
+   "hours": {
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "from": "06:00",
+      "to": "22:00"
+     }
+    ],
+    "closedOnHolidays": false
+   },
+   "website": "https://www.facebook.com/Familie.Seegers/",
+   "phone": "02824 999281",
+   "sources": [
+    "https://www.openstreetmap.org/node/11618322993",
+    "https://www.landservice.de/agronet/images/Milch_und_Warenautomaten_am_Niederrhein.pdf",
+    "https://www.landservice.de/bauernhoefe?begriff=DE0300003656",
+    "https://boxenscout.de/automaten/kniesthof-kalkar/",
+    "https://www.niederrhein.de/freizeit-am-niederrhein-erleben/shopping-am-niederrhein/milchtankstelle-hof-seegers"
+   ],
+   "osm": "node/11618322993",
+   "lat": 51.72842,
+   "lon": 6.31139
+  },
+  {
+   "name": "Raadts Hofladen",
+   "kind": "hofladen",
+   "ortsteil": "grieth",
+   "address": "Griether Straße 189, 47546 Kalkar",
+   "products": [
+    "Äpfel",
+    "Birnen",
+    "Erdbeeren",
+    "Spargel",
+    "Apfelsaft",
+    "Apfelmus",
+    "Apfelchips",
+    "Obst"
+   ],
+   "hoursText": "Mo–Fr 8–18, Sa 8–13 Uhr",
+   "hours": {
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "08:00",
+      "to": "18:00"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "08:00",
+      "to": "13:00"
+     }
+    ],
+    "closedOnHolidays": true
+   },
+   "website": "https://www.edelobst-raadts.de/",
+   "phone": "02824 5766",
+   "sources": [
+    "https://www.edelobst-raadts.de/",
+    "https://www.openstreetmap.org/node/703093739",
+    "https://www.landservice.de/agronet/images/Landservice_im_Kreis_Kleve.pdf"
+   ],
+   "osm": "node/703093739",
+   "lat": 51.77318,
+   "lon": 6.32009
+  },
+  {
+   "name": "Tannen-Karl Kalkar",
+   "kind": "saisonstand",
+   "ortsteil": "altkalkar",
+   "address": "Gocher Feld 2b, 47546 Kalkar",
+   "products": [
+    "Weihnachtsbäume",
+    "Nordmanntannen",
+    "Nobilis",
+    "Fichten",
+    "Blaufichten"
+   ],
+   "hoursText": "Ende November bis Heiligabend, Mo–Sa 10–18, So 10–16 Uhr (Zeiten 2025)",
+   "season": "Ende November–24. Dezember",
+   "phone": "0172 2511610",
+   "sources": [
+    "https://www.genussregion-niederrhein.de/wp-content/uploads/2025/11/Weihnachtsbaeume_vom_Niederrhein_2025.pdf",
+    "https://www.genussregion-niederrhein.de/directory-classifieds/tannen-karl-kalkar/",
+    "https://www.openstreetmap.org/node/11618346511"
+   ],
+   "osm": "node/11618346511",
+   "lat": 51.73702,
+   "lon": 6.27904
+  },
+  {
+   "name": "Bauernmarkt Lindchen",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Am Lindchen 3, 47589 Uedem",
+   "products": [
+    "Obst",
+    "Gemüse",
+    "Kartoffeln",
+    "Spargel",
+    "Erdbeeren",
+    "Kürbisse",
+    "Grünkohl",
+    "Steinobst"
+   ],
+   "hoursText": "Mo–Fr 7:30–18:30, Sa 7:30–16 Uhr",
+   "hours": {
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "07:30",
+      "to": "18:30"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "07:30",
+      "to": "16:00"
+     }
+    ],
+    "closedOnHolidays": true
+   },
+   "website": "https://lindchen.de",
+   "phone": "02825 535260",
+   "sources": [
+    "https://lindchen.de",
+    "https://www.openstreetmap.org/node/11640715582"
+   ],
+   "osm": "node/11640715582",
+   "lat": 51.7034,
+   "lon": 6.23116
+  },
+  {
+   "name": "Berkhöfel / Niederrhein Destille",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Uedemer Straße 196, 47551 Bedburg-Hau",
+   "products": [
+    "Apfelsaft",
+    "Apfelkraut",
+    "Obstbrände",
+    "Liköre",
+    "Gin",
+    "Whisky"
+   ],
+   "hoursText": "Donnerstag 10–18 Uhr, Freitag 10–18 Uhr, Samstag 13–17 Uhr",
+   "lat": 51.73014,
+   "lon": 6.20502,
+   "sources": [
+    "https://www.openstreetmap.org/way/250048654",
+    "https://www.niederrhein-destille.de"
+   ],
+   "website": "https://www.berkhoefel-naturkultur.de",
+   "osm": "way/250048654"
+  },
+  {
+   "name": "Biohof Aldenhof",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Banndeich 1, 47533 Kleve",
+   "products": [
+    "Bio-Produkte"
+   ],
+   "hoursText": "Mi, Do 15:00–18:00 (laut OSM)",
+   "lat": 51.80453,
+   "lon": 6.17724,
+   "sources": [
+    "https://www.openstreetmap.org/node/11622020510"
+   ],
+   "website": "https://www.aldenhof.de",
+   "osm": "node/11622020510"
+  },
+  {
+   "name": "Biohof Büsch",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Niederhelsum 1a, 47652 Weeze",
+   "products": [
+    "Gemüse",
+    "Kartoffeln",
+    "Obst",
+    "Brot",
+    "Käse",
+    "Fleisch",
+    "Eier"
+   ],
+   "hoursText": "Montag 09:00–18:30, Freitag 09:00–18:30, Samstag 09:00–13:00 (laut Website; OSM: Di statt Mo)",
+   "lat": 51.62892,
+   "lon": 6.16973,
+   "sources": [
+    "https://www.openstreetmap.org/way/100713982",
+    "http://www.buesch-naturkost.de"
+   ],
+   "osm": "way/100713982"
+  },
+  {
+   "name": "Café Landluft mit Hofladen",
+   "kind": "hofcafe",
+   "ortsteil": "umgebung",
+   "address": "Westerheide 15, 46487 Wesel",
+   "products": [
+    "Blumen",
+    "Obst",
+    "Gemüse",
+    "Kartoffeln",
+    "Eier",
+    "Fruchtaufstriche"
+   ],
+   "hoursText": "Mo 14–18, Mi–So 14–18 Uhr (laut OSM)",
+   "lat": 51.67664,
+   "lon": 6.51735,
+   "sources": [
+    "https://www.openstreetmap.org/node/9373862606",
+    "https://www.cafe-landluft.de/"
+   ],
+   "website": "https://www.cafe-landluft.de",
+   "osm": "node/9373862606"
+  },
+  {
+   "name": "Die am Deich",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Banndeich 8, 47533 Kleve",
+   "products": [
+    "Bio-Lebensmittel",
+    "Fleisch",
+    "Wurst"
+   ],
+   "hoursText": "Do 14–18 Uhr, Fr 10–18 Uhr, Sa 10–14 Uhr",
+   "lat": 51.80976,
+   "lon": 6.1772,
+   "sources": [
+    "https://www.openstreetmap.org/node/10593402562",
+    "https://www.die-am-deich.de/"
+   ],
+   "website": "https://www.die-am-deich.de",
+   "osm": "node/10593402562"
+  },
+  {
+   "name": "Eichenhof Reichswalde – Milchtankstelle",
+   "kind": "automat",
+   "ortsteil": "umgebung",
+   "address": "Engelsstraße 6, 47533 Kleve",
+   "products": [
+    "Rohmilch",
+    "Rohmilchkäse",
+    "Wurst",
+    "Rindfleisch",
+    "Schweinefleisch"
+   ],
+   "hoursText": "Milchtankstelle und Verkaufsautomat; Hofladen nur an Frischfleisch-Terminen oder auf Anfrage",
+   "lat": 51.75071,
+   "lon": 6.10957,
+   "sources": [
+    "https://www.openstreetmap.org/node/11622020509",
+    "https://www.eichenhof-hannen.de"
+   ],
+   "website": "https://www.eichenhof-hannen.de",
+   "osm": "node/11622020509"
+  },
+  {
+   "name": "Heider Hof",
+   "kind": "selbstbedienung",
+   "ortsteil": "umgebung",
+   "address": "Knappheide 2, 47652 Weeze",
+   "products": [
+    "Rohmilch",
+    "Eier",
+    "Rindfleisch",
+    "Kartoffeln",
+    "Eis",
+    "Honig"
+   ],
+   "hoursText": "täglich geöffnet, auch an Sonn- und Feiertagen",
+   "lat": 51.64418,
+   "lon": 6.17973,
+   "sources": [
+    "https://www.openstreetmap.org/node/11648725334",
+    "https://heiderhof-weeze.de/"
+   ],
+   "website": "https://heiderhof-weeze.de",
+   "osm": "node/11648725334"
+  },
+  {
+   "name": "Hof Messing",
+   "kind": "selbstbedienung",
+   "ortsteil": "umgebung",
+   "address": "Wardstraße 2a, 46459 Rees",
+   "products": [
+    "Eier",
+    "Milch",
+    "Kartoffeln",
+    "Softeis",
+    "Honig",
+    "Marmelade",
+    "Fleisch auf Vorbestellung"
+   ],
+   "hoursText": "Selbstbedienung rund um die Uhr",
+   "always": true,
+   "website": "https://www.hof-messing.de",
+   "phone": "02851 917690",
+   "sources": [
+    "https://www.hof-messing.de",
+    "https://www.openstreetmap.org/node/9001598959"
+   ],
+   "osm": "node/9001598959",
+   "lat": 51.75933,
+   "lon": 6.38237
+  },
+  {
+   "name": "Hofladen Rouenhof",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Sonsbecker Straße 40, 47627 Kevelaer",
+   "products": [
+    "Bio-Produkte",
+    "Käse",
+    "Fleisch",
+    "Eier"
+   ],
+   "hoursText": "Samstag 10–14 Uhr",
+   "lat": 51.62711,
+   "lon": 6.2933,
+   "sources": [
+    "https://www.openstreetmap.org/node/4597171180",
+    "https://www.rouenhof.de"
+   ],
+   "website": "https://www.rouenhof.de",
+   "osm": "node/4597171180"
+  },
+  {
+   "name": "Naturhof Kirsel",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Kirsel 123, 47589 Uedem",
+   "products": [
+    "Apfelsaft",
+    "Äpfel"
+   ],
+   "hoursText": "Nach Vereinbarung",
+   "lat": 51.68688,
+   "lon": 6.29984,
+   "sources": [
+    "https://www.openstreetmap.org/node/11640715585",
+    "https://kirsel.de"
+   ],
+   "website": "https://kirsel.de",
+   "osm": "node/11640715585"
+  },
+  {
+   "name": "Reeserwarder Obstanlagen",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Wardstraße 2, 46459 Rees",
+   "products": [
+    "Äpfel",
+    "Birnen",
+    "Apfelchips",
+    "Säfte",
+    "Eis",
+    "Fruchtaufstrich",
+    "Honig"
+   ],
+   "hoursText": "Selbstbedienung täglich 8–22 Uhr; Hofladen Aug.–Mai",
+   "hours": {
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ],
+      "from": "08:00",
+      "to": "22:00"
+     },
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "09:00",
+      "to": "12:30",
+      "months": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       8,
+       9,
+       10,
+       11,
+       12
+      ]
+     },
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "14:00",
+      "to": "18:00",
+      "months": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       8,
+       9,
+       10,
+       11,
+       12
+      ]
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "09:00",
+      "to": "12:30",
+      "months": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       8,
+       9,
+       10,
+       11,
+       12
+      ]
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "14:00",
+      "to": "18:00",
+      "months": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       8,
+       9,
+       10,
+       11,
+       12
+      ]
+     }
+    ],
+    "closedOnHolidays": false
+   },
+   "website": "https://www.reeserwarder-obstanlagen.de",
+   "phone": "02851 3887",
+   "sources": [
+    "https://www.reeserwarder-obstanlagen.de",
+    "https://www.openstreetmap.org/node/11622020513"
+   ],
+   "osm": "node/11622020513",
+   "lat": 51.75946,
+   "lon": 6.38515
+  },
+  {
+   "name": "Rosenhofmilch",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Grietherbusch 10, 46459 Rees",
+   "products": [
+    "Milch",
+    "Heu"
+   ],
+   "hoursText": "nur nach vorheriger Absprache, telefonisch oder per WhatsApp",
+   "lat": 51.79424,
+   "lon": 6.34699,
+   "sources": [
+    "https://www.openstreetmap.org/node/11629990364",
+    "https://www.rosenhofmilch.de"
+   ],
+   "website": "https://www.rosenhofmilch.de",
+   "osm": "node/11629990364"
+  },
+  {
+   "name": "Spargelhof Schippers",
+   "kind": "saisonstand",
+   "ortsteil": "umgebung",
+   "address": "Tackenstraße 14, 46519 Alpen",
+   "products": [
+    "Spargel",
+    "Erdbeeren",
+    "Kartoffeln",
+    "Eier",
+    "Gemüse",
+    "Wurstwaren"
+   ],
+   "hoursText": "Während der Spargelsaison Mo–So 08:30–19:00 Uhr; Hofladen öffnet 2027 wieder",
+   "lat": 51.62511,
+   "lon": 6.46398,
+   "sources": [
+    "https://www.openstreetmap.org/node/2289932751",
+    "https://www.spargelhof-schippers.de/hofladen"
+   ],
+   "website": "https://www.spargelhof-schippers.de",
+   "osm": "node/2289932751"
+  },
+  {
+   "name": "Villemont",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Querallee 84, 47551 Bedburg-Hau",
+   "products": [
+    "Erdbeeren",
+    "Himbeeren",
+    "Heidelbeeren",
+    "Kartoffeln"
+   ],
+   "hoursText": "Do, Fr 09:30–12:30, Sa 09:00–12:30 (laut OSM)",
+   "lat": 51.76744,
+   "lon": 6.134,
+   "sources": [
+    "https://www.openstreetmap.org/node/11597568858"
+   ],
+   "website": "https://www.villemont.de",
+   "osm": "node/11597568858"
+  },
+  {
+   "name": "Vriendshof",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Grietherbusch 7, 46459 Rees",
+   "products": [
+    "Äpfel",
+    "Birnen",
+    "regionale Produkte"
+   ],
+   "hoursText": "Di, Mi 9–12:30; Do–Sa 9–12:30 und 14–18; So 11–12:30 und 14–18 Uhr",
+   "hours": {
+    "slots": [
+     {
+      "days": [
+       2,
+       3
+      ],
+      "from": "09:00",
+      "to": "12:30"
+     },
+     {
+      "days": [
+       4,
+       5,
+       6
+      ],
+      "from": "09:00",
+      "to": "12:30"
+     },
+     {
+      "days": [
+       4,
+       5,
+       6
+      ],
+      "from": "14:00",
+      "to": "18:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "11:00",
+      "to": "12:30"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "14:00",
+      "to": "18:00"
+     }
+    ],
+    "closedOnHolidays": false
+   },
+   "website": "https://vriendshof.de/",
+   "phone": "02851 986111",
+   "sources": [
+    "https://vriendshof.de/",
+    "https://www.openstreetmap.org/node/9374622219"
+   ],
+   "osm": "node/9374622219",
+   "lat": 51.79291,
+   "lon": 6.34314
+  },
+  {
+   "name": "Brucher Lädchen",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Marienbaumer Straße 5, 47589 Uedem",
+   "lat": 51.65962,
+   "lon": 6.32784,
+   "products": [
+    "Stauden",
+    "Gräser",
+    "Honig",
+    "Adventskränze",
+    "Geschenke"
+   ],
+   "hoursText": "ab 4.11.: Mi 14–17, Do 10–17 Uhr und vier Samstage vor Weihnachten; Frühjahr und Sommer Mi 15–18, Do 11–17 Uhr",
+   "website": "https://bruchergarten.de",
+   "sources": [
+    "https://bruchergarten.de/2024/01/28/aktuelles/",
+    "https://bruchergarten.de/2026/01/05/laedchen/",
+    "https://bruchergarten.de/2024/07/20/imkerei/"
+   ]
+  },
+  {
+   "name": "Hof am Hochwald",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Am Hochwald 5, 47589 Uedem",
+   "lat": 51.68218,
+   "lon": 6.3303,
+   "products": [
+    "Spargel",
+    "Erdbeeren",
+    "Kartoffeln",
+    "Heidelbeeren",
+    "Himbeeren",
+    "Brombeeren",
+    "Blumen zum Selberschneiden",
+    "Kürbisse"
+   ],
+   "season": "Spargel April–Juni, danach Beeren, Kartoffeln und Kürbisse",
+   "phone": "02825 554",
+   "osm": "node/971847356",
+   "sources": [
+    "https://www.genussregion-niederrhein.de/directory-classifieds/hochwald-spargel-gbr/",
+    "https://www.openstreetmap.org/node/971847356"
+   ]
+  },
+  {
+   "name": "Hofladen Höhnshof",
+   "kind": "hofladen",
+   "ortsteil": "umgebung",
+   "address": "Xantener Straße 100, 47665 Sonsbeck",
+   "lat": 51.63259,
+   "lon": 6.40531,
+   "products": [
+    "Eier",
+    "Fleisch",
+    "Milch",
+    "Käse",
+    "Hofeis",
+    "Kartoffeln",
+    "Honig",
+    "Erdbeeren",
+    "Spargel",
+    "Kürbisse",
+    "Schnittblumen"
+   ],
+   "hoursText": "Mo, Mi–Fr 10–17, Sa 10–15 Uhr; Automaten rund um die Uhr",
+   "hours": {
+    "slots": [
+     {
+      "days": [
+       1,
+       3,
+       4,
+       5
+      ],
+      "from": "10:00",
+      "to": "17:00"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "10:00",
+      "to": "15:00"
+     }
+    ]
+   },
+   "website": "https://www.hoehnshof.de",
+   "phone": "02802 704891",
+   "sources": [
+    "https://www.hoehnshof.de/",
+    "https://www.hoehnshof.de/hofladen",
+    "https://www.hoehnshof.de/kontakt"
+   ]
+  },
+  {
+   "name": "Broeckelhof – Hofbox und Blumen-Pflückfeld",
+   "kind": "selbstbedienung",
+   "ortsteil": "umgebung",
+   "address": "Uedemer Straße 192, 47551 Bedburg-Hau",
+   "lat": 51.7314,
+   "lon": 6.20391,
+   "products": [
+    "Eier",
+    "Blumen zum Selberpflücken"
+   ],
+   "season": "Pflückfeld im Sommerhalbjahr",
+   "sources": [
+    "https://www.agrarheute.com/pflanze/landwirtin-bietet-blumen-selberpfluecken-ueberrascht-620614",
+    "https://www.genussregion-niederrhein.de/veranstaltungen/besuchstag-beim-bienenkoenig/"
+   ]
+  }
+ ]
+}

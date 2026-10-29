@@ -1,0 +1,417 @@
+{
+ "comment": "Koordinaten für die Karte. Adressen über Nominatim (OpenStreetMap, ODbL), Haltestellen aus der VRR-Auskunft, Sperrungen von Hand. Erneuern: python3 -I tool/seed/geocode_places.py",
+ "places": {
+  "haltestelle:de:05154:35643": {
+   "lat": 51.74116,
+   "lon": 6.31142,
+   "query": "de:05154:35643"
+  },
+  "haltestelle:de:05154:35645": {
+   "lat": 51.74912,
+   "lon": 6.33392,
+   "query": "de:05154:35645"
+  },
+  "haltestelle:de:05154:35646": {
+   "lat": 51.73741,
+   "lon": 6.28898,
+   "query": "de:05154:35646"
+  },
+  "haltestelle:de:05154:35649": {
+   "lat": 51.73843,
+   "lon": 6.29224,
+   "query": "de:05154:35649"
+  },
+  "haltestelle:de:05154:35650": {
+   "lat": 51.71001,
+   "lon": 6.33938,
+   "query": "de:05154:35650"
+  },
+  "haltestelle:de:05154:35653": {
+   "lat": 51.74429,
+   "lon": 6.38768,
+   "query": "de:05154:35653"
+  },
+  "haltestelle:de:05154:35662": {
+   "lat": 51.7235,
+   "lon": 6.35253,
+   "query": "de:05154:35662"
+  },
+  "haltestelle:de:05154:35916": {
+   "lat": 51.81068,
+   "lon": 6.2714,
+   "query": "de:05154:35916"
+  },
+  "haltestelle:de:05154:35918": {
+   "lat": 51.78807,
+   "lon": 6.25339,
+   "query": "de:05154:35918"
+  },
+  "haltestelle:de:05154:35920": {
+   "lat": 51.77376,
+   "lon": 6.29011,
+   "query": "de:05154:35920"
+  },
+  "haltestelle:de:05154:35927": {
+   "lat": 51.70696,
+   "lon": 6.30283,
+   "query": "de:05154:35927"
+  },
+  "haltestelle:de:05154:35929": {
+   "lat": 51.78689,
+   "lon": 6.3141,
+   "query": "de:05154:35929"
+  },
+  "haltestelle:de:05154:37332": {
+   "lat": 51.73595,
+   "lon": 6.28894,
+   "query": "de:05154:37332"
+  },
+  "kirche:Ev. Kirche Kalkar": {
+   "lat": 51.73924,
+   "lon": 6.29123,
+   "query": "Kesselstr. 9, 47546 Kalkar"
+  },
+  "kirche:Fatima-Kapelle": {
+   "lat": 51.72815,
+   "lon": 6.38217,
+   "query": "Fatima-Weg 79, 47546 Kalkar"
+  },
+  "kirche:Kapelle St. Marien": {
+   "lat": 51.78723,
+   "lon": 6.31633,
+   "query": "Griether Markt 30, 47546 Kalkar"
+  },
+  "kirche:Kapelle im Krankenhaus (St.-Nikolaus-Hospital)": {
+   "lat": 51.74006,
+   "lon": 6.29331,
+   "query": "Grabenstr. 88, 47546 Kalkar"
+  },
+  "kirche:Kapelle im Marienstift": {
+   "lat": 51.7405,
+   "lon": 6.29302,
+   "query": "Grabenstr. 6-8, 47546 Kalkar"
+  },
+  "kirche:NAK Kalkar": {
+   "lat": 51.74021,
+   "lon": 6.28476,
+   "query": "Tiller Straße 1, 47546 Kalkar"
+  },
+  "kirche:St. Antonius": {
+   "lat": 51.73488,
+   "lon": 6.31455,
+   "query": "Spickstr. 83, 47546 Kalkar"
+  },
+  "kirche:St. Barnabas": {
+   "lat": 51.74503,
+   "lon": 6.38774,
+   "query": "Kerkend 9, 47546 Kalkar"
+  },
+  "kirche:St. Clemens": {
+   "lat": 51.77107,
+   "lon": 6.28703,
+   "query": "Köstersdick 33, 47546 Kalkar"
+  },
+  "kirche:St. Hubertus": {
+   "lat": 51.70751,
+   "lon": 6.33232,
+   "query": "St.-Hubertus-Weg 1, 47546 Kalkar"
+  },
+  "kirche:St. Lambertus": {
+   "lat": 51.72424,
+   "lon": 6.35051,
+   "query": "St.-Lambertus-Str. 19, 47546 Kalkar"
+  },
+  "kirche:St. Nicolai": {
+   "lat": 51.73793,
+   "lon": 6.29189,
+   "query": "Jan-Joest-Str. 1, 47546 Kalkar"
+  },
+  "kirche:St. Pankratius": {
+   "lat": 51.73628,
+   "lon": 6.2855,
+   "query": "Karl-Leisner-Platz 10, 47546 Kalkar"
+  },
+  "kirche:St. Peter und Paul": {
+   "lat": 51.78634,
+   "lon": 6.31697,
+   "query": "Griether Markt 16a, 47546 Kalkar"
+  },
+  "kirche:St. Regenfledis": {
+   "lat": 51.7543,
+   "lon": 6.33029,
+   "query": "Griether Str. 45, 47546 Kalkar"
+  },
+  "ort:Am Ehrenmal 13 47546 Kalkar-Grieth": {
+   "lat": 51.7887,
+   "lon": 6.31348,
+   "query": "Am Ehrenmal 13 47546 Kalkar-Grieth"
+  },
+  "ort:Beginenhof, Kesselstraße 20": {
+   "lat": 51.73998,
+   "lon": 6.29182,
+   "query": "Kesselstraße 20, Kalkar"
+  },
+  "ort:Beginenhof, Kesselstraße 20, Kalkar": {
+   "lat": 51.73998,
+   "lon": 6.29182,
+   "query": "Kesselstraße 20, Kalkar"
+  },
+  "ort:Burg Boetzelaer Reeser Straße 247 47546 Kalkar": {
+   "lat": 51.72875,
+   "lon": 6.34812,
+   "query": "Burg Boetzelaer Reeser Straße 247 47546 Kalkar"
+  },
+  "ort:Bücherei Kalkar": {
+   "lat": 51.75123,
+   "lon": 6.33646,
+   "query": "Bücherei Kalkar"
+  },
+  "ort:Familienbetrieb Wilmsen, Hochend 51, 47546 Kalkar": {
+   "lat": 51.74099,
+   "lon": 6.33492,
+   "query": "Hochend 51, Kalkar"
+  },
+  "ort:Grabenstraße 66 47546 Kalkar": {
+   "lat": 51.73882,
+   "lon": 6.2935,
+   "query": "Grabenstraße 66 47546 Kalkar"
+  },
+  "ort:Grieth am Rhein": {
+   "lat": 51.78666,
+   "lon": 6.31406,
+   "query": "Grieth am Rhein, Kalkar"
+  },
+  "ort:Griether Markt 28 47546 Kalkar-Grieth": {
+   "lat": 51.78719,
+   "lon": 6.31683,
+   "query": "Griether Markt 28 47546 Kalkar-Grieth"
+  },
+  "ort:Grundschule Wissel": {
+   "lat": 51.77401,
+   "lon": 6.28895,
+   "query": "Grundschule Wissel, Kalkar"
+  },
+  "ort:Hanselaer (St. Antonius, Spickstr. 83 – Kirche nicht ausdrücklich genannt)": {
+   "lat": 51.7358,
+   "lon": 6.31591,
+   "query": "Hanselaer, Kalkar"
+  },
+  "ort:Jan-Joest-Straße 6 47546 Kalkar": {
+   "lat": 51.73763,
+   "lon": 6.29138,
+   "query": "Jan-Joest-Straße 6 47546 Kalkar"
+  },
+  "ort:Kalkarer Mühle (historische Windmühle)": {
+   "lat": 51.73961,
+   "lon": 6.29569,
+   "query": "Kalkarer Mühle"
+  },
+  "ort:Kirche / Feuerwehr, Niedermörmter": {
+   "lat": 51.74503,
+   "lon": 6.37894,
+   "query": "Niedermörmter, Kalkar"
+  },
+  "ort:Köstersdick 33 47546 Kalkar-Wissel": {
+   "lat": 51.77107,
+   "lon": 6.28703,
+   "query": "Köstersdick 33 47546 Kalkar-Wissel"
+  },
+  "ort:Landhaus Beckmann": {
+   "lat": 51.70696,
+   "lon": 6.31987,
+   "query": "Landhaus Beckmann, Kalkar"
+  },
+  "ort:Landhaus Beckmann, Kalkar-Kehrum": {
+   "lat": 51.70696,
+   "lon": 6.31987,
+   "query": "Landhaus Beckmann, Kalkar-Kehrum"
+  },
+  "ort:Markt 20 47546 Kalkar": {
+   "lat": 51.73875,
+   "lon": 6.29301,
+   "query": "Markt 20 47546 Kalkar"
+  },
+  "ort:Marktplatz Kalkar": {
+   "lat": 51.78691,
+   "lon": 6.31674,
+   "query": "Marktplatz Kalkar"
+  },
+  "ort:Marktstübchen Kalkar": {
+   "lat": 51.73847,
+   "lon": 6.29256,
+   "query": "Marktstübchen Kalkar"
+  },
+  "ort:Mehrzweckhalle Wissel, Dorfstraße 19": {
+   "lat": 51.77308,
+   "lon": 6.28809,
+   "query": "Dorfstraße 19, Kalkar"
+  },
+  "ort:Museum Schloss Moyland, Am Schloss 4, 47551 Bedburg-Hau": {
+   "lat": 51.75532,
+   "lon": 6.2366,
+   "query": "Museum Schloss Moyland, Bedburg-Hau"
+  },
+  "ort:Narrenburg (Bürgerhalle), Grieth am Rhein": {
+   "lat": 51.78666,
+   "lon": 6.31406,
+   "query": "Grieth am Rhein, Kalkar"
+  },
+  "ort:PZ Kalkar, Am Bollwerk, Kalkar": {
+   "lat": 51.73517,
+   "lon": 6.29615,
+   "query": "Am Bollwerk, Kalkar"
+  },
+  "ort:Ratskeller Kalkar": {
+   "lat": 51.73875,
+   "lon": 6.29301,
+   "query": "Ratskeller Kalkar"
+  },
+  "ort:Ratssaal im Rathaus, Markt 20, 47546 Kalkar": {
+   "lat": 51.73875,
+   "lon": 6.29301,
+   "query": "Markt 20, Kalkar"
+  },
+  "ort:Start: Markt, Grieth": {
+   "lat": 51.78675,
+   "lon": 6.31684,
+   "query": "Markt, Grieth, Kalkar"
+  },
+  "ort:Start: Straße 'Rotes Häuschen', Hönnepel": {
+   "lat": 51.75206,
+   "lon": 6.33269,
+   "query": "Hönnepel, Kalkar"
+  },
+  "ort:Start: Vorplatz St. Lambertus Pfarrkirche, Appeldorn": {
+   "lat": 51.72407,
+   "lon": 6.35097,
+   "query": "Appeldorn, Kalkar"
+  },
+  "ort:Städtisches Museum Kalkar Grabenstraße 66 47546 Kalkar": {
+   "lat": 51.73882,
+   "lon": 6.2935,
+   "query": "Städtisches Museum Kalkar Grabenstraße 66 47546 Kalkar"
+  },
+  "ort:Treffpunkt: Städtisches Museum/Tourist-Information, Grabenstraße 66, 47546 Kalkar": {
+   "lat": 51.73882,
+   "lon": 6.2935,
+   "query": "Grabenstraße 66, Kalkar"
+  },
+  "ort:Wunderland Kalkar": {
+   "lat": 51.76356,
+   "lon": 6.32615,
+   "query": "Wunderland Kalkar"
+  },
+  "sperrung:K12|Zum Wisseler See, Wissel": {
+   "lat": 51.75382,
+   "lon": 6.3095,
+   "query": "Zum Wisseler See, Wissel",
+   "line": [
+    [
+     51.7559,
+     6.30308
+    ],
+    [
+     51.75585,
+     6.30333
+    ],
+    [
+     51.75578,
+     6.30361
+    ],
+    [
+     51.75562,
+     6.30413
+    ],
+    [
+     51.75465,
+     6.30714
+    ],
+    [
+     51.75445,
+     6.30779
+    ],
+    [
+     51.75418,
+     6.30864
+    ],
+    [
+     51.75401,
+     6.3091
+    ],
+    [
+     51.75382,
+     6.3095
+    ],
+    [
+     51.75363,
+     6.30982
+    ],
+    [
+     51.75333,
+     6.31024
+    ],
+    [
+     51.75261,
+     6.31113
+    ],
+    [
+     51.75232,
+     6.31158
+    ],
+    [
+     51.75216,
+     6.31184
+    ],
+    [
+     51.75198,
+     6.31219
+    ],
+    [
+     51.75177,
+     6.3127
+    ],
+    [
+     51.75161,
+     6.3132
+    ],
+    [
+     51.75157,
+     6.31332
+    ]
+   ],
+   "lineSource": "KKB 06.10.2026: zwischen Einfahrt Parkplatz Reitzentrum und Einfahrt Nr. 111; Verlauf aus OSM"
+  },
+  "sperrung:Kalkar|Altkalkarer Straße (Altkalkarer Tor)": {
+   "lat": 51.73777,
+   "lon": 6.29025,
+   "query": "Altkalkarer Straße am Wallgraben (OSM way 790946254)",
+   "line": [
+    [
+     51.73757,
+     6.28961
+    ],
+    [
+     51.73765,
+     6.28989
+    ],
+    [
+     51.73768,
+     6.29002
+    ],
+    [
+     51.73772,
+     6.29015
+    ],
+    [
+     51.73777,
+     6.2903
+    ],
+    [
+     51.73809,
+     6.29127
+    ]
+   ],
+   "lineSource": "Stadt Kalkar 21.10.2026: Stadteingang Altkalkarer Tor zwischen Im Schwanenhorst und Jan-Joest-/Wallstraße; Verlauf aus OSM"
+  }
+ }
+}

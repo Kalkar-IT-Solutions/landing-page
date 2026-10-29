@@ -1,0 +1,1115 @@
+{
+ "comment": "Straßen der Stadt Kalkar und ihre Ortsteile, aus der Straßenschlüsseltabelle des Kreises Kleve (Open Data, dl-de/zero-2-0). Eine Straße kann in mehreren Ortsteilen liegen.",
+ "source": "http://offenedaten.kreis-kleve.de/files/Fachbereich_6/gisverb/Strassenschluesseltabelle_Kreis_Kleve/Strassenschluessel_Kreis_Kleve.csv",
+ "license": "dl-de/zero-2-0",
+ "retrievedAt": "2026-10-26",
+ "streets": {
+  "Ackerstraße": [
+   "appeldorn"
+  ],
+  "Ahornweg": [
+   "altkalkar"
+  ],
+  "Alte Molkerei": [
+   "niedermoermter"
+  ],
+  "Alte Schmiede": [
+   "hoennepel"
+  ],
+  "Alter Schulweg": [
+   "wissel"
+  ],
+  "Altkalkarer Straße": [
+   "kalkar"
+  ],
+  "Am Anger": [
+   "hoennepel"
+  ],
+  "Am Bahndamm": [
+   "altkalkar"
+  ],
+  "Am Bahnhof": [
+   "altkalkar"
+  ],
+  "Am Bolk": [
+   "wissel"
+  ],
+  "Am Bollwerk": [
+   "kalkar"
+  ],
+  "Am Ehrenmal": [
+   "grieth"
+  ],
+  "Am Golfplatz": [
+   "niedermoermter"
+  ],
+  "Am Hanselaer Tor": [
+   "kalkar"
+  ],
+  "Am Haus Veen": [
+   "appeldorn"
+  ],
+  "Am Pappelwäldchen": [
+   "wissel"
+  ],
+  "Am Patersdeich": [
+   "altkalkar"
+  ],
+  "Am Rietegatt": [
+   "kalkar"
+  ],
+  "Am See": [
+   "wissel"
+  ],
+  "Am Sportplatz": [
+   "grieth"
+  ],
+  "Am Stadtpark": [
+   "kalkar"
+  ],
+  "Am Steg": [
+   "hoennepel"
+  ],
+  "Am Tannenbusch": [
+   "wissel"
+  ],
+  "Am Weiher": [
+   "kalkar"
+  ],
+  "Amselweg": [
+   "wissel"
+  ],
+  "An de alde Scholl": [
+   "altkalkar"
+  ],
+  "An der Gracht": [
+   "hoennepel"
+  ],
+  "An der Kehre": [
+   "kehrum"
+  ],
+  "An der Steinmühle": [
+   "altkalkar"
+  ],
+  "An der Woy": [
+   "niedermoermter"
+  ],
+  "Anemonenweg": [
+   "niedermoermter"
+  ],
+  "Anton-Heuken-Straße": [
+   "wissel"
+  ],
+  "Appeldorner Straße": [
+   "appeldorn",
+   "hoennepel"
+  ],
+  "Arnimstraße": [
+   "altkalkar"
+  ],
+  "Auenweg": [
+   "hoennepel"
+  ],
+  "Auf dem Großen Damm": [
+   "altkalkar"
+  ],
+  "Bahnhofstraße": [
+   "altkalkar",
+   "kalkar"
+  ],
+  "Bahnweg": [
+   "kehrum"
+  ],
+  "Barnabasweg": [
+   "niedermoermter"
+  ],
+  "Baukamp": [
+   "altkalkar"
+  ],
+  "Beginenweg": [
+   "altkalkar"
+  ],
+  "Begonienweg": [
+   "niedermoermter"
+  ],
+  "Behrnenweg": [
+   "altkalkar"
+  ],
+  "Bennepstraße": [
+   "hanselaer"
+  ],
+  "Berglandstraße": [
+   "wissel"
+  ],
+  "Bergstraße": [
+   "neulouisendorf"
+  ],
+  "Bienemannsweg": [
+   "wissel"
+  ],
+  "Birgelfeld": [
+   "appeldorn",
+   "hoennepel",
+   "niedermoermter"
+  ],
+  "Birkenallee": [
+   "altkalkar"
+  ],
+  "Bleichenstege": [
+   "kalkar"
+  ],
+  "Bockskamp": [
+   "grieth"
+  ],
+  "Bollenkamp": [
+   "wissel"
+  ],
+  "Bollwerkstege": [
+   "kalkar"
+  ],
+  "Bossendell": [
+   "hoennepel"
+  ],
+  "Bovenholt": [
+   "altkalkar",
+   "kalkar"
+  ],
+  "Brentanostraße": [
+   "altkalkar"
+  ],
+  "Bruchweg": [
+   "kehrum"
+  ],
+  "Brüggersweg": [
+   "appeldorn"
+  ],
+  "Buchenweg": [
+   "altkalkar"
+  ],
+  "Burggarten": [
+   "kalkar"
+  ],
+  "Burginatium": [
+   "altkalkar",
+   "kehrum"
+  ],
+  "Buschweg": [
+   "niedermoermter"
+  ],
+  "Chamissostraße": [
+   "altkalkar"
+  ],
+  "Cäcilienhof": [
+   "altkalkar"
+  ],
+  "Dahlienweg": [
+   "niedermoermter"
+  ],
+  "Dammweg": [
+   "altkalkar"
+  ],
+  "Daveracker": [
+   "appeldorn"
+  ],
+  "Dechant-Beckmann-Straße": [
+   "kalkar"
+  ],
+  "Deichweg": [
+   "altkalkar"
+  ],
+  "Dergeltweg": [
+   "wissel"
+  ],
+  "Dominikaner Bongert": [
+   "kalkar"
+  ],
+  "Dorfstraße": [
+   "wissel"
+  ],
+  "Douvermannstege": [
+   "kalkar"
+  ],
+  "Dr.-Hugo-Mönnig-Straße": [
+   "altkalkar"
+  ],
+  "Dr.-Karl-Bartels-Weg": [
+   "altkalkar"
+  ],
+  "Driwtstraße": [
+   "hanselaer"
+  ],
+  "Drißkamp": [
+   "altkalkar"
+  ],
+  "Drosselweg": [
+   "wissel"
+  ],
+  "Durchlaß": [
+   "grieth"
+  ],
+  "Düffelsmühle": [
+   "niedermoermter"
+  ],
+  "Dünenweg": [
+   "wissel"
+  ],
+  "Düstern-Bongert": [
+   "grieth"
+  ],
+  "Eichendorffstraße": [
+   "altkalkar"
+  ],
+  "Eichenweg": [
+   "altkalkar"
+  ],
+  "Eligiusstraße": [
+   "kalkar"
+  ],
+  "Elsemannsweg": [
+   "kehrum"
+  ],
+  "Emmericher Straße": [
+   "bylerward",
+   "emmericher-eyland",
+   "wissel"
+  ],
+  "Ensefeld": [
+   "hanselaer"
+  ],
+  "Erlenstraße": [
+   "altkalkar"
+  ],
+  "Eschenweg": [
+   "altkalkar"
+  ],
+  "Eselsweg": [
+   "appeldorn"
+  ],
+  "Ewald-Scholten-Straße": [
+   "niedermoermter"
+  ],
+  "Eyland": [
+   "emmericher-eyland"
+  ],
+  "Fackelkampsweg": [
+   "wissel"
+  ],
+  "Fasanenweg": [
+   "wissel"
+  ],
+  "Fatimaweg": [
+   "appeldorn"
+  ],
+  "Feldhuysenweg": [
+   "altkalkar"
+  ],
+  "Feldweg": [
+   "wissel"
+  ],
+  "Fichtenweg": [
+   "altkalkar"
+  ],
+  "Fingerhutshof": [
+   "wissel"
+  ],
+  "Fischerwall": [
+   "grieth"
+  ],
+  "Florenweg": [
+   "kehrum"
+  ],
+  "Freyendahl": [
+   "altkalkar"
+  ],
+  "Friedrich-Ebert-Straße": [
+   "wissel"
+  ],
+  "Fuhrenweg": [
+   "niedermoermter"
+  ],
+  "Galgensteg": [
+   "hoennepel"
+  ],
+  "Gartenstraße": [
+   "grieth"
+  ],
+  "Gasthausstege": [
+   "kalkar"
+  ],
+  "Gehmsweg": [
+   "hanselaer",
+   "hoennepel"
+  ],
+  "Geranienstraße": [
+   "niedermoermter"
+  ],
+  "Gerd-Jansen-Platz": [
+   "kalkar"
+  ],
+  "Giltjesweg": [
+   "wissel"
+  ],
+  "Ginsterweg": [
+   "altkalkar"
+  ],
+  "Gocher Feld": [
+   "altkalkar"
+  ],
+  "Gocher Straße": [
+   "altkalkar",
+   "neulouisendorf"
+  ],
+  "Goetendyk": [
+   "niedermoermter"
+  ],
+  "Goethestraße": [
+   "altkalkar"
+  ],
+  "Grabenstraße": [
+   "kalkar"
+  ],
+  "Grafenhof": [
+   "altkalkar"
+  ],
+  "Greilack": [
+   "hoennepel",
+   "niedermoermter"
+  ],
+  "Grenzacker": [
+   "appeldorn"
+  ],
+  "Grenzstraße": [
+   "neulouisendorf"
+  ],
+  "Grenzweg": [
+   "altkalkar"
+  ],
+  "Griether Feld": [
+   "wissel"
+  ],
+  "Griether Markt": [
+   "grieth"
+  ],
+  "Griether Straße": [
+   "hoennepel",
+   "wisselward"
+  ],
+  "Grimmstraße": [
+   "altkalkar"
+  ],
+  "Grüner Weg": [
+   "hanselaer"
+  ],
+  "Gänseweide": [
+   "hoennepel"
+  ],
+  "Görtze-Woy": [
+   "niedermoermter"
+  ],
+  "Hagedorn": [
+   "altkalkar"
+  ],
+  "Hammelweg": [
+   "altkalkar"
+  ],
+  "Hanselaerstraße": [
+   "kalkar"
+  ],
+  "Hansestraße": [
+   "grieth"
+  ],
+  "Hasenkamp": [
+   "kalkar"
+  ],
+  "Hasenweg": [
+   "wissel"
+  ],
+  "Heideweg": [
+   "neulouisendorf"
+  ],
+  "Heienberg": [
+   "wissel"
+  ],
+  "Heiligenberg": [
+   "appeldorn"
+  ],
+  "Heinrich-Eger-Straße": [
+   "appeldorn"
+  ],
+  "Heinrich-Heidbüchel-Weg": [
+   "altkalkar"
+  ],
+  "Heinrich-Heine-Straße": [
+   "altkalkar"
+  ],
+  "Heinrich-Terhorst-Weg": [
+   "altkalkar"
+  ],
+  "Heinz-Seesing-Straße": [
+   "altkalkar"
+  ],
+  "Helenenweg": [
+   "wissel"
+  ],
+  "Hellendornstraße": [
+   "wissel"
+  ],
+  "Herderstraße": [
+   "altkalkar"
+  ],
+  "Heseler Weg": [
+   "altkalkar"
+  ],
+  "Himmelacker": [
+   "appeldorn"
+  ],
+  "Hinter dem Markt": [
+   "kalkar"
+  ],
+  "Hochend": [
+   "hoennepel"
+  ],
+  "Hochstraße": [
+   "neulouisendorf"
+  ],
+  "Hohe Straße": [
+   "kalkar"
+  ],
+  "Holtmoelen": [
+   "altkalkar"
+  ],
+  "Horster Weg": [
+   "altkalkar"
+  ],
+  "Hortmannsweg": [
+   "wissel"
+  ],
+  "Husenweg": [
+   "niedermoermter"
+  ],
+  "Hölderlinstraße": [
+   "altkalkar"
+  ],
+  "Im Dahl": [
+   "altkalkar"
+  ],
+  "Im Mühlenfeld": [
+   "hoennepel"
+  ],
+  "Im Schwanenhorst": [
+   "kalkar"
+  ],
+  "Immermannstraße": [
+   "altkalkar"
+  ],
+  "In den Vennen": [
+   "kehrum"
+  ],
+  "In der Aue": [
+   "altkalkar"
+  ],
+  "Industriepark": [
+   "kehrum"
+  ],
+  "Inselring": [
+   "hoennepel"
+  ],
+  "Jan-Joest-Straße": [
+   "kalkar"
+  ],
+  "Josef-Rottmann-Weg": [
+   "altkalkar"
+  ],
+  "Jägerweg": [
+   "wissel"
+  ],
+  "Kalflakstraße": [
+   "emmericher-eyland"
+  ],
+  "Kallo-van-Holt-Straße": [
+   "wissel"
+  ],
+  "Kaltenberg": [
+   "wissel"
+  ],
+  "Kanienendyk": [
+   "hoennepel"
+  ],
+  "Karl-Leisner-Platz": [
+   "altkalkar"
+  ],
+  "Kasernenweg": [
+   "altkalkar"
+  ],
+  "Kastellstraße": [
+   "altkalkar"
+  ],
+  "Katernstraße": [
+   "grieth"
+  ],
+  "Kattenberg": [
+   "niedermoermter"
+  ],
+  "Kemkesweg": [
+   "hoennepel"
+  ],
+  "Kemnadestraße": [
+   "wissel"
+  ],
+  "Kerkend": [
+   "niedermoermter"
+  ],
+  "Kerkpad": [
+   "appeldorn"
+  ],
+  "Kerßeweg": [
+   "wissel"
+  ],
+  "Kesselstraße": [
+   "kalkar"
+  ],
+  "Kiefernweg": [
+   "altkalkar"
+  ],
+  "Kilewardsweg": [
+   "bylerward"
+  ],
+  "Kirchdamm": [
+   "grieth"
+  ],
+  "Kirchenacker": [
+   "niedermoermter"
+  ],
+  "Kirchfeld": [
+   "hoennepel"
+  ],
+  "Kirchhofstraße": [
+   "grieth"
+  ],
+  "Kirchplatz": [
+   "kalkar"
+  ],
+  "Kirchstraße": [
+   "altkalkar"
+  ],
+  "Kiwittweg": [
+   "wissel"
+  ],
+  "Kleiststraße": [
+   "altkalkar"
+  ],
+  "Klever Straße": [
+   "altkalkar",
+   "kalkar"
+  ],
+  "Klompenstraße": [
+   "grieth"
+  ],
+  "Klosterstege": [
+   "kalkar"
+  ],
+  "Konrad-Adenauer-Straße": [
+   "wissel"
+  ],
+  "Kreuzstraße": [
+   "grieth"
+  ],
+  "Kuhweg": [
+   "kehrum"
+  ],
+  "Kurfürstendamm": [
+   "altkalkar"
+  ],
+  "Köstersdick": [
+   "wissel"
+  ],
+  "Kückstege": [
+   "kalkar"
+  ],
+  "Küppstege": [
+   "grieth"
+  ],
+  "Laubenweg": [
+   "altkalkar"
+  ],
+  "Leegtal": [
+   "appeldorn"
+  ],
+  "Legestraße": [
+   "grieth"
+  ],
+  "Lenaustraße": [
+   "altkalkar"
+  ],
+  "Leo-Klever-Straße": [
+   "wissel"
+  ],
+  "Lessingstraße": [
+   "altkalkar"
+  ],
+  "Leuthweg": [
+   "hanselaer",
+   "hoennepel"
+  ],
+  "Leygräfte": [
+   "kalkar"
+  ],
+  "Leyweg": [
+   "appeldorn"
+  ],
+  "Limmerstraße": [
+   "grieth"
+  ],
+  "Lincolnstraße": [
+   "altkalkar"
+  ],
+  "Lindenweg": [
+   "altkalkar"
+  ],
+  "Loefsche Straße": [
+   "neulouisendorf"
+  ],
+  "Lärchenstraße": [
+   "altkalkar"
+  ],
+  "Marienbaumer Straße": [
+   "appeldorn"
+  ],
+  "Marienblum": [
+   "altkalkar"
+  ],
+  "Markt": [
+   "kalkar"
+  ],
+  "Meerweg": [
+   "hoennepel"
+  ],
+  "Metzgerweg": [
+   "wissel"
+  ],
+  "Michelsdick": [
+   "wissel"
+  ],
+  "Mintenweg": [
+   "hanselaer"
+  ],
+  "Mittelsandweg": [
+   "niedermoermter"
+  ],
+  "Molkereistraße": [
+   "wissel"
+  ],
+  "Mondweg": [
+   "grieth"
+  ],
+  "Monreberg": [
+   "altkalkar"
+  ],
+  "Monrestraße": [
+   "kalkar"
+  ],
+  "Möllepöttje": [
+   "altkalkar"
+  ],
+  "Mörikestraße": [
+   "altkalkar"
+  ],
+  "Mössekiep": [
+   "altkalkar"
+  ],
+  "Mühlenberg": [
+   "appeldorn"
+  ],
+  "Mühlenstege": [
+   "kalkar"
+  ],
+  "Mühlenstraße": [
+   "wissel",
+   "wisselward"
+  ],
+  "Mühlenweg": [
+   "neulouisendorf"
+  ],
+  "Narzissenstraße": [
+   "niedermoermter"
+  ],
+  "Nauenstege": [
+   "kalkar"
+  ],
+  "Nejwittweg": [
+   "wissel"
+  ],
+  "Nelkenstraße": [
+   "niedermoermter"
+  ],
+  "Neue Straße": [
+   "grieth"
+  ],
+  "Neuenhof": [
+   "wissel"
+  ],
+  "Neulouisendorfer Straße": [
+   "kehrum",
+   "neulouisendorf"
+  ],
+  "Nätelward": [
+   "hoennepel"
+  ],
+  "Obermörmterer Straße": [
+   "niedermoermter"
+  ],
+  "Ochsenwiesen": [
+   "appeldorn"
+  ],
+  "Op de Wacht": [
+   "kalkar"
+  ],
+  "Osterwyk": [
+   "appeldorn"
+  ],
+  "Oyweg": [
+   "altkalkar",
+   "appeldorn",
+   "hanselaer"
+  ],
+  "Pastor-Sieverding-Straße": [
+   "appeldorn"
+  ],
+  "Pastor-Smits-Weg": [
+   "wissel"
+  ],
+  "Postweg": [
+   "altkalkar"
+  ],
+  "Prof.Schmidt-Straße": [
+   "kalkar"
+  ],
+  "Prostewardsweg": [
+   "wissel"
+  ],
+  "Rabenhorst": [
+   "wissel"
+  ],
+  "Reeser Straße": [
+   "appeldorn",
+   "kehrum",
+   "niedermoermter"
+  ],
+  "Reeserschanz": [
+   "niedermoermter"
+  ],
+  "Reiherstraße": [
+   "appeldorn"
+  ],
+  "Rheinstraße": [
+   "altkalkar",
+   "hanselaer",
+   "hoennepel",
+   "kalkar",
+   "niedermoermter"
+  ],
+  "Rheintorstraße": [
+   "grieth"
+  ],
+  "Rheinuferstraße": [
+   "bylerward",
+   "emmericher-eyland",
+   "grieth",
+   "wissel",
+   "wisselward"
+  ],
+  "Richard-Birckman-Weg": [
+   "altkalkar"
+  ],
+  "Risterweg": [
+   "altkalkar"
+  ],
+  "Ritter-Elbert-Straße": [
+   "hoennepel"
+  ],
+  "Rosenstraße": [
+   "niedermoermter"
+  ],
+  "Rotes Häuschen": [
+   "hoennepel"
+  ],
+  "Roßkamp": [
+   "altkalkar"
+  ],
+  "Rutger-Krop-Weg": [
+   "kalkar"
+  ],
+  "Römerstraße": [
+   "altkalkar",
+   "kehrum",
+   "neulouisendorf"
+  ],
+  "Sandkuhl": [
+   "appeldorn"
+  ],
+  "Sandweg": [
+   "wissel"
+  ],
+  "Schafweg": [
+   "altkalkar"
+  ],
+  "Scheppenacker": [
+   "appeldorn"
+  ],
+  "Schifferdamm": [
+   "grieth"
+  ],
+  "Schillerstraße": [
+   "altkalkar"
+  ],
+  "Schlenkstraße": [
+   "hoennepel"
+  ],
+  "Schlingstraße": [
+   "hanselaer"
+  ],
+  "Schloßstraße": [
+   "grieth"
+  ],
+  "Schlüskesgraben": [
+   "kalkar"
+  ],
+  "Scholtenhof": [
+   "wissel"
+  ],
+  "Scholtenweg": [
+   "wissel"
+  ],
+  "Schuldamm": [
+   "grieth"
+  ],
+  "Schusterweg": [
+   "wissel"
+  ],
+  "Schwalbenweg": [
+   "wissel"
+  ],
+  "Schwester-Walburga-Straße": [
+   "appeldorn"
+  ],
+  "Schwäwelsweg": [
+   "hoennepel"
+  ],
+  "Schüttschott": [
+   "grieth"
+  ],
+  "Schützenweg": [
+   "wissel"
+  ],
+  "Seeweg": [
+   "hoennepel"
+  ],
+  "Servitenstege": [
+   "kalkar"
+  ],
+  "Seydlitzstege": [
+   "kalkar"
+  ],
+  "Sießstraße": [
+   "neulouisendorf"
+  ],
+  "Sommerdyck": [
+   "altkalkar",
+   "kalkar"
+  ],
+  "Sonnenstraße": [
+   "grieth"
+  ],
+  "Spickstraße": [
+   "hanselaer",
+   "hoennepel"
+  ],
+  "Spiegelstege": [
+   "kalkar"
+  ],
+  "Spierheide": [
+   "kehrum"
+  ],
+  "Spillenweg": [
+   "wissel"
+  ],
+  "St. Hubertus Weg": [
+   "kehrum"
+  ],
+  "St. Lambertus-Straße": [
+   "appeldorn"
+  ],
+  "Stadtwall": [
+   "grieth"
+  ],
+  "Starenweg": [
+   "wissel"
+  ],
+  "Steckkuhl": [
+   "niedermoermter"
+  ],
+  "Steenowense Weg": [
+   "grieth"
+  ],
+  "Stefan-Paeßens-Straße": [
+   "altkalkar"
+  ],
+  "Steinacker": [
+   "appeldorn"
+  ],
+  "Steinbruch": [
+   "appeldorn"
+  ],
+  "Steinchensweg": [
+   "kehrum"
+  ],
+  "Steinweg": [
+   "neulouisendorf"
+  ],
+  "Sternenweg": [
+   "grieth"
+  ],
+  "Stiller Winkel": [
+   "hoennepel",
+   "niedermoermter"
+  ],
+  "Stockshof": [
+   "wissel"
+  ],
+  "Stormstraße": [
+   "altkalkar"
+  ],
+  "Swartkopweg": [
+   "wissel"
+  ],
+  "Tabaksweg": [
+   "wissel"
+  ],
+  "Talacker": [
+   "hanselaer"
+  ],
+  "Talstraße": [
+   "altkalkar"
+  ],
+  "Taubensterz": [
+   "hoennepel"
+  ],
+  "Taubenweg": [
+   "wissel"
+  ],
+  "Terwelpweg": [
+   "wissel"
+  ],
+  "Theodor-Franken-Straße": [
+   "altkalkar"
+  ],
+  "Theodor-Heuss-Straße": [
+   "wissel"
+  ],
+  "Theodor-Kuypers-Straße": [
+   "altkalkar"
+  ],
+  "Tiller Straße": [
+   "altkalkar"
+  ],
+  "Totenhügel": [
+   "neulouisendorf"
+  ],
+  "Trebbelin": [
+   "kalkar"
+  ],
+  "Treidelweg": [
+   "grieth"
+  ],
+  "Trompetweg": [
+   "altkalkar"
+  ],
+  "Tulpenweg": [
+   "niedermoermter"
+  ],
+  "Uedemer Straße": [
+   "kehrum"
+  ],
+  "Uferallee": [
+   "hoennepel"
+  ],
+  "Uhlandstraße": [
+   "altkalkar"
+  ],
+  "Van-Dornick-Straße": [
+   "altkalkar"
+  ],
+  "Van-Remmen-Weg": [
+   "kehrum"
+  ],
+  "Veenweg": [
+   "appeldorn"
+  ],
+  "Viehstege": [
+   "altkalkar"
+  ],
+  "Von-Lauff-Weg": [
+   "kalkar"
+  ],
+  "Vossegattweg": [
+   "altkalkar"
+  ],
+  "Vossekuhl": [
+   "appeldorn"
+  ],
+  "Vynener Straße": [
+   "appeldorn"
+  ],
+  "Wallstraße": [
+   "kalkar"
+  ],
+  "Washingtonstraße": [
+   "altkalkar"
+  ],
+  "Waysche Straße": [
+   "hanselaer",
+   "kalkar",
+   "wisselward"
+  ],
+  "Weidenweg": [
+   "bylerward",
+   "grieth"
+  ],
+  "Wesselsbruch": [
+   "kehrum"
+  ],
+  "Wielandstraße": [
+   "altkalkar"
+  ],
+  "Wildhagen": [
+   "hoennepel"
+  ],
+  "Wöhrmannstraße": [
+   "kehrum"
+  ],
+  "Wüldersweg": [
+   "kehrum"
+  ],
+  "Wüllschlag": [
+   "appeldorn"
+  ],
+  "Xantener Straße": [
+   "altkalkar",
+   "appeldorn",
+   "kalkar",
+   "kehrum"
+  ],
+  "Zum Wisseler See": [
+   "hanselaer",
+   "hoennepel",
+   "wissel",
+   "wisselward"
+  ],
+  "Zur ehemaligen Gärtnerei": [
+   "altkalkar"
+  ],
+  "Ärmen Düwel": [
+   "wissel"
+  ]
+ }
+}
