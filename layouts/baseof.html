@@ -24,7 +24,7 @@
 {{ partial "horizont/nav/horizon.html" (dict
     "product" "regetskcob"
     "mark" "kalkar-it"
-    "place" (cond .IsHome site.Title (printf "%s / %s" site.Title .Title))
+    "place" (cond .IsHome site.Title (printf "%s / %s" site.Title (cond (eq .Kind "404") "Seite nicht gefunden" .Title)))
     "marks" "auto"
     "link" (dict "url" ("" | relURL) "hint" site.Title)) }}
 <div class="hz-feld">

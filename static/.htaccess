@@ -1,0 +1,51 @@
+# Apache settings for the webspace at do.de (basicWEB, Apache 2.4). Hugo copies
+# this file unchanged into public/, the workflow uploads it with the site.
+
+Options -Indexes
+ErrorDocument 404 /404.html
+AddDefaultCharset utf-8
+AddType application/x-protobuf .pbf
+AddType application/wasm .wasm
+AddType application/manifest+json .webmanifest
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www.kalkar-it.de leads to kalkar-it.de, as it did on GitHub Pages.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ %{REQUEST_SCHEME}://%1%{REQUEST_URI} [R=301,L]
+
+  # HTTPS: switch on once the Let's Encrypt certificate is issued. Before
+  # the DNS switch it cannot be, and the redirect would lock the site out.
+  # The ACME challenge stays reachable over plain HTTP for renewals.
+  #RewriteCond %{HTTPS} !=on
+  #RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+  #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # The FTP upload keeps its state in this file; nobody needs to read it.
+  RewriteRule ^\.ftp-deploy-sync-state\.json$ - [R=404,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
+  # HSTS only after HTTPS has run without trouble for a while.
+  #Header always set Strict-Transport-Security "max-age=31536000"
+
+  # By default the browser asks whether there is a newer version: pages, and
+  # Kalkar Kompakt, whose main.dart.js and engine carry no hash in the name.
+  Header set Cache-Control "no-cache"
+  # CSS, scripts and images with a Hugo hash in the name never change.
+  <FilesMatch "\.[0-9a-f]{16,}(\.min)?\.(css|js|svg|webp|png|jpg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "_hu_[0-9a-f]+\.(webp|png|jpg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Fonts and map tiles change rarely; a week is a fair trade.
+  <FilesMatch "\.(woff2?|ttf|otf|pbf)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>

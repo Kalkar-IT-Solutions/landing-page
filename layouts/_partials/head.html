@@ -1,6 +1,6 @@
 {{- $hz := site.Data.horizont -}}
 {{- $desc := .Description | default site.Home.Description -}}
-<title>{{ if .IsHome }}{{ site.Title }} – bald da{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+<title>{{ if .IsHome }}{{ site.Title }} – bald da{{ else }}{{ cond (eq .Kind "404") "Seite nicht gefunden" .Title }} · {{ site.Title }}{{ end }}</title>
 <meta name="description" content="{{ $desc }}">
 <meta name="color-scheme" content="light dark">
 {{ partial "horizont/theme-color.html" dict }}
