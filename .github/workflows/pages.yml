@@ -56,6 +56,9 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
+          # The upload job takes the site from this artifact, and do.de
+          # needs the .htaccess; Pages ignores it.
+          include-hidden-files: true
   deploy:
     environment:
       name: github-pages
