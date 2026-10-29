@@ -3,8 +3,7 @@
 <title>{{ if .IsHome }}{{ site.Title }} – bald da{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
 <meta name="description" content="{{ $desc }}">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ $hz.color.neutral.light.bg }}">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ $hz.color.neutral.dark.bg }}">
+{{ partial "horizont/theme-color.html" dict }}
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ site.Title }}">
 <meta property="og:description" content="{{ $desc }}">
