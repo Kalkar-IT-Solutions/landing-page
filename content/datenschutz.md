@@ -48,11 +48,9 @@ IP-Adresse. Die Karte stammt aus OpenStreetMap-Daten und liegt auf
 kalkar-it.de selbst. Rechtsgrundlage ist unser berechtigtes Interesse,
 die Informationen zuverlässig bereitzustellen (Art. 6 Abs. 1 lit. f DSGVO).
 
-**Darstellung im Browser.** Die Web-App lädt zur Darstellung Programmteile
-und Schriften von Servern von Google (gstatic.com); dabei wird Ihre
-IP-Adresse an Google (Google LLC, USA) übermittelt. Rechtsgrundlage ist
-Art. 6 Abs. 1 lit. f DSGVO; Google stützt sich für die Übermittlung in die
-USA auf das EU-US Data Privacy Framework. Die Apps laden nichts von Google.
+**Darstellung im Browser.** Die Web-App bringt alle Programmteile und
+Schriften selbst mit und lädt nichts von Servern Dritter, auch nicht von
+Google.
 
 **Melden und Prüfen.** Wenn Sie einen Termin oder einen Hinweis melden oder
 die Meldung eines anderen bestätigen, schickt die App eine zufällige
