@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{- /* The page Apache shows for an address that does not exist
+   (ErrorDocument in static/.htaccess). */ -}}
+<article class="kit-page">
+  {{ partial "horizont/kennung.html" site.Title }}
+  <h1 class="t-headline">Seite nicht gefunden</h1>
+  <div class="t-reading">
+    <p>Unter dieser Adresse gibt es nichts. Weiter geht es auf der <a href="{{ "" | relURL }}">Startseite</a>.</p>
+  </div>
+</article>
+{{ end }}
