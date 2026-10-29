@@ -20,8 +20,6 @@ jobs:
       # module (go.mod); Hugo fetches it with the Go the runner image has.
       HUGO_VERSION: 0.154.5
       TZ: Europe/Berlin
-      # Set once the FTP user at do.de exists; the upload below waits for it.
-      FTP_SERVER: ${{ secrets.FTP_SERVER }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -54,20 +52,6 @@ jobs:
           else
             echo "::warning::No branch kompakt-build, deploying without /kompakt/."
           fi
-      # The move to the webspace at do.de: until the DNS switch the site goes
-      # to both, Pages and do.de. The FTP user only sees the directory of
-      # kalkar-it.de, so the site lands in its root. Only changed files go
-      # up; the action keeps its state in .ftp-deploy-sync-state.json there.
-      - name: Upload to do.de
-        if: ${{ env.FTP_SERVER != '' }}
-        uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./public/
-          server-dir: ./
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
@@ -83,3 +67,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+  # The move to the webspace at do.de: until the DNS switch the site goes to
+  # both, Pages and do.de. The FTP secrets live in the environment
+  # github-pages, which only main may use. The FTP user only sees the
+  # directory of kalkar-it.de, so the site lands in its root. Only changed
+  # files go up; the action keeps its state in .ftp-deploy-sync-state.json.
+  upload:
+    environment: github-pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: build
+    steps:
+      - name: Fetch the built site
+        uses: actions/download-artifact@v8
+        with:
+          name: github-pages
+      - name: Unpack
+        run: mkdir public && tar -xf artifact.tar -C public
+      - name: Upload to do.de
+        uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./public/
+          server-dir: ./
