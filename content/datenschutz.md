@@ -19,11 +19,9 @@ E-Mail: [hi@kalkar-it.de](mailto:hi@kalkar-it.de)
 
 ## Hosting und Server-Protokolle
 
-Die Seite wird bei GitHub Pages, einem Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, gehostet. Bei jedem Aufruf verarbeitet der Hoster technisch notwendige Daten, um die Seite auszuliefern und den Betrieb abzusichern: IP-Adresse, Datum und Uhrzeit, aufgerufene Adresse, übertragene Datenmenge, Browser und Betriebssystem sowie die zuvor besuchte Seite, soweit Ihr Browser sie übermittelt.
+Die Seite liegt auf einem Webspace bei do.de, einem Dienst der Greenmark IT GmbH, Leinstraße 3, 31061 Alfeld (Leine), Deutschland, mit Servern in der EU. Mit ihr besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). Bei jedem Aufruf verarbeitet der Server technisch notwendige Daten, um die Seite auszuliefern und den Betrieb abzusichern: IP-Adresse, Datum und Uhrzeit, aufgerufene Adresse, übertragene Datenmenge, Browser und Betriebssystem sowie die zuvor besuchte Seite, soweit Ihr Browser sie übermittelt.
 
-Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverlässigen Auslieferung der Seite (Art. 6 Abs. 1 lit. f DSGVO). Auf diese Protokolle haben wir selbst keinen Zugriff; wie lange der Hoster sie aufbewahrt, regelt seine Datenschutzerklärung: [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
-
-Dabei können Daten in die USA übermittelt werden. Der Hoster ist unter dem EU-US Data Privacy Framework zertifiziert, für das ein Angemessenheitsbeschluss der EU-Kommission besteht (Art. 45 DSGVO).
+Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverlässigen Auslieferung der Seite (Art. 6 Abs. 1 lit. f DSGVO). Wir werten diese Protokolle nicht aus.
 
 ## Kontakt per E-Mail
 
@@ -42,15 +40,25 @@ Informationen für Kalkar und seine Ortsteile, im Browser unter
 **Inhalte und Server.** Die Inhalte holt ein Dienst von uns bei Supabase
 (Supabase, Inc.; Rechenzentrum in Frankfurt am Main, EU) aus öffentlichen
 Quellen, etwa der Stadt Kalkar, dem Deutschen Wetterdienst oder der
-Autobahn GmbH. Ihr Gerät spricht dabei nur mit Supabase und mit kalkar-it.de,
-nicht mit diesen Quellen; Supabase verarbeitet technisch notwendig Ihre
+Autobahn GmbH. Supabase verarbeitet dabei technisch notwendig Ihre
 IP-Adresse. Die Karte stammt aus OpenStreetMap-Daten und liegt auf
 kalkar-it.de selbst. Rechtsgrundlage ist unser berechtigtes Interesse,
 die Informationen zuverlässig bereitzustellen (Art. 6 Abs. 1 lit. f DSGVO).
 
+**Wetter und Pegel.** Die Wettervorhersage und den Rheinpegel ruft Ihr
+Gerät direkt bei zwei öffentlichen Diensten ab: bei Bright Sky
+(api.brightsky.dev), einem freien Projekt, das die Daten des Deutschen
+Wetterdienstes bereitstellt, und bei PEGELONLINE der Wasserstraßen- und
+Schifffahrtsverwaltung des Bundes (www.pegelonline.wsv.de). Abgefragt
+werden nur der feste Punkt Kalkar und der Pegel; Ihre Gerätenummer,
+Einstellungen oder Ihr Standort gehen dabei nicht mit. Die Dienste
+erhalten wie jeder Server Ihre IP-Adresse und die üblichen
+Verbindungsdaten. Rechtsgrundlage ist unser berechtigtes Interesse an
+aktuellen Wetter- und Pegeldaten (Art. 6 Abs. 1 lit. f DSGVO).
+
 **Darstellung im Browser.** Die Web-App bringt alle Programmteile und
-Schriften selbst mit und lädt nichts von Servern Dritter, auch nicht von
-Google.
+Schriften selbst mit und lädt sie nicht von Servern Dritter, auch nicht
+von Google.
 
 **Melden und Prüfen.** Wenn Sie einen Termin oder einen Hinweis melden oder
 die Meldung eines anderen bestätigen, schickt die App eine zufällige
