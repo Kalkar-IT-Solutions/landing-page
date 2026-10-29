@@ -1,0 +1,16 @@
+{{- /*
+  A screen of the app from assets/kompakt/, light or dark with the page.
+
+    partial "kompakt/shot.html" (dict "name" "start" "alt" "…" "width" 300 "class" "…" "eager" true)
+
+  name      <name>-light.png and <name>-dark.png (390 × 844 at 3x)
+  width     shown width in px; WebP at twice that
+*/ -}}
+{{- $w := mul (int (.width | default 300)) 2 -}}
+{{- $l := (resources.Get (printf "kompakt/%s-light.png" .name)).Resize (printf "%dx webp q88" $w) -}}
+{{- $d := (resources.Get (printf "kompakt/%s-dark.png" .name)).Resize (printf "%dx webp q88" $w) -}}
+<picture{{ with .class }} class="{{ . }}"{{ end }}>
+  <source media="(prefers-color-scheme: dark)" srcset="{{ $d.RelPermalink }}">
+  <img src="{{ $l.RelPermalink }}" width="{{ div $l.Width 2 }}" height="{{ div $l.Height 2 }}" alt="{{ .alt }}"{{ if not .eager }} loading="lazy"{{ end }} decoding="async">
+</picture>
+{{- /**/ -}}

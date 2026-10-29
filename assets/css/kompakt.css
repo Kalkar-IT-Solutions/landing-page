@@ -1,0 +1,199 @@
+/* Kalkar Kompakt teaser (/kompakt/): own rules on top of Horizont, only
+   what the Feldseite does not have, colours and steps from the tokens.
+   Every animation waits for kompakt.js (html.kk-js) and stands still with
+   reduced motion; without the script the page is complete and calm. */
+
+html { background: var(--bg); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html, body.hz { overflow-x: clip; }
+body { margin: 0; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.kk-skip {
+  position: absolute; left: var(--s-16); top: var(--s-8); z-index: 10;
+  padding: var(--s-8) var(--s-12);
+  background: var(--surface); color: var(--text);
+  border: var(--line-hairline) solid var(--line-strong); border-radius: var(--r-6);
+  transform: translateY(-200%);
+}
+.kk-skip:focus { transform: none; }
+
+/* ---- Hero: words left, the phone on the horizon right ---------------- */
+
+.kk-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  box-sizing: border-box;
+  min-height: calc(100svh - 62px - 72px);
+  padding-top: var(--s-48);
+}
+.kk-words { align-self: center; padding-bottom: var(--s-48); }
+.kk-hero h1 { font-size: clamp(2.5rem, 7cqw, 4.5rem); letter-spacing: -0.01em; margin-bottom: var(--s-24); }
+.kk-hero p { font-size: 1.125rem; }
+.kk-hero .hz-feld-actions { margin-bottom: var(--s-16); }
+.kk-hero .kk-note { color: var(--text-faint); margin: 0; font-size: 0.8125rem; }
+
+.kk-brand { display: flex; align-items: center; gap: var(--s-12); margin-bottom: var(--s-32); }
+.kk-brand svg { display: block; border-radius: var(--r-12); }
+.kk-name { font: 600 1.125rem/1 var(--font-sans); }
+
+.kk-aside {
+  position: relative; isolation: isolate;
+  justify-self: stretch; align-self: end;
+  display: flex; align-items: flex-end; justify-content: center; gap: var(--s-32);
+  padding-top: var(--s-32);
+}
+/* The town hall stands on the horizon behind the phone, much larger, in
+   the faintest tone of the page, as on the start page of the app. */
+.kk-townhall {
+  position: absolute; z-index: -1; bottom: 0; left: 50%;
+  height: min(88%, 520px); width: auto; transform: translateX(-62%);
+  fill: var(--sunken);
+}
+.kk-phone { flex: none; }
+.kk-device > .hz-device-screen { display: grid; }
+.kk-slide { grid-area: 1 / 1; display: block; }
+.kk-slide img { display: block; width: 100%; height: auto; }
+.kk-js .kk-slide { opacity: 0; transform: translateY(var(--s-12)); transition: opacity var(--motion-slow) var(--ease-standard), transform var(--motion-slow) var(--ease-settle); }
+.kk-js .kk-slide.is-on { opacity: 1; transform: none; }
+
+/* The screens by name, a short list next to the phone. Under the current
+   one a line fills while it is shown (its animation is the clock that
+   kompakt.js listens to). */
+.kk-tour { list-style: none; margin: 0 0 var(--s-48); padding: 0; display: grid; gap: var(--s-4); }
+.kk-tour button {
+  position: relative; display: flex; align-items: baseline; gap: var(--s-12);
+  width: 100%; padding: var(--s-8) 0; border: 0; background: none; cursor: pointer;
+  font: 400 0.9375rem/1.3 var(--font-sans); color: var(--text-muted); text-align: left;
+}
+.kk-tour button:hover { color: var(--text); }
+.kk-tour button:focus-visible { outline: var(--line-focus) solid var(--accent); outline-offset: 2px; border-radius: var(--r-4); }
+.kk-tour-n { font: 500 0.75rem/1 var(--font-mono); color: var(--text-faint); }
+.kk-tour button[aria-current="true"] { color: var(--text); }
+.kk-tour button[aria-current="true"] .kk-tour-n { color: var(--accent-text); }
+.kk-tour i {
+  position: absolute; left: 0; right: 0; bottom: 0; height: var(--line-hairline);
+  background: var(--line); overflow: hidden;
+}
+.kk-tour i::after {
+  content: ""; position: absolute; inset: 0; background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+}
+.kk-tour button[aria-current="true"] i::after { transform: scaleX(1); }
+.kk-js .kk-tour button[aria-current="true"] i::after { animation: kk-dwell var(--kk-dwell, 5s) linear both; }
+.kk-js .kk-aside:hover .kk-tour i::after,
+.kk-js .kk-aside:focus-within .kk-tour i::after { animation-play-state: paused; }
+@keyframes kk-dwell { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* The horizon draws itself from the left on arrival. */
+.kk-js .kk-horizon { transform-origin: left; animation: kk-draw var(--motion-calm) var(--ease-settle) both; animation-duration: calc(var(--motion-calm) * 3); }
+@keyframes kk-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* The hero words rise in, one after the other. */
+.kk-js .kk-words > * { animation: kk-rise var(--motion-calm) var(--ease-settle) both; }
+.kk-js .kk-words > :nth-child(2) { animation-delay: 60ms; }
+.kk-js .kk-words > :nth-child(3) { animation-delay: 120ms; }
+.kk-js .kk-words > :nth-child(4) { animation-delay: 180ms; }
+.kk-js .kk-words > :nth-child(5) { animation-delay: 240ms; }
+.kk-js .kk-words > :nth-child(6) { animation-delay: 300ms; }
+.kk-js .kk-phone { animation: kk-rise calc(var(--motion-calm) * 2) var(--ease-settle) 200ms both; }
+.kk-js .kk-townhall { animation: kk-fade calc(var(--motion-calm) * 4) var(--ease-standard) 300ms both; }
+@keyframes kk-rise { from { opacity: 0; transform: translateY(var(--s-24)); } to { opacity: 1; transform: none; } }
+@keyframes kk-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---- The Rhine under the horizon -------------------------------------- */
+
+.kk-rhein { position: relative; overflow: hidden; padding: var(--s-12) 0 var(--s-16); border-bottom: var(--line-hairline) solid var(--line); }
+.kk-wave { display: block; width: 200%; height: 12px; }
+.kk-wave path { fill: none; stroke: var(--line-strong); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.kk-js .kk-wave { animation: kk-flow 24s linear infinite; }
+.kk-ticker { display: flex; width: max-content; margin-top: var(--s-8); }
+.kk-ticker p { display: flex; margin: 0; flex: none; }
+.kk-ticker span {
+  font: 400 0.75rem/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-faint); white-space: nowrap; padding: 0 var(--s-24);
+}
+.kk-ticker span::before { content: "~"; margin-right: var(--s-24); color: var(--accent); }
+.kk-js .kk-ticker { animation: kk-flow 60s linear infinite; }
+.kk-ticker p + p { display: none; }
+.kk-js .kk-ticker p + p { display: flex; }
+@keyframes kk-flow { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---- Sections ---------------------------------------------------------- */
+
+.kk-section { border-bottom: 0; padding-top: var(--s-64); }
+.kk-section h2 { font-size: clamp(1.5rem, 3cqw, 2rem); }
+
+/* Screens under a section, from the text column on. */
+.kk-shots {
+  display: flex; gap: var(--s-32); align-items: flex-start;
+  padding: var(--s-16) var(--s-32) var(--s-64) calc(180px + var(--s-32) * 2);
+  border-bottom: var(--line-hairline) solid var(--line);
+}
+.kk-shot { margin: 0; }
+.kk-shot figcaption { margin-top: var(--s-12); color: var(--text-muted); }
+.kk-shot .hz-device-screen { display: block; }
+.kk-shot img { display: block; width: 100%; height: auto; }
+/* Three side by side, the middle one a step lower: a little rhythm. */
+.kk-shots--3 .kk-shot:nth-child(2) { margin-top: var(--s-48); }
+
+/* Come into view: the row (or the report) is watched, its screens rise
+   and fade in one after the other (--i). A screen scrolled in sideways
+   would never count as seen, hence the row. */
+.kk-js .kk-reveal > .kk-shot, .kk-js .kk-report.kk-reveal { opacity: 0; transform: translateY(var(--s-32)); transition: opacity var(--motion-calm) var(--ease-standard), transform calc(var(--motion-calm) * 2) var(--ease-settle); transition-delay: calc(var(--i, 0) * 120ms); }
+.kk-js .kk-reveal.is-in > .kk-shot, .kk-js .kk-report.kk-reveal.is-in { opacity: 1; transform: none; }
+
+/* The report on its way into the app. */
+.kk-report-row { padding: var(--s-16) var(--s-32) var(--s-64) calc(180px + var(--s-32) * 2); border-bottom: var(--line-hairline) solid var(--line); }
+.kk-report {
+  margin: 0; max-width: 360px; padding: var(--s-16) var(--s-16) var(--s-12);
+  background: var(--surface); border: var(--line-hairline) solid var(--line-strong); border-radius: var(--r-10);
+}
+.kk-report-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-12); color: var(--text-muted); }
+.kk-report-example { color: var(--text-faint); }
+.kk-report-title { margin: var(--s-12) 0 var(--s-4); font: 500 1.0625rem/1.3 var(--font-sans); }
+.kk-report-text { margin: 0; color: var(--text-muted); font-size: 0.9375rem; }
+.kk-report-votes { display: flex; align-items: center; gap: var(--s-12); margin-top: var(--s-16); padding-top: var(--s-12); border-top: var(--line-hairline) solid var(--line); font-size: 0.875rem; }
+.kk-report-ask { color: var(--text-muted); }
+.kk-dots { display: flex; gap: var(--s-4); margin-left: auto; }
+.kk-dots i { width: 10px; height: 10px; border-radius: 50%; border: var(--line-hairline) solid var(--line-strong); transition: background var(--motion-base) var(--ease-standard), border-color var(--motion-base) var(--ease-standard), transform var(--motion-base) var(--ease-settle); }
+.kk-dots i.is-on { background: var(--accent); border-color: var(--accent); transform: scale(1.15); }
+.kk-report-count { color: var(--text-muted); min-width: 3ch; text-align: right; }
+.kk-report-done {
+  display: flex; align-items: center; gap: var(--s-8); margin: var(--s-12) 0 0;
+  color: var(--positive); font-size: 0.875rem;
+}
+/* Without the script the report stands as confirmed. */
+.kk-js .kk-report-done { opacity: 0; transform: translateY(var(--s-4)); transition: opacity var(--motion-slow) var(--ease-standard), transform var(--motion-slow) var(--ease-settle); }
+.kk-js .kk-report.is-done .kk-report-done { opacity: 1; transform: none; }
+html:not(.kk-js) .kk-dots i { background: var(--accent); border-color: var(--accent); }
+
+/* ---- The end: once more the one way in --------------------------------- */
+
+.kk-end { display: flex; align-items: center; gap: var(--s-24); flex-wrap: wrap; padding: var(--s-64) var(--s-32); border-bottom: var(--line-hairline) solid var(--line); }
+.kk-end svg { display: block; border-radius: var(--r-16); }
+.kk-end h2 { margin: 0; font-family: var(--font-serif); font-weight: 300; flex: 1 1 16rem; }
+
+/* ---- Narrow ------------------------------------------------------------ */
+
+@container (max-width: 960px) {
+  .kk-tour { display: none; }
+}
+@container (max-width: 720px) {
+  .kk-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; gap: var(--s-32); }
+  .kk-words { padding-bottom: 0; }
+  /* The app is the point: on the phone the phone stays, below the words. */
+  .kk-aside { display: flex; padding-top: 0; }
+  .kk-phone .hz-device { --w: 260px !important; --h: 400px !important; }
+  .kk-shots, .kk-report-row { padding: 0 var(--s-16) var(--s-48); gap: var(--s-16); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .kk-shot { scroll-snap-align: start; flex: none; }
+  .kk-shot .hz-device { --w: 220px !important; }
+  .kk-shots--3 .kk-shot:nth-child(2) { margin-top: 0; }
+  .kk-end { padding: var(--s-48) var(--s-16); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kk-js .kk-wave, .kk-js .kk-ticker { animation: none; }
+  .kk-js .kk-reveal > .kk-shot, .kk-js .kk-report.kk-reveal { transition: none; opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kk-js .kk-tour button[aria-current="true"] i::after { animation: none; }
+}
