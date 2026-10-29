@@ -1,0 +1,160 @@
+{{- /*
+  The teaser of Kalkar Kompakt at /kompakt/, a Feldseite of its own: the
+  app icon and one promise on the left, the app itself on the right, a
+  phone standing on the horizon in front of the town hall and running
+  through its screens. Under the horizon the Rhine, with what the app
+  knows drifting along it. Then four numbered sections with screens from
+  the app. The web app lives below, at /kompakt/app/. All words in
+  content/kompakt.md, screens in assets/kompakt/ (light and dark).
+*/ -}}
+{{- $p := .Params -}}
+{{- $app := printf "%s%s" .RelPermalink $p.app -}}
+{{- $links := slice -}}
+{{- range slice "impressum" "datenschutz" }}
+  {{- with site.GetPage . }}{{ $links = $links | append (dict "name" .Title "url" .RelPermalink) }}{{ end }}
+{{- end -}}
+{{- /* A screen as a picture that follows the colour scheme: WebP at the
+       width it is shown, twice for sharp displays. */ -}}
+{{- $shot := dict -}}
+{{- range $p.screens }}{{ $shot = merge $shot (dict .name .) }}{{ end -}}
+<!doctype html>
+<html lang="de" data-product="kalkar-kompakt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ .Title }} – Kalkar auf einen Blick</title>
+  <meta name="description" content="{{ .Description }}">
+  <meta name="color-scheme" content="light dark">
+  {{ partial "horizont/theme-color.html" dict }}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ .Description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  {{- with resources.Get "kompakt/start-light.png" }}{{ with .Fill "1200x630 top webp q85" }}
+  <meta property="og:image" content="{{ .Permalink }}">
+  {{- end }}{{ end }}
+  {{- $icon := partial "horizont/app-icon.html" (dict "product" "kalkar-kompakt" "size" 64) | resources.FromString "kompakt/favicon.svg" | minify | fingerprint }}
+  <link rel="icon" type="image/svg+xml" href="{{ $icon.RelPermalink }}">
+  {{- $hz := site.Data.horizont }}
+  {{- $css := slice
+    (resources.Get "css/horizont/tokens.css" | resources.ExecuteAsTemplate "css/horizont-tokens.css" $hz)
+    (resources.Get "css/horizont/components.css")
+    (resources.Get "css/kompakt.css")
+    | resources.Concat "css/kompakt.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{- /* An installed web app from before the move opens /kompakt/: on to
+         the app, as do old links into it (#/abfall). Before the first
+         paint, so the teaser does not flash. */}}
+  <script>
+    (function () {
+      var h = location.hash, s = matchMedia('(display-mode: standalone)').matches;
+      if (s || h.indexOf('#/') === 0) location.replace('{{ $app }}' + (h.indexOf('#/') === 0 ? h : ''));
+    })();
+  </script>
+</head>
+<body class="hz kk">
+<a class="kk-skip" href="#main">Zum Inhalt</a>
+{{ partial "horizont/nav/horizon.html" (dict
+    "product" "kalkar-kompakt"
+    "mark" "kalkar-kompakt"
+    "place" (printf "%s / %s" site.Title .Title)
+    "marks" "auto"
+    "link" (dict "url" ("" | relURL) "hint" site.Title)) }}
+<div class="hz-feld">
+<main id="main">
+  <section class="hz-feld-hero kk-hero">
+    <div class="kk-words">
+      <div class="kk-brand">
+        {{ partial "horizont/app-icon.html" (dict "product" "kalkar-kompakt" "size" 56) }}
+        <span class="kk-name">{{ .Title }}</span>
+      </div>
+      {{ partial "horizont/kennung.html" $p.hero.kennung }}
+      <h1 class="t-display">{{ $p.hero.title }}</h1>
+      <p>{{ $p.hero.text }}</p>
+      <div class="hz-feld-actions">
+        <a class="hz-button hz-button--primary" href="{{ $app }}">{{ $p.hero.primary }}{{ partial "horizont/symbol.html" "arrow_forward" }}</a>
+        <a class="hz-button hz-button--secondary" href="#{{ (index $p.sections 0).id }}">{{ $p.hero.secondary }}{{ partial "horizont/symbol.html" "expand_more" }}</a>
+      </div>
+      <p class="kk-note t-caption">{{ $p.hero.note }}</p>
+    </div>
+    <div class="hz-feld-aside kk-aside">
+      {{- /* The town hall of the icon, faint, standing on the horizon
+             behind the phone (as behind the start page of the app). */}}
+      {{ partial "kompakt/town-hall.html" }}
+      {{- $screens := "" }}
+      {{- range $i, $s := $p.screens }}
+      {{- $screens = printf "%s%s" $screens (partial "kompakt/shot.html" (dict "name" $s.name "alt" $s.alt "width" 300 "class" (printf "kk-slide%s" (cond (eq $i 0) " is-on" "")) "eager" (eq $i 0))) }}
+      {{- end }}
+      <div class="kk-phone">
+        {{ partial "horizont/device.html" (dict "device" "iphone" "width" 300 "cropped" true "height" 520 "inner" $screens "class" "kk-device") }}
+      </div>
+      {{- /* The screens by name; the line under the current one fills
+             while it is shown. A click shows that one. */}}
+      <ol class="kk-tour" aria-label="Ausschnitte aus der App">
+        {{- range $i, $s := $p.screens }}
+        <li><button type="button" data-slide="{{ $i }}"{{ if eq $i 0 }} aria-current="true"{{ end }}><span class="kk-tour-n">{{ printf "%02d" (add $i 1) }}</span>{{ $s.label }}<i></i></button></li>
+        {{- end }}
+      </ol>
+    </div>
+  </section>
+  <hr class="hz-feld-horizon kk-horizon">
+  {{- /* The Rhine under the horizon: a slow wave and what the app knows,
+         drifting by. Decoration; the same words stand in the sections. */}}
+  <div class="kk-rhein" aria-hidden="true">
+    <svg class="kk-wave" viewBox="0 0 1200 12" preserveAspectRatio="none"><path d="M0 6 Q 75 0 150 6 T 300 6 T 450 6 T 600 6 T 750 6 T 900 6 T 1050 6 T 1200 6 T 1350 6 T 1500 6 T 1650 6 T 1800 6 T 1950 6 T 2100 6 T 2250 6 T 2400 6"/></svg>
+    <div class="kk-ticker"><p>{{ range $p.ticker }}<span>{{ . }}</span>{{ end }}</p><p>{{ range $p.ticker }}<span>{{ . }}</span>{{ end }}</p></div>
+  </div>
+
+  {{- range $sec := $p.sections }}
+  <section class="hz-feld-section kk-section" id="{{ $sec.id }}">
+    {{ partial "horizont/kennung.html" $sec.kennung }}
+    <div>
+      <h2>{{ $sec.title }}</h2>
+      <p>{{ $sec.text | markdownify }}</p>
+    </div>
+    {{ partial "horizont/facts.html" (dict "items" $sec.facts) }}
+  </section>
+  {{- with $sec.shots }}
+  <div class="kk-shots kk-shots--{{ len . }} kk-reveal">
+    {{- range $i, $name := . }}
+    {{- with index $shot $name }}
+    <figure class="kk-shot" style="--i: {{ $i }}">
+      {{ partial "horizont/device.html" (dict "device" "iphone" "width" (cond (eq (len $sec.shots) 1) 300 260) "inner" (partial "kompakt/shot.html" (dict "name" .name "alt" .alt "width" 300))) }}
+      <figcaption class="t-caption">{{ .label }}</figcaption>
+    </figure>
+    {{- end }}
+    {{- end }}
+  </div>
+  {{- end }}
+  {{- with $sec.report }}
+  {{- /* A report on its way into the app: three confirmations, then it
+         stands. Played once when it comes into view. */}}
+  <div class="kk-report-row">
+    <figure class="kk-report kk-reveal" aria-label="{{ .example }}: {{ .kind }}, {{ .title }}, {{ .text }}">
+      <div class="kk-report-head"><span class="t-kennung">{{ .kind }}</span><span class="kk-report-example t-caption">{{ .example }}</span></div>
+      <p class="kk-report-title">{{ .title }}</p>
+      <p class="kk-report-text">{{ .text }}</p>
+      <div class="kk-report-votes">
+        <span class="kk-report-ask">{{ .ask }}</span>
+        <span class="kk-dots"><i></i><i></i><i></i></span>
+        <span class="kk-report-count hz-mono"><b>0</b>/3</span>
+      </div>
+      <p class="kk-report-done">{{ partial "horizont/symbol.html" "check_circle" }}{{ .done }}</p>
+    </figure>
+  </div>
+  {{- end }}
+  {{- end }}
+
+  <section class="kk-end">
+    {{ partial "horizont/app-icon.html" (dict "product" "kalkar-kompakt" "size" 72) }}
+    <h2 class="t-headline">{{ $p.hero.title }}</h2>
+    <a class="hz-button hz-button--primary" href="{{ $app }}">{{ $p.hero.primary }}{{ partial "horizont/symbol.html" "arrow_forward" }}</a>
+  </section>
+</main>
+{{ partial "horizont/feld/foot.html" (dict "links" $links) }}
+</div>
+{{ partial "horizont/nav/script.html" . }}
+{{- $js := resources.Get "js/kompakt.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</body>
+</html>

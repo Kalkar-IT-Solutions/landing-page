@@ -32,14 +32,22 @@ jobs:
         run: hugo --gc --minify
       # Kalkar Kompakt (private repo Kalkar-IT-Solutions/kalkar-kompakt)
       # pushes its web build to the branch kompakt-build of this repo; it
-      # is served at /kompakt/. Without that branch the site still deploys.
+      # is served at /kompakt/app/, below the teaser page at /kompakt/.
+      # A build still made for /kompakt/ goes there and covers the teaser,
+      # so the app keeps working until its next publish. Without that
+      # branch the site still deploys.
       - name: Add Kalkar Kompakt
         run: |
           if git fetch --depth 1 origin kompakt-build; then
-            mkdir -p public/kompakt
-            git --work-tree=public/kompakt checkout FETCH_HEAD -- .
+            dir=public/kompakt/app
+            if ! git show FETCH_HEAD:index.html | grep -q '<base href="/kompakt/app/">'; then
+              echo "::warning::kompakt-build is still built for /kompakt/, it covers the teaser."
+              dir=public/kompakt
+            fi
+            mkdir -p "$dir"
+            git --work-tree="$dir" checkout FETCH_HEAD -- .
             # The branch carries the workflow that started this run.
-            rm -rf public/kompakt/.github
+            rm -rf "$dir/.github"
           else
             echo "::warning::No branch kompakt-build, deploying without /kompakt/."
           fi
