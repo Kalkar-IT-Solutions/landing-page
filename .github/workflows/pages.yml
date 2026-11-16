@@ -31,25 +31,21 @@ jobs:
       - name: Build the site
         run: hugo --gc --minify
       # Kalkar Kompakt (private repo Kalkar-IT-Solutions/kalkar-kompakt)
-      # pushes its web build to the branch kompakt-build of this repo; it
-      # is served at /kompakt/app/, below the teaser page at /kompakt/.
-      # A build still made for /kompakt/ goes there and covers the teaser,
-      # so the app keeps working until its next publish. Without that
-      # branch the site still deploys.
+      # pushes its web app, the static folder app/, to the branch
+      # kompakt-build of this repo; it is served at /kompakt/app/, below
+      # the teaser page at /kompakt/. Without that branch the site still
+      # deploys.
       - name: Add Kalkar Kompakt
         run: |
           if git fetch --depth 1 origin kompakt-build; then
             dir=public/kompakt/app
-            if ! git show FETCH_HEAD:index.html | grep -q '<base href="/kompakt/app/">'; then
-              echo "::warning::kompakt-build is still built for /kompakt/, it covers the teaser."
-              dir=public/kompakt
-            fi
             mkdir -p "$dir"
             git --work-tree="$dir" checkout FETCH_HEAD -- .
             # The branch carries the workflow that started this run.
             rm -rf "$dir/.github"
+            test -f "$dir/config.js" || echo "::warning::kompakt-build holds no app/ folder (no config.js)."
           else
-            echo "::warning::No branch kompakt-build, deploying without /kompakt/."
+            echo "::warning::No branch kompakt-build, deploying without /kompakt/app/."
           fi
       - name: Keep the site for the upload
         uses: actions/upload-artifact@v7

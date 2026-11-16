@@ -7,7 +7,7 @@ Werbedienste, keine eingebetteten Inhalte Dritter. Schriften und Symbole
 liegen auf demselben Server wie die Seite. Personenbezogene Daten fallen auf
 der Seite selbst nur an zwei Stellen an: beim Aufruf der Seite durch den
 Hoster und wenn Sie uns schreiben. Für die Web-App Kalkar Kompakt unter
-[kalkar-it.de/kompakt](/kompakt/) und die gleichnamigen Apps gilt zusätzlich
+[kalkar-it.de/kompakt](/kompakt/) gilt zusätzlich
 der Abschnitt „Kalkar Kompakt“ weiter unten.
 
 ## Verantwortlich
@@ -35,7 +35,7 @@ E-Mails an diese Adresse werden über do.de, einen Dienst der Greenmark IT GmbH,
 
 Kalkar Kompakt bündelt Termine, Warnungen, Wetter, Verkehr und weitere
 Informationen für Kalkar und seine Ortsteile, im Browser unter
-[kalkar-it.de/kompakt](/kompakt/) und als App.
+[kalkar-it.de/kompakt](/kompakt/).
 
 **Inhalte und Server.** Die Inhalte holt ein Dienst von uns bei Supabase
 (Supabase, Inc.; Rechenzentrum in Frankfurt am Main, EU) aus öffentlichen
@@ -71,8 +71,9 @@ Abs. 1 lit. f DSGVO. Auf Wunsch löschen wir Ihre Meldungen; schreiben Sie
 dazu an [hi@kalkar-it.de](mailto:hi@kalkar-it.de).
 
 **Auf Ihrem Gerät.** Einstellungen wie Ihr Ortsteil und die Gerätenummer
-liegen nur im Speicher Ihres Browsers bzw. der App. Erinnerungen erzeugt die
-App selbst auf dem Gerät, ohne Push-Dienst. Es gibt keine Cookies, keine
+liegen nur im Speicher Ihres Browsers (localStorage). Erinnerungen an die
+Abfuhr gibt es als Kalenderdatei, die Ihr Gerät selbst verwaltet, ohne
+Push-Dienst. Es gibt keine Cookies, keine
 Analyse und keine Werbung.
 
 ## Ihre Rechte
