@@ -1,0 +1,1146 @@
+/* Horizont, web components. Built only on the tokens (tokens.css), no raw
+   colour, size or duration here: a landing page or a web app takes both files
+   and sets data-product on <html>. The fonts are expected in fonts/ next to
+   the css/ folder the stylesheet is published in.
+
+   Signature, everywhere the same:
+   - lines instead of shadows: 1px hairlines separate, nothing floats
+   - selection is a 2px line in the accent (the horizon), never a pill
+   - Kennungen: small mono capitals that label a section, an id, a value
+   - the accent marks one thing per view: the main action and the selection */
+
+@font-face { font-family: "Literata"; src: url("../fonts/Literata/Literata-Light.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Literata"; src: url("../fonts/Literata/Literata-LightItalic.woff2") format("woff2"); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: "Literata"; src: url("../fonts/Literata/Literata-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Monaspace Argon"; src: url("../fonts/Monaspace/MonaspaceArgon-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Monaspace Argon"; src: url("../fonts/Monaspace/MonaspaceArgon-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Mona Sans"; src: url("../fonts/MonaSans/MonaSans-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Mona Sans"; src: url("../fonts/MonaSans/MonaSans-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Mona Sans"; src: url("../fonts/MonaSans/MonaSans-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Mona Sans Display Expanded"; src: url("../fonts/MonaSans/MonaSansDisplayExpanded-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Mona Sans Display Expanded"; src: url("../fonts/MonaSans/MonaSansDisplayExpanded-Black.woff2") format("woff2"); font-weight: 800 900; font-display: swap; }
+@font-face { font-family: "Material Symbols Sharp"; src: url("../fonts/MaterialSymbols/MaterialSymbolsSharp-300.woff2") format("woff2"); font-weight: 300; font-display: block; }
+
+.hz {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/* A page on Horizont runs edge to edge; its frames bring their own padding. */
+body.hz { margin: 0; }
+
+.hz :focus-visible {
+  outline: var(--line-focus) solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hz-muted { color: var(--text-muted); }
+
+/* A Material Symbols Sharp icon by codepoint (icons/material-symbols.json):
+   <span class="hz-symbol" aria-hidden="true">&#xe88a;</span>. The font is
+   cut to the names in icons/material-symbols.txt and has no ligatures. */
+.hz-symbol {
+  font-family: var(--font-symbols);
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.25em;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: -0.2em;
+  -webkit-font-smoothing: antialiased;
+}
+.hz-kennung { color: var(--text-muted); }
+.hz-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+.hz-rule {
+  border: 0;
+  border-top: var(--line-hairline) solid var(--line);
+  margin: 0;
+}
+
+/* --- Buttons --- */
+
+.hz-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-8);
+  min-height: var(--size-touch);
+  padding: 0 var(--s-16);
+  border: var(--line-hairline) solid transparent;
+  border-radius: var(--r-6);
+  font: 500 0.9375rem/1 var(--font-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--motion-fast) var(--ease-standard),
+    border-color var(--motion-fast) var(--ease-standard);
+}
+
+.hz-button svg { width: 18px; height: 18px; }
+
+.hz-button--primary { background: var(--accent); color: var(--on-accent); }
+.hz-button--primary:hover { background: color-mix(in srgb, var(--accent) 88%, var(--text)); }
+.hz-button--secondary { background: transparent; color: var(--text); border-color: var(--line-strong); }
+.hz-button--secondary:hover { background: var(--sunken); }
+.hz-button--quiet { background: transparent; color: var(--accent-text); padding: 0 var(--s-8); }
+.hz-button--quiet:hover { background: var(--accent-tint); }
+.hz-button--critical { background: transparent; color: var(--critical); border-color: currentColor; }
+.hz-button--dense { min-height: var(--size-control-desktop); padding: 0 var(--s-12); font-size: 0.8125rem; }
+.hz-button:disabled { opacity: 1; background: var(--sunken); color: var(--text-faint); border-color: var(--line); cursor: not-allowed; }
+
+/* --- Fields --- */
+
+.hz-field { display: grid; gap: var(--s-4); }
+.hz-field label { font: 500 0.8125rem/1.25 var(--font-sans); color: var(--text); }
+.hz-field .hz-help { font-size: 0.75rem; color: var(--text-muted); }
+.hz-field .hz-error { font-size: 0.75rem; color: var(--critical); display: flex; gap: var(--s-4); align-items: center; }
+
+.hz-input {
+  min-height: var(--size-touch);
+  padding: 0 var(--s-12);
+  background: var(--surface);
+  color: var(--text);
+  border: var(--line-hairline) solid var(--line-strong);
+  border-radius: var(--r-6);
+  font: 400 1rem/1 var(--font-sans);
+}
+
+.hz-input:focus { outline: none; border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.hz-input[aria-invalid="true"] { border-color: var(--critical); }
+.hz-input.hz-mono { font-family: var(--font-mono); font-size: 0.875rem; }
+
+/* --- Lists ---
+   Rows are separated by a hairline that starts at the text, not at the edge
+   (the leading slot hangs out). No zebra, no cards per row. */
+
+.hz-list { list-style: none; margin: 0; padding: 0; background: var(--surface); }
+
+.hz-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--s-12);
+  min-height: var(--size-row);
+  padding: var(--s-8) var(--s-16);
+  position: relative;
+}
+
+.hz-row + .hz-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--row-inset, var(--s-16));
+  right: 0;
+  border-top: var(--line-hairline) solid var(--line);
+}
+
+.hz-row--inset { --row-inset: 52px; }
+.hz-row .hz-row-lead { width: 24px; height: 24px; color: var(--text-muted); display: grid; place-items: center; }
+.hz-row .hz-row-lead svg { width: 22px; height: 22px; }
+.hz-row .hz-row-title { font: 400 1rem/1.3 var(--font-sans); }
+.hz-row .hz-row-meta { font: 400 0.75rem/1.4 var(--font-mono); color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.hz-row .hz-row-trail { color: var(--text-faint); display: flex; align-items: center; gap: var(--s-8); }
+.hz-row[aria-selected="true"] { background: var(--accent-tint); }
+.hz-row[aria-selected="true"]::after {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  border-left: var(--line-selection) solid var(--accent);
+}
+
+/* --- Section header (Kennzeile) --- */
+
+.hz-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--s-24) var(--s-16) var(--s-8);
+  border-bottom: var(--line-hairline) solid var(--line);
+}
+
+/* --- Status ---
+   Never colour alone: every state has its own glyph and its word. */
+
+.hz-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+  height: 22px;
+  padding: 0 var(--s-8) 0 var(--s-4);
+  border-radius: var(--r-2);
+  font: 500 0.75rem/1 var(--font-sans);
+  background: var(--sunken);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hz-badge svg { width: 14px; height: 14px; }
+.hz-badge--positive { background: var(--positive-tint); color: var(--positive); }
+.hz-badge--warning { background: var(--warning-tint); color: var(--warning); }
+.hz-badge--critical { background: var(--critical-tint); color: var(--critical); }
+.hz-badge--info { background: var(--info-tint); color: var(--info); }
+.hz-badge--accent { background: var(--accent-tint); color: var(--accent-text); }
+
+/* --- Segments and tabs: the selected one carries the line --- */
+
+.hz-segmented {
+  display: inline-flex;
+  border: var(--line-hairline) solid var(--line-strong);
+  border-radius: var(--r-6);
+  overflow: hidden;
+}
+
+.hz-segmented button {
+  min-height: 32px;
+  padding: 0 var(--s-16);
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font: 500 0.8125rem/1 var(--font-sans);
+  cursor: pointer;
+  box-shadow: inset 0 calc(-1 * var(--line-selection)) 0 transparent;
+}
+
+.hz-segmented button + button { border-left: var(--line-hairline) solid var(--line-strong); }
+.hz-segmented button[aria-pressed="true"] {
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: inset 0 calc(-1 * var(--line-selection)) 0 var(--accent);
+}
+
+.hz-tabs {
+  display: flex;
+  gap: var(--s-24);
+  border-bottom: var(--line-hairline) solid var(--line);
+}
+
+.hz-tabs a {
+  padding: var(--s-12) 0;
+  color: var(--text-muted);
+  text-decoration: none;
+  font: 500 0.875rem/1 var(--font-sans);
+  border-bottom: var(--line-selection) solid transparent;
+  margin-bottom: -1px;
+}
+
+.hz-tabs a[aria-current] { color: var(--text); border-bottom-color: var(--accent); }
+
+/* --- Switch: the one round shape, so on and off read at a glance --- */
+
+.hz-switch {
+  appearance: none;
+  width: 40px; height: 24px;
+  border-radius: 12px;
+  background: var(--line-strong);
+  position: relative;
+  cursor: pointer;
+  transition: background-color var(--motion-fast) var(--ease-standard);
+  margin: 0;
+}
+
+.hz-switch::after {
+  content: "";
+  position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--surface);
+  transition: transform var(--motion-fast) var(--ease-standard);
+}
+
+.hz-switch:checked { background: var(--accent); }
+.hz-switch:checked::after { transform: translateX(16px); background: var(--on-accent); }
+
+/* --- Surface: rare. Grouping comes from space and lines first. --- */
+
+.hz-card {
+  background: var(--surface);
+  border: var(--line-hairline) solid var(--line-strong);
+  border-radius: var(--r-10);
+}
+
+/* --- Data table: values in mono, columns aligned, hairlines only --- */
+
+.hz-table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; }
+.hz-table th {
+  text-align: left;
+  font: 600 0.6875rem/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: var(--s-8) var(--s-12);
+  border-bottom: var(--line-hairline) solid var(--line-strong);
+  white-space: nowrap;
+}
+
+.hz-table td {
+  padding: 0 var(--s-12);
+  height: var(--size-row-dense);
+  border-bottom: var(--line-hairline) solid var(--line);
+  white-space: nowrap;
+}
+
+.hz-table td.hz-mono { font-size: 0.75rem; }
+.hz-table tr[aria-selected="true"] td { background: var(--accent-tint); }
+.hz-table tr[aria-selected="true"] td:first-child { box-shadow: inset var(--line-selection) 0 0 var(--accent); }
+.hz-table .hz-num { text-align: right; }
+
+/* A row without a leading icon: the title starts at the edge. */
+.hz-row:has(> span:empty:first-child) { grid-template-columns: 1fr auto; }
+.hz-row > span:empty:first-child { display: none; }
+
+/* --- Device frames ---
+   Every screenshot stands in its device: minimal, but true to the real thing.
+   Real proportions, the camera cut-out, side buttons, the stand. No
+   reflection, no perspective, no shadow, no colour but black and aluminium.
+
+     <figure class="hz-device hz-device--iphone" style="--w: 300px">
+       <div class="hz-device-screen">…</div>
+     </figure>
+
+   --w is the outer width; everything else follows from it. */
+
+.hz-device { position: relative; display: block; margin: 0; flex: none; width: var(--w, 300px); max-width: 100%; }
+.hz-device-screen { position: relative; overflow: hidden; background: var(--bg); color: var(--text); }
+
+.hz-device--iphone, .hz-device--android {
+  padding: calc(var(--w, 300px) * 0.022);
+  background: var(--device-body);
+  box-shadow: 0 0 0 1px var(--device-edge);
+}
+.hz-device--iphone { border-radius: calc(var(--w, 300px) * 0.165); }
+.hz-device--iphone > .hz-device-screen { aspect-ratio: 393 / 852; border-radius: calc(var(--w, 300px) * 0.145); }
+.hz-device--iphone > .hz-device-screen::before {
+  content: ""; position: absolute; z-index: 5; left: 50%; top: 1.3%;
+  width: 31%; height: 3.6%; transform: translateX(-50%);
+  border-radius: 999px; background: #000;
+}
+.hz-device--android { border-radius: calc(var(--w, 300px) * 0.11); }
+.hz-device--android > .hz-device-screen { aspect-ratio: 412 / 915; border-radius: calc(var(--w, 300px) * 0.09); }
+.hz-device--android > .hz-device-screen::before {
+  content: ""; position: absolute; z-index: 5; left: 50%; top: 1.4%;
+  width: 3.2%; aspect-ratio: 1; transform: translateX(-50%);
+  border-radius: 50%; background: #000;
+}
+
+/* Side buttons: iPhone action button and volume left, side button right;
+   Android volume and power right. --btn is how far a button shows past the
+   1 px edge of the frame (whose outline would cover it otherwise): 1 % of
+   the frame width less that pixel, never under 1 px. 3 px in all at the
+   default 300, as before; a small phone in a scene keeps slim buttons
+   instead of 3 px blocks. */
+.hz-device--iphone, .hz-device--android { --btn: max(1px, calc(var(--w, 300px) * 0.01 - 1px)); }
+.hz-device--iphone::before, .hz-device--iphone::after, .hz-device--android::after {
+  content: ""; position: absolute; width: calc(var(--btn) + 1px); background: var(--device-button);
+}
+.hz-device--iphone::before {
+  left: calc(-1 * var(--btn) - 1px); top: 17%; height: 21%; border-radius: 2px 0 0 2px;
+  background: linear-gradient(var(--device-button) 0 20%, transparent 20% 32%, var(--device-button) 32% 62%, transparent 62% 70%, var(--device-button) 70%);
+}
+.hz-device--iphone::after { right: calc(-1 * var(--btn) - 1px); top: 25%; height: 11%; border-radius: 0 2px 2px 0; }
+.hz-device--android::after {
+  right: calc(-1 * var(--btn) - 1px); top: 18%; height: 24%; border-radius: 0 2px 2px 0;
+  background: linear-gradient(var(--device-button) 0 25%, transparent 25% 40%, var(--device-button) 40%);
+}
+
+/* A phone cut off at the bottom edge of a section, as on landing pages. */
+.hz-device--cropped { padding-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.hz-device--cropped > .hz-device-screen { aspect-ratio: auto; height: var(--h, 380px); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+/* MacBook: thin black bezel, aluminium base with the opening notch. */
+.hz-device--laptop {
+  /* The base is 3.5 % wider than the lid on each side: at full width it
+     reached past the column and made the page scroll sideways. */
+  max-width: calc(100% / 1.07);
+  padding: calc(var(--w, 700px) * 0.014) calc(var(--w, 700px) * 0.014) calc(var(--w, 700px) * 0.02);
+  margin-bottom: calc(var(--w, 700px) * 0.022);
+  background: var(--device-body);
+  border-radius: calc(var(--w, 700px) * 0.022) calc(var(--w, 700px) * 0.022) 0 0;
+  box-shadow: 0 0 0 1px var(--device-edge);
+}
+.hz-device--laptop > .hz-device-screen { aspect-ratio: 16 / 10; border-radius: 3px; }
+.hz-device--laptop::after {
+  content: ""; position: absolute; left: -3.5%; right: -3.5%; top: 100%;
+  height: calc(var(--w, 700px) * 0.022);
+  background: linear-gradient(var(--device-aluminium), var(--device-aluminium-dark));
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+}
+.hz-device--laptop::before {
+  content: ""; position: absolute; z-index: 1; left: 43%; right: 43%; top: 100%;
+  height: calc(var(--w, 700px) * 0.008);
+  background: var(--device-aluminium-dark);
+  border-radius: 0 0 6px 6px;
+}
+
+/* Television: hairline bezel, a slim neck and foot. */
+.hz-device--tv {
+  padding: calc(var(--w, 700px) * 0.008);
+  margin-bottom: calc(var(--w, 700px) * 0.045);
+  background: var(--device-glass);
+  border-radius: calc(var(--w, 700px) * 0.006);
+  box-shadow: 0 0 0 1px var(--device-edge);
+}
+.hz-device--tv > .hz-device-screen { aspect-ratio: 16 / 9; }
+.hz-device--tv::before {
+  content: ""; position: absolute; left: 48.5%; right: 48.5%; top: 100%;
+  height: calc(var(--w, 700px) * 0.035); background: var(--device-body);
+}
+.hz-device--tv::after {
+  content: ""; position: absolute; left: 38%; right: 38%;
+  top: calc(100% + var(--w, 700px) * 0.035);
+  height: calc(var(--w, 700px) * 0.008); background: var(--device-body);
+  border-radius: 2px;
+}
+
+/* iPad in landscape: even bezel, camera on the long top edge, top button. */
+.hz-device--ipad {
+  padding: calc(var(--w, 600px) * 0.024);
+  background: var(--device-body);
+  border-radius: calc(var(--w, 600px) * 0.045);
+  box-shadow: 0 0 0 1px var(--device-edge);
+}
+.hz-device--ipad > .hz-device-screen { aspect-ratio: 1180 / 820; border-radius: calc(var(--w, 600px) * 0.022); }
+.hz-device--ipad::before {
+  content: ""; position: absolute; left: 50%; top: calc(var(--w, 600px) * 0.0095);
+  width: calc(var(--w, 600px) * 0.006); aspect-ratio: 1; transform: translateX(-50%);
+  border-radius: 50%; background: var(--device-button);
+}
+.hz-device--ipad::after {
+  /* The top button: 0.5 % of the frame width, 3 px at the default 600,
+     past the 1 px edge like the phone buttons. */
+  --btn: max(1px, calc(var(--w, 600px) * 0.005 - 1px));
+  content: ""; position: absolute; top: calc(-1 * var(--btn) - 1px); right: 9%; width: 7%; height: calc(var(--btn) + 1px);
+  border-radius: 2px 2px 0 0; background: var(--device-button);
+}
+
+/* Apple Watch: rounded body, Digital Crown and side button on the right.
+   The screen is black like the real one; apps draw on top of it. */
+.hz-device--watch {
+  padding: calc(var(--w, 160px) * 0.075);
+  background: var(--device-body);
+  border-radius: calc(var(--w, 160px) * 0.27);
+  box-shadow: 0 0 0 1px var(--device-edge);
+}
+.hz-device--watch > .hz-device-screen { aspect-ratio: 396 / 484; border-radius: calc(var(--w, 160px) * 0.2); background: #000; }
+.hz-device--watch::before {
+  content: ""; position: absolute; right: calc(var(--w, 160px) * -0.045); top: 24%;
+  width: calc(var(--w, 160px) * 0.05); height: 15%;
+  border-radius: 0 3px 3px 0; background: var(--device-button);
+  box-shadow: inset -1px 0 0 var(--device-edge);
+}
+.hz-device--watch::after {
+  /* The side button: 3 px at the default 160, scaled with the frame, past
+     the 1 px edge like the phone buttons. */
+  --btn: max(1px, calc(var(--w, 160px) * 0.019 - 1px));
+  content: ""; position: absolute; right: calc(-1 * var(--btn) - 1px); top: 50%; width: calc(var(--btn) + 1px); height: 20%;
+  border-radius: 0 2px 2px 0; background: var(--device-button);
+}
+
+/* --- Density ---
+   Touch keeps 44 pt targets. With a pointer (macOS, a web app on the
+   desktop) controls are 24 to 28 pt high and the toolbar 52 pt: set
+   data-density="desktop" on the window or the page. */
+[data-density="desktop"] .hz-button { min-height: var(--size-control-desktop); padding: 0 var(--s-12); font-size: 0.8125rem; }
+[data-density="desktop"] .hz-input { min-height: var(--size-control-desktop); font-size: 0.8125rem; }
+[data-density="desktop"] .hz-segmented button { min-height: 24px; padding: 0 var(--s-12); font-size: 0.75rem; }
+[data-density="desktop"] .hz-row { min-height: var(--size-row-dense); padding-block: var(--s-4); }
+
+/* --- Lockup: mark and name on one baseline ---
+   The horizon of a mark lies on its lower third. Next to a name it sits on
+   the baseline of the text, like a line drawn under the word: the mark's
+   bottom goes to the baseline, then moves down by a third of its height.
+   --mark sets its size, 1.15em by default. */
+.hz-lockup { display: inline-flex; align-items: baseline; gap: 0.4em; }
+.hz-lockup > .hz-mark {
+  flex: none;
+  width: var(--mark, 1.15em);
+  height: var(--mark, 1.15em);
+  position: relative;
+  top: calc(var(--mark, 1.15em) / 3);
+}
+
+/* --- Facts: a term in mono capitals and its value on one baseline ---
+   The term column has a fixed width (--facts-term), so lists below each
+   other line up. */
+.hz-facts {
+  display: grid;
+  grid-template-columns: var(--facts-term, var(--size-fact-term)) minmax(0, 1fr);
+  gap: var(--s-8) var(--s-16);
+  align-items: baseline;
+  align-content: start;
+  margin: 0;
+}
+.hz-facts dt {
+  font: 600 0.6875rem/1.6 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.hz-facts dd { margin: 0; }
+
+/* --- Feldseite: the landing page of every product ---
+   The horizon on top (horizont/nav/horizon.html), hero left (Kennung, Literata headline, one primary
+   action) with the product in its device on the right, the horizon line in
+   the accent, numbered sections, the footer with the sender. Built by the
+   partials under horizont/feld/. */
+.hz-feld { container-type: inline-size; max-width: var(--size-page); margin: 0 auto; }
+.hz-feld-hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: var(--s-48); padding: var(--s-64) var(--s-32) 0; align-items: end; }
+.hz-feld-hero h1 { margin: var(--s-16) 0 var(--s-24); font-size: clamp(2rem, 5.2cqw, 3.25rem); line-height: 1.08; text-wrap: balance; }
+.hz-feld-hero p { color: var(--text-muted); max-width: 46ch; margin: 0 0 var(--s-32); }
+.hz-feld-actions { display: flex; gap: var(--s-12); flex-wrap: wrap; margin-bottom: var(--s-64); }
+.hz-feld-aside { align-self: end; justify-self: center; }
+.hz-feld-aside--center { align-self: center; margin-bottom: var(--s-64); }
+.hz-feld-horizon { border: 0; border-top: var(--line-selection) solid var(--accent); margin: 0; }
+.hz-feld-section { display: grid; grid-template-columns: 180px 1fr 1fr; gap: var(--s-32); padding: var(--s-48) var(--s-32); border-bottom: var(--line-hairline) solid var(--line); }
+.hz-feld-section h2 { margin: 0 0 var(--s-12); font: 300 1.5rem/1.25 var(--font-serif); text-wrap: balance; }
+.hz-feld-section p { margin: 0; color: var(--text-muted); }
+.hz-feld-section .hz-facts { --facts-term: 5.5rem; font-size: 0.875rem; }
+.hz-feld-foot { display: flex; align-items: baseline; gap: var(--s-8); padding: var(--s-24) var(--s-32); color: var(--text-muted); font-size: 0.8125rem; }
+.hz-feld-foot .hz-feld-links { margin-left: auto; display: flex; flex-wrap: wrap; gap: var(--s-8) var(--s-16); min-width: 0; }
+.hz-feld-foot a { color: inherit; }
+@container (max-width: 720px) {
+  .hz-feld-hero { grid-template-columns: 1fr; padding: var(--s-48) var(--s-16) 0; }
+  .hz-feld-aside { display: none; }
+  .hz-feld-section { grid-template-columns: 1fr; gap: var(--s-12); padding: var(--s-32) var(--s-16); }
+  .hz-feld-foot { padding: var(--s-24) var(--s-16); flex-wrap: wrap; }
+  /* Narrow, the links take a line of their own and wrap there: in one
+     row they made the page wider than the window, and the fixed horizon
+     at the bottom grew with it. */
+  .hz-feld-foot .hz-feld-links { margin-left: 0; flex-basis: 100%; }
+}
+
+/* --- Horizon: the navigation (partials/nav/horizon.html) ---
+   No menu bar: a line with the mark standing on it. The mark walks with the
+   reading (--walk, set by horizon.js) and opens the Flurkarte. Chapter marks
+   sit on the line at the position of their chapter; their titles hang
+   below it, the current one dark and whole. With a pointer the line stands
+   at the top of the page, on touch at the bottom, in reach of the thumb.
+   Without the script the marks are a plain row of links under the line. */
+.hz-horizon {
+  --inset: var(--s-24);
+  --at: 36px;
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  display: block;
+  min-height: 62px;
+  width: 100%;
+  max-width: var(--horizon-width, none);
+  margin-inline: auto;
+  background: var(--bg);
+  /* The ground behind the line reaches the window edges while the line
+     itself keeps to the page frame (--horizon-width). */
+  box-shadow: 0 0 0 100vmax var(--bg);
+  clip-path: inset(0 -100vmax);
+  font-family: var(--font-mono);
+}
+.hz-horizon-line,
+.hz-horizon-done { position: absolute; left: var(--inset); top: var(--at); height: var(--line-hairline); }
+.hz-horizon-line { right: calc(var(--inset) + var(--end, 0px)); background: var(--line-strong); }
+/* With a language switch the line ends before it. */
+.hz-horizon:has(.hz-horizon-lang) { --end: calc(var(--lang-w, 72px) + var(--s-8)); }
+.hz-horizon-done { width: 0; height: var(--line-selection); margin-top: -1px; background: var(--accent); }
+.hz-walker {
+  position: absolute;
+  /* Two thirds of the mark (18.7px) above the line, on whole pixels so the
+     edges of a filled mark stay sharp. Not round(): with var() inside, a
+     browser without it (Chrome < 125) drops the whole top, earlier
+     declarations included, and the mark sits at the top of the bar. */
+  top: calc(var(--at) - 19px);
+  left: calc(var(--inset) + var(--walk, 0px));
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  color: var(--accent-text);
+  z-index: 2;
+  transition: left var(--motion-base) var(--ease-standard);
+}
+.hz-walker .hz-mark { display: block; width: 28px; height: 28px; }
+.hz-walker::after {
+  content: attr(data-hint) " · " attr(data-place);
+  position: absolute;
+  left: 36px;
+  top: 2px;
+  font: 600 0.625rem/1.6 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding-right: var(--s-4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-fast);
+}
+.hz-walker:hover::after,
+.hz-walker:focus-visible::after { opacity: 1; }
+.hz-ticks { list-style: none; margin: 0; padding: calc(var(--at) + var(--s-8)) var(--inset) var(--s-8) calc(var(--inset) + 28px); display: flex; flex-wrap: wrap; gap: var(--s-4) var(--s-16); }
+.hz-tick { font: 600 0.5625rem/1.2 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); text-decoration: none; }
+.hz-tick:hover, .hz-tick.is-current { color: var(--text); }
+/* Back hangs before the start of the line, outside the frame, its words on
+   the line like a lockup; the line keeps its length. Shown by the script
+   only where the window leaves room for it. */
+.hz-horizon-back {
+  position: absolute;
+  right: calc(100% - var(--inset) + 14px + var(--s-8));
+  top: calc(var(--at) - 11px);
+  font: 600 0.6875rem/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding-block: var(--s-2);
+}
+.hz-horizon-back:hover { color: var(--text); }
+.hz-horizon-back:not(.has-room) { visibility: hidden; }
+/* The language switch at the end of the line: both languages in a small
+   frame, the current one carrying the accent line, the other a link. */
+.hz-horizon-lang {
+  position: absolute;
+  right: var(--inset);
+  top: calc(var(--at) - 13px);
+  z-index: 3;
+  display: inline-flex;
+  align-items: stretch;
+  border: var(--line-hairline) solid var(--line-strong);
+  border-radius: var(--r-6);
+  background: var(--bg);
+  font: 600 0.6875rem/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  overflow: hidden;
+}
+.hz-horizon-lang > * { display: inline-flex; align-items: center; min-height: 24px; padding: 0 var(--s-8); text-decoration: none; }
+.hz-horizon-lang-here { color: var(--text); box-shadow: inset 0 calc(-1 * var(--line-selection)) 0 var(--accent); }
+.hz-horizon-lang a { color: var(--text-muted); border-left: var(--line-hairline) solid var(--line); }
+.hz-horizon-lang a:hover { color: var(--text); background: var(--sunken); }
+
+/* On a Feldseite the line stands before .hz-feld (whose container would
+   hold a fixed line on touch at the page's end) and keeps its frame. */
+body:has(> .hz-feld) > .hz-horizon { --horizon-width: var(--size-page); --inset: var(--s-32); }
+@media (max-width: 720px) { body:has(> .hz-feld) > .hz-horizon { --inset: var(--s-16); } }
+
+/* With the script: marks at their place on the line. */
+.hz-horizon.is-live .hz-ticks { position: absolute; left: var(--inset); right: calc(var(--inset) + var(--end, 0px)); top: 0; height: 100%; padding: 0; display: block; }
+.hz-horizon.is-live .hz-ticks li { position: absolute; top: 0; height: 100%; }
+.hz-horizon.is-live .hz-tick { position: absolute; top: 0; left: -10px; width: 20px; height: 100%; }
+.hz-horizon.is-live .hz-tick::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  bottom: calc(100% - var(--at));
+  width: 2px;
+  height: var(--h, 10px);
+  background: var(--line-strong);
+}
+.hz-horizon.is-live .hz-tick.is-current::before { background: var(--accent); }
+.hz-horizon.is-live .hz-tick span {
+  position: absolute;
+  top: calc(var(--at) + 6px);
+  left: 9px;
+  max-width: var(--room, 80px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hz-horizon.is-live .hz-tick.is-end span { left: auto; right: 9px; text-align: right; }
+.hz-horizon.is-live .hz-tick.is-current span { max-width: max(var(--room, 80px), 180px); background: var(--bg); padding-right: var(--s-4); z-index: 1; }
+/* The chapter the line marks is the one heading in the text that stands
+   whole; the others recede. Only with the script, which sets the classes. */
+.hz-chapter { color: var(--text-muted); transition: color var(--motion-slow) var(--ease-standard); }
+.hz-chapter.is-current { color: var(--text); }
+.hz-horizon-bubble {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + var(--s-8));
+  transform: translateX(-50%);
+  max-width: calc(100vw - 2 * var(--s-16));
+  padding: var(--s-8) var(--s-16);
+  border-radius: var(--r-6);
+  background: var(--text);
+  color: var(--bg);
+  font: 300 1.125rem/1.3 var(--font-serif);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Touch: the line at the bottom, marks with numbers, the current one with
+   its title; swiping along it jumps (horizon.js). */
+@media (hover: none) and (pointer: coarse) {
+  .hz-horizon {
+    --inset: var(--s-16);
+    --at: 30px;
+    max-width: none;
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    border-top: var(--line-hairline) solid var(--line);
+    touch-action: pan-y;
+  }
+  .hz-horizon.is-live { touch-action: none; }
+  body:has(.hz-horizon) { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+  .hz-walker::after { display: none; }
+  .hz-horizon { --lang-w: 88px; }
+  .hz-horizon-lang { top: calc(var(--at) - 17px); }
+  .hz-horizon-lang > * { min-height: 32px; padding: 0 var(--s-12); }
+  .hz-walker { width: 44px; height: 44px; margin-left: -22px; top: calc(var(--at) - 27px); padding: 8px; }
+  .hz-horizon.is-live .hz-tick { left: -14px; width: 28px; }
+  .hz-horizon.is-live .hz-tick::before { left: 13px; }
+  .hz-horizon.is-live .hz-tick span { left: 13px; }
+  .hz-horizon.is-live .hz-tick.is-end span { right: 13px; }
+  .hz-horizon.is-live .hz-tick:not(.is-current) span { max-width: min(var(--room, 24px), 28px); }
+}
+
+/* --- Flurkarte (partials/nav/karte.html) ---
+   The family seen from above: regetskcob as a field map, each field as large
+   as its content, furrows at their own angle; the products behind a field
+   path. The field you are on carries the accent and the mark. */
+/* The map follows its own width, not the window's: in a dialog or in a
+   page column it switches to one column below 760 px. Each field is a
+   container too, so a narrow field sets its name smaller; a long name
+   breaks with a hyphen rather than running over the field's edge. */
+.hz-karte { container: hz-karte / inline-size; }
+.hz-karte-grid { display: grid; grid-template-columns: minmax(0, 3fr) var(--s-16) minmax(0, 1.2fr); gap: var(--s-8); align-items: stretch; }
+/* A product's own domain: its field map alone, without the other sites. */
+.hz-karte-grid--solo { grid-template-columns: minmax(0, 1fr); }
+.hz-gem { display: flex; flex-direction: column; gap: var(--s-8); min-width: 0; }
+.hz-gem > .hz-kennung { margin: 0; }
+.hz-gem > .hz-kennung a { color: inherit; text-decoration: none; }
+.hz-gem > .hz-kennung a:hover { color: var(--text); }
+.hz-parzellen { list-style: none; margin: 0; padding: 0; flex: 1; display: grid; gap: 6px; }
+.hz-gem:first-child .hz-parzellen { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: minmax(76px, auto); grid-auto-flow: dense; }
+.hz-gem:first-child .hz-parzellen > li { grid-column: span var(--cols, 1); grid-row: span var(--rows, 1); }
+.hz-gem--prod .hz-parzellen { grid-auto-rows: 1fr; }
+.hz-parzellen > li { display: flex; min-width: 0; }
+.hz-parzelle {
+  container-type: inline-size;
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 76px;
+  padding: var(--s-8) var(--s-12);
+  border: var(--line-hairline) solid var(--line-strong);
+  background: repeating-linear-gradient(var(--ang, 0deg), var(--line) 0 1px, transparent 1px 7px), var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+.hz-parzelle:hover { border-color: var(--text); }
+.hz-parzelle-name, .hz-parzelle-count {
+  max-width: calc(100% + var(--s-4));
+  background: var(--surface);
+  padding: 0 var(--s-4);
+  margin-left: calc(-1 * var(--s-4));
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.hz-parzelle-name { font: 300 1.125rem/1.2 var(--font-serif); display: inline-flex; align-items: center; gap: var(--s-8); min-width: 0; }
+.hz-parzelle-name .hz-mark { flex: none; width: 20px; height: 20px; color: var(--accent-text); }
+.hz-parzelle-count { font: 600 0.5625rem/1.6 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+@container (max-width: 150px) {
+  .hz-parzelle-name { font-size: 0.9375rem; gap: var(--s-4); }
+  .hz-parzelle-name .hz-mark { width: 16px; height: 16px; }
+  .hz-parzelle-count { letter-spacing: 0.04em; }
+}
+.hz-parzelle[aria-current] {
+  border: var(--line-selection) solid var(--accent);
+  padding: calc(var(--s-8) - 1px) calc(var(--s-12) - 1px);
+  background: repeating-linear-gradient(var(--ang, 0deg), var(--accent-tint) 0 2px, transparent 2px 7px), var(--surface);
+}
+.hz-parzelle > .hz-mark { position: absolute; top: var(--s-8); right: var(--s-8); width: 24px; height: 24px; color: var(--accent-text); }
+.hz-weg { position: relative; }
+.hz-weg::before { content: ""; position: absolute; left: 50%; top: var(--s-24); bottom: 0; border-left: var(--line-hairline) dashed var(--line-strong); }
+@container hz-karte (max-width: 760px) {
+  .hz-karte-grid { grid-template-columns: minmax(0, 1fr); }
+  .hz-weg { display: none; }
+  .hz-gem:first-child .hz-parzellen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hz-gem:first-child .hz-parzellen > li { grid-column: span 1; grid-row: span 1; }
+  .hz-gem:first-child .hz-parzellen > li:first-child { grid-column: span 2; }
+  .hz-gem--prod { margin-top: var(--s-16); }
+  .hz-gem--prod .hz-parzellen { grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); grid-auto-rows: auto; }
+}
+
+.hz-karte-dialog {
+  width: min(960px, calc(100vw - 2 * var(--s-16)));
+  max-height: calc(100dvh - 2 * var(--s-16));
+  padding: var(--s-24);
+  border: var(--line-hairline) solid var(--line-strong);
+  border-radius: var(--r-10);
+  background: var(--bg);
+  color: var(--text);
+}
+.hz-karte-dialog::backdrop { background: color-mix(in srgb, var(--text) 30%, transparent); }
+.hz-karte-top { display: flex; align-items: center; justify-content: space-between; gap: var(--s-16); margin: 0 0 var(--s-16); }
+.hz-karte-actions { display: flex; gap: var(--s-8); }
+@media (max-width: 640px) { .hz-karte-dialog { padding: var(--s-16); } }
+
+/* Lightbox (partials/lightbox.html, js/lightbox.js): a picture large on a dark
+   backdrop, the bars on the window edges slightly see-through and fading
+   towards it. A viewer for pictures, so it keeps its own dark, whatever the
+   page's theme; taken over from the blog. */
+.hz-lightbox {
+  /* The bars sit on the top and bottom edge of the window, slightly see-
+     through, and fade out towards the photo. */
+  --hz-scrim-alpha: var(--scrim-bar-alpha);
+  --hz-scrim-bar: rgb(from var(--scrim-bg) r g b / var(--hz-scrim-alpha));
+  --hz-lightbox-bar-height: 4.4rem;
+  --hz-scrim-fade: 5rem;
+  /* A fixed frame, not one that follows the photo: portrait and landscape
+     photos change in turn while paging, and the bars' content must stay put.
+     On a wide screen the frame is no wider than a 3:2 photo that fills its
+     height, so the buttons stay near the photo instead of in the far
+     corners of the window. */
+  --hz-lightbox-width: min(95vw, calc(1.5 * (100dvh - 2 * var(--hz-lightbox-bar-height) - 1rem)));
+  padding: 0;
+  border: none;
+  background: transparent;
+  width: var(--hz-lightbox-width);
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  box-sizing: border-box;
+  padding-block: var(--hz-lightbox-bar-height);
+  overflow: visible;
+  cursor: default;
+}
+
+/* The way out of a bar: a smootherstep gradient over the full length of the
+   fade, so it shows no edge where it starts or ends. Positions count from
+   the window edge; --fade-solid is how far the bar is solid (its height for
+   the top and bottom bar, its width for the shooting data on the left). */
+.hz-lightbox-bar,
+.hz-lightbox-exif,
+.hz-scrim-bar {
+  --hz-scrim-fadeout:
+    var(--hz-scrim-bar) var(--fade-solid),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.995)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.083),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.965)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.167),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.896)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.250),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.790)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.333),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.653)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.417),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.500)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.500),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.347)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.583),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.210)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.667),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.104)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.750),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.035)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.833),
+    rgb(from var(--scrim-bg) r g b / calc(var(--hz-scrim-alpha) * 0.005)) calc(var(--fade-solid) + var(--hz-scrim-fade) * 0.917),
+    transparent calc(var(--fade-solid) + var(--hz-scrim-fade));
+}
+
+/* A bar on a picture, e.g. the title on a cover photo: words in the scrim's
+   white on the scrim, fading out towards the picture with the lightbox's
+   fade. --fade-solid is the height of the solid part (the text with its
+   padding), --hz-scrim-fade the length of the fade above it. */
+.hz-scrim-bar {
+  --hz-scrim-alpha: var(--scrim-bar-alpha);
+  --hz-scrim-bar: rgb(from var(--scrim-bg) r g b / var(--hz-scrim-alpha));
+  --hz-scrim-fade: 2.6rem;
+  --fade-solid: 3.7rem;
+  padding-top: var(--hz-scrim-fade);
+  background: linear-gradient(to top, var(--hz-scrim-fadeout));
+  color: var(--scrim-text);
+}
+
+/* Nothing in the lightbox can be selected. Fast clicks on the paging buttons are
+   double and triple clicks, and the browser answered with a text selection
+   that tinted the photo and the caption (and reached into the page behind).
+   The photo cannot be dragged away either. */
+.hz-lightbox,
+.hz-lightbox * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.hz-lightbox img {
+  -webkit-user-drag: none;
+}
+
+.hz-lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hz-lightbox::backdrop {
+  background: rgb(from var(--scrim-bg) r g b / 0.88);
+}
+
+/* The photo keeps its own aspect ratio, centred between the bars, and is
+   never scaled up beyond its own size. */
+.hz-lightbox img {
+  /* Above the bars: their fade runs out behind the photo, never over it. */
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 2 * var(--hz-lightbox-bar-height) - 1rem);
+  max-height: calc(100dvh - 2 * var(--hz-lightbox-bar-height) - 1rem);
+}
+
+/* The stage around the photo takes no part in the layout until the photo is
+   zoomed to its full size: then it is a scrolling window over the whole
+   screen, and the bars (and their buttons) stay above it. */
+.hz-lightbox-stage {
+  display: contents;
+}
+
+.hz-lightbox.zoomable img {
+  cursor: zoom-in;
+}
+
+.hz-lightbox.zoomed .hz-lightbox-stage {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  box-sizing: border-box;
+  padding-block: var(--hz-lightbox-bar-height);
+  overflow: auto;
+  scrollbar-width: none;
+  overscroll-behavior: contain;
+}
+
+.hz-lightbox.zoomed .hz-lightbox-stage::-webkit-scrollbar {
+  display: none;
+}
+
+.hz-lightbox.zoomed img {
+  flex: none;
+  margin: auto;
+  max-width: none;
+  max-height: none;
+  z-index: auto;
+  cursor: zoom-out;
+}
+
+.hz-lightbox.zoomed .hz-lightbox-bar {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hz-lightbox.zoomed .hz-lightbox-bar > * {
+  pointer-events: auto;
+}
+
+/* Two bars across the whole window, flush with its top and bottom edge. Their
+   content is a grid of three columns that keeps the middle one centred,
+   however wide the outer ones are, and is inset so that it lines up with the
+   frame. Below the content the bar fades into the backdrop. */
+.hz-lightbox-bar {
+  --fade-solid: var(--hz-lightbox-bar-height);
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: minmax(2.6rem, 1fr) minmax(0, auto) minmax(2.6rem, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+  /* A percentage of the window width here. */
+  padding-inline: calc((100% - var(--hz-lightbox-width)) / 2 + 1rem);
+  box-sizing: border-box;
+  color: var(--scrim-text);
+  cursor: default;
+}
+
+.hz-lightbox-bar-top {
+  top: 0;
+  height: calc(var(--hz-lightbox-bar-height) + var(--hz-scrim-fade));
+  padding-bottom: var(--hz-scrim-fade);
+  background: linear-gradient(to bottom, var(--hz-scrim-fadeout));
+}
+
+.hz-lightbox-bar-bottom {
+  bottom: 0;
+  height: calc(var(--hz-lightbox-bar-height) + var(--hz-scrim-fade));
+  padding-top: var(--hz-scrim-fade);
+  background: linear-gradient(to top, var(--hz-scrim-fadeout));
+}
+
+.hz-lightbox-bar p {
+  margin: 0;
+}
+
+.hz-lightbox-start {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hz-lightbox-count,
+.hz-lightbox-exif-toggle {
+  padding: var(--s-2) var(--s-8);
+  border: var(--line-hairline) solid rgb(from var(--scrim-text) r g b / 0.55);
+  border-radius: var(--r-6);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hz-lightbox-exif-toggle {
+  background: transparent;
+  color: var(--scrim-text);
+  cursor: pointer;
+}
+
+.hz-lightbox-exif-toggle:hover,
+.hz-lightbox-exif-toggle[aria-pressed="true"] {
+  background: rgb(from var(--scrim-text) r g b / 0.15);
+  border-color: rgb(from var(--scrim-text) r g b / 0.85);
+}
+
+/* The shooting data: a bar on the left edge between the top and the bottom
+   bar, like them slightly see-through, fading out towards the photo, and
+   above the photo. */
+.hz-lightbox-exif {
+  --fade-solid: 13rem;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: var(--hz-lightbox-bar-height);
+  bottom: var(--hz-lightbox-bar-height);
+  width: calc(var(--fade-solid) + var(--hz-scrim-fade));
+  box-sizing: border-box;
+  padding: 1rem var(--hz-scrim-fade) 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to right, var(--hz-scrim-fadeout));
+  color: var(--scrim-text);
+  cursor: default;
+}
+
+.hz-lightbox-exif[hidden] {
+  display: none;
+}
+
+.hz-lightbox-exif dl {
+  margin: 0;
+}
+
+.hz-lightbox-exif dt {
+  margin-top: var(--s-12);
+  font: 600 0.6875rem/1.4545 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--scrim-text-muted);
+}
+
+.hz-lightbox-exif dt:first-child {
+  margin-top: 0;
+}
+
+.hz-lightbox-exif dd {
+  margin: var(--s-2) 0 0;
+  font: 400 0.875rem/1.4286 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* The album or post, one line. */
+.hz-lightbox-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.hz-lightbox-close,
+.hz-lightbox-nav {
+  width: var(--size-touch);
+  height: var(--size-touch);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: var(--line-hairline) solid rgb(from var(--scrim-text) r g b / 0.55);
+  border-radius: var(--r-6);
+  background: transparent;
+  color: var(--scrim-text);
+  cursor: pointer;
+}
+
+/* Each one sticks to the outer end of its column. */
+.hz-lightbox-close,
+.hz-lightbox-next {
+  justify-self: end;
+}
+
+.hz-lightbox-prev {
+  justify-self: start;
+}
+
+.hz-lightbox-close:hover,
+.hz-lightbox-nav:hover {
+  background: rgb(from var(--scrim-text) r g b / 0.15);
+  border-color: rgb(from var(--scrim-text) r g b / 0.85);
+}
+
+/* The alt text, between the buttons, at most two lines (three on a phone). */
+.hz-lightbox-caption {
+  min-width: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.4286;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  /* More room for the text on a phone, in the bars and in the fade. */
+  .hz-lightbox {
+    --hz-lightbox-bar-height: 4.6rem;
+    --hz-scrim-fade: 5.4rem;
+  }
+
+  .hz-lightbox-exif {
+    --fade-solid: 11rem;
+  }
+
+  .hz-lightbox-bar {
+    gap: 0.5rem;
+    padding-inline: calc((100% - var(--hz-lightbox-width)) / 2 + 0.6rem);
+  }
+
+  .hz-lightbox-caption {
+    font-size: 0.75rem;
+    line-height: 1.3333;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
+/* With a single photo there is nothing to page through: the buttons and the
+   count go, but keep their room, so the middle stays in the middle. */
+.hz-lightbox-nav[hidden],
+.hz-lightbox-count[hidden] {
+  display: flex;
+  visibility: hidden;
+}
+
+/* Pictures that open in the lightbox. */
+a[data-lightbox] {
+  display: block;
+  cursor: zoom-in;
+  text-decoration: none;
+  border-bottom: none;
+}

@@ -1,0 +1,21 @@
+name: Deploy after a new Kalkar Kompakt build
+# Lives only in the branch kompakt-build of Kalkar-IT-Solutions/landing-page;
+# tool/deploy/publish_web.sh (or the app's CI) puts it there with each web
+# build, because push workflows run from the pushed branch. The FTP secrets
+# for the upload to do.de only hold on main, so this starts the deploy
+# workflow (still named pages.yml) on main, which picks the build up. A dispatch with GITHUB_TOKEN may start a workflow.
+on:
+  push:
+    branches:
+      - kompakt-build
+permissions:
+  actions: write
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Run the deploy workflow on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main -R "${{ github.repository }}"

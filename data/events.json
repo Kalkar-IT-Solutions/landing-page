@@ -1,0 +1,1029 @@
+{
+ "comment": "Veranstaltungen aus dem Kalender auf kalkar.de, Ratssitzungen aus dem iCal des Ratsportals (ris.kalkar.de), abgerufen am 26.10.2026. Zeiten sind Ortszeit Kalkar. Ergänzt um Termine aus den Ortsteilen (Vereins- und Dorfseiten, katholisch-kalkar.de, moyland.de), Stand 26.10.2026. \"ortsteil\" aus der Recherche oder über die Straßenschlüsseltabelle des Kreises; \"umgebung\" = außerhalb Kalkars (Schloss Moyland, Bedburg-Hau).",
+ "sources": [
+  "https://www.kalkar.de/aktuelles-events/veranstaltungen (pages 0–7)",
+  "https://www.kalkar.de/veranstaltungen/<slug> (detail pages, dates from their Google-Calendar links with ctz=Europe/Berlin)",
+  "https://ris.kalkar.de/termine",
+  "https://ris.kalkar.de/termine/ics/SD.NET_RIM.ics"
+ ],
+ "retrievedAt": "2026-10-26",
+ "events": [
+  {
+   "title": "Ausstellung \"Stahl und Stein\"",
+   "kind": "event",
+   "start": "2026-09-26",
+   "end": "2026-12-20",
+   "allDay": true,
+   "place": "Atelier Niederheeshof Marienbaumer Straße 118 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/ausstellung-stahl-und-stein",
+   "ortsteile": [
+    "appeldorn"
+   ]
+  },
+  {
+   "title": "Ausstellung \"I wish Fear was an Illusion\" von Hyunjin Kim",
+   "kind": "event",
+   "start": "2026-09-27",
+   "end": "2026-11-15",
+   "allDay": true,
+   "place": "Städtisches Museum Kalkar Grabenstraße 66 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/ausstellung-i-wish-fear-was-illusion-von-hyunjin-kim",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Ausstellung \"Girls\" im Stiftsmuseum",
+   "kind": "event",
+   "start": "2026-10-18",
+   "end": "2026-11-22",
+   "allDay": true,
+   "place": "Stiftsmuseum Wissel e. V. Köstersdick 22 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/ausstellung-girls-im-stiftsmuseum",
+   "ortsteile": [
+    "wissel"
+   ]
+  },
+  {
+   "title": "Ferienworkshop im Städtischen Museum",
+   "kind": "event",
+   "start": "2026-10-28T10:00:00",
+   "end": "2026-10-28T12:00:00",
+   "allDay": false,
+   "place": "Grabenstraße 66 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/ferienworkshop-im-staedtischen-museum",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Ferienworkshop im Städtischen Museum",
+   "kind": "event",
+   "start": "2026-10-29T15:00:00",
+   "end": "2026-10-29T17:00:00",
+   "allDay": false,
+   "place": "Grabenstraße 66 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/ferienworkshop-im-staedtischen-museum-0",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Kalkar aKtiv trifft… Familienbetrieb Wilmsen",
+   "kind": "event",
+   "start": "2026-10-29T18:30:00",
+   "end": "2026-10-29T22:00:00",
+   "allDay": false,
+   "place": "Familienbetrieb Wilmsen, Hochend 51, 47546 Kalkar",
+   "url": "https://www.kalkar-aktiv.com/event/kalkar-aktiv-trifft-familienbetrieb-wilmsen/",
+   "ortsteile": [
+    "hoennepel"
+   ],
+   "source": "https://www.kalkar-aktiv.com/veranstaltungen/"
+  },
+  {
+   "title": "Das Kriminal Dinner in Kalkar: Spannung, Genuss und ein rätselhafter Fall",
+   "kind": "event",
+   "start": "2026-10-30T19:00:00",
+   "end": "2026-10-30T22:30:00",
+   "allDay": false,
+   "place": "Landhaus Beckmann, Kalkar-Kehrum",
+   "url": "https://www.kalkar.de/veranstaltungen/das-kriminal-dinner-kalkar-spannung-genuss-und-ein-raetselhafter-fall",
+   "ortsteile": [
+    "kehrum"
+   ]
+  },
+  {
+   "title": "Lädchen-Session mit True Vodoo",
+   "kind": "event",
+   "start": "2026-10-30T20:00:00",
+   "allDay": false,
+   "place": "Griether Markt 28 47546 Kalkar-Grieth",
+   "url": "https://www.kalkar.de/veranstaltungen/laedchen-session-mit-true-vodoo",
+   "ortsteile": [
+    "grieth"
+   ]
+  },
+  {
+   "title": "Die Kalkarer Mühle ist geöffnet!",
+   "kind": "event",
+   "start": "2026-11-01T11:00:00",
+   "end": "2026-11-01T14:00:00",
+   "allDay": false,
+   "place": "Kalkarer Mühle (historische Windmühle)",
+   "url": "https://www.kalkar.de/veranstaltungen/die-kalkarer-muehle-ist-geoeffnet",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Kirchenführung in der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2026-11-01T12:00:00",
+   "allDay": false,
+   "place": "Jan-Joest-Straße 6 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/kirchenfuehrung-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Jour fixe zur Ausstellung \"I wish Fear was an Illusion\"",
+   "kind": "event",
+   "start": "2026-11-03T15:00:00",
+   "allDay": false,
+   "place": "Städtisches Museum Kalkar Grabenstraße 66 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/jour-fixe-zur-ausstellung-i-wish-fear-was-illusion",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Expat Family Life - Stephanie Finkler liest in der Bücherei",
+   "kind": "event",
+   "start": "2026-11-04T19:00:00",
+   "end": "2026-11-04T20:30:00",
+   "allDay": false,
+   "place": "Bücherei Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/expat-family-life-stephanie-finkler-liest-der-buecherei",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Weihnachtsdeko-Tauschmarkt im Beginenhof",
+   "kind": "event",
+   "start": "2026-11-05T17:00:00",
+   "end": "2026-11-05T18:30:00",
+   "allDay": false,
+   "place": "Beginenhof, Kesselstraße 20, Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/weihnachtsdeko-tauschmarkt-im-beginenhof",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Haupt- und Finanzausschuss",
+   "kind": "council",
+   "start": "2026-11-05T18:00:00",
+   "allDay": false,
+   "place": "Ratssaal im Rathaus, Markt 20, 47546 Kalkar",
+   "url": "https://ris.kalkar.de/tops/?__=UGhVM0hpd2NXNFdFcExjZRQuiPLq7_RT8Jd3PpZixp8",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Abendkonzert mit der Blues- Rock- Band Three Ball Eddy",
+   "kind": "event",
+   "start": "2026-11-06T19:00:00",
+   "allDay": false,
+   "place": "Burg Boetzelaer Reeser Straße 247 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/abendkonzert-mit-der-blues-rock-band-three-ball-eddy",
+   "ortsteile": [
+    "appeldorn"
+   ]
+  },
+  {
+   "title": "Grünkohlessen (BSV Kalkar 1953)",
+   "kind": "event",
+   "start": "2026-11-06T19:30:00",
+   "allDay": false,
+   "place": "Ratskeller Kalkar",
+   "url": "https://bsvkalkar.de/termine/eventdetail/16006/-/gruenkohlessen",
+   "ortsteile": [
+    "kalkar"
+   ],
+   "source": "https://bsvkalkar.de/termine/eventdetail/16006/-/gruenkohlessen"
+  },
+  {
+   "title": "Griether Karnevalsgesellschaft: Start Kartenvorverkauf",
+   "kind": "event",
+   "start": "2026-11-07",
+   "allDay": true,
+   "place": "Grieth am Rhein",
+   "url": "https://grieth.eu/kalender/griether-karnevalsgesellschaft-start-kartenvorverkauf/",
+   "ortsteile": [
+    "grieth"
+   ],
+   "source": "https://grieth.eu/events.ics"
+  },
+  {
+   "title": "Thementour: Juden in Kalkar - jüdische Traditionen",
+   "kind": "event",
+   "start": "2026-11-07T15:00:00",
+   "allDay": false,
+   "place": "Treffpunkt: Städtisches Museum/Tourist-Information, Grabenstraße 66, 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/thementour-juden-kalkar-juedische-traditionen",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Hubertusfest (St. Hubertus-Schützenbruderschaft Kehrum)",
+   "kind": "event",
+   "start": "2026-11-08",
+   "allDay": true,
+   "place": "Landhaus Beckmann",
+   "url": "https://www.schuetzen-kehrum.de/termine-1/",
+   "ortsteile": [
+    "kehrum"
+   ],
+   "source": "https://www.schuetzen-kehrum.de/termine-1/"
+  },
+  {
+   "title": "St. Clemens Markt Wissel",
+   "kind": "event",
+   "start": "2026-11-08T10:30:00",
+   "end": "2026-11-08T17:00:00",
+   "allDay": false,
+   "place": "Mehrzweckhalle Wissel Dorfstraße 19 47546 Kalkar-Wissel",
+   "url": "https://www.kalkar.de/veranstaltungen/st-clemens-markt-wissel",
+   "ortsteile": [
+    "wissel"
+   ]
+  },
+  {
+   "title": "Frühschoppen (BSV Kalkar 1953)",
+   "kind": "event",
+   "start": "2026-11-08T11:00:00",
+   "allDay": false,
+   "url": "https://bsvkalkar.de/termine/eventdetail/15839/-/fruehschoppen",
+   "ortsteile": [
+    "kalkar"
+   ],
+   "source": "https://bsvkalkar.de/termine/eventdetail/15839/-/fruehschoppen"
+  },
+  {
+   "title": "Martinszug Kalkar-Appeldorn 2026",
+   "kind": "event",
+   "start": "2026-11-08T18:00:00",
+   "allDay": false,
+   "place": "Start: Vorplatz St. Lambertus Pfarrkirche, Appeldorn",
+   "url": "https://www.kalkar.de/veranstaltungen/martinszug-kalkar-appeldorn-2026",
+   "ortsteile": [
+    "appeldorn"
+   ]
+  },
+  {
+   "title": "Martinszug Kalkar-Hönnepel 2026",
+   "kind": "event",
+   "start": "2026-11-09T17:45:00",
+   "allDay": false,
+   "place": "Start: Straße 'Rotes Häuschen', Hönnepel",
+   "url": "https://www.kalkar.de/veranstaltungen/martinszug-kalkar-hoennepel-2026",
+   "ortsteile": [
+    "hoennepel"
+   ]
+  },
+  {
+   "title": "Martinszug Kalkar-Kehrum 2025",
+   "kind": "event",
+   "start": "2026-11-10T18:00:00",
+   "end": "2026-11-10T20:00:00",
+   "allDay": false,
+   "place": "Kirche Kehrum",
+   "url": "https://www.kalkar.de/veranstaltungen/martinszug-kalkar-kehrum-2025",
+   "ortsteile": [
+    "kehrum"
+   ]
+  },
+  {
+   "title": "Martinszug Kalkar-Wissel 2026",
+   "kind": "event",
+   "start": "2026-11-11T18:00:00",
+   "allDay": false,
+   "place": "Grundschule Wissel",
+   "url": "https://www.kalkar.de/veranstaltungen/martinszug-kalkar-wissel-2026",
+   "ortsteile": [
+    "wissel"
+   ]
+  },
+  {
+   "title": "Martinszug Huisberden, Emmericher Eyland, Bylerward 2026",
+   "kind": "event",
+   "start": "2026-11-11T18:30:00",
+   "allDay": false,
+   "place": "Start: Alte Schule, Huisberden",
+   "url": "https://www.kalkar.de/veranstaltungen/martinszug-huisberden-emmericher-eyland-bylerward-2026",
+   "ortsteile": [
+    "bylerward",
+    "emmericher-eyland"
+   ]
+  },
+  {
+   "title": "St. Martin in Hanselaer – moderner St.-Martins-Gottesdienst",
+   "kind": "event",
+   "start": "2026-11-11T19:00:00",
+   "allDay": false,
+   "place": "Hanselaer (St. Antonius, Spickstr. 83 – Kirche nicht ausdrücklich genannt)",
+   "url": "https://www.katholisch-kalkar.de/neuigkeiten-termine/aktuelles/detailseite/st-martin-in-hanselaer-sehen-wahrnehmen-teilen",
+   "ortsteile": [
+    "hanselaer"
+   ],
+   "source": "https://www.katholisch-kalkar.de/neuigkeiten-termine/aktuelles/detailseite/st-martin-in-hanselaer-sehen-wahrnehmen-teilen"
+  },
+  {
+   "title": "Rat der Stadt",
+   "kind": "council",
+   "start": "2026-11-12T18:00:00",
+   "allDay": false,
+   "place": "Ratssaal im Rathaus, Markt 20, 47546 Kalkar",
+   "url": "https://ris.kalkar.de/tops/?__=UGhVM0hpd2NXNFdFcExjZTlXPttCJBwjawj8eut-QJA",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Die Singenden Leerer auf der Burg Boetzelaer",
+   "kind": "event",
+   "start": "2026-11-12T19:00:00",
+   "allDay": false,
+   "place": "Burg Boetzelaer Reeser Straße 247 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/die-singenden-leerer-auf-der-burg-boetzelaer",
+   "ortsteile": [
+    "appeldorn"
+   ]
+  },
+  {
+   "title": "Mitsingkonzert BSV Schützenchor Kalkar im Marktstübchen",
+   "kind": "event",
+   "start": "2026-11-13T19:00:00",
+   "allDay": false,
+   "place": "Marktstübchen Kalkar",
+   "url": "https://bsvkalkar.de/termine/eventdetail/16062/-/mitsingkonzert",
+   "ortsteile": [
+    "kalkar"
+   ],
+   "source": "https://bsvkalkar.de/termine/eventdetail/16062/-/mitsingkonzert"
+  },
+  {
+   "title": "Griether Karnevalsgesellschaft: Hoppeditzerwachen im PZ Kalkar",
+   "kind": "event",
+   "start": "2026-11-14",
+   "allDay": true,
+   "place": "PZ Kalkar, Am Bollwerk, Kalkar",
+   "url": "https://grieth.eu/kalender/griether-karnevalsgesellschaft-hoppeditzerwachen-im-pz-kalkar/",
+   "ortsteile": [
+    "grieth"
+   ],
+   "source": "https://grieth.eu/events.ics"
+  },
+  {
+   "title": "Martinszug Kalkar-Grieth am Rhein 2026",
+   "kind": "event",
+   "start": "2026-11-14T17:00:00",
+   "allDay": false,
+   "place": "Start: Markt, Grieth",
+   "url": "https://www.kalkar.de/veranstaltungen/martinszug-kalkar-grieth-am-rhein-2026",
+   "ortsteile": [
+    "grieth"
+   ]
+  },
+  {
+   "title": "Martinszug Kalkar-Niedermörmter 2026",
+   "kind": "event",
+   "start": "2026-11-14T18:00:00",
+   "allDay": false,
+   "place": "Kirche / Feuerwehr, Niedermörmter",
+   "url": "https://www.kalkar.de/veranstaltungen/martinszug-kalkar-niedermoermter-2026",
+   "ortsteile": [
+    "niedermoermter"
+   ]
+  },
+  {
+   "title": "Die Fenster der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2026-11-15T14:00:00",
+   "allDay": false,
+   "place": "St. Nicolai Kirche Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/die-fenster-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Künstlerinnentag: Eröffnung Women by Women by Women – Künstlerinnen der Sammlung",
+   "kind": "event",
+   "start": "2026-11-15T14:00:00",
+   "end": "2026-11-15T17:00:00",
+   "allDay": false,
+   "place": "Museum Schloss Moyland, Am Schloss 4, 47551 Bedburg-Hau",
+   "url": "https://moyland.de/veranstaltungen/kuenstlerinnentag-eroeffnung-women-by-women-by-women-kuenstlerinnen-der-sammlung-15041/",
+   "ortsteile": [
+    "umgebung"
+   ],
+   "source": "https://moyland.de/veranstaltungen/"
+  },
+  {
+   "title": "Finissage der Ausstellung \"I wish Fear was an Illusion\"",
+   "kind": "event",
+   "start": "2026-11-15T15:00:00",
+   "allDay": false,
+   "place": "Städtisches Museum Kalkar Grabenstraße 66 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/finissage-der-ausstellung-i-wish-fear-was-illusion",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Winterliche Reise in Geschichten und Liedern mit Uschi & Chrisi",
+   "kind": "event",
+   "start": "2026-11-18T19:00:00",
+   "end": "2026-11-18T21:00:00",
+   "allDay": false,
+   "place": "Bücherei Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/winterliche-reise-geschichten-und-liedern-mit-uschi-chrisi",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Langer Donnerstag: SCHULE IM SCHLOSS?",
+   "kind": "event",
+   "start": "2026-11-19T17:00:00",
+   "end": "2026-11-19T20:00:00",
+   "allDay": false,
+   "place": "Museum Schloss Moyland, Am Schloss 4, 47551 Bedburg-Hau",
+   "url": "https://moyland.de/veranstaltungen/langer-donnerstag-schule-im-schloss-14864/",
+   "ortsteile": [
+    "umgebung"
+   ],
+   "source": "https://moyland.de/veranstaltungen/"
+  },
+  {
+   "title": "Rock in der Griether Halle",
+   "kind": "event",
+   "start": "2026-11-21",
+   "allDay": true,
+   "place": "Griether Markt 28 47546 Kalkar-Grieth",
+   "url": "https://www.kalkar.de/veranstaltungen/rock-der-griether-halle",
+   "ortsteile": [
+    "grieth"
+   ]
+  },
+  {
+   "title": "Gildenfest (Wissel)",
+   "kind": "event",
+   "start": "2026-11-21",
+   "allDay": true,
+   "url": "http://www.duenendorf-wissel.de/wp-content/uploads/2026/01/Kalender_2026.pdf",
+   "ortsteile": [
+    "wissel"
+   ],
+   "source": "http://www.duenendorf-wissel.de/wp-content/uploads/2026/01/Kalender_2026.pdf"
+  },
+  {
+   "title": "Erste-Hilfe-Kurs in Kalkar-Wissel",
+   "kind": "event",
+   "start": "2026-11-21T08:30:00",
+   "end": "2026-11-21T16:15:00",
+   "allDay": false,
+   "place": "Malteser Hilfsdienst e. V. Kalkar Dorfstraße 19 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/erste-hilfe-kurs-kalkar-wissel",
+   "ortsteile": [
+    "wissel"
+   ]
+  },
+  {
+   "title": "Weihnachtsschießen (Wissel)",
+   "kind": "event",
+   "start": "2026-11-22",
+   "allDay": true,
+   "url": "http://www.duenendorf-wissel.de/wp-content/uploads/2026/01/Kalender_2026.pdf",
+   "ortsteile": [
+    "wissel"
+   ],
+   "source": "http://www.duenendorf-wissel.de/wp-content/uploads/2026/01/Kalender_2026.pdf"
+  },
+  {
+   "title": "Familiensonntag – Bühne frei: Katharina Sieverding & Joseph Beuys",
+   "kind": "event",
+   "start": "2026-11-22T11:30:00",
+   "end": "2026-11-22T13:00:00",
+   "allDay": false,
+   "place": "Museum Schloss Moyland, Am Schloss 4, 47551 Bedburg-Hau",
+   "url": "https://moyland.de/veranstaltungen/familiensonntag-buehne-frei-katharina-sieverding-joseph-beuys-15003/",
+   "ortsteile": [
+    "umgebung"
+   ],
+   "source": "https://moyland.de/veranstaltungen/"
+  },
+  {
+   "title": "Ausschuss für Wirtschaftsförderung und Liegenschaften",
+   "kind": "council",
+   "start": "2026-11-25T18:00:00",
+   "allDay": false,
+   "place": "Ratssaal im Rathaus, Markt 20, 47546 Kalkar",
+   "url": "https://ris.kalkar.de/tops/?__=UGhVM0hpd2NXNFdFcExjZbpzE5FewSUFp7sGNOt2lD0",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Sprechstunde der Bürgermeisterin",
+   "kind": "event",
+   "start": "2026-11-26T16:00:00",
+   "end": "2026-11-26T17:30:00",
+   "allDay": false,
+   "place": "Historisches Rathaus Kalkar Markt 20 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/sprechstunde-der-buergermeisterin-3",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Taschenlampenführung im Schlosspark (Kinder 6–10 und Familien)",
+   "kind": "event",
+   "start": "2026-11-27T17:00:00",
+   "end": "2026-11-27T18:00:00",
+   "allDay": false,
+   "place": "Museum Schloss Moyland, Am Schloss 4, 47551 Bedburg-Hau",
+   "url": "https://moyland.de/veranstaltungen/taschenlampenfuehrung-im-schlosspark-fuer-kinder-von-6-10-jahren-und-ihre-familien-4-15018/",
+   "ortsteile": [
+    "umgebung"
+   ],
+   "source": "https://moyland.de/veranstaltungen/"
+  },
+  {
+   "title": "Nikolausmarkt in Kalkar",
+   "kind": "event",
+   "start": "2026-11-28T14:00:00",
+   "end": "2026-11-28T20:00:00",
+   "allDay": false,
+   "place": "Kirchplatz rund um die St. Nicolai Kirche, Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/nikolausmarkt-kalkar-0",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Nikolausmarkt in Kalkar",
+   "kind": "event",
+   "start": "2026-11-29T12:00:00",
+   "end": "2026-11-29T19:00:00",
+   "allDay": false,
+   "place": "Kirchplatz rund um die St. Nicolai Kirche, Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/nikolausmarkt-kalkar-0",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Stephanie Marzian liest aus ihrem neuen Roman \"Die Legende der Mistelzweig-Küsse\".",
+   "kind": "event",
+   "start": "2026-11-29T13:00:00",
+   "end": "2026-11-29T14:00:00",
+   "allDay": false,
+   "place": "Bücherei Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/stephanie-marzian-liest-aus-ihrem-neuen-roman-die-legende-der-mistelzweig-kuesse",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Tango Argentino - eine Milonga in der Burg Boetzelaer",
+   "kind": "event",
+   "start": "2026-11-29T15:00:00",
+   "allDay": false,
+   "place": "Burg Boetzelaer Reeser Straße 247 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/tango-argentino-eine-milonga-der-burg-boetzelaer-2",
+   "ortsteile": [
+    "appeldorn"
+   ]
+  },
+  {
+   "title": "GreenLive 2026 – Fachmesse für die Agrarwirtschaft",
+   "kind": "event",
+   "start": "2026-11-30T13:00:00",
+   "end": "2026-12-02T22:00:00",
+   "allDay": false,
+   "place": "Messe Kalkar",
+   "url": "https://www.kalkar-aktiv.com/veranstaltungen/",
+   "source": "https://www.kalkar-aktiv.com/veranstaltungen/"
+  },
+  {
+   "title": "Ausschuss für Bildung, Jugend und Sport",
+   "kind": "council",
+   "start": "2026-12-01T18:00:00",
+   "allDay": false,
+   "place": "Ratssaal im Rathaus, Markt 20, 47546 Kalkar",
+   "url": "https://ris.kalkar.de/tops/?__=UGhVM0hpd2NXNFdFcExjZbpcpwhLm3AsBUmLRaBpIFs",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Ausschuss für das Sondervermögen Abwasser",
+   "kind": "council",
+   "start": "2026-12-02T18:00:00",
+   "allDay": false,
+   "place": "Ratssaal im Rathaus, Markt 20, 47546 Kalkar",
+   "url": "https://ris.kalkar.de/tops/?__=UGhVM0hpd2NXNFdFcExjZfPs5U6cn_rBvVp4n5IVvHc",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Ausschuss für Bauwesen und Umwelt",
+   "kind": "council",
+   "start": "2026-12-03T18:00:00",
+   "allDay": false,
+   "place": "Ratssaal im Rathaus, Markt 20, 47546 Kalkar",
+   "url": "https://ris.kalkar.de/tops/?__=UGhVM0hpd2NXNFdFcExjZQKJ5xArsUQ1tZtZ8Ir3dpI",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Die Kalkarer Mühle ist geöffnet!",
+   "kind": "event",
+   "start": "2026-12-06T11:00:00",
+   "end": "2026-12-06T14:00:00",
+   "allDay": false,
+   "place": "Kalkarer Mühle (historische Windmühle)",
+   "url": "https://www.kalkar.de/veranstaltungen/die-kalkarer-muehle-ist-geoeffnet",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Kirchenführung in der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2026-12-06T12:00:00",
+   "allDay": false,
+   "place": "Jan-Joest-Straße 6 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/kirchenfuehrung-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Adventskonzert in der Burg Boetzelaer mit dem Duo HörBar",
+   "kind": "event",
+   "start": "2026-12-06T15:00:00",
+   "allDay": false,
+   "place": "Burg Boetzelaer Reeser Straße 247 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/adventskonzert-der-burg-boetzelaer-mit-dem-duo-hoerbar-0",
+   "ortsteile": [
+    "appeldorn"
+   ]
+  },
+  {
+   "title": "Adventskonzert des Shantychors \"Die Hanseaten Grieth\"",
+   "kind": "event",
+   "start": "2026-12-06T17:00:00",
+   "allDay": false,
+   "place": "Am Ehrenmal 13 47546 Kalkar-Grieth",
+   "url": "https://www.kalkar.de/veranstaltungen/adventskonzert-des-shantychors-die-hanseaten-grieth-0",
+   "ortsteile": [
+    "grieth"
+   ]
+  },
+  {
+   "title": "Messe der Frauengemeinschaft mit Nikolaus-Frühstück (Wissel)",
+   "kind": "event",
+   "start": "2026-12-07",
+   "allDay": true,
+   "url": "http://www.duenendorf-wissel.de/wp-content/uploads/2026/01/Kalender_2026.pdf",
+   "ortsteile": [
+    "wissel"
+   ],
+   "source": "http://www.duenendorf-wissel.de/wp-content/uploads/2026/01/Kalender_2026.pdf"
+  },
+  {
+   "title": "28. Moyländer Kunsthandwerker-Weihnachtsmarkt",
+   "kind": "event",
+   "start": "2026-12-09T13:00:00",
+   "end": "2026-12-13T20:00:00",
+   "allDay": false,
+   "place": "Museum Schloss Moyland, Am Schloss 4, 47551 Bedburg-Hau",
+   "url": "https://moyland.de/veranstaltungen/28-moylaender-kunsthandwerker-weihnachtsmarkt-15015/",
+   "ortsteile": [
+    "umgebung"
+   ],
+   "source": "https://moyland.de/veranstaltungen/"
+  },
+  {
+   "title": "Haupt- und Finanzausschuss",
+   "kind": "council",
+   "start": "2026-12-10T18:00:00",
+   "allDay": false,
+   "place": "Ratssaal im Rathaus, Markt 20, 47546 Kalkar",
+   "url": "https://ris.kalkar.de/tops/?__=UGhVM0hpd2NXNFdFcExjZfsrS_sP7wVyOTbN1NGeACs",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Erste-Hilfe-Kurs in Kalkar-Wissel",
+   "kind": "event",
+   "start": "2026-12-12T08:30:00",
+   "end": "2026-12-12T16:15:00",
+   "allDay": false,
+   "place": "Malteser Hilfsdienst e. V. Kalkar Dorfstraße 19 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/erste-hilfe-kurs-kalkar-wissel",
+   "ortsteile": [
+    "wissel"
+   ]
+  },
+  {
+   "title": "50. Nikolausturnen des TV Kalkar",
+   "kind": "event",
+   "start": "2026-12-12T16:00:00",
+   "allDay": false,
+   "place": "Dreifachsporthalle der Stadt Kalkar Am Bollwerk 20 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/50-nikolausturnen-des-tv-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "50. Nikolausturnen des TV Kalkar",
+   "kind": "event",
+   "start": "2026-12-13T11:00:00",
+   "allDay": false,
+   "place": "Dreifachsporthalle der Stadt Kalkar Am Bollwerk 20 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/50-nikolausturnen-des-tv-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Unterhaltsame Geschichten zum 3. Advent mit Trü Kobusch und Beate Spira",
+   "kind": "event",
+   "start": "2026-12-13T15:00:00",
+   "allDay": false,
+   "place": "Atelier Künstlerhaus Sabisch, Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/unterhaltsame-geschichten-zum-3-advent-mit-true-kobusch-und-beate-spira"
+  },
+  {
+   "title": "Adventskonzert des Dünenorchesters Wissel und der Chorgemeinschaft",
+   "kind": "event",
+   "start": "2026-12-13T17:00:00",
+   "allDay": false,
+   "place": "Köstersdick 33 47546 Kalkar-Wissel",
+   "url": "https://www.kalkar.de/veranstaltungen/adventskonzert-des-duenenorchesters-wissel-und-der-chorgemeinschaft-0",
+   "ortsteile": [
+    "wissel"
+   ]
+  },
+  {
+   "title": "Rat der Stadt",
+   "kind": "council",
+   "start": "2026-12-17T17:00:00",
+   "allDay": false,
+   "place": "Ratssaal im Rathaus, Markt 20, 47546 Kalkar",
+   "url": "https://ris.kalkar.de/tops/?__=UGhVM0hpd2NXNFdFcExjZf4AY2ql3oDjN0IlDGvKAek",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Langer Donnerstag: NACHTS IM MUSEUM",
+   "kind": "event",
+   "start": "2026-12-17T17:00:00",
+   "end": "2026-12-17T20:00:00",
+   "allDay": false,
+   "place": "Museum Schloss Moyland, Am Schloss 4, 47551 Bedburg-Hau",
+   "url": "https://moyland.de/veranstaltungen/langer-donnerstag-nachts-im-museum-1-14905/",
+   "ortsteile": [
+    "umgebung"
+   ],
+   "source": "https://moyland.de/veranstaltungen/"
+  },
+  {
+   "title": "Adventskonzert in der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2026-12-19T18:00:00",
+   "end": "2026-12-19T19:30:00",
+   "allDay": false,
+   "place": "Katholische Kirche St. Nicolai Jan-Joest-Straße 6 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/adventskonzert-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Die Fenster der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2026-12-20T14:00:00",
+   "allDay": false,
+   "place": "St. Nicolai Kirche Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/die-fenster-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Weihnachtslieder auf dem Kalkarer Marktplatz",
+   "kind": "event",
+   "start": "2026-12-20T18:00:00",
+   "end": "2026-12-20T18:30:00",
+   "allDay": false,
+   "place": "Marktplatz Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/weihnachtslieder-auf-dem-kalkarer-marktplatz",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Die Kalkarer Mühle ist geöffnet!",
+   "kind": "event",
+   "start": "2027-01-03T11:00:00",
+   "end": "2027-01-03T14:00:00",
+   "allDay": false,
+   "place": "Kalkarer Mühle (historische Windmühle)",
+   "url": "https://www.kalkar.de/veranstaltungen/die-kalkarer-muehle-ist-geoeffnet",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Kirchenführung in der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2027-01-03T12:00:00",
+   "allDay": false,
+   "place": "Jan-Joest-Straße 6 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/kirchenfuehrung-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Die Fenster der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2027-01-17T14:00:00",
+   "allDay": false,
+   "place": "St. Nicolai Kirche Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/die-fenster-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Griether Karnevalsgesellschaft: 1. Sitzung",
+   "kind": "event",
+   "start": "2027-01-23T19:11:00",
+   "allDay": false,
+   "place": "Narrenburg (Bürgerhalle), Grieth am Rhein",
+   "url": "https://grieth.eu/kalender/griether-karnevalsgesellschaft-1-sitzung/",
+   "ortsteile": [
+    "grieth"
+   ],
+   "source": "https://grieth.eu/events.ics"
+  },
+  {
+   "title": "Griether Karnevalsgesellschaft: 2. Sitzung",
+   "kind": "event",
+   "start": "2027-01-30T19:11:00",
+   "allDay": false,
+   "place": "Narrenburg (Bürgerhalle), Grieth am Rhein",
+   "url": "https://grieth.eu/kalender/griether-karnevalsgesellschaft-2-sitzung/",
+   "ortsteile": [
+    "grieth"
+   ],
+   "source": "https://grieth.eu/events.ics"
+  },
+  {
+   "title": "Die Kalkarer Mühle ist geöffnet!",
+   "kind": "event",
+   "start": "2027-02-07T11:00:00",
+   "end": "2027-02-07T14:00:00",
+   "allDay": false,
+   "place": "Kalkarer Mühle (historische Windmühle)",
+   "url": "https://www.kalkar.de/veranstaltungen/die-kalkarer-muehle-ist-geoeffnet",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Kirchenführung in der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2027-02-07T12:00:00",
+   "allDay": false,
+   "place": "Jan-Joest-Straße 6 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/kirchenfuehrung-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Griether Karnevalsgesellschaft: Kinderkarneval",
+   "kind": "event",
+   "start": "2027-02-07T15:11:00",
+   "allDay": false,
+   "place": "Narrenburg (Bürgerhalle), Grieth am Rhein",
+   "url": "https://grieth.eu/kalender/griether-karnevalsgesellschaft-kinderkarneval/",
+   "ortsteile": [
+    "grieth"
+   ],
+   "source": "https://grieth.eu/events.ics"
+  },
+  {
+   "title": "Rosenmontag mal anders – Kunst statt Kamelle mit Finissage Katharina Sieverding & Joseph Beuys",
+   "kind": "event",
+   "start": "2027-02-08T11:00:00",
+   "end": "2027-02-08T17:00:00",
+   "allDay": false,
+   "place": "Museum Schloss Moyland, Am Schloss 4, 47551 Bedburg-Hau",
+   "url": "https://moyland.de/veranstaltungen/rosenmontag-mal-anders-kunst-statt-kamelle-mit-finissage-katharina-sieverding-joseph-beuys-15013/",
+   "ortsteile": [
+    "umgebung"
+   ],
+   "source": "https://moyland.de/veranstaltungen/"
+  },
+  {
+   "title": "Das Kriminal Dinner in Kalkar: Spannung, Genuss und ein rätselhafter Fall",
+   "kind": "event",
+   "start": "2027-02-19T19:00:00",
+   "end": "2027-02-19T22:30:00",
+   "allDay": false,
+   "place": "Landhaus Beckmann, Kalkar-Kehrum",
+   "url": "https://www.kalkar.de/veranstaltungen/das-kriminal-dinner-kalkar-spannung-genuss-und-ein-raetselhafter-fall-0",
+   "ortsteile": [
+    "kehrum"
+   ]
+  },
+  {
+   "title": "Die Fenster der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2027-02-21T14:00:00",
+   "allDay": false,
+   "place": "St. Nicolai Kirche Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/die-fenster-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Die Kalkarer Mühle ist geöffnet!",
+   "kind": "event",
+   "start": "2027-03-07T11:00:00",
+   "end": "2027-03-07T14:00:00",
+   "allDay": false,
+   "place": "Kalkarer Mühle (historische Windmühle)",
+   "url": "https://www.kalkar.de/veranstaltungen/die-kalkarer-muehle-ist-geoeffnet",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Kirchenführung in der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2027-03-07T12:00:00",
+   "allDay": false,
+   "place": "Jan-Joest-Straße 6 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/kirchenfuehrung-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Die Fenster der St. Nicolai Kirche Kalkar",
+   "kind": "event",
+   "start": "2027-03-21T14:00:00",
+   "allDay": false,
+   "place": "St. Nicolai Kirche Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/die-fenster-der-st-nicolai-kirche-kalkar",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Klavierkonzert Hans Albert Müllers",
+   "kind": "event",
+   "start": "2027-04-18T17:00:00",
+   "allDay": false,
+   "place": "Ratssaal im historischen Rathaus Markt 20 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/klavierkonzert-hans-albert-muellers",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Blutspende beim Blutspendemobil",
+   "kind": "event",
+   "start": "2027-06-02T09:00:00",
+   "end": "2027-06-02T13:00:00",
+   "allDay": false,
+   "place": "Markt 20 47546 Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/blutspende-beim-blutspendemobil",
+   "ortsteile": [
+    "kalkar"
+   ]
+  },
+  {
+   "title": "Premiere für die Messe „Jagd Niederrhein“",
+   "kind": "event",
+   "start": "2027-09-03",
+   "end": "2027-09-05",
+   "allDay": true,
+   "place": "Wunderland Kalkar",
+   "url": "https://www.kalkar.de/veranstaltungen/premiere-fuer-die-messe-jagd-niederrhein",
+   "ortsteile": [
+    "hoennepel"
+   ]
+  }
+ ]
+}

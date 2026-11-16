@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de" data-product="kalkar-kompakt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kalkar Kompakt</title>
+  <meta name="description" content="Öffentliche Infos zu Kalkar auf einen Blick: Warnungen, Wetter und Rhein, Abfuhrtermine, Termine, Einkaufen, Vereine und Rathaus.">
+  <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="horizont/css/tokens.css">
+  <link rel="stylesheet" href="horizont/css/components.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    // The chosen appearance before the first paint, so nothing flashes.
+    try {
+      var theme = JSON.parse(localStorage.getItem('kompakt:theme'));
+      if (theme) document.documentElement.dataset.theme = theme;
+    } catch (e) {}
+  </script>
+  <script src="config.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body class="hz">
+  <a class="skip" href="#main">Zum Inhalt</a>
+  <div class="bar" id="bar"></div>
+  <main id="main" class="main">
+    <noscript>
+      <p>Kalkar Kompakt braucht JavaScript. Die Quellen stehen auf
+        <a href="https://www.kalkar.de/">kalkar.de</a>.</p>
+    </noscript>
+  </main>
+  <footer class="foot" id="foot">
+    <span class="foot-sender">ein Projekt von <a href="https://kalkar-it.de/">Kalkar IT Solutions</a></span>
+    <span class="foot-links">
+      <a id="imprint" href="https://kalkar-it.de/impressum/">Impressum</a>
+      <a id="privacy" href="https://kalkar-it.de/datenschutz/">Datenschutz</a>
+    </span>
+  </footer>
+  <script>
+    (function () {
+      var c = window.KOMPAKT_CONFIG || {};
+      var imprint = document.getElementById('imprint');
+      var privacy = document.getElementById('privacy');
+      if (c.imprint) imprint.href = c.imprint; else imprint.remove();
+      if (c.privacy) privacy.href = c.privacy; else privacy.remove();
+    })();
+  </script>
+</body>
+</html>

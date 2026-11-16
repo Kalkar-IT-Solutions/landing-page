@@ -1,0 +1,200 @@
+{
+ "comment": "Öffentliche Parkplätze in Kalkar aus OpenStreetMap: mit Name, P-Nummer, mindestens 10 Plätzen oder 500 m². Straße ist die nächste benannte Straße, der Ortsteil kommt aus der Straßentabelle des Kreises. Keine Belegung, die misst in Kalkar niemand öffentlich.",
+ "source": "https://www.openstreetmap.org/",
+ "license": "ODbL 1.0, © OpenStreetMap-Mitwirkende",
+ "retrievedAt": "2026-10-27",
+ "parking": [
+  {
+   "osm": "way/53265680",
+   "ref": "P2",
+   "street": "Josefs-Platz",
+   "ortsteil": "kalkar",
+   "lat": 51.73832,
+   "lon": 6.28961,
+   "areaM2": 3978
+  },
+  {
+   "osm": "way/383531888",
+   "ref": "P3",
+   "street": "Jan-Joest-Straße",
+   "ortsteil": "kalkar",
+   "lat": 51.73645,
+   "lon": 6.2927,
+   "fee": false,
+   "areaM2": 445
+  },
+  {
+   "osm": "way/383531887",
+   "ref": "P6",
+   "street": "Jan-Joest-Straße",
+   "ortsteil": "kalkar",
+   "lat": 51.73681,
+   "lon": 6.29274,
+   "fee": false,
+   "areaM2": 521
+  },
+  {
+   "osm": "way/383531880",
+   "ref": "P9",
+   "street": "Am Bollwerk",
+   "ortsteil": "kalkar",
+   "lat": 51.73521,
+   "lon": 6.29895,
+   "fee": false,
+   "areaM2": 894
+  },
+  {
+   "osm": "way/45399753",
+   "street": "Hanselaerstraße",
+   "ortsteil": "kalkar",
+   "lat": 51.74,
+   "lon": 6.29693,
+   "areaM2": 4476
+  },
+  {
+   "osm": "way/53265294",
+   "name": "Marktplatz",
+   "street": "Markt",
+   "ortsteil": "kalkar",
+   "lat": 51.73861,
+   "lon": 6.29187,
+   "spaces": 25,
+   "fee": false,
+   "areaM2": 288
+  },
+  {
+   "osm": "way/383588473",
+   "street": "Klever Straße",
+   "ortsteil": "kalkar",
+   "lat": 51.7382,
+   "lon": 6.28789,
+   "fee": false,
+   "areaM2": 609
+  },
+  {
+   "osm": "way/1382821556",
+   "street": "Bollwerkstege",
+   "ortsteil": "kalkar",
+   "lat": 51.73644,
+   "lon": 6.29538,
+   "spaces": 15,
+   "areaM2": 311
+  },
+  {
+   "osm": "way/1560583409",
+   "street": "Xantener Straße",
+   "ortsteil": "kalkar",
+   "lat": 51.72882,
+   "lon": 6.30013,
+   "spaces": 11,
+   "areaM2": 164
+  },
+  {
+   "osm": "way/1156536354",
+   "street": "Reeser Straße",
+   "ortsteil": "appeldorn",
+   "lat": 51.72911,
+   "lon": 6.35729,
+   "areaM2": 1657
+  },
+  {
+   "osm": "way/1156536355",
+   "street": "Reeser Straße",
+   "ortsteil": "appeldorn",
+   "lat": 51.7298,
+   "lon": 6.35825,
+   "areaM2": 1642
+  },
+  {
+   "osm": "way/839711095",
+   "street": "Emmericher Straße",
+   "ortsteil": "bylerward",
+   "lat": 51.79064,
+   "lon": 6.26084,
+   "areaM2": 2651
+  },
+  {
+   "osm": "way/53166774",
+   "name": "Rheinwiese",
+   "street": "Durchlaß",
+   "ortsteil": "grieth",
+   "lat": 51.7876,
+   "lon": 6.31787,
+   "spaces": 30,
+   "fee": false,
+   "areaM2": 1174
+  },
+  {
+   "osm": "way/262896927",
+   "street": "Am Sportplatz",
+   "ortsteil": "grieth",
+   "lat": 51.78739,
+   "lon": 6.31035,
+   "areaM2": 550
+  },
+  {
+   "osm": "way/53866789",
+   "street": "Griether Markt",
+   "ortsteil": "grieth",
+   "lat": 51.7865,
+   "lon": 6.31631,
+   "spaces": 9,
+   "fee": false,
+   "disabledSpaces": 2,
+   "areaM2": 629
+  },
+  {
+   "osm": "way/259198893",
+   "street": "Reeserschanz",
+   "ortsteil": "niedermoermter",
+   "lat": 51.7508,
+   "lon": 6.39288,
+   "areaM2": 1808
+  },
+  {
+   "osm": "way/238119958",
+   "street": "Mühlenstraße",
+   "ortsteil": "wissel",
+   "lat": 51.76469,
+   "lon": 6.29673,
+   "fee": false,
+   "areaM2": 14879
+  },
+  {
+   "osm": "way/383588475",
+   "street": "Zum Wisseler See",
+   "ortsteil": "wissel",
+   "lat": 51.76018,
+   "lon": 6.28509,
+   "fee": false,
+   "areaM2": 10027
+  },
+  {
+   "osm": "way/235863132",
+   "name": "Parkplatz Fingerhutshof",
+   "street": "Zum Wisseler See",
+   "ortsteil": "wissel",
+   "lat": 51.75625,
+   "lon": 6.29684,
+   "fee": false,
+   "areaM2": 5093
+  },
+  {
+   "osm": "way/205273639",
+   "street": "Anton-Heuken-Straße",
+   "ortsteil": "wissel",
+   "lat": 51.76909,
+   "lon": 6.28453,
+   "areaM2": 1891
+  },
+  {
+   "osm": "way/436690775",
+   "street": "Emmericher Straße",
+   "ortsteil": "wissel",
+   "lat": 51.77287,
+   "lon": 6.28846,
+   "fee": false,
+   "areaM2": 913
+  }
+ ]
+}

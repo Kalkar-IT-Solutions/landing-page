@@ -1,0 +1,266 @@
+{
+ "comment": "Supermärkte, Bäckereien, Metzgereien, Drogerie und Getränkemarkt in Kalkar. Lage aus OpenStreetMap (© OpenStreetMap-Mitwirkende, ODbL), Zeiten und Adressen von den Seiten der Geschäfte (research/geschaefte.json).",
+ "retrievedAt": "2026-10-27",
+ "license": "Lage aus OpenStreetMap, ODbL; Namensnennung in der App.",
+ "shops": [
+  {
+   "name": "ALDI SÜD",
+   "kind": "supermarkt",
+   "ortsteil": "kalkar",
+   "address": "Xantener Straße 15, 47546 Kalkar",
+   "lat": 51.73362,
+   "lon": 6.29755,
+   "website": "https://www.aldi-sued.de/filialen/l/kalkar/xantener-strasse-15/b030",
+   "osm": "way/184220510",
+   "sources": [
+    "https://www.aldi-sued.de/filialen/l/kalkar/xantener-strasse-15/b030",
+    "https://www.openstreetmap.org/way/184220510"
+   ]
+  },
+  {
+   "name": "Bröd'je Backwaren",
+   "kind": "baeckerei",
+   "ortsteil": "kalkar",
+   "address": "Markt 7, 47546 Kalkar",
+   "lat": 51.73876,
+   "lon": 6.29161,
+   "phone": "02824 999466",
+   "osm": "node/12990102286",
+   "sources": [
+    "https://www.openstreetmap.org/node/12990102286",
+    "https://www.openstreetmap.org/node/12990102286"
+   ]
+  },
+  {
+   "name": "Bäckerei Heicks & Teutenberg",
+   "kind": "baeckerei",
+   "ortsteil": "kalkar",
+   "address": "Bahnhofstraße 11, 47546 Kalkar",
+   "lat": 51.73642,
+   "lon": 6.28877,
+   "hoursText": "Mo–Fr 5:30–17:30, Sa 5:30–13, So 6–12 Uhr",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "05:30",
+      "to": "17:30"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "05:30",
+      "to": "13:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "06:00",
+      "to": "12:00"
+     }
+    ]
+   },
+   "website": "https://heicks-teutenberg.de/filialen/",
+   "phone": "02824 9615166",
+   "osm": "node/6735537765",
+   "sources": [
+    "https://heicks-teutenberg.de/filialen/",
+    "https://www.openstreetmap.org/node/6735537765"
+   ]
+  },
+  {
+   "name": "Bäckerei Reffeling – Café van Calcar",
+   "kind": "baeckerei",
+   "ortsteil": "kalkar",
+   "address": "Markt 26, 47546 Kalkar",
+   "lat": 51.73829,
+   "lon": 6.29222,
+   "hoursText": "Mo–Fr 6:30–18, Sa 6:30–17, So 7–17 Uhr",
+   "hours": {
+    "closedOnHolidays": false,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "from": "06:30",
+      "to": "18:00"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "06:30",
+      "to": "17:00"
+     },
+     {
+      "days": [
+       7
+      ],
+      "from": "07:00",
+      "to": "17:00"
+     }
+    ]
+   },
+   "website": "https://reffeling.de/filialen/",
+   "phone": "02824 5252",
+   "osm": "node/603559236",
+   "sources": [
+    "https://reffeling.de/filialen/",
+    "https://www.openstreetmap.org/node/603559236"
+   ]
+  },
+  {
+   "name": "dm-drogerie markt",
+   "kind": "drogerie",
+   "ortsteil": "kalkar",
+   "address": "Bahnhofstraße 18, 47546 Kalkar",
+   "lat": 51.7367,
+   "lon": 6.28755,
+   "hoursText": "Mo–Sa 8–20 Uhr",
+   "hours": {
+    "closedOnHolidays": true,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "from": "08:00",
+      "to": "20:00"
+     }
+    ]
+   },
+   "website": "https://www.dm.de/store/d321/kalkar/bahnhofstrasse-18",
+   "phone": "02824 9615767",
+   "osm": "node/5867238085",
+   "sources": [
+    "https://www.dm.de/store/d321/kalkar/bahnhofstrasse-18",
+    "https://www.openstreetmap.org/node/5867238085"
+   ]
+  },
+  {
+   "name": "Lidl",
+   "kind": "supermarkt",
+   "ortsteil": "kalkar",
+   "address": "Bahnhofstraße 24–26, 47546 Kalkar",
+   "lat": 51.73519,
+   "lon": 6.28928,
+   "website": "https://www.lidl.de/s/de-DE/filialen/kalkar/bahnhofstr-24-26/",
+   "osm": "way/386828021",
+   "sources": [
+    "https://www.lidl.de/s/de-DE/filialen/kalkar/bahnhofstr-24-26/",
+    "https://www.openstreetmap.org/way/386828021"
+   ]
+  },
+  {
+   "name": "Netto Marken-Discount",
+   "kind": "supermarkt",
+   "ortsteil": "kalkar",
+   "address": "Bahnhofstraße 46, 47546 Kalkar",
+   "lat": 51.73466,
+   "lon": 6.2896,
+   "hoursText": "Mo–Sa 7–22 Uhr",
+   "hours": {
+    "closedOnHolidays": true,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "from": "07:00",
+      "to": "22:00"
+     }
+    ]
+   },
+   "website": "https://www.netto-online.de/filialen/kalkar/bahnhofstr-46/6437",
+   "osm": "way/254691011",
+   "sources": [
+    "https://www.netto-online.de/filialen/kalkar/bahnhofstr-46/6437",
+    "https://www.openstreetmap.org/way/254691011"
+   ]
+  },
+  {
+   "name": "REWE",
+   "kind": "supermarkt",
+   "ortsteil": "kalkar",
+   "address": "Gocher Straße 3, 47546 Kalkar",
+   "lat": 51.73605,
+   "lon": 6.28723,
+   "website": "https://www.rewe.de/marktseite/kalkar/9067626/rewe-markt-gocher-str-3/",
+   "phone": "02824 9615505",
+   "osm": "node/5867269999",
+   "sources": [
+    "https://www.rewe.de/marktseite/kalkar/9067626/rewe-markt-gocher-str-3/",
+    "https://www.openstreetmap.org/node/5867269999"
+   ]
+  },
+  {
+   "name": "Schinken Arntz",
+   "kind": "metzgerei",
+   "ortsteil": "kalkar",
+   "address": "Talstraße 3, 47546 Kalkar",
+   "lat": 51.73193,
+   "lon": 6.29532,
+   "hoursText": "Mo–Do 8–18:30, Fr 7:30–18:30, Sa 7:30–14 Uhr",
+   "hours": {
+    "closedOnHolidays": true,
+    "slots": [
+     {
+      "days": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "from": "08:00",
+      "to": "18:30"
+     },
+     {
+      "days": [
+       5
+      ],
+      "from": "07:30",
+      "to": "18:30"
+     },
+     {
+      "days": [
+       6
+      ],
+      "from": "07:30",
+      "to": "14:00"
+     }
+    ]
+   },
+   "website": "https://www.schinken-arntz.de/",
+   "phone": "02824 2886",
+   "osm": "node/276688372",
+   "sources": [
+    "https://www.schinken-arntz.de/",
+    "https://www.openstreetmap.org/node/276688372"
+   ]
+  }
+ ]
+}
