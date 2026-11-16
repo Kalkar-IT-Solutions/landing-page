@@ -99,11 +99,8 @@ body { margin: 0; }
 
 /* ---- The Rhine under the horizon -------------------------------------- */
 
-.kk-rhein { position: relative; overflow: hidden; padding: var(--s-12) 0 var(--s-16); border-bottom: var(--line-hairline) solid var(--line); }
-.kk-wave { display: block; width: 200%; height: 12px; }
-.kk-wave path { fill: none; stroke: var(--line-strong); stroke-width: 1; vector-effect: non-scaling-stroke; }
-.kk-js .kk-wave { animation: kk-flow 24s linear infinite; }
-.kk-ticker { display: flex; width: max-content; margin-top: var(--s-8); }
+.kk-rhein { position: relative; overflow: hidden; padding: var(--s-24) 0 var(--s-32); }
+.kk-ticker { display: flex; width: max-content; }
 .kk-ticker p { display: flex; margin: 0; flex: none; }
 .kk-ticker span {
   font: 400 0.75rem/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase;
@@ -189,7 +186,7 @@ html:not(.kk-js) .kk-dots i { background: var(--accent); border-color: var(--acc
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .kk-js .kk-wave, .kk-js .kk-ticker { animation: none; }
+  .kk-js .kk-ticker { animation: none; }
   .kk-js .kk-reveal > .kk-shot, .kk-js .kk-report.kk-reveal { transition: none; opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {

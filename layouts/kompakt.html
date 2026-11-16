@@ -98,10 +98,11 @@
     </div>
   </section>
   <hr class="hz-feld-horizon kk-horizon">
-  {{- /* The Rhine under the horizon: a slow wave and what the app knows,
-         drifting by. Decoration; the same words stand in the sections. */}}
+  {{- /* The Rhine under the horizon: what the app knows, drifting by like
+         the river (the ~ marks). One line only, the horizon above it: a
+         drawn wave and a hairline below made three lines in two cm.
+         Decoration; the same words stand in the sections. */}}
   <div class="kk-rhein" aria-hidden="true">
-    <svg class="kk-wave" viewBox="0 0 1200 12" preserveAspectRatio="none"><path d="M0 6 Q 75 0 150 6 T 300 6 T 450 6 T 600 6 T 750 6 T 900 6 T 1050 6 T 1200 6 T 1350 6 T 1500 6 T 1650 6 T 1800 6 T 1950 6 T 2100 6 T 2250 6 T 2400 6"/></svg>
     <div class="kk-ticker"><p>{{ range $p.ticker }}<span>{{ . }}</span>{{ end }}</p><p>{{ range $p.ticker }}<span>{{ . }}</span>{{ end }}</p></div>
   </div>
 
