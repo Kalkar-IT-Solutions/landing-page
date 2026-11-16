@@ -3,16 +3,16 @@ title: Kalkar Kompakt
 description: >-
   Öffentliche Infos zu Kalkar auf einen Blick: Wetter und Rhein,
   Abfuhrtermine, Veranstaltungen, Hofläden, Vereine und das Rathaus. Als
-  Web-App, bald für iPhone und Android.
+  Web-App für jedes Gerät, frei zum Selbsthosten.
 layout: kompakt
 url: /kompakt/
 
-# The web app itself (the Flutter build of kalkar-kompakt, see
+# The web app itself (app/ of kalkar-kompakt, a static folder, see
 # .github/workflows/pages.yml).
 app: app/
 
 hero:
-  kennung: Bürger-App · Web · bald iPhone und Android
+  kennung: Bürger-App · Web · jedes Gerät
   title: Kalkar auf einen Blick.
   text: >-
     Wetter und Rhein, Abfuhrtermine, Veranstaltungen, Hofläden, Vereine
@@ -102,7 +102,7 @@ sections:
       und Englisch.
     facts:
       - { term: Web, value: "jetzt, im Browser" }
-      - { term: Apps, value: "iPhone und Android folgen" }
+      - { term: Hosten, value: "ein Ordner, per FTP überall" }
       - { term: Sprachen, value: "Deutsch, Englisch" }
       - { term: Von, value: "Kalkar IT Solutions" }
 ---

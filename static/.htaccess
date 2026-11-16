@@ -37,7 +37,7 @@ AddType application/manifest+json .webmanifest
   #Header always set Strict-Transport-Security "max-age=31536000"
 
   # By default the browser asks whether there is a newer version: pages, and
-  # Kalkar Kompakt, whose main.dart.js and engine carry no hash in the name.
+  # Kalkar Kompakt, whose scripts carry no hash in the name.
   Header set Cache-Control "no-cache"
   # CSS, scripts and images with a Hugo hash in the name never change.
   <FilesMatch "\.[0-9a-f]{16,}(\.min)?\.(css|js|svg|webp|png|jpg)$">
@@ -45,6 +45,11 @@ AddType application/manifest+json .webmanifest
   </FilesMatch>
   <FilesMatch "_hu_[0-9a-f]+\.(webp|png|jpg)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # The map tiles and glyphs may be used by copies of Kalkar Kompakt on
+  # other webspaces (README of kalkar-kompakt, "Selbst hosten").
+  <FilesMatch "\.pbf$">
+    Header set Access-Control-Allow-Origin "*"
   </FilesMatch>
   # Fonts and map tiles change rarely; a week is a fair trade.
   <FilesMatch "\.(woff2?|ttf|otf|pbf)$">
