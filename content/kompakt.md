@@ -12,7 +12,7 @@ url: /kompakt/
 app: app/
 
 hero:
-  kennung: 01 — Bürger-App · Web · bald iPhone und Android
+  kennung: Bürger-App · Web · bald iPhone und Android
   title: Kalkar auf einen Blick.
   text: >-
     Wetter und Rhein, Abfuhrtermine, Veranstaltungen, Hofläden, Vereine
@@ -46,7 +46,7 @@ ticker:
 
 sections:
   - id: inhalt
-    kennung: 02 — Auf einen Blick
+    kennung: Auf einen Blick
     title: Sechs Kacheln statt zwanzig Webseiten.
     text: >-
       Die Startseite zeigt, was heute zählt: ob es Warnungen gibt, wie hoch
@@ -61,7 +61,7 @@ sections:
       - { term: Info, value: "Notfall, Rathaus, Bus, Amtsblatt" }
     shots: [start, wetter, termine]
   - id: karte
-    kennung: 03 — Unterwegs
+    kennung: Unterwegs
     title: Eine eigene Karte von Kalkar.
     text: >-
       Hofläden, Märkte, Termine, Sehenswertes, Haltestellen und Sperrungen
@@ -74,7 +74,7 @@ sections:
       - { term: Ortsteil, value: "Vorschau auf der Startseite" }
     shots: [karte]
   - id: mitmachen
-    kennung: 04 — Mitmachen
+    kennung: Mitmachen
     title: Was fehlt, ergänzt Kalkar selbst.
     text: >-
       Einen Termin, eine Sperrung, einen Verein oder einen Hofladen melden,
@@ -93,7 +93,7 @@ sections:
       done: Steht jetzt in der App
       example: Beispiel
   - id: haltung
-    kennung: 05 — Haltung
+    kennung: Haltung
     title: Ruhig, offen und aus der Nähe.
     text: >-
       Die Daten kommen aus öffentlichen Quellen wie dem Deutschen

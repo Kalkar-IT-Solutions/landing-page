@@ -92,7 +92,7 @@
              while it is shown. A click shows that one. */}}
       <ol class="kk-tour" aria-label="Ausschnitte aus der App">
         {{- range $i, $s := $p.screens }}
-        <li><button type="button" data-slide="{{ $i }}"{{ if eq $i 0 }} aria-current="true"{{ end }}><span class="kk-tour-n">{{ printf "%02d" (add $i 1) }}</span>{{ $s.label }}<i></i></button></li>
+        <li><button type="button" data-slide="{{ $i }}"{{ if eq $i 0 }} aria-current="true"{{ end }}>{{ $s.label }}<i></i></button></li>
         {{- end }}
       </ol>
     </div>
@@ -151,6 +151,7 @@
     <a class="hz-button hz-button--primary" href="{{ $app }}">{{ $p.hero.primary }}{{ partial "horizont/symbol.html" "arrow_forward" }}</a>
   </section>
 </main>
+{{ partial "land.html" . }}
 {{ partial "horizont/feld/foot.html" (dict "links" $links) }}
 </div>
 {{ partial "horizont/nav/script.html" . }}

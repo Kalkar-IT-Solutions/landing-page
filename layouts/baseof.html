@@ -31,6 +31,7 @@
 <main id="main">
 {{ block "main" . }}{{ end }}
 </main>
+{{ if not .Params.aufbau }}{{ partial "land.html" . }}{{ end }}
 {{ partial "horizont/feld/foot.html" (dict "links" $links) }}
 </div>
 {{ partial "horizont/nav/script.html" . }}
