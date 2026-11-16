@@ -1,0 +1,39 @@
+{{- /*
+  "Arbeiten": what Kalkar IT already runs, under the hero in both modes.
+  Since 16.11.2026 the products live here, not on regetskcob.de; the blog
+  keeps the stories and links over. Kalkar Kompakt comes from its page
+  (/kompakt/), the others from Horizont's tokens/flur.yaml by id (name,
+  note, status, text, site), so they read the same as on the Flurkarte.
+  Words of the section: "arbeiten" in content/_index.md.
+*/ -}}
+{{- $a := .Params.arbeiten -}}
+{{- with $a }}
+{{- $items := slice -}}
+{{- with site.GetPage "/kompakt" }}
+  {{- $items = $items | append (dict "product" "kalkar-kompakt" "name" .Title "note" "Bürger-App" "status" "Web-App" "positive" true "text" .Description "url" .RelPermalink) -}}
+{{- end }}
+{{- range $id := $a.flur }}
+  {{- range site.Data.flur.gemarkungen }}{{ if eq .id $id }}
+    {{- $items = $items | append (dict "product" .product "name" .name "note" .note "status" .status "text" .text "url" (printf "%s%s" .site .path)) -}}
+  {{- end }}{{ end }}
+{{- end }}
+<section class="hz-feld-section kit-arbeiten" id="arbeiten">
+  {{ partial "horizont/kennung.html" $a.kennung }}
+  <div>
+    <h2>{{ $a.title }}</h2>
+    <p>{{ $a.text }}</p>
+  </div>
+  <ul class="kit-arbeiten-liste">
+    {{- range $it := $items }}
+    <li>
+      <a href="{{ .url }}">
+        {{ partial "horizont/app-icon.html" (dict "product" .product "size" 48) }}
+        <span class="kit-arbeit-kopf"><span class="kit-arbeit-name">{{ .name }}</span>{{ with .status }} {{ partial "horizont/badge.html" (dict "status" (cond ($it.positive | default false) "positive" "info") "label" .) }}{{ end }}</span>
+        <span class="kit-arbeit-note">{{ .note }}</span>
+        <span class="kit-arbeit-text">{{ .text }}</span>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

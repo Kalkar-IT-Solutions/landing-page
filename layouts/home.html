@@ -13,6 +13,7 @@
   "title" $hero.title
   "text" $hero.text
   "aside" (partial "scene.html" .)) }}
+{{ partial "arbeiten.html" . }}
 {{- if not $p.aufbau }}
 {{- range $p.sections }}
 {{ partial "horizont/feld/section.html" (dict "id" .id "kennung" .kennung "title" .title "text" .text "facts" .facts) }}

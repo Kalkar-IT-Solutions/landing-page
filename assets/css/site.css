@@ -268,3 +268,25 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
 @media (max-width: 640px) {
   .kit-land svg svg:nth-of-type(n+3) { display: none; }
 }
+
+/* --- Arbeiten (partials/arbeiten.html) ---
+   The products as a list beside the text: icon, name with status, note,
+   one line. On the Feldseite grid the list takes the facts column; below
+   960px it runs under the text. */
+.kit-arbeiten-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-8); }
+.kit-arbeiten-liste a {
+  display: grid; grid-template-columns: 48px minmax(0, 1fr); column-gap: var(--s-16); row-gap: var(--s-2);
+  padding: var(--s-12) 0; border-bottom: var(--line-hairline) solid var(--line); color: var(--text); text-decoration: none;
+}
+.kit-arbeiten-liste li:first-child a { border-top: var(--line-hairline) solid var(--line); }
+.kit-arbeiten-liste .hz-app-icon, .kit-arbeiten-liste svg:first-child { grid-row: 1 / 4; border-radius: var(--r-12); }
+.kit-arbeit-kopf { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-8); }
+.kit-arbeit-name { font: 600 1.0625rem/1.3 var(--font-sans); }
+.kit-arbeiten-liste a:hover .kit-arbeit-name { text-decoration: underline; text-underline-offset: 3px; }
+.kit-arbeit-note { font: 400 0.875rem/1.4 var(--font-sans); color: var(--text-muted); }
+.kit-arbeit-text { font: 400 0.875rem/1.5 var(--font-sans); color: var(--text-muted); }
+
+/* With "Arbeiten" under it, the hero no longer fills the page by flex; it
+   keeps the height of the screen below the horizon line (62px) and above
+   the start of the next section, so the scene keeps its room. */
+body.kit-aufbau .hz-feld-hero { flex: none; min-height: calc(100svh - 62px - 72px); }
