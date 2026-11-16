@@ -16,7 +16,7 @@ hero:
 
 # The hero once the page is complete (aufbau: false).
 heroFull:
-  kennung: 01 — Bald da · Kalkar · Niederrhein
+  kennung: Bald da · Kalkar · Niederrhein
   title: IT-Lösungen vom Niederrhein für den Niederrhein.
   text: >-
     Kalkar IT Solutions entsteht gerade. Software, Webseiten und IT für
@@ -26,7 +26,7 @@ heroFull:
 
 sections:
   - id: vorhaben
-    kennung: 02 — Vorhaben
+    kennung: Vorhaben
     title: Was hier entsteht.
     text: >-
       Ein kleines IT-Büro, das zuhört, bevor es baut. Lieber eine Lösung,
@@ -36,7 +36,7 @@ sections:
       - { term: Web, value: "Seiten, die schnell und schlicht sind" }
       - { term: Betrieb, value: "Einrichtung, Wartung, Beratung" }
   - id: region
-    kennung: 03 — Region
+    kennung: Region
     title: Kurze Wege, klare Worte.
     text: >-
       Zwischen Rhein, Deichen und Kopfweiden zuhause. Wer hier arbeitet,
@@ -45,7 +45,7 @@ sections:
     facts:
       - { term: Vor Ort, value: Kalkar und Umgebung }
   - id: kontakt
-    kennung: 04 — Kontakt
+    kennung: Kontakt
     title: Noch nicht ganz fertig.
     text: >-
       Die Seite wächst mit dem Büro. Wer schon jetzt ein Vorhaben hat,

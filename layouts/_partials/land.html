@@ -1,0 +1,14 @@
+{{- /*
+  The strip of land above the foot, shared with regetskcob.de since the
+  redesign of 16.11.2026: Horizont's silhouettes on the horizon line, here
+  the beech of Kalkar IT, a pair of pollard willows and, far off, the church
+  tower with the stepped gable of the market. Not on the home page while it
+  is "im Aufbau": its hero already stands on the line with beech and people.
+  Tones: assets/css/site.css, "Land".
+*/ -}}
+<div class="kit-land">
+{{ partial "horizont/landschaft.html" (dict "items" (slice
+  (dict "name" "kirchturm" "x" "70%" "height" 120 "far" true)
+  (dict "name" "buche" "x" "6%" "height" 140)
+  (dict "name" "kopfweide" "x" "84%" "height" 96))) }}
+</div>

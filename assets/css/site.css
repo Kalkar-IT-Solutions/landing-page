@@ -253,3 +253,18 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
   .kit-extend { padding: 0 var(--s-16) var(--s-48); }
   .kit-page { padding: var(--s-48) var(--s-16); }
 }
+
+/* --- Land ---
+   The strip of land above the foot (partials/land.html), as on
+   regetskcob.de: near shapes mixed from the strong line tone, far ones close
+   to the sky by day and a little lighter than the night. On a phone only
+   the first two shapes stand. */
+.kit-land {
+  margin-top: var(--s-48);
+  overflow: hidden;
+  --line: color-mix(in srgb, var(--line-strong) 62%, var(--bg));
+  --sunken: light-dark(color-mix(in srgb, var(--line-strong) 20%, var(--bg)), color-mix(in srgb, var(--line-strong) 38%, var(--bg)));
+}
+@media (max-width: 640px) {
+  .kit-land svg svg:nth-of-type(n+3) { display: none; }
+}
