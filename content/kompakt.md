@@ -27,7 +27,7 @@ hero:
 screens:
   - { name: start, label: Start, alt: "Startseite mit Straßensperrungen, Wetter und Rheinpegel, Abfall, Terminen und Einkaufen" }
   - { name: wetter, label: Wetter & Rhein, alt: "Wetter, Warnungen für den Kreis Kleve und der Pegel des Rheins" }
-  - { name: abfall, label: Abfall, alt: "Die nächsten Abfuhrtermine des Bezirks mit Erinnerung am Vorabend" }
+  - { name: abfall, label: Abfall, alt: "Die nächsten Abfuhrtermine des gewählten Bezirks" }
   - { name: termine, label: Termine, alt: "Veranstaltungen und Ratssitzungen der Woche" }
   - { name: karte, label: Karte, alt: "Die eigene Karte von Kalkar mit Hofläden, Haltestellen und Sehenswertem" }
 
