@@ -23,7 +23,7 @@ hero:
   note: Ohne Konto, ohne Werbung. Kein Angebot der Stadt Kalkar.
 
 # The screens the phone in the hero runs through, from assets/kompakt/
-# (<name>-light.png and <name>-dark.png, 390 × 844 at 3x).
+# (<name>-light.png and <name>-dark.png, 390 × 844 at 2x, taken from the web app).
 screens:
   - { name: start, label: Start, alt: "Startseite mit Straßensperrungen, Wetter und Rheinpegel, Abfall, Terminen und Einkaufen" }
   - { name: wetter, label: Wetter & Rhein, alt: "Wetter, Warnungen für den Kreis Kleve und der Pegel des Rheins" }
@@ -47,16 +47,18 @@ ticker:
 sections:
   - id: inhalt
     kennung: Auf einen Blick
-    title: Sechs Kacheln statt zwanzig Webseiten.
+    title: Eine Startseite statt zwanzig Webseiten.
     text: >-
-      Die Startseite zeigt, was heute zählt: ob es Warnungen gibt, wie hoch
-      der Rhein steht, wann die nächste Tonne raus muss und was diese Woche
-      los ist. Ein Tipp führt zu allem Weiteren.
+      Die Startseite zeigt untereinander, was heute zählt: ob es Warnungen
+      gibt, wie hoch der Rhein steht, wann die nächste Tonne raus muss, was
+      diese Woche los ist und was gerade geöffnet hat. Ein Tipp auf eine
+      Zeile führt zu allem Weiteren.
     facts:
       - { term: Wetter, value: "Warnungen, Vorhersage, Pegel, Pollen" }
-      - { term: Abfall, value: "Termine je Straße, Erinnerung" }
+      - { term: Abfall, value: "Termine je Straße, Erinnerung im eigenen Kalender" }
       - { term: Termine, value: "Veranstaltungen, Rat, Vereine" }
       - { term: Einkaufen, value: "Märkte und Hofläden, jetzt geöffnet" }
+      - { term: Essen, value: "Lokale, jetzt geöffnet" }
       - { term: Vereine, value: "88, nach Art und Ortsteil" }
       - { term: Info, value: "Notfall, Rathaus, Bus, Amtsblatt" }
     shots: [start, wetter, termine]
@@ -77,9 +79,9 @@ sections:
     kennung: Mitmachen
     title: Was fehlt, ergänzt Kalkar selbst.
     text: >-
-      Einen Termin, eine Sperrung, einen Verein oder einen Hofladen melden,
-      an jedem Eintrag eine Änderung vorschlagen. Andere bestätigen mit
-      „Stimmt das?“, nach drei Bestätigungen steht es in der App.
+      Einen Termin oder eine Sperrung melden, einen Verein oder einen
+      Hofladen eintragen. Andere bestätigen mit „Stimmt das?“, nach drei
+      Bestätigungen steht es in der App.
     facts:
       - { term: Melden, value: "Termine, Sperrungen, Vereine, Hofläden" }
       - { term: Prüfen, value: "drei Bestätigungen von verschiedenen Geräten" }
