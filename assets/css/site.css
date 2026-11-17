@@ -34,7 +34,9 @@ html, body.hz { overflow-x: clip; }
   min-height: calc(100svh - 92px - var(--s-48));
   padding-top: var(--s-48);
 }
-.hz-feld-hero > div:first-child { align-self: center; padding-bottom: var(--s-48); }
+/* The words above the scene, the beech and the people: silhouettes are
+   always background, never over the text. */
+.hz-feld-hero > div:first-child { position: relative; z-index: 1; align-self: center; padding-bottom: var(--s-48); }
 .hz-feld-hero p { margin-bottom: 0; }
 .hz-feld-aside { justify-self: stretch; width: 100%; }
 

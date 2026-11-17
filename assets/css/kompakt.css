@@ -25,7 +25,9 @@ body { margin: 0; }
   min-height: calc(100svh - 92px - 72px);
   padding-top: var(--s-48);
 }
-.kk-words { align-self: center; padding-bottom: var(--s-48); }
+/* The words stand above the town hall and the phone: a silhouette is
+   always background, never over the text. */
+.kk-words { position: relative; z-index: 1; align-self: center; padding-bottom: var(--s-48); }
 .kk-hero h1 { font-size: clamp(2.5rem, 7cqw, 4.5rem); letter-spacing: -0.01em; margin-bottom: var(--s-24); }
 .kk-hero p { font-size: 1.125rem; }
 .kk-hero .hz-feld-actions { margin-bottom: var(--s-16); }
