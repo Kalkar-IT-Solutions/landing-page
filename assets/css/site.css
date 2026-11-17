@@ -31,7 +31,7 @@ html, body.hz { overflow-x: clip; }
 .hz-feld-hero {
   grid-template-columns: 1fr 1.25fr;
   box-sizing: border-box;
-  min-height: calc(100svh - 62px - var(--s-48));
+  min-height: calc(100svh - 92px - var(--s-48));
   padding-top: var(--s-48);
 }
 .hz-feld-hero > div:first-child { align-self: center; padding-bottom: var(--s-48); }
@@ -287,6 +287,6 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
 .kit-arbeit-text { font: 400 0.875rem/1.5 var(--font-sans); color: var(--text-muted); }
 
 /* With "Arbeiten" under it, the hero no longer fills the page by flex; it
-   keeps the height of the screen below the horizon line (62px) and above
+   keeps the height of the screen below the horizon line (92px with the place above it since Horizont 0.19) and above
    the start of the next section, so the scene keeps its room. */
-body.kit-aufbau .hz-feld-hero { flex: none; min-height: calc(100svh - 62px - 72px); }
+body.kit-aufbau .hz-feld-hero { flex: none; min-height: calc(100svh - 92px - 72px); }

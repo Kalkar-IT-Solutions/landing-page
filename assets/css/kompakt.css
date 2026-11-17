@@ -22,7 +22,7 @@ body { margin: 0; }
 .kk-hero {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   box-sizing: border-box;
-  min-height: calc(100svh - 62px - 72px);
+  min-height: calc(100svh - 92px - 72px);
   padding-top: var(--s-48);
 }
 .kk-words { align-self: center; padding-bottom: var(--s-48); }
