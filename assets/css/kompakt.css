@@ -126,8 +126,12 @@ body { margin: 0; }
   border-bottom: var(--line-hairline) solid var(--line);
 }
 .kk-shot { margin: 0; }
-.kk-shot figcaption { margin-top: var(--s-12); color: var(--text-muted); }
+.kk-shot figcaption { margin-top: var(--s-12); color: var(--text-muted); text-align: center; }
 .kk-shot .hz-device-screen { display: block; }
+/* The screens are taken without a status bar, so their first line ran
+   under the island of the frame. A band in the app's ground (the page's,
+   which switches light and dark with the picture) stands in for it. */
+.kk-shot .hz-device-screen, .kk-device > .hz-device-screen { padding-top: 12%; background: var(--bg); box-sizing: border-box; }
 .kk-shot img { display: block; width: 100%; height: auto; }
 /* Three side by side, the middle one a step lower: a little rhythm. */
 .kk-shots--3 .kk-shot:nth-child(2) { margin-top: var(--s-48); }
