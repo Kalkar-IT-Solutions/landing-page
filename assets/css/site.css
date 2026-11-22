@@ -168,7 +168,7 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
 
 /* The watch: one value large in mono, as Horizont has it for the wrist.
    --wp is one point of the 198 pt wide screen of a large watch. */
-.kit-watch { container-type: inline-size; background: #000; color: var(--text); }
+.hz-device--watch > .kit-watch { container-type: inline-size; background: var(--surface, var(--bg)); color: var(--text); }
 /* The face inside the screen, so the points resolve against the screen
    (a container's own properties would measure the scene). */
 .kit-watch-face {
