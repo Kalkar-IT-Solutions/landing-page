@@ -103,7 +103,7 @@ sections:
       Bei Fragen haben Sie einen Ansprechpartner vor Ort, der Ihre Seite
       kennt.
     facts:
-      - { term: Geräte, value: "Browser, iPhone, iPad, Android, Mac" }
+      - { term: Geräte, value: "Im Browser; Apps für iPhone, iPad und Android folgen" }
       - { term: Hosting, value: "Webspace, Betrieb, Wartung" }
       - { term: Vor Ort, value: "Kalkar und Umgebung" }
   - id: zusaetze
