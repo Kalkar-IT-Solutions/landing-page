@@ -281,10 +281,11 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
    the start of the next section, so the scene keeps its room. */
 body.kit-aufbau .hz-feld-hero { flex: none; min-height: calc(100svh - 92px - 72px); }
 
-/* The laptop base seen slightly from above, as in the Kalkar IT icon:
+/* The laptop base seen slightly from above, lying on the desk top as in
+   the Kalkar IT icon:
    as wide as the lid at the back, wider to the front, with keyboard,
    trackpad and a thin front edge. Replaces Horizont's flat base. */
-.kit-scene-laptop { margin-bottom: calc(var(--w) * 0.075); }
+.kit-scene-laptop { margin-bottom: 0; z-index: 2; }
 .kit-scene-laptop::before { display: none; }
 .kit-scene-laptop::after {
   left: -6%; right: -6%; height: calc(var(--w) * 0.075);
