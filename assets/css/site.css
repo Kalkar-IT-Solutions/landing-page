@@ -103,6 +103,17 @@ body.kit-aufbau .kit-hero--facts .hz-feld-aside { grid-column: 1 / -1; }
 .kit-hero-facts { position: relative; z-index: 1; align-self: start; }
 .kit-hero-facts .hz-facts { margin: var(--s-16) 0 0; }
 .hz-feld-hero .kit-hero-address { margin: var(--s-32) 0 0; color: var(--text); }
+/* Two columns only where the facts keep their values on one line; below,
+   they follow the words. */
+@media (max-width: 1100px) {
+  body.kit-aufbau .kit-hero--facts { grid-template-columns: minmax(0, 1fr); row-gap: var(--s-32); }
+  body.kit-aufbau .kit-hero--facts .kit-hero-facts { max-width: var(--size-text-column); }
+  /* The words now take most of the screen; the scene keeps the full
+     width (its height is 32 % of it) instead of shrinking to what is
+     left, and the people stay in scale with it. */
+  body.kit-aufbau .kit-hero--facts .hz-feld-aside { min-height: calc((100vw - 2 * var(--s-32)) * 0.32); }
+  body.kit-aufbau .kit-hero--facts::after { height: min(40%, calc((100vw - 2 * var(--s-32)) * 0.32 * 1.3)); }
+}
 .kit-hero-address a { color: var(--accent-text); text-underline-offset: 0.2em; white-space: nowrap; }
 
 /* The horizon line under the hero is a desk top of light oak, across the
