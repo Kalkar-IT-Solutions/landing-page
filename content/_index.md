@@ -13,6 +13,9 @@ hero:
     Hier entsteht Kalkar IT Solutions. Die Seite ist noch im Aufbau, mehr
     folgt bald. Wer schon jetzt ein Anliegen hat, schreibt an
     [hi@kalkar-it.de](mailto:hi@kalkar-it.de).
+  # Beside the words while in "aufbau", with the facts of "vorhaben".
+  factsKennung: Was hier entsteht
+  address: "kalkar-it.de · [hi@kalkar-it.de](mailto:hi@kalkar-it.de)"
 
 # The hero once the page is complete (aufbau: false).
 heroFull:

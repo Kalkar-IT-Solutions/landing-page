@@ -1,17 +1,22 @@
 {{ define "main" }}
 {{- /*
   The teaser as a Feldseite: the hero with the promise and, standing on the
-  horizon line, a picture of what is built here; then the numbered
+  horizon line (here an oak desk top), a picture of what is built
+  here, while in 'aufbau' with the facts of 'vorhaben' beside the words; then the numbered
   sections, the last one with the contact form. While "aufbau" is set the
   page is the hero alone, in more open words. All words live in
   content/_index.md.
 */ -}}
 {{- $p := .Params -}}
 {{- $hero := cond $p.aufbau $p.hero $p.heroFull -}}
-{{ partial "horizont/feld/hero.html" (dict
+{{- $vorhaben := index (where $p.sections "id" "vorhaben") 0 }}
+{{ partial "hero.html" (dict
   "kennung" $hero.kennung
   "title" $hero.title
   "text" $hero.text
+  "facts" (cond $p.aufbau $vorhaben.facts nil)
+  "factsKennung" $hero.factsKennung
+  "address" $hero.address
   "aside" (partial "scene.html" .)) }}
 {{ partial "arbeiten.html" . }}
 {{- if not $p.aufbau }}
