@@ -19,7 +19,7 @@ heroFull:
   kennung: Bald da · Kalkar · Niederrhein
   title: IT-Lösungen vom Niederrhein für den Niederrhein.
   text: >-
-    Kalkar IT Solutions entsteht gerade. Software, Webseiten und IT für
+    Kalkar IT Solutions entsteht gerade. Software, Webseiten, 3D-Druck und IT für
     Betriebe, Vereine und Menschen in der Region, mit kurzen Wegen und
     ohne Fachchinesisch.
 
@@ -46,6 +46,7 @@ sections:
       - { term: Software, value: Apps und Werkzeuge nach Maß }
       - { term: Web, value: "Seiten, die schnell und schlicht sind" }
       - { term: Betrieb, value: "Einrichtung, Wartung, Beratung" }
+      - { term: 3D-Druck, value: "Gehäuse, Halter und Ersatzteile nach Maß" }
   - id: region
     kennung: Region
     title: Kurze Wege, klare Worte.
