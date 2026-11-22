@@ -96,6 +96,28 @@ body.kit-aufbau .hz-feld-hero::after {
 }
 :root[data-theme="dark"] body.kit-aufbau .hz-feld-hero::before { background-image: url("{{ .beechDark }}"); }
 :root[data-theme="dark"] body.kit-aufbau .hz-feld-hero::after { background-image: url("{{ .peopleDark }}"); }
+/* Beside the words, what is built here and the address, as on the
+   Instagram hero: the words left, the facts right, the scene below both. */
+body.kit-aufbau .kit-hero--facts { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); column-gap: var(--s-64); }
+body.kit-aufbau .kit-hero--facts .hz-feld-aside { grid-column: 1 / -1; }
+.kit-hero-facts { position: relative; z-index: 1; align-self: start; }
+.kit-hero-facts .hz-facts { margin: var(--s-16) 0 0; }
+.hz-feld-hero .kit-hero-address { margin: var(--s-32) 0 0; color: var(--text); }
+.kit-hero-address a { color: var(--accent-text); text-underline-offset: 0.2em; white-space: nowrap; }
+
+/* The horizon line under the hero is a desk top of light oak, across the
+   whole window as on the Instagram hero: flat tone, a few darker grain
+   lines, a lit back edge. Darker oak at night. */
+.hz-feld-horizon.kit-desk {
+  --oak: #CFAE80; --oak-edge: #B8956A; --oak-grain: rgb(120 84 44 / 0.10);
+  box-sizing: border-box; height: var(--s-64); margin: 0 calc(50% - 50vw); border: 0;
+  border-top: 3px solid var(--oak-edge);
+  background: repeating-linear-gradient(180deg, transparent 0 11px, var(--oak-grain) 11px 12px, transparent 12px 20px, var(--oak-grain) 20px 21px, transparent 21px 33px), var(--oak);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hz-feld-horizon.kit-desk { --oak: #7A6248; --oak-edge: #92785A; --oak-grain: rgb(0 0 0 / 0.14); }
+}
+:root[data-theme="dark"] .hz-feld-horizon.kit-desk { --oak: #7A6248; --oak-edge: #92785A; --oak-grain: rgb(0 0 0 / 0.14); }
 body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 320px)); }
 
 /* ---- The scene: laptop, phone and board on one line ----------------- */
@@ -123,61 +145,12 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
 .kit-board-port { fill: var(--sunken); stroke: var(--text-muted); stroke-width: 1; }
 .kit-board-led { fill: var(--positive); }
 
-/* Screens are drawn at their real size: --px is one CSS pixel of the
-   1280 px wide laptop screen. */
-.kit-web { container-type: inline-size; }
-/* A small base, so no line box in a drawn screen keeps the page's 16/24
-   strut; every text inside sets its own size in --px or --wp. */
-.kit-web, .kit-watch { font-size: 4px; line-height: 1.2; }
-.kit-web { --px: calc(100cqw / 1280); }
+/* A small base, so no line box in the drawn watch keeps the page's 16/24
+   strut; every text inside sets its own size in --wp. */
+.kit-watch { font-size: 4px; line-height: 1.2; }
 
-/* The website: a browser bar, the horizon nav, a Feldseite in small. */
-.kit-web { display: flex; flex-direction: column; background: var(--bg); }
-.kit-web-bar {
-  display: flex; align-items: center; gap: calc(var(--px) * 8);
-  height: calc(var(--px) * 38); padding: 0 calc(var(--px) * 16);
-  background: var(--sunken); border-bottom: 1px solid var(--line);
-}
-.kit-web-bar i { width: calc(var(--px) * 12); height: calc(var(--px) * 12); border-radius: 50%; background: var(--line-strong); }
-.kit-web-bar span {
-  margin: 0 auto; padding: 0 calc(var(--px) * 64);
-  font: calc(var(--px) * 13) / calc(var(--px) * 24) var(--font-sans); color: var(--text-muted);
-  background: var(--bg); border-radius: calc(var(--px) * 6);
-}
-.kit-web-nav { position: relative; height: calc(var(--px) * 56); margin: 0 calc(var(--px) * 48); border-bottom: 1px solid var(--line-strong); }
-.kit-web-nav b { position: absolute; left: 0; bottom: -1px; width: 22%; border-bottom: 2px solid var(--accent); }
-.kit-web-hero {
-  flex: 1; display: grid; grid-template-columns: 1fr 0.8fr; gap: calc(var(--px) * 48);
-  align-items: end; padding: calc(var(--px) * 72) calc(var(--px) * 48) 0;
-}
-.kit-web-hero > div { display: grid; justify-items: start; gap: calc(var(--px) * 16); padding-bottom: calc(var(--px) * 56); }
-.kit-web-kennung {
-  font: 600 calc(var(--px) * 13) / 1.4 var(--font-mono); letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-muted);
-}
-.kit-web-title { font: 300 calc(var(--px) * 64) / 1.06 var(--font-serif); letter-spacing: -0.01em; color: var(--text); }
-.kit-web-text { width: 92%; height: calc(var(--px) * 14); border-radius: calc(var(--px) * 3); background: var(--line); }
-.kit-web-text--short { width: 64%; }
-.kit-web-button {
-  margin-top: calc(var(--px) * 16); padding: 0 calc(var(--px) * 20);
-  font: 500 calc(var(--px) * 17) / calc(var(--px) * 48) var(--font-sans);
-  background: var(--accent); color: var(--on-accent); border-radius: calc(var(--px) * 6);
-}
-/* The picture on the website: a field from above, its furrows. */
-.kit-web-field {
-  height: calc(var(--px) * 380);
-  border: 1px solid var(--line-strong); border-bottom: 0;
-  border-radius: calc(var(--px) * 10) calc(var(--px) * 10) 0 0;
-  background: repeating-linear-gradient(60deg, var(--line) 0 2px, transparent 2px 14px), var(--surface);
-}
-.kit-web-horizon { border-top: 2px solid var(--accent); }
-.kit-web-rows {
-  display: grid; grid-template-columns: calc(var(--px) * 220) 1fr 1fr; gap: calc(var(--px) * 40);
-  padding: calc(var(--px) * 40) calc(var(--px) * 48);
-}
-.kit-web-rows > span:not(.kit-web-kennung) { display: grid; gap: calc(var(--px) * 12); }
-.kit-web-rows b { height: calc(var(--px) * 14); border-radius: calc(var(--px) * 3); background: var(--line); }
-.kit-web-rows b:first-child { width: 70%; height: calc(var(--px) * 22); background: var(--line-strong); }
+/* The laptop screen: the Kalkar Kompakt scene, cut to the 16:10 screen. */
+.kit-rathaus svg { display: block; width: 100%; height: 100%; }
 
 /* The phone: the screenshot fills the screen, cut by its rounded corners. */
 .kit-shot { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
@@ -252,6 +225,10 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
   .hz-feld-aside { display: block; }
   /* On a phone people and beech would overlap; the beech alone stays. */
   body.kit-aufbau .hz-feld-hero::after { display: none; }
+  body.kit-aufbau .kit-hero--facts { grid-template-columns: minmax(0, 1fr); }
+  /* With the facts the words are long; the scene keeps at least its own
+     height (32 % of its at least 320 px) instead of sliding over them. */
+  body.kit-aufbau .kit-hero--facts .hz-feld-aside { min-height: calc(min(100cqw, 320px) * 0.32 + var(--s-8)); }
   .kit-extend { padding: 0 var(--s-16) var(--s-48); }
   .kit-page { padding: var(--s-48) var(--s-16); }
 }

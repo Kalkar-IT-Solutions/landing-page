@@ -1,0 +1,25 @@
+{{- /*
+  The hero of the start page: Horizont's Feldseite hero (feld/hero.html,
+  same markup and classes) with a second column while the page is in
+  "aufbau": what is built here (the facts of the section "vorhaben") and
+  the address just above the desk, as on the Instagram hero. Horizont's
+  partial has no slot for it.
+*/ -}}
+<section class="hz-feld-hero{{ if .facts }} kit-hero--facts{{ end }}">
+  <div>
+    {{ with .kennung }}{{ partial "horizont/kennung.html" . }}{{ end }}
+    <h1 class="t-display">{{ .title }}</h1>
+    {{ with .text }}<p>{{ . | markdownify }}</p>{{ end }}
+  </div>
+  {{- with .facts }}
+  <div class="kit-hero-facts">
+    {{ with $.factsKennung }}{{ partial "horizont/kennung.html" . }}{{ end }}
+    {{ partial "horizont/facts.html" (dict "items" .) }}
+    {{ with $.address }}<p class="kit-hero-address">{{ . | markdownify }}</p>{{ end }}
+  </div>
+  {{- end }}
+  {{- with .aside }}
+  <div class="hz-feld-aside">{{ . | safeHTML }}</div>
+  {{- end }}
+</section>
+<hr class="hz-feld-horizon kit-desk">

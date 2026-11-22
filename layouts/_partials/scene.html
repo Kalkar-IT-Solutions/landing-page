@@ -1,36 +1,20 @@
 {{- /*
   The picture of the hero: what Kalkar IT builds, standing on the horizon
-  line. A laptop with a website, a phone with KNX Monitor, a watch with one
+  line. A laptop with the town hall of Kalkar, a phone with KNX Monitor,
+  a watch with one
   value from that app and a single-board computer in front. The phone
-  carries a real screenshot; laptop and watch are drawn, their sizes
-  following the real screen (1280 px for the laptop, 198 pt for the watch)
+  carries a real screenshot, the laptop the Kalkar Kompakt scene; the
+  watch is drawn, its size following the real screen (198 pt)
   through container units, so bars and type have the size they would have
   on the device.
   Purely decorative; the hero text says the same in words.
 */ -}}
 <div class="kit-scene" aria-hidden="true">
 
+  {{- /* The laptop shows the town hall of Kalkar, the scene of the
+     Kalkar Kompakt icon in its wide shape, as on the Instagram hero. */}}
   <figure class="hz-device hz-device--laptop kit-scene-laptop">
-    <div class="hz-device-screen kit-web">
-      <div class="kit-web-bar"><i></i><i></i><i></i><span>hofladen-am-deich.de</span></div>
-      <div class="kit-web-nav"><b></b></div>
-      <div class="kit-web-hero">
-        <div>
-          <span class="kit-web-kennung">Hofladen · Kalkar</span>
-          <span class="kit-web-title">Direkt vom Feld auf die eigene Webseite.</span>
-          <span class="kit-web-text"></span>
-          <span class="kit-web-text kit-web-text--short"></span>
-          <span class="kit-web-button">Öffnungszeiten</span>
-        </div>
-        <div class="kit-web-field"></div>
-      </div>
-      <div class="kit-web-horizon"></div>
-      <div class="kit-web-rows">
-        <span class="kit-web-kennung">Sortiment</span>
-        <span><b></b><b></b></span>
-        <span><b></b><b></b></span>
-      </div>
-    </div>
+    <div class="hz-device-screen kit-rathaus">{{ partial "horizont/app-icon.html" (dict "product" "kalkar-kompakt" "shape" "tv" "size" 640) }}</div>
   </figure>
 
   {{- /* The phone shows the real thing: the overview of KNX Monitor from
