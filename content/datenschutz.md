@@ -8,7 +8,8 @@ liegen auf demselben Server wie die Seite. Personenbezogene Daten fallen auf
 der Seite selbst nur an zwei Stellen an: beim Aufruf der Seite durch den
 Hoster und wenn Sie uns schreiben. Für die Web-App Kalkar Kompakt unter
 [kalkar-it.de/kompakt](/kompakt/) gilt zusätzlich
-der Abschnitt „Kalkar Kompakt“ weiter unten.
+der Abschnitt „Kalkar Kompakt“ weiter unten, für das Werkzeug Redaktion unter
+[kalkar-it.de/redaktion](/redaktion/) der Abschnitt „Redaktion“.
 
 ## Verantwortlich
 
@@ -76,6 +77,36 @@ Abfuhr gibt es als Kalenderdatei, die Ihr Gerät selbst verwaltet, ohne
 Push-Dienst. Es gibt keine Cookies, keine
 Analyse und keine Werbung.
 
+## Redaktion
+
+Redaktion ist ein Werkzeug, mit dem unsere Kundinnen und Kunden die Inhalte
+ihrer Webseiten selbst pflegen, im Browser unter
+[kalkar-it.de/redaktion](/redaktion/) und als App. Ein Zugang entsteht nur
+auf Einladung durch uns oder durch die verantwortliche Person beim Kunden.
+
+**Zugang.** Für jeden Zugang speichern wir E-Mail-Adresse, Namen und einen
+Hash des Passworts sowie die Zuordnung zu den Webseiten, die er pflegen
+darf. Die Anmeldung und diese Daten liegen bei Supabase (Supabase, Inc.;
+Rechenzentrum in Frankfurt am Main, EU). Nach der Anmeldung liegt ein
+Anmeldeschlüssel im Speicher Ihres Browsers bzw. der App, bis Sie sich
+abmelden oder er abläuft.
+
+**Änderungen.** Wer etwas veröffentlicht, ändert die Dateien der Webseite in
+deren Repository bei GitHub (GitHub, Inc., USA). Jede Änderung trägt dort
+Namen und E-Mail-Adresse der Person, die sie veröffentlicht hat, und bleibt
+im Verlauf der Webseite erhalten, damit sich frühere Fassungen
+wiederherstellen lassen. GitHub ist nach dem EU-US Data Privacy Framework
+zertifiziert. Zusätzlich halten wir bei Supabase fest, wer wann was
+veröffentlicht oder an den Zugängen geändert hat.
+
+**Rechtsgrundlage und Dauer.** Wir verarbeiten diese Daten, um den Vertrag
+mit unseren Kunden zu erfüllen (Art. 6 Abs. 1 lit. b DSGVO); bei Personen,
+die für einen Kunden arbeiten, auf Grundlage unseres und dessen
+berechtigten Interesses an einer nachvollziehbaren Pflege der Webseite
+(Art. 6 Abs. 1 lit. f DSGVO). Ein Zugang bleibt bestehen, bis er entfernt
+wird; auf Wunsch löschen wir ihn. Die Web-App lädt keine Inhalte von
+Servern Dritter, setzt keine Cookies und enthält keine Analyse.
+
 ## Ihre Rechte
 
 Sie haben das Recht auf Auskunft über Ihre bei uns gespeicherten Daten (Art. 15 DSGVO), auf Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20). Einer Verarbeitung auf Grundlage berechtigter Interessen können Sie jederzeit widersprechen (Art. 21). Eine formlose E-Mail an [hi@kalkar-it.de](mailto:hi@kalkar-it.de) genügt.
@@ -84,4 +115,4 @@ Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, e
 
 ## Stand
 
-Oktober 2026
+November 2026
