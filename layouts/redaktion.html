@@ -1,0 +1,48 @@
+{{ define "main" }}
+{{- /*
+  The product page of Redaktion at /redaktion-webseiten/ (the web app
+  itself is served at /redaktion/, so the page needs another address). A
+  Feldseite from Horizont's parts: the hero with the demo as the main
+  action and, standing on the horizon, a phone with a form of the editor;
+  then the sections, the questions as a list in the facts column, the
+  contact form under "kontakt". All words in content/redaktion-webseiten.md.
+*/ -}}
+{{- $p := .Params -}}
+{{- $v := $p.vorschau -}}
+{{- /* The phone beside the hero: a picture of the editor in Horizont's
+       field, badge and button classes, hidden from screen readers (the
+       sections say the same in words). */ -}}
+{{- $felder := "" -}}
+{{- range $v.felder }}
+  {{- $felder = printf "%s<div class=\"hz-field\"><label>%s</label><span class=\"hz-input kit-rd-value\">%s</span></div>" $felder (htmlEscape .label) (htmlEscape .wert) -}}
+{{- end -}}
+{{- $screen := printf "<div class=\"kit-rd-screen\" aria-hidden=\"true\"><div class=\"kit-rd-head\">%s<span class=\"t-title-3\">%s</span></div>%s<div class=\"kit-rd-foot\">%s<span class=\"hz-button hz-button--secondary hz-button--dense\">%s</span></div></div>"
+    (partial "horizont/kennung.html" $v.kennung) (htmlEscape $v.title) $felder
+    (partial "horizont/badge.html" (dict "status" "info" "label" $v.status)) (htmlEscape $v.knopf) -}}
+{{ partial "horizont/feld/hero.html" (dict
+  "kennung" $p.hero.kennung
+  "title" $p.hero.title
+  "text" $p.hero.text
+  "primary" $p.hero.primary
+  "secondary" $p.hero.secondary
+  "aside" (printf "<div class=\"kit-rd-phone\">%s</div>" (partial "horizont/device.html" (dict "device" "iphone" "width" 280 "cropped" true "height" 460 "inner" $screen)))) }}
+{{- range $p.sections }}
+{{- if .fragen }}
+<section class="hz-feld-section" id="{{ .id }}">
+  {{ partial "horizont/kennung.html" .kennung }}
+  <div>
+    <h2>{{ .title }}</h2>
+    {{ with .text }}<p>{{ . | markdownify }}</p>{{ end }}
+  </div>
+  <dl class="kit-fragen">
+    {{- range .fragen }}
+    <div><dt class="t-title-3">{{ .frage }}</dt><dd>{{ .antwort | markdownify }}</dd></div>
+    {{- end }}
+  </dl>
+</section>
+{{- else }}
+{{ partial "horizont/feld/section.html" (dict "id" .id "kennung" .kennung "title" .title "text" .text "facts" .facts) }}
+{{- end }}
+{{- if eq .id "kontakt" }}{{ partial "kontakt.html" $p.form }}{{ end }}
+{{- end }}
+{{ end }}

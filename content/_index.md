@@ -27,15 +27,16 @@ heroFull:
     ohne Fachchinesisch.
 
 
-# What already runs: shown under the hero in both modes. Kalkar Kompakt
-# comes from its own page here, the others from Horizont's tokens/flur.yaml
+# What already runs: shown under the hero in both modes. Kalkar Kompakt and
+# Redaktion come from their own pages here, the others from Horizont's tokens/flur.yaml
 # (ids), so name, line and status read the same as on the Flurkarte.
 arbeiten:
   kennung: Arbeiten
   title: Was schon läuft.
   text: >-
-    Apps und Werkzeuge aus Kalkar, für Menschen hier und für alle, die ein
-    Haus mit KNX oder Lust auf ein Panzerduell haben.
+    Apps und Werkzeuge aus Kalkar: für Menschen hier, für Betriebe und
+    Vereine, die ihre Webseite selbst pflegen, und für alle, die ein Haus
+    mit KNX oder Lust auf ein Panzerduell haben.
   flur: [knx, panzergefecht]
 
 sections:

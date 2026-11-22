@@ -1,8 +1,8 @@
 {{- /*
   "Arbeiten": what Kalkar IT already runs, under the hero in both modes.
   Since 16.11.2026 the products live here, not on regetskcob.de; the blog
-  keeps the stories and links over. Kalkar Kompakt comes from its page
-  (/kompakt/), the others from Horizont's tokens/flur.yaml by id (name,
+  keeps the stories and links over. Kalkar Kompakt and Redaktion come from
+  their pages (/kompakt/, /redaktion-webseiten/), the others from Horizont's tokens/flur.yaml by id (name,
   note, status, text, site), so they read the same as on the Flurkarte.
   Words of the section: "arbeiten" in content/_index.md.
 */ -}}
@@ -11,6 +11,12 @@
 {{- $items := slice -}}
 {{- with site.GetPage "/kompakt" }}
   {{- $items = $items | append (dict "product" "kalkar-kompakt" "name" .Title "note" "Bürger-App" "status" "Web-App" "positive" true "text" .Description "url" .RelPermalink) -}}
+{{- end }}
+{{- /* Redaktion, the web care of Kalkar IT, from its product page; its
+       name and line from the page (arbeit in its front matter), the
+       picture is Kalkar IT's own, as Horizont has no icon for it. */}}
+{{- with site.GetPage "/redaktion-webseiten" }}
+  {{- $items = $items | append (dict "product" "kalkar-it" "name" .Title "note" .Params.arbeit.note "status" .Params.arbeit.status "positive" true "text" .Description "url" .RelPermalink) -}}
 {{- end }}
 {{- range $id := $a.flur }}
   {{- range site.Data.flur.gemarkungen }}{{ if eq .id $id }}

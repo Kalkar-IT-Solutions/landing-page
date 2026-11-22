@@ -60,6 +60,85 @@ singletons:
           - { name: text, label: Text, type: text }
           - { name: note, label: Hinweis, type: string }
 
+  - name: redaktion
+    label: Redaktion (Produktseite)
+    icon: article
+    file: content/redaktion-webseiten.md
+    fields:
+      - { name: title, label: Titel, type: string, required: true }
+      - { name: description, label: Beschreibung, type: text, hint: Für Suchmaschinen und die Zeile unter „Arbeiten“ auf der Startseite. }
+      - name: arbeit
+        label: Eintrag unter „Arbeiten“
+        type: object
+        fields:
+          - { name: note, label: Zeile, type: string }
+          - { name: status, label: Status, type: string }
+      - name: hero
+        label: Kopf
+        type: object
+        fields:
+          - { name: kennung, label: Kennung, type: string }
+          - { name: title, label: Überschrift, type: string, required: true }
+          - { name: text, label: Text, type: text, hint: Markdown erlaubt, etwa Links. }
+          - name: primary
+            label: Hauptknopf
+            type: object
+            fields:
+              - { name: label, label: Beschriftung, type: string, required: true }
+              - { name: url, label: Ziel, type: string, required: true }
+          - name: secondary
+            label: Zweiter Knopf
+            type: object
+            fields:
+              - { name: label, label: Beschriftung, type: string, required: true }
+              - { name: url, label: Ziel, type: string, required: true }
+      - name: vorschau
+        label: Formular im Telefon
+        type: object
+        fields:
+          - { name: kennung, label: Kennung, type: string }
+          - { name: title, label: Überschrift, type: string, required: true }
+          - name: felder
+            label: Felder
+            type: list
+            fields:
+              - { name: label, label: Beschriftung, type: string, required: true }
+              - { name: wert, label: Wert, type: string, required: true }
+          - { name: status, label: Status, type: string }
+          - { name: knopf, label: Knopf, type: string }
+      - name: sections
+        label: Abschnitte
+        type: list
+        fields:
+          - { name: id, label: Anker, type: string, required: true, hint: "Kleinbuchstaben, für Links wie #ablauf; „kontakt“ bekommt das Formular darunter" }
+          - { name: kennung, label: Kennung, type: string }
+          - { name: title, label: Überschrift, type: string, required: true }
+          - { name: text, label: Text, type: text, hint: Markdown erlaubt, etwa Links. }
+          - name: facts
+            label: Fakten
+            type: list
+            fields:
+              - { name: term, label: Begriff, type: string, required: true, hint: Kurz halten, höchstens etwa elf Zeichen. }
+              - { name: value, label: Wert, type: string, required: true }
+          - name: fragen
+            label: Fragen und Antworten
+            type: list
+            hint: Statt der Fakten; nur im Abschnitt mit den häufigen Fragen.
+            fields:
+              - { name: frage, label: Frage, type: string, required: true }
+              - { name: antwort, label: Antwort, type: text, required: true }
+      - name: form
+        label: Kontaktformular
+        type: object
+        fields:
+          - { name: subject, label: Betreff der E-Mail, type: string, required: true }
+          - { name: name, label: Beschriftung Name, type: string, required: true }
+          - { name: message, label: Beschriftung Nachricht, type: string, required: true }
+          - { name: placeholder, label: Platzhalter, type: string }
+          - { name: help, label: Hilfetext, type: text }
+          - { name: submit, label: Knopf, type: string, required: true }
+          - { name: direct, label: Vor der Adresse, type: string }
+
   - name: impressum
     label: Impressum
     icon: legal

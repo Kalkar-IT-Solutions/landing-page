@@ -301,3 +301,17 @@ body.kit-aufbau .hz-feld-hero { flex: none; min-height: calc(100svh - 92px - 72p
     linear-gradient(transparent 82%, var(--device-aluminium-dark) 82%),
     var(--device-aluminium);
 }
+
+/* --- Redaktion (layouts/redaktion.html) ---
+   The phone beside the hero holds a form of the editor, made of Horizont's
+   field, badge and button; it stands on the horizon in the middle of its
+   column. The questions take the facts column, question over answer. */
+.kit-rd-phone { display: flex; justify-content: center; }
+.kit-rd-screen { display: grid; gap: var(--s-16); align-content: start; height: 100%; box-sizing: border-box; padding: var(--s-48) var(--s-16) var(--s-16); }
+.kit-rd-head { display: grid; gap: var(--s-4); padding-bottom: var(--s-12); border-bottom: var(--line-hairline) solid var(--line); }
+.kit-rd-value { display: flex; align-items: center; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.kit-rd-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-8); }
+.kit-fragen { margin: 0; display: grid; gap: var(--s-24); align-content: start; }
+.kit-fragen dt { color: var(--text); }
+.kit-fragen dd { margin: var(--s-4) 0 0; color: var(--text-muted); }
+.kit-fragen dd a { color: var(--accent-text); text-underline-offset: 0.2em; }
