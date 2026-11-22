@@ -301,10 +301,3 @@ body.kit-aufbau .hz-feld-hero { flex: none; min-height: calc(100svh - 92px - 72p
     linear-gradient(transparent 82%, var(--device-aluminium-dark) 82%),
     var(--device-aluminium);
 }
-
-/* The printed vase: orange filament, layer lines a shade
-   darker, between laptop and phone. */
-.kit-scene-print { left: 65.6cqw; width: 4.4cqw; height: auto; }
-.kit-print { fill: #D98A3D; }
-.kit-print-layers { stroke: #7A4518; stroke-opacity: .35; stroke-width: .6; }
-.kit-print-rim { stroke: #7A4518; stroke-opacity: .5; stroke-width: 1.2; }
