@@ -24,6 +24,12 @@ AddType application/manifest+json .webmanifest
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule ^ https://kalkar-it.de%{REQUEST_URI} [R=301,L]
 
+  # Redaktion is a single-page app with clean URLs (/redaktion/sites/…,
+  # /redaktion/invite/…): paths that are no file fall back to its index.html.
+  RewriteCond %{REQUEST_URI} ^/redaktion/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^redaktion/ /redaktion/index.html [L]
+
   # The FTP upload keeps its state in this file; nobody needs to read it.
   RewriteRule ^\.ftp-deploy-sync-state\.json$ - [R=404,L]
 </IfModule>

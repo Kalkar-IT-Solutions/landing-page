@@ -1,0 +1,77 @@
+# What can be edited in Redaktion (kalkar-it.de/redaktion/). Layouts, styles,
+# the Horizont module and the deploy stay with the developer. Keys of the
+# front matter that are not listed here survive every save unchanged.
+timezone: Europe/Berlin
+
+singletons:
+  - name: start
+    label: Startseite
+    icon: home
+    file: content/_index.md
+    fields:
+      - { name: title, label: Titel der Seite, type: string, required: true }
+      - { name: description, label: Beschreibung für Suchmaschinen, type: text }
+      - name: aufbau
+        label: Im Aufbau
+        type: boolean
+        hint: Zeigt nur den oberen Bereich; die Abschnitte darunter bleiben verborgen.
+      - name: hero
+        label: Kopf während des Aufbaus
+        type: object
+        fields:
+          - { name: kennung, label: Kennung, type: string }
+          - { name: title, label: Überschrift, type: string, required: true }
+          - { name: text, label: Text, type: text, hint: Markdown erlaubt, etwa Links. }
+      - name: heroFull
+        label: Kopf der fertigen Seite
+        type: object
+        fields:
+          - { name: kennung, label: Kennung, type: string }
+          - { name: title, label: Überschrift, type: string, required: true }
+          - { name: text, label: Text, type: text }
+      - name: sections
+        label: Abschnitte
+        type: list
+        fields:
+          - { name: id, label: Anker, type: string, required: true, hint: "Kleinbuchstaben, für Links wie #kontakt" }
+          - { name: kennung, label: Kennung, type: string }
+          - { name: title, label: Überschrift, type: string, required: true }
+          - { name: text, label: Text, type: text }
+          - name: facts
+            label: Fakten
+            type: list
+            fields:
+              - { name: term, label: Begriff, type: string, required: true }
+              - { name: value, label: Wert, type: string, required: true }
+
+  - name: kompakt
+    label: Kalkar Kompakt
+    icon: info
+    file: content/kompakt.md
+    fields:
+      - { name: title, label: Titel, type: string, required: true }
+      - { name: description, label: Beschreibung, type: text }
+      - name: hero
+        label: Kopf
+        type: object
+        fields:
+          - { name: kennung, label: Kennung, type: string }
+          - { name: title, label: Überschrift, type: string, required: true }
+          - { name: text, label: Text, type: text }
+          - { name: note, label: Hinweis, type: string }
+
+  - name: impressum
+    label: Impressum
+    icon: legal
+    file: content/impressum.md
+    fields:
+      - { name: title, label: Titel, type: string, required: true }
+      - { name: body, label: Text, type: markdown }
+
+  - name: datenschutz
+    label: Datenschutz
+    icon: privacy
+    file: content/datenschutz.md
+    fields:
+      - { name: title, label: Titel, type: string, required: true }
+      - { name: body, label: Text, type: markdown }
