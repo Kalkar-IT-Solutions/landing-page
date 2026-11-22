@@ -46,7 +46,7 @@ sections:
       - { term: Software, value: Apps und Werkzeuge nach Maß }
       - { term: Web, value: "Seiten, die schnell und schlicht sind" }
       - { term: Betrieb, value: "Einrichtung, Wartung, Beratung" }
-      - { term: 3D-Druck, value: "Gehäuse, Halter und Ersatzteile nach Maß" }
+      - { term: 3D-Druck, value: "Gehäuse, Halter und Ersatzteile" }
   - id: region
     kennung: Region
     title: Kurze Wege, klare Worte.
