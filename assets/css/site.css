@@ -280,3 +280,23 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
    keeps the height of the screen below the horizon line (92px with the place above it since Horizont 0.19) and above
    the start of the next section, so the scene keeps its room. */
 body.kit-aufbau .hz-feld-hero { flex: none; min-height: calc(100svh - 92px - 72px); }
+
+/* The laptop base seen slightly from above, as in the Kalkar IT icon:
+   as wide as the lid at the back, wider to the front, with keyboard,
+   trackpad and a thin front edge. Replaces Horizont's flat base. */
+.kit-scene-laptop { margin-bottom: calc(var(--w) * 0.075); }
+.kit-scene-laptop::before { display: none; }
+.kit-scene-laptop::after {
+  left: -6%; right: -6%; height: calc(var(--w) * 0.075);
+  border-radius: 0 0 calc(var(--w) * 0.012) calc(var(--w) * 0.012);
+  clip-path: polygon(6% 0, 94% 0, 100% 82%, 100% 100%, 0 100%, 0 82%);
+  background:
+    /* trackpad */
+    linear-gradient(var(--device-aluminium-dark), var(--device-aluminium-dark)) 50% 70% / 26% 26% no-repeat,
+    /* key rows */
+    repeating-linear-gradient(90deg, transparent 0 0.5%, var(--device-aluminium) 0.5% 0.9%) 50% 18% / 84% 38% no-repeat,
+    linear-gradient(var(--device-aluminium-dark), var(--device-aluminium-dark)) 50% 18% / 84% 38% no-repeat,
+    /* front edge */
+    linear-gradient(transparent 82%, var(--device-aluminium-dark) 82%),
+    var(--device-aluminium);
+}
