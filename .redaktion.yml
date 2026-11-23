@@ -132,13 +132,18 @@ singletons:
         label: Kontaktformular
         type: object
         fields:
-          - { name: subject, label: Betreff der E-Mail, type: string, required: true }
+          - { name: subject, label: Betreff des Mail-Links (ohne JavaScript), type: string, required: true }
           - { name: name, label: Beschriftung Name, type: string, required: true }
+          - { name: email, label: Beschriftung E-Mail, type: string, required: true }
           - { name: message, label: Beschriftung Nachricht, type: string, required: true }
           - { name: placeholder, label: Platzhalter, type: string }
-          - { name: help, label: Hilfetext, type: text }
+          - { name: consent, label: Einwilligung, type: text, required: true }
+          - { name: consentLink, label: Link zur Datenschutzerklärung, type: string }
           - { name: submit, label: Knopf, type: string, required: true }
-          - { name: direct, label: Vor der Adresse, type: string }
+          - { name: ok, label: Meldung nach dem Senden, type: string, required: true }
+          - { name: error, label: Meldung bei Fehler, type: string, required: true }
+          - { name: rate, label: Meldung bei zu vielen Anfragen, type: string }
+          - { name: offline, label: Meldung ohne Verbindung, type: string }
 
   - name: impressum
     label: Impressum

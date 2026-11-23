@@ -9,8 +9,14 @@ defaultContentLanguage = 'de'
 disableKinds = ['taxonomy', 'term', 'section', 'rss']
 
 [params]
-  # Where the contact form sends its mail.
+  # The address for mailto links (the hero's button without JavaScript).
   contactMail = 'hi@kalkar-it.de'
+  # Redaktion's contact add-on, switched on for kalkar-it.de in its admin
+  # (docs/zusatzangebote.md in the redaktion repo). The form posts here; the
+  # endpoint only takes requests from the site's own origin.
+  [params.redaktion]
+    api = 'https://erruhlqtrnuxgguvbein.supabase.co/functions/v1/redaktion'
+    site = 'a0d876ca-e7a1-4947-adf1-1c6108d7f98e'
 
 [module]
   [[module.mounts]]

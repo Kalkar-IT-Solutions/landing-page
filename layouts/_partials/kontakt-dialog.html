@@ -3,10 +3,11 @@
   page is in "aufbau" and the contact section is hidden. Without JavaScript
   the button is a plain mailto link. The form: kontakt-form.html.
 
-    partial "kontakt-dialog.html" (dict "form" $p.form "button" "Nachricht schreiben")
+    partial "kontakt-dialog.html" (dict "form" $p.form "button" "Anfrage senden" "page" .RelPermalink)
 
   form    the words of the form (front matter "form"); form.title heads the dialog
   button  the label of the button
+  page    path of the page (see kontakt-form.html)
 */ -}}
 {{- $mail := site.Params.contactMail -}}
 {{- $f := .form -}}
@@ -24,5 +25,5 @@
       </svg>
     </button>
   </div>
-  {{ partial "kontakt-form.html" (dict "form" $f "id" "kit-dialog") }}
+  {{ partial "kontakt-form.html" (dict "form" $f "id" "kit-dialog" "page" .page) }}
 </dialog>

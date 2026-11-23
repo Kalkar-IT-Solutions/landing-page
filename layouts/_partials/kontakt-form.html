@@ -1,36 +1,62 @@
 {{- /*
-  The contact form itself, used under the contact section (kontakt.html)
-  and in the dialog behind the hero's button (kontakt-dialog.html). The page
-  has no server, so the form only writes the mail: assets/js/kontakt.js
-  opens the visitor's mail app with subject and text filled in. Without
-  JavaScript the browser's own mailto form takes over (enctype text/plain),
-  plainer but working. Nothing is stored or sent by the page.
+  The contact form, under the contact section (kontakt.html) and in the
+  dialog behind the hero's button (kontakt-dialog.html). It sends to
+  Redaktion's contact add-on ([params.redaktion] in hugo.toml; the messages
+  land in the inbox of kalkar-it.de in Redaktion, see docs/zusatzangebote.md
+  there): no third party, no cookies, no captcha. Spam protection: a field
+  hidden from people ("website"), the fill time ("t", set by the script) and
+  a rate limit on the server. assets/js/kontakt.js sends and shows the
+  answer in the form; without JavaScript the browser posts the form and the
+  server sends it back to the page with #kontakt-ok or #kontakt-fehler,
+  which the notes below show through :target (only for a form on the page,
+  "notes": true; the dialog needs the script anyway).
 
-    partial "kontakt-form.html" (dict "form" $p.form "id" "kit")
+    partial "kontakt-form.html" (dict "form" $p.form "id" "kit" "page" .RelPermalink "notes" true)
 
-  form  the words (front matter "form")
-  id    prefix of the field ids, unique on the page
+  form   the words (front matter "form")
+  id     prefix of the field ids, unique on the page
+  page   path of the page, where the server sends a browser back to
+  notes  whether to add the :target notes for a browser without script
 */ -}}
-{{- $mail := site.Params.contactMail -}}
-{{- if not $mail }}{{ errorf "kontakt: params.contactMail is empty in hugo.toml" }}{{ end -}}
+{{- $cfg := site.Params.redaktion -}}
+{{- if not (and $cfg $cfg.api $cfg.site) }}{{ errorf "kontakt: [params.redaktion] api and site are missing in hugo.toml" }}{{ end -}}
 {{- $f := .form -}}
 {{- $id := .id | default "kit" -}}
-<form class="kit-form" action="mailto:{{ $mail }}" method="post" enctype="text/plain"
-  data-kit-mail="{{ $mail }}" data-kit-subject="{{ $f.subject }}">
+{{- $page := .page | default "/" -}}
+{{- $action := printf "%s/public/sites/%s/contact?page=%s" (strings.TrimSuffix "/" $cfg.api) $cfg.site ($page | urlquery) -}}
+{{- with .notes }}
+<p class="kit-form-note" id="kontakt-ok" role="status">{{ $f.ok }}</p>
+<p class="kit-form-note kit-form-note--error" id="kontakt-fehler" role="alert">{{ $f.error }}</p>
+{{- end }}
+<form class="kit-form" method="post" action="{{ $action }}" data-kit-contact
+  data-kit-ok="{{ $f.ok }}" data-kit-error="{{ $f.error }}" data-kit-rate="{{ $f.rate }}" data-kit-offline="{{ $f.offline }}">
   <div class="hz-field kit-form-name">
     <label for="{{ $id }}-name">{{ $f.name }}</label>
-    <input class="hz-input" id="{{ $id }}-name" name="Name" autocomplete="name" required>
+    <input class="hz-input" id="{{ $id }}-name" name="name" autocomplete="name" required maxlength="200">
+  </div>
+  <div class="hz-field kit-form-name">
+    <label for="{{ $id }}-email">{{ $f.email }}</label>
+    <input class="hz-input" id="{{ $id }}-email" name="email" type="email" autocomplete="email" required maxlength="254">
   </div>
   <div class="hz-field">
     <label for="{{ $id }}-message">{{ $f.message }}</label>
-    <textarea class="hz-input kit-form-message" id="{{ $id }}-message" name="Nachricht" rows="6" required
+    <textarea class="hz-input kit-form-message" id="{{ $id }}-message" name="message" rows="6" required maxlength="5000"
       placeholder="{{ $f.placeholder }}"></textarea>
-    <span class="hz-help">{{ $f.help }}</span>
   </div>
+  <div class="kit-form-hp" aria-hidden="true">
+    <label for="{{ $id }}-website">Webseite</label>
+    <input id="{{ $id }}-website" name="website" tabindex="-1" autocomplete="off">
+  </div>
+  <input type="hidden" name="t" value="">
+  <input type="hidden" name="page" value="{{ $page }}">
+  <label class="kit-form-consent t-caption">
+    <input type="checkbox" name="consent" required>
+    <span>{{ $f.consent }}{{ with site.GetPage "datenschutz" }} <a href="{{ .RelPermalink }}#kontaktformular">{{ $f.consentLink }}</a>{{ end }}</span>
+  </label>
+  <p class="kit-form-status t-caption" role="status" aria-live="polite" hidden></p>
   <div>
     <button class="hz-button hz-button--primary" type="submit">{{ $f.submit }}{{ partial "horizont/symbol.html" "arrow_forward" }}</button>
   </div>
-  <p class="kit-form-direct t-caption">{{ $f.direct }} <a href="mailto:{{ $mail }}">{{ $mail }}</a></p>
 </form>
 {{- $js := resources.Get "js/kontakt.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

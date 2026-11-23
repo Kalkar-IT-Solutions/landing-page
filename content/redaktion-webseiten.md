@@ -159,14 +159,20 @@ sections:
     text: >-
       Am schnellsten geht es über die [Demo](/redaktion/demo): Dort fragen Sie
       mit „Jetzt eigene Seite anfragen“ an, Ihre Antworten aus dem Assistenten
-      gehen mit. Oder Sie schreiben uns ein paar Sätze.
+      gehen mit. Oder Sie senden uns hier eine Anfrage.
 
 form:
+  # Subject of the mailto link behind the hero's button without JavaScript.
   subject: Anfrage zu Redaktion
   name: Name
+  email: E-Mail
   message: Worum geht es?
   placeholder: Betrieb, Praxis oder Verein, und was die Seite zeigen soll.
-  help: Der Knopf öffnet Ihr Mailprogramm mit der fertigen Nachricht. Diese Seite speichert und sendet nichts.
-  submit: E-Mail schreiben
-  direct: Oder direkt an
+  consent: Ich bin einverstanden, dass meine Angaben gespeichert werden, um meine Anfrage zu beantworten.
+  consentLink: Mehr dazu in der Datenschutzerklärung.
+  submit: Anfrage senden
+  ok: Danke, Ihre Anfrage ist angekommen. Wir melden uns per E-Mail.
+  error: Die Anfrage konnte nicht gesendet werden. Bitte prüfen Sie Ihre Angaben und versuchen Sie es noch einmal.
+  rate: Gerade kamen sehr viele Anfragen. Bitte versuchen Sie es später noch einmal.
+  offline: Die Anfrage konnte nicht gesendet werden. Bitte prüfen Sie Ihre Internetverbindung.
 ---

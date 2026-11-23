@@ -198,7 +198,7 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
 /* ---- Sections and contact ------------------------------------------- */
 
 /* Links in running text and facts: the accent's text colour. */
-.hz-feld-hero p a, .hz-feld-section p a, .hz-facts dd a, .kit-page a, .kit-form-direct a {
+.hz-feld-hero p a, .hz-feld-section p a, .hz-facts dd a, .kit-page a, .kit-form-consent a {
   color: var(--accent-text);
   text-underline-offset: 0.2em;
 }
@@ -220,7 +220,16 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
   font: 1rem/1.5 var(--font-sans); resize: vertical;
 }
 .kit-form-message::placeholder { color: var(--text-muted); }
-.kit-form-direct { margin: 0; color: var(--text-muted); }
+/* The consent box: the box at the top of the first line. */
+.kit-form-consent { display: grid; grid-template-columns: auto 1fr; gap: var(--s-12); align-items: start; color: var(--text-muted); }
+.kit-form-consent input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); }
+/* Hidden from people, filled in only by bots (the server drops those). */
+.kit-form-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.kit-form .kit-form-status { margin: 0; color: var(--text); }
+.kit-form .kit-form-status--error, .kit-form-note--error { color: var(--critical); }
+/* The server's answer to a browser without script: shown via the anchor. */
+.kit-form-note { display: none; margin: 0 0 var(--s-24); max-width: var(--size-text-column); }
+.kit-form-note:target { display: block; }
 
 /* The button under the hero's words opens the form in a dialog
    (kontakt-dialog.html), framed like Horizont's map dialog. On a phone it
