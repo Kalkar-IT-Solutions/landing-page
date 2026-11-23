@@ -73,9 +73,11 @@ form:
   # Subject of the mailto link behind the hero's button without JavaScript.
   subject: Anfrage über die Webseite
   name: Name
+  namePlaceholder: Vor- und Nachname
   email: E-Mail
+  emailPlaceholder: name@beispiel.de
   message: Worum geht es?
-  placeholder: Ein paar Sätze zu Ihrem Vorhaben genügen.
+  messagePlaceholder: Ein paar Sätze zu Ihrem Vorhaben genügen.
   consent: Ich bin einverstanden, dass meine Angaben gespeichert werden, um meine Anfrage zu beantworten.
   consentLink: Mehr dazu in der Datenschutzerklärung.
   submit: Anfrage senden

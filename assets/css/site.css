@@ -219,7 +219,7 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
   min-height: calc(var(--size-touch) * 3); padding-block: var(--s-12);
   font: 1rem/1.5 var(--font-sans); resize: vertical;
 }
-.kit-form-message::placeholder { color: var(--text-muted); }
+.kit-form .hz-input::placeholder { color: var(--text-muted); opacity: 1; }
 /* The consent box: the box at the top of the first line. */
 .kit-form-consent { display: grid; grid-template-columns: auto 1fr; gap: var(--s-12); align-items: start; color: var(--text-muted); }
 .kit-form-consent input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); }

@@ -32,16 +32,18 @@
   data-kit-ok="{{ $f.ok }}" data-kit-error="{{ $f.error }}" data-kit-rate="{{ $f.rate }}" data-kit-offline="{{ $f.offline }}">
   <div class="hz-field kit-form-name">
     <label for="{{ $id }}-name">{{ $f.name }}</label>
-    <input class="hz-input" id="{{ $id }}-name" name="name" autocomplete="name" required maxlength="200">
+    <input class="hz-input" id="{{ $id }}-name" name="name" autocomplete="name" required maxlength="200"
+      placeholder="{{ $f.namePlaceholder }}">
   </div>
   <div class="hz-field kit-form-name">
     <label for="{{ $id }}-email">{{ $f.email }}</label>
-    <input class="hz-input" id="{{ $id }}-email" name="email" type="email" autocomplete="email" required maxlength="254">
+    <input class="hz-input" id="{{ $id }}-email" name="email" type="email" autocomplete="email" required maxlength="254"
+      placeholder="{{ $f.emailPlaceholder }}">
   </div>
   <div class="hz-field">
     <label for="{{ $id }}-message">{{ $f.message }}</label>
     <textarea class="hz-input kit-form-message" id="{{ $id }}-message" name="message" rows="6" required maxlength="5000"
-      placeholder="{{ $f.placeholder }}"></textarea>
+      placeholder="{{ $f.messagePlaceholder }}"></textarea>
   </div>
   <div class="kit-form-hp" aria-hidden="true">
     <label for="{{ $id }}-website">Webseite</label>
