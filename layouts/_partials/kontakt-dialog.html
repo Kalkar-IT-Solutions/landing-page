@@ -1,0 +1,28 @@
+{{- /*
+  A button that opens the contact form in a dialog, for the hero while the
+  page is in "aufbau" and the contact section is hidden. Without JavaScript
+  the button is a plain mailto link. The form: kontakt-form.html.
+
+    partial "kontakt-dialog.html" (dict "form" $p.form "button" "Nachricht schreiben")
+
+  form    the words of the form (front matter "form"); form.title heads the dialog
+  button  the label of the button
+*/ -}}
+{{- $mail := site.Params.contactMail -}}
+{{- $f := .form -}}
+{{- $href := printf "mailto:%s?subject=%s" $mail (replace ($f.subject | urlquery) "+" "%20") -}}
+<div class="hz-feld-actions kit-hero-actions">
+  <a class="hz-button hz-button--primary" href="{{ $href | safeURL }}"
+    data-kit-dialog="kit-kontakt">{{ .button }}{{ partial "horizont/symbol.html" "arrow_forward" }}</a>
+</div>
+<dialog class="kit-dialog" id="kit-kontakt" aria-labelledby="kit-kontakt-title">
+  <div class="kit-dialog-top">
+    <h2 class="t-title-2" id="kit-kontakt-title">{{ $f.title | default .button }}</h2>
+    <button type="button" class="hz-button hz-button--quiet kit-dialog-close" data-kit-close aria-label="Schließen">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+        <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+  </div>
+  {{ partial "kontakt-form.html" (dict "form" $f "id" "kit-dialog") }}
+</dialog>

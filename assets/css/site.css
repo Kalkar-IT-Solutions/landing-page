@@ -222,6 +222,32 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
 .kit-form-message::placeholder { color: var(--text-muted); }
 .kit-form-direct { margin: 0; color: var(--text-muted); }
 
+/* The button under the hero's words opens the form in a dialog
+   (kontakt-dialog.html), framed like Horizont's map dialog. On a phone it
+   is a full page instead of a box over the page. */
+.hz-feld-hero .kit-hero-actions { margin: var(--s-24) 0 0; }
+.kit-dialog {
+  box-sizing: border-box;
+  width: min(560px, calc(100vw - 2 * var(--s-16)));
+  max-height: calc(100dvh - 2 * var(--s-16));
+  padding: var(--s-24);
+  border: var(--line-hairline) solid var(--line-strong);
+  border-radius: var(--r-10);
+  background: var(--bg);
+  color: var(--text);
+}
+.kit-dialog::backdrop { background: color-mix(in srgb, var(--text) 30%, transparent); }
+.kit-dialog-top { display: flex; align-items: center; justify-content: space-between; gap: var(--s-16); margin: 0 0 var(--s-24); }
+.kit-dialog-top h2 { margin: 0; }
+.kit-dialog .kit-form-name { max-width: none; }
+@media (max-width: 640px) {
+  .kit-dialog {
+    width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh;
+    margin: 0; padding: var(--s-16) var(--s-16) calc(var(--s-16) + env(safe-area-inset-bottom));
+    border: 0; border-radius: 0;
+  }
+}
+
 .kit-page { max-width: var(--size-text-column); padding: var(--s-64) var(--s-32); }
 .kit-page h1 { margin: var(--s-16) 0 var(--s-32); }
 /* Headings in the legal text like those of the Feldseite sections. */

@@ -4,12 +4,15 @@
   horizon line (here an oak desk top), a picture of what is built
   here, while in 'aufbau' with the facts of 'vorhaben' beside the words; then the numbered
   sections, the last one with the contact form. While "aufbau" is set the
-  page is the hero alone, in more open words. All words live in
+  page is the hero alone, in more open words, and its button opens the
+  contact form in a dialog. All words live in
   content/_index.md.
 */ -}}
 {{- $p := .Params -}}
 {{- $hero := cond $p.aufbau $p.hero $p.heroFull -}}
 {{- $vorhaben := index (where $p.sections "id" "vorhaben") 0 }}
+{{- $actions := "" }}
+{{- with $hero.button }}{{ $actions = partial "kontakt-dialog.html" (dict "form" $p.form "button" .) }}{{ end }}
 {{ partial "hero.html" (dict
   "kennung" $hero.kennung
   "title" $hero.title
@@ -17,6 +20,7 @@
   "facts" (cond $p.aufbau $vorhaben.facts nil)
   "factsKennung" $hero.factsKennung
   "address" $hero.address
+  "actions" $actions
   "aside" (partial "scene.html" .)) }}
 {{ partial "arbeiten.html" . }}
 {{- if not $p.aufbau }}

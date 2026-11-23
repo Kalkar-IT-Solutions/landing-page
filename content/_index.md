@@ -11,8 +11,9 @@ hero:
   title: IT-Lösungen vom Niederrhein für den Niederrhein.
   text: >-
     Hier entsteht Kalkar IT Solutions. Die Seite ist noch im Aufbau, mehr
-    folgt bald. Wer schon jetzt ein Anliegen hat, schreibt an
-    [hi@kalkar-it.de](mailto:hi@kalkar-it.de).
+    folgt bald. Wer schon jetzt ein Anliegen hat, meldet sich gern.
+  # The button under the text; it opens the contact form ("form") in a dialog.
+  button: Nachricht schreiben
   # Beside the words while in "aufbau", with the facts of "vorhaben".
   factsKennung: Was hier entsteht
   address: "kalkar-it.de · [hi@kalkar-it.de](mailto:hi@kalkar-it.de)"
@@ -68,6 +69,7 @@ sections:
       ist herzlich eingeladen, sich zu melden.
 
 form:
+  title: Schreiben Sie uns.
   subject: Anfrage über die Webseite
   name: Name
   message: Worum geht es?
