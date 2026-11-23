@@ -116,11 +116,11 @@ body.kit-aufbau .kit-hero--facts .hz-feld-aside { grid-column: 1 / -1; }
 }
 .kit-hero-address a { color: var(--accent-text); text-underline-offset: 0.2em; white-space: nowrap; }
 
-/* The horizon line under the hero is a desk top of light oak, across the
+/* The horizon line under the hero is a desk top of oak (obj.desk of the icon), across the
    whole window as on the Instagram hero: flat tone, a few darker grain
    lines, a lit back edge. Darker oak at night. */
 .hz-feld-horizon.kit-desk {
-  --oak: #CFAE80; --oak-edge: #B8956A; --oak-grain: rgb(120 84 44 / 0.10);
+  --oak: #B8956A; --oak-edge: #A07E55; --oak-grain: rgb(100 68 34 / 0.12);
   box-sizing: border-box; height: var(--s-64); margin: 0 calc(50% - 50vw); border: 0;
   border-top: 3px solid var(--oak-edge);
   background: repeating-linear-gradient(180deg, transparent 0 11px, var(--oak-grain) 11px 12px, transparent 12px 20px, var(--oak-grain) 20px 21px, transparent 21px 33px), var(--oak);
