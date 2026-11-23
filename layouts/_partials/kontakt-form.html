@@ -54,7 +54,7 @@
     <span>{{ $f.consent }}{{ with site.GetPage "datenschutz" }} <a href="{{ .RelPermalink }}#kontaktformular">{{ $f.consentLink }}</a>{{ end }}</span>
   </label>
   <p class="kit-form-status t-caption" role="status" aria-live="polite" hidden></p>
-  <div>
+  <div class="kit-form-actions">
     <button class="hz-button hz-button--primary" type="submit">{{ $f.submit }}{{ partial "horizont/symbol.html" "arrow_forward" }}</button>
   </div>
 </form>

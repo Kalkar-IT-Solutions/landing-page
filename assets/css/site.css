@@ -249,6 +249,8 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
 .kit-dialog-top { display: flex; align-items: center; justify-content: space-between; gap: var(--s-16); margin: 0 0 var(--s-24); }
 .kit-dialog-top h2 { margin: 0; }
 .kit-dialog .kit-form-name { max-width: none; }
+/* In a dialog the primary button stands on the right. */
+.kit-dialog .kit-form-actions { display: flex; justify-content: flex-end; }
 @media (max-width: 640px) {
   .kit-dialog {
     width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh;
