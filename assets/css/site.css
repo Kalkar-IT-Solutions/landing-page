@@ -284,23 +284,18 @@ body.kit-aufbau .hz-feld-hero { flex: none; min-height: calc(100svh - 92px - 72p
 /* The laptop base seen slightly from above, lying on the desk top as in
    the Kalkar IT icon:
    as wide as the lid at the back, wider to the front, with keyboard,
-   trackpad and a thin front edge. Replaces Horizont's flat base. */
+   trackpad and a thin front edge, drawn as SVG so keyboard and trackpad
+   follow the slanted sides. Replaces Horizont's flat base. */
 .kit-scene-laptop { margin-bottom: 0; z-index: 2; }
 .kit-scene-laptop::before { display: none; }
-.kit-scene-laptop::after {
-  left: -6%; right: -6%; height: calc(var(--w) * 0.075);
-  border-radius: 0 0 calc(var(--w) * 0.012) calc(var(--w) * 0.012);
-  clip-path: polygon(6% 0, 94% 0, 100% 82%, 100% 100%, 0 100%, 0 82%);
-  background:
-    /* trackpad */
-    linear-gradient(var(--device-aluminium-dark), var(--device-aluminium-dark)) 50% 70% / 26% 26% no-repeat,
-    /* key rows */
-    repeating-linear-gradient(90deg, transparent 0 0.5%, var(--device-aluminium) 0.5% 0.9%) 50% 18% / 84% 38% no-repeat,
-    linear-gradient(var(--device-aluminium-dark), var(--device-aluminium-dark)) 50% 18% / 84% 38% no-repeat,
-    /* front edge */
-    linear-gradient(transparent 82%, var(--device-aluminium-dark) 82%),
-    var(--device-aluminium);
+.kit-scene-laptop::after { display: none; }
+.kit-laptop-base {
+  position: absolute; top: 100%; left: -6%; width: 112%; height: calc(var(--w) * 0.075);
+  overflow: visible;
 }
+.kit-laptop-base .top { fill: var(--device-aluminium); }
+.kit-laptop-base .front, .kit-laptop-base .well, .kit-laptop-base .pad { fill: var(--device-aluminium-dark); }
+.kit-laptop-base .keys { stroke: var(--device-aluminium); stroke-width: 1; opacity: .6; }
 
 /* --- Redaktion (layouts/redaktion.html) ---
    The phone beside the hero holds a form of the editor, made of Horizont's
