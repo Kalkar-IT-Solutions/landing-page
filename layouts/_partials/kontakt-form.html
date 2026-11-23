@@ -1,0 +1,36 @@
+{{- /*
+  The contact form itself, used under the contact section (kontakt.html)
+  and in the dialog behind the hero's button (kontakt-dialog.html). The page
+  has no server, so the form only writes the mail: assets/js/kontakt.js
+  opens the visitor's mail app with subject and text filled in. Without
+  JavaScript the browser's own mailto form takes over (enctype text/plain),
+  plainer but working. Nothing is stored or sent by the page.
+
+    partial "kontakt-form.html" (dict "form" $p.form "id" "kit")
+
+  form  the words (front matter "form")
+  id    prefix of the field ids, unique on the page
+*/ -}}
+{{- $mail := site.Params.contactMail -}}
+{{- if not $mail }}{{ errorf "kontakt: params.contactMail is empty in hugo.toml" }}{{ end -}}
+{{- $f := .form -}}
+{{- $id := .id | default "kit" -}}
+<form class="kit-form" action="mailto:{{ $mail }}" method="post" enctype="text/plain"
+  data-kit-mail="{{ $mail }}" data-kit-subject="{{ $f.subject }}">
+  <div class="hz-field kit-form-name">
+    <label for="{{ $id }}-name">{{ $f.name }}</label>
+    <input class="hz-input" id="{{ $id }}-name" name="Name" autocomplete="name" required>
+  </div>
+  <div class="hz-field">
+    <label for="{{ $id }}-message">{{ $f.message }}</label>
+    <textarea class="hz-input kit-form-message" id="{{ $id }}-message" name="Nachricht" rows="6" required
+      placeholder="{{ $f.placeholder }}"></textarea>
+    <span class="hz-help">{{ $f.help }}</span>
+  </div>
+  <div>
+    <button class="hz-button hz-button--primary" type="submit">{{ $f.submit }}{{ partial "horizont/symbol.html" "arrow_forward" }}</button>
+  </div>
+  <p class="kit-form-direct t-caption">{{ $f.direct }} <a href="mailto:{{ $mail }}">{{ $mail }}</a></p>
+</form>
+{{- $js := resources.Get "js/kontakt.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

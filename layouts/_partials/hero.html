@@ -3,13 +3,15 @@
   same markup and classes) with a second column while the page is in
   "aufbau": what is built here (the facts of the section "vorhaben") and
   the address just above the desk, as on the Instagram hero. Horizont's
-  partial has no slot for it.
+  partial has no slot for it. "actions" is ready HTML under the text, such
+  as the button of the contact dialog (kontakt-dialog.html).
 */ -}}
 <section class="hz-feld-hero{{ if .facts }} kit-hero--facts{{ end }}">
   <div>
     {{ with .kennung }}{{ partial "horizont/kennung.html" . }}{{ end }}
     <h1 class="t-display">{{ .title }}</h1>
     {{ with .text }}<p>{{ . | markdownify }}</p>{{ end }}
+    {{ with .actions }}{{ . | safeHTML }}{{ end }}
   </div>
   {{- with .facts }}
   <div class="kit-hero-facts">

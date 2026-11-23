@@ -22,6 +22,7 @@ singletons:
           - { name: kennung, label: Kennung, type: string }
           - { name: title, label: Überschrift, type: string, required: true }
           - { name: text, label: Text, type: text, hint: Markdown erlaubt, etwa Links. }
+          - { name: button, label: Knopf zum Kontaktformular, type: string, hint: Öffnet das Kontaktformular in einem Fenster. Leer lassen für keinen Knopf. }
       - name: heroFull
         label: Kopf der fertigen Seite
         type: object
