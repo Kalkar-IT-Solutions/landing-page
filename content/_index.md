@@ -10,13 +10,13 @@ hero:
   kennung: Im Aufbau · Kalkar · Niederrhein
   title: IT-Lösungen vom Niederrhein für den Niederrhein.
   text: >-
-    Hier entsteht Kalkar IT Solutions. Die Seite ist noch im Aufbau, mehr
-    folgt bald. Wer schon jetzt ein Anliegen hat, meldet sich gern.
-  # The button under the text; it opens the contact form ("form") in a dialog.
+    Hier entsteht Kalkar IT Solutions. Die Seite ist noch im Aufbau, mehr folgt
+    bald. 
+
+    Ich freue mich schon jetzt, von euren Anliegen zu hören.
   button: Anfrage senden
-  # Beside the words while in "aufbau", with the facts of "vorhaben".
   factsKennung: Was hier entsteht
-  address: "kalkar-it.de · [hi@kalkar-it.de](mailto:hi@kalkar-it.de)"
+  address: kalkar-it.de · [hi@kalkar-it.de](mailto:hi@kalkar-it.de)
 
 # The hero once the page is complete (aufbau: false).
 heroFull:
