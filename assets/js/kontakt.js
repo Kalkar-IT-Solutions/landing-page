@@ -1,21 +1,42 @@
-// The contact form writes a mail and hands it to the visitor's mail app.
-// Without this script the form posts to mailto: itself (text/plain) and the
-// hero's button is a plain mailto link. The partials may include this file
-// more than once on a page, so every element is wired only once.
-document.querySelectorAll('form[data-kit-mail]:not([data-kit-ready])').forEach(function (form) {
+// The contact form sends to Redaktion's contact add-on and shows the answer
+// in the form. Form data and Accept are "simple" for CORS: no preflight.
+// Without this script the browser posts the form itself and the server sends
+// it back to the page with #kontakt-ok or #kontakt-fehler, and the hero's
+// button is a plain mailto link. The partials may include this file more
+// than once on a page, so every element is wired only once.
+document.querySelectorAll('form[data-kit-contact]:not([data-kit-ready])').forEach(function (form) {
   form.setAttribute('data-kit-ready', '');
+  var shown = Date.now();
+  var status = form.querySelector('.kit-form-status');
+  var button = form.querySelector('button[type=submit]');
+  function show(text, failed) {
+    status.textContent = text;
+    status.hidden = false;
+    status.classList.toggle('kit-form-status--error', failed);
+  }
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     if (!form.reportValidity()) return;
-    var name = form.elements.Name.value.trim();
-    var message = form.elements.Nachricht.value.trim();
-    var subject = form.dataset.kitSubject + (name ? ' – ' + name : '');
-    var body = message + '\n\n' + name;
-    window.location.href = 'mailto:' + form.dataset.kitMail +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-    var dialog = form.closest('dialog');
-    if (dialog) dialog.close();
+    // How long the form was open; the server takes less than 3 s for a bot.
+    form.elements.t.value = String(Date.now() - shown);
+    button.disabled = true;
+    fetch(form.action, {
+      method: 'POST',
+      body: new URLSearchParams(new FormData(form)),
+      headers: { Accept: 'application/json' }
+    }).then(function (response) {
+      if (response.ok) {
+        form.reset();
+        shown = Date.now();
+        show(form.dataset.kitOk, false);
+      } else {
+        show(response.status === 429 ? form.dataset.kitRate : form.dataset.kitError, true);
+      }
+    }).catch(function () {
+      show(form.dataset.kitOffline, true);
+    }).then(function () {
+      button.disabled = false;
+    });
   });
 });
 

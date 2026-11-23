@@ -13,7 +13,7 @@ hero:
     Hier entsteht Kalkar IT Solutions. Die Seite ist noch im Aufbau, mehr
     folgt bald. Wer schon jetzt ein Anliegen hat, meldet sich gern.
   # The button under the text; it opens the contact form ("form") in a dialog.
-  button: Nachricht schreiben
+  button: Anfrage senden
   # Beside the words while in "aufbau", with the facts of "vorhaben".
   factsKennung: Was hier entsteht
   address: "kalkar-it.de · [hi@kalkar-it.de](mailto:hi@kalkar-it.de)"
@@ -69,12 +69,20 @@ sections:
       ist herzlich eingeladen, sich zu melden.
 
 form:
-  title: Schreiben Sie uns.
+  title: Ihre Anfrage.
+  # Subject of the mailto link behind the hero's button without JavaScript.
   subject: Anfrage über die Webseite
   name: Name
+  namePlaceholder: Vor- und Nachname
+  email: E-Mail
+  emailPlaceholder: name@beispiel.de
   message: Worum geht es?
-  placeholder: Ein paar Sätze zu Ihrem Vorhaben genügen.
-  help: Der Knopf öffnet Ihr Mailprogramm mit der fertigen Nachricht. Diese Seite speichert und sendet nichts.
-  submit: E-Mail schreiben
-  direct: Oder direkt an
+  messagePlaceholder: Ein paar Sätze zu Ihrem Vorhaben genügen.
+  consent: Ich bin einverstanden, dass meine Angaben gespeichert werden, um meine Anfrage zu beantworten.
+  consentLink: Mehr dazu in der Datenschutzerklärung.
+  submit: Anfrage senden
+  ok: Danke, Ihre Anfrage ist angekommen. Wir melden uns per E-Mail.
+  error: Die Anfrage konnte nicht gesendet werden. Bitte prüfen Sie Ihre Angaben und versuchen Sie es noch einmal.
+  rate: Gerade kamen sehr viele Anfragen. Bitte versuchen Sie es später noch einmal.
+  offline: Die Anfrage konnte nicht gesendet werden. Bitte prüfen Sie Ihre Internetverbindung.
 ---

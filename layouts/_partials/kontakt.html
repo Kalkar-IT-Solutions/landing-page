@@ -1,7 +1,9 @@
 {{- /*
   The contact form under its section, from the start of the section's
-  middle column. The form: kontakt-form.html. Context: the words ("form").
+  middle column. The form: kontakt-form.html.
+
+    partial "kontakt.html" (dict "form" $p.form "page" .RelPermalink)
 */ -}}
 <div class="kit-extend">
-  {{ partial "kontakt-form.html" (dict "form" . "id" "kit") }}
+  {{ partial "kontakt-form.html" (dict "form" .form "id" "kit" "page" .page "notes" true) }}
 </div>

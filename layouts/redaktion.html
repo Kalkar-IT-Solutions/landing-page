@@ -43,6 +43,6 @@
 {{- else }}
 {{ partial "horizont/feld/section.html" (dict "id" .id "kennung" .kennung "title" .title "text" .text "facts" .facts) }}
 {{- end }}
-{{- if eq .id "kontakt" }}{{ partial "kontakt.html" $p.form }}{{ end }}
+{{- if eq .id "kontakt" }}{{ partial "kontakt.html" (dict "form" $p.form "page" $.RelPermalink) }}{{ end }}
 {{- end }}
 {{ end }}

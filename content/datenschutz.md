@@ -5,8 +5,9 @@ title: Datenschutz
 Diese Seite ist bewusst schlicht gebaut: keine Cookies, keine Analyse- oder
 Werbedienste, keine eingebetteten Inhalte Dritter. Schriften und Symbole
 liegen auf demselben Server wie die Seite. Personenbezogene Daten fallen auf
-der Seite selbst nur an zwei Stellen an: beim Aufruf der Seite durch den
-Hoster und wenn Sie uns schreiben. Für die Web-App Kalkar Kompakt unter
+der Seite selbst nur an drei Stellen an: beim Aufruf der Seite durch den
+Hoster, wenn Sie uns eine E-Mail schreiben und wenn Sie das Kontaktformular
+nutzen. Für die Web-App Kalkar Kompakt unter
 [kalkar-it.de/kompakt](/kompakt/) gilt zusätzlich
 der Abschnitt „Kalkar Kompakt“ weiter unten, für das Werkzeug Redaktion unter
 [kalkar-it.de/redaktion](/redaktion/) der Abschnitt „Redaktion“.
@@ -26,11 +27,17 @@ Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverläs
 
 ## Kontakt per E-Mail
 
-Wenn Sie uns eine E-Mail schreiben, erhalten wir Ihre E-Mail-Adresse, Ihren Namen und Ihre Nachricht. Ein Kontaktformular auf dieser Seite sendet nichts selbst: Es öffnet nur Ihr Mailprogramm mit einer vorbereiteten Nachricht, die Sie dort prüfen und abschicken.
-
-Wir nutzen diese Angaben nur, um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Auftrag oder dessen Anbahnung geht, sonst unser berechtigtes Interesse an der Beantwortung (Art. 6 Abs. 1 lit. f DSGVO). Wir löschen die Nachricht, sobald die Anfrage erledigt ist, es sei denn, gesetzliche Aufbewahrungspflichten stehen dem entgegen.
+Wenn Sie uns eine E-Mail schreiben, erhalten wir Ihre E-Mail-Adresse, Ihren Namen und Ihre Nachricht. Wir nutzen diese Angaben nur, um Ihre Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn es um einen Auftrag oder dessen Anbahnung geht, sonst unser berechtigtes Interesse an der Beantwortung (Art. 6 Abs. 1 lit. f DSGVO). Wir löschen die Nachricht, sobald die Anfrage erledigt ist, es sei denn, gesetzliche Aufbewahrungspflichten stehen dem entgegen.
 
 E-Mails an diese Adresse werden über do.de, einen Dienst der Greenmark IT GmbH, Leinstraße 3, 31061 Alfeld (Leine), Deutschland, empfangen und gespeichert.
+
+## Kontaktformular {#kontaktformular}
+
+Wenn Sie uns über das Formular eine Anfrage senden, speichern wir Ihren Namen, Ihre E-Mail-Adresse, Ihre Nachricht, die Seite, von der Sie geschrieben haben, und den Zeitpunkt, um Ihre Anfrage zu beantworten. Das Formular schickt die Angaben an unser eigenes Werkzeug Redaktion, das bei Supabase (Supabase, Inc.; Rechenzentrum in Frankfurt am Main, EU) läuft; es kommt kein weiterer Dienst zum Einsatz, und es werden keine Cookies gesetzt.
+
+Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie mit dem Haken im Formular erteilen und jederzeit mit Wirkung für die Zukunft widerrufen können, und bei Anfragen zu einem Auftrag Art. 6 Abs. 1 lit. b DSGVO. Anfragen werden nach 90 Tagen automatisch gelöscht, früher, wenn sie erledigt sind; was wir für einen Auftrag weiter brauchen, übernehmen wir in unsere Unterlagen.
+
+Um Missbrauch zu begrenzen, verarbeitet der Server Ihre IP-Adresse kurz; gespeichert wird nur ein Hash daraus, mit dem die Anfragen der letzten Stunde gezählt werden (höchstens 5 pro Absender). Ein für Menschen unsichtbares Feld und die Zeit, die das Formular geöffnet war, helfen, automatisch gesendete Anfragen zu erkennen; beides wird nicht gespeichert.
 
 ## Kalkar Kompakt
 
