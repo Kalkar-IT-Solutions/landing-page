@@ -48,6 +48,13 @@ AddType application/manifest+json .webmanifest
   # HSTS only after HTTPS has run without trouble for a while.
   #Header always set Strict-Transport-Security "max-age=31536000"
 
+  # The customer portal only talks to its own Supabase function and loads
+  # everything else from here (built with --no-web-resources-cdn). Pictures
+  # of customers' sites may come from anywhere over HTTPS.
+  <If "%{REQUEST_URI} =~ m#^/kundenportal/#">
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://erruhlqtrnuxgguvbein.supabase.co wss://erruhlqtrnuxgguvbein.supabase.co; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+  </If>
+
   # By default the browser asks whether there is a newer version: pages, and
   # Kalkar Kompakt, whose scripts carry no hash in the name.
   Header set Cache-Control "no-cache"
