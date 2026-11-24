@@ -198,8 +198,8 @@ body.kit-aufbau .kit-scene { width: max(min(100cqw, 100cqh / 0.32), min(100cqw, 
 .kit-watch-time { align-self: flex-end; font: 600 calc(var(--wp) * 17) / 1 var(--font-sans); }
 .kit-watch-reading > * { display: block; }
 .kit-watch-kennung {
-  font: 600 calc(var(--wp) * 13) / 1.3 var(--font-mono); letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-muted);
+  font: 700 calc(var(--wp) * 13) / 1.3 var(--font-mono); letter-spacing: 0.02em;
+  color: var(--text-muted);
 }
 .kit-watch-value { font: 400 calc(var(--wp) * 46) / 1 var(--font-mono); font-variant-numeric: tabular-nums; }
 .kit-watch-value small { font-size: 0.45em; color: var(--text-muted); }
