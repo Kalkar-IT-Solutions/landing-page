@@ -9,8 +9,8 @@ der Seite selbst nur an drei Stellen an: beim Aufruf der Seite durch den
 Hoster, wenn Sie uns eine E-Mail schreiben und wenn Sie das Kontaktformular
 nutzen. Für die Web-App Kalkar Kompakt unter
 [kalkar-it.de/kompakt](/kompakt/) gilt zusätzlich
-der Abschnitt „Kalkar Kompakt“ weiter unten, für das Werkzeug Redaktion unter
-[kalkar-it.de/redaktion](/redaktion/) der Abschnitt „Redaktion“.
+der Abschnitt „Kalkar Kompakt“ weiter unten, für unser Kundenportal unter
+[kalkar-it.de/kundenportal](/kundenportal/) der Abschnitt „Kundenportal“.
 
 ## Verantwortlich
 
@@ -33,7 +33,7 @@ E-Mails an diese Adresse werden über do.de, einen Dienst der Greenmark IT GmbH,
 
 ## Kontaktformular {#kontaktformular}
 
-Wenn Sie uns über das Formular eine Anfrage senden, speichern wir Ihren Namen, Ihre E-Mail-Adresse, Ihre Nachricht, die Seite, von der Sie geschrieben haben, und den Zeitpunkt, um Ihre Anfrage zu beantworten. Das Formular schickt die Angaben an unser eigenes Werkzeug Redaktion, das bei Supabase (Supabase, Inc.; Rechenzentrum in Frankfurt am Main, EU) läuft; es kommt kein weiterer Dienst zum Einsatz, und es werden keine Cookies gesetzt.
+Wenn Sie uns über das Formular eine Anfrage senden, speichern wir Ihren Namen, Ihre E-Mail-Adresse, Ihre Nachricht, die Seite, von der Sie geschrieben haben, und den Zeitpunkt, um Ihre Anfrage zu beantworten. Das Formular schickt die Angaben an unser eigenes Kundenportal, das bei Supabase (Supabase, Inc.; Rechenzentrum in Frankfurt am Main, EU) läuft; es kommt kein weiterer Dienst zum Einsatz, und es werden keine Cookies gesetzt.
 
 Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie mit dem Haken im Formular erteilen und jederzeit mit Wirkung für die Zukunft widerrufen können, und bei Anfragen zu einem Auftrag Art. 6 Abs. 1 lit. b DSGVO. Anfragen werden nach 90 Tagen automatisch gelöscht, früher, wenn sie erledigt sind; was wir für einen Auftrag weiter brauchen, übernehmen wir in unsere Unterlagen.
 
@@ -84,11 +84,11 @@ Abfuhr gibt es als Kalenderdatei, die Ihr Gerät selbst verwaltet, ohne
 Push-Dienst. Es gibt keine Cookies, keine
 Analyse und keine Werbung.
 
-## Redaktion
+## Kundenportal
 
-Redaktion ist ein Werkzeug, mit dem unsere Kundinnen und Kunden die Inhalte
+Das Kundenportal ist ein Werkzeug, mit dem unsere Kundinnen und Kunden die Inhalte
 ihrer Webseiten selbst pflegen, im Browser unter
-[kalkar-it.de/redaktion](/redaktion/) und als App. Ein Zugang entsteht nur
+[kalkar-it.de/kundenportal](/kundenportal/) und als App. Ein Zugang entsteht nur
 auf Einladung durch uns oder durch die verantwortliche Person beim Kunden.
 
 **Zugang.** Für jeden Zugang speichern wir E-Mail-Adresse, Namen und einen

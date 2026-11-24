@@ -27,6 +27,9 @@
     "place" (cond .IsHome site.Title (printf "%s / %s" site.Title (cond (eq .Kind "404") "Seite nicht gefunden" .Title)))
     "marks" "auto"
     "link" (dict "url" ("" | relURL) "hint" site.Title)) }}
+{{- /* Customers sign in here; the portal is the web app under /kundenportal/
+       (repo Kalkar-IT-Solutions/redaktion). Top right, beside the horizon. */}}
+<a class="kit-portal" href="/kundenportal/">{{ partial "horizont/symbol.html" "login" }}<span>Zum Kundenportal</span></a>
 <div class="hz-feld">
 <main id="main">
 {{ block "main" . }}{{ end }}

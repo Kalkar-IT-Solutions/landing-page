@@ -23,6 +23,20 @@ html, body.hz { overflow-x: clip; }
 }
 .kit-skip:focus { transform: none; }
 
+/* „Zum Kundenportal“: top right, above the horizon nav (pointer) or alone
+   at the top (touch, where the horizon stands at the bottom). */
+.kit-portal {
+  position: absolute; top: var(--s-12); right: var(--s-16); z-index: 20;
+  display: inline-flex; align-items: center; gap: var(--s-8);
+  padding: var(--s-8) var(--s-12);
+  background: var(--surface); color: var(--text);
+  border: var(--line-hairline) solid var(--line-strong); border-radius: var(--r-6);
+  font: inherit; font-size: 0.9375rem; text-decoration: none;
+}
+.kit-portal:hover, .kit-portal:focus-visible { border-color: var(--text); }
+.kit-portal svg, .kit-portal .hz-symbol { width: 20px; height: 20px; }
+@media (max-width: 480px) { .kit-portal { right: var(--s-12); } }
+
 /* ---- Hero ----------------------------------------------------------- */
 
 /* The hero fills the first screen (below the horizon nav, 62 px); the

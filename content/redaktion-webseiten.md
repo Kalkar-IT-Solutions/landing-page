@@ -6,7 +6,7 @@ description: >-
   als Version, Einrichtung und Betrieb durch Kalkar IT.
 layout: redaktion
 
-# The web app itself lives at /redaktion/ (branch redaktion-build, see
+# The web app itself lives at /kundenportal/ (branch redaktion-build, see
 # .github/workflows/pages.yml); this page describes it and must not use that
 # address.
 
@@ -23,7 +23,7 @@ hero:
     Vereine am Niederrhein. Neuigkeiten, Termine und Öffnungszeiten ändern Sie
     in einfachen Formularen, Einrichtung und Betrieb übernehmen wir. Die Demo
     läuft im Browser, ohne Konto.
-  primary: { label: Demo ausprobieren, url: /redaktion/demo }
+  primary: { label: Demo ausprobieren, url: /kundenportal/demo }
   secondary: { label: So läuft es ab, url: "#ablauf" }
 
 # The form in the phone beside the hero: a picture of the editor, made of
@@ -79,7 +79,7 @@ sections:
       ein.
     facts:
       - { term: Assistent, value: "ein paar Fragen, jede lässt sich überspringen" }
-      - { term: Demo, value: "[Beispielseite im Browser](/redaktion/demo), nichts wird veröffentlicht" }
+      - { term: Demo, value: "[Beispielseite im Browser](/kundenportal/demo), nichts wird veröffentlicht" }
       - { term: Anfrage, value: "„Jetzt eigene Seite anfragen“, mit Ihren Antworten" }
       - { term: Einrichtung, value: "Kalkar IT richtet Seite und Zugänge ein" }
   - id: daten
@@ -157,7 +157,7 @@ sections:
     kennung: Anfrage
     title: Ihre eigene Seite.
     text: >-
-      Am schnellsten geht es über die [Demo](/redaktion/demo): Dort fragen Sie
+      Am schnellsten geht es über die [Demo](/kundenportal/demo): Dort fragen Sie
       mit „Jetzt eigene Seite anfragen“ an, Ihre Antworten aus dem Assistenten
       gehen mit. Oder Sie senden uns hier eine Anfrage.
 

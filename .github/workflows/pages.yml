@@ -49,18 +49,19 @@ jobs:
           fi
       # Redaktion (private repo Kalkar-IT-Solutions/redaktion), the editor for
       # this site and the sites of customers, pushes its web app to the branch
-      # redaktion-build of this repo; it is served at /redaktion/. Without
+      # redaktion-build of this repo; it is served as the customer portal at
+      # /kundenportal/ (/redaktion/ redirects there, static/.htaccess). Without
       # that branch the site still deploys.
       - name: Add Redaktion
         run: |
           if git fetch --depth 1 origin redaktion-build; then
-            dir=public/redaktion
+            dir=public/kundenportal
             mkdir -p "$dir"
             git --work-tree="$dir" checkout FETCH_HEAD -- .
             rm -rf "$dir/.github"
             test -f "$dir/index.html" || echo "::warning::redaktion-build holds no index.html."
           else
-            echo "::warning::No branch redaktion-build, deploying without /redaktion/."
+            echo "::warning::No branch redaktion-build, deploying without /kundenportal/."
           fi
       - name: Keep the site for the upload
         uses: actions/upload-artifact@v7
