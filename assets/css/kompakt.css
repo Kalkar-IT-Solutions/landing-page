@@ -105,7 +105,7 @@ body { margin: 0; }
 .kk-ticker { display: flex; width: max-content; }
 .kk-ticker p { display: flex; margin: 0; flex: none; }
 .kk-ticker span {
-  font: 400 0.75rem/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase;
+  font: 700 0.75rem/1 var(--font-mono); letter-spacing: 0.02em;
   color: var(--text-faint); white-space: nowrap; padding: 0 var(--s-24);
 }
 .kk-ticker span::before { content: "~"; margin-right: var(--s-24); color: var(--accent); }

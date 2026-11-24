@@ -28,3 +28,11 @@ github.com/regetskcob/horizont v0.23.0 h1:iG4LDMsbDtY05kwMSdwIQWdgM+AcLND9OuKMqK
 github.com/regetskcob/horizont v0.23.0/go.mod h1:T5yVy8OGTUHOy56+cqNUbjSFpsG2xkPb3CGvnLcOYU8=
 github.com/regetskcob/horizont v0.24.0 h1:0Kqo4rFRQqfUF3ZA81KV5znbq+0dfV9OAwztM9VAxvo=
 github.com/regetskcob/horizont v0.24.0/go.mod h1:T5yVy8OGTUHOy56+cqNUbjSFpsG2xkPb3CGvnLcOYU8=
+github.com/regetskcob/horizont v0.25.0 h1:Ui/L5XFoBBc6VDYtYBI8L+t8KVyP5Plv5ZfVeusbkb0=
+github.com/regetskcob/horizont v0.25.0/go.mod h1:T5yVy8OGTUHOy56+cqNUbjSFpsG2xkPb3CGvnLcOYU8=
+github.com/regetskcob/horizont v0.26.0 h1:Mr7hYyGwjM6TXazEe+GyuUHumgAcJLO7Z8Ni2HGc5wE=
+github.com/regetskcob/horizont v0.26.0/go.mod h1:T5yVy8OGTUHOy56+cqNUbjSFpsG2xkPb3CGvnLcOYU8=
+github.com/regetskcob/horizont v0.26.1 h1:vrDDKV8slV8xv2EiWH1/o8EY/Srn3N60UPTEKluwYbo=
+github.com/regetskcob/horizont v0.26.1/go.mod h1:T5yVy8OGTUHOy56+cqNUbjSFpsG2xkPb3CGvnLcOYU8=
+github.com/regetskcob/horizont v0.26.2 h1:Wu2AEHRThP2RvzF21juLJmEgXWJcN2Znj42GL/qQn/M=
+github.com/regetskcob/horizont v0.26.2/go.mod h1:T5yVy8OGTUHOy56+cqNUbjSFpsG2xkPb3CGvnLcOYU8=
