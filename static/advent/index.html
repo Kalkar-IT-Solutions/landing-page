@@ -567,7 +567,8 @@ if(SZENE){
   while(true){const p=Math.min(1,(performance.now()-t0)/ms);r.value=from+(to_-from)*p;r.oninput&&r.oninput({target:r});if(p>=1)break;await wait(30)}};
  const sweep=async(list,gap=160)=>{for(const d of list){capDrop(door(d));await wait(gap)}};
  const S={
-  async stille(){to(24,.25)},                                       // nur fallender Schnee auf vollen Hauben
+  async stille(){to(24,.25)},
+  async erste(){to(1,.08);await wait(400);await sweep([7,15,1,20,11],90);await open(1)},                                       // nur fallender Schnee auf vollen Hauben
   async hauben(){to(1,.08);await wait(500);await sweep([7,15,1,20,11,3,9,18,5,13,22,2,16,10,23,6,19,12,4,21,14,8,17],110)},
   async nikolaus(){await open(6);await wait(300);document.getElementById("boot").click();await wait(1800);document.getElementById("boot").click()},
   async phishing(){await open(3);await wait(1400);document.querySelectorAll(".opt")[1].click();await wait(900);sheet.scrollTo({top:400,behavior:"smooth"})},
