@@ -62,7 +62,7 @@ footer a{color:var(--bronze)}
 .sheet h2{font-family:var(--serif);font-weight:400;font-size:1.7rem;margin:.15em 0 .5em;line-height:1.15}
 .sheet .emoji{font-size:3rem;line-height:1}
 .sheet p{line-height:1.55;margin:.6em 0}
-.sheet .actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+.sheet .actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px;margin-top:20px}
 .btn{border:0;border-radius:999px;padding:11px 20px;font:600 .95rem var(--sans);cursor:pointer;background:var(--line);color:var(--ink)}
 .btn.primary{background:var(--bronze2);color:#fff}
 .opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;font:inherit;cursor:pointer}
@@ -406,7 +406,7 @@ const FX={
 const TEASER={1: "Die erste Kerze brennt", 2: "Hält dein Passwort, was es verspricht?", 3: "Würdest du auf diese Mail reinfallen?", 4: "Kennst du Kalkars größten Schatz?", 5: "Ein Tastendruck, der Nerven rettet", 6: "Was hat der Nikolaus dir gebracht?", 7: "Damit kein Weihnachtsfoto verloren geht", 8: "Ein WLAN nur für die Gäste", 9: "Weiße Weihnacht zum Selbermachen", 10: "Was schützt dein Postfach wirklich?", 11: "Wie hoch steht der Rhein gerade?", 12: "Eine Webseite zum Ausprobieren", 13: "Ein Tipp, ausgewürfelt", 14: "Warum Updates kleine Geschenke sind", 15: "67 Minuten oder 7?", 16: "Wie viele Plätzchen schaffst du?", 17: "Fotos, die nicht mit dem Handy verschwinden", 18: "Was steht mitten auf dem Marktplatz?", 19: "Wohin führt dieser Link wirklich?", 20: "Wie lange bräuchte man für dein Passwort?", 21: "Der kürzeste Tag des Jahres", 22: "Zehn Minuten Technik-Check für die Familie", 23: "Digitaler Hausputz vor dem Fest", 24: "Frohe Weihnachten aus Kalkar"};
 // ---------- Ergebnis als Story-Bild (1080×1920) ----------
 // Wird nur im Browser gezeichnet; geteilt über das Teilen-Menü des Geräts, sonst als Download.
-async function shareCard({emoji,kicker,big,label,sub,file}){
+function makeCard({emoji,kicker,big,label,sub}){
  const W=1080,H=1920,c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");
  g.fillStyle="#1d1913";g.fillRect(0,0,W,H);
  const col=["#b8323a","#e1b04a","#2f5d45"];g.fillStyle="#2f5d45";g.fillRect(0,0,W,22);
@@ -426,6 +426,8 @@ async function shareCard({emoji,kicker,big,label,sub,file}){
  g.fillStyle="#b8956a";g.font="italic 58px 'Iowan Old Style','Palatino Linotype',Georgia,serif";g.fillText(sub,W/2,1390);
  g.fillStyle="#b8956a";g.beginPath();g.roundRect(W/2-300,1600,600,110,55);g.fill();
  g.fillStyle="#fff";g.font="600 50px -apple-system,Segoe UI,Roboto,sans-serif";g.fillText("kalkar-it.de/advent",W/2,1673);
+ return c}
+async function shareCard(o){const c=makeCard(o),file=o.file;
  const blob=await new Promise(r=>c.toBlob(r,"image/png"));const f=new File([blob],file,{type:"image/png"});
  if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:"Kalkar IT Adventskalender"})}catch(e){}return}
  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=file;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
@@ -440,7 +442,7 @@ function show(d,el){fromEl=el||null;
   if(x.q)body=`<p>${x.q.f}</p>`+x.q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("")+`<p id="qx" class="muted" hidden>${x.q.x}</p>`;
   if(x.w)body=W[x.w].html;
   sheet.innerHTML=`<div class="emoji">${x.e}</div><div class="day">Türchen ${d}</div><h2 id="mt">${x.t}</h2>${body}
-    <div class="actions"><button class="btn" id="share">Für die Story</button><button class="btn primary" id="close">Schließen</button></div>`;
+    <div class="actions"><button class="btn" id="copy">Link kopieren</button><button class="btn" id="share">Für die Story</button><button class="btn primary" id="close">Schließen</button></div>`;
   bd.classList.remove("fading");bd.classList.add("show");
   if(!reduce){
     // Fenster wächst aus der Tür heraus (FLIP)
@@ -465,6 +467,7 @@ function show(d,el){fromEl=el||null;
   if(x.w&&W[x.w].init)W[x.w].init();
   if(x.fx&&!x.q)FX[x.fx]();
   document.getElementById("close").onclick=hide;
+  document.getElementById("copy").onclick=async e=>{const u="https://kalkar-it.de/advent/";try{await navigator.clipboard.writeText(u);e.target.textContent="Kopiert ✓"}catch(_){prompt("Link zum Kopieren:",u)}};
   document.getElementById("share").onclick=()=>shareCard({emoji:x.e,kicker:"Türchen "+d+" · "+x.t,big:TEASER[d]||x.t,sub:d===24?"Danke fürs Mitmachen!":"Die Auflösung steckt im Türchen",file:"adventskalender-tuerchen-"+d+".png"});
   document.getElementById("close").focus();
 }
@@ -545,6 +548,11 @@ function burst(n=60){if(reduce)return;const c=["#b8956a","#f1f1ec","#d4b48a","#8
  for(const f of flakes){f.y+=f.s;f.d+=.01;f.x+=Math.sin(f.d)*.4;if(f.y>innerHeight){f.y=-5;f.x=Math.random()*innerWidth}cx.beginPath();cx.arc(f.x,f.y,f.r,0,6.28);cx.fill()}
  sparks=sparks.filter(s=>s.l-->0);for(const s of sparks){if(s.f){s.x+=s.vx;s.y+=s.vy;s.vy+=.08;cx.globalAlpha=Math.min(1,s.l/30);cx.fillStyle="#fff";cx.beginPath();cx.arc(s.x,s.y,s.s,0,6.28);cx.fill();cx.globalAlpha=1;continue}s.x+=s.vx;s.y+=s.vy;s.vy+=.35;s.r+=8;cx.save();cx.translate(s.x,s.y);cx.rotate(s.r*.017);cx.fillStyle=s.c;cx.fillRect(-4,-2,8,4);cx.restore()}
  requestAnimationFrame(loop)})();
+
+// ---------- ?karte=N zeigt nur das Story-Bild eines Türchens (zum Speichern per Screenshot, 1080×1920) ----------
+if(params.has("karte")){const d=+params.get("karte"),x=DAYS[d];
+ const c=makeCard({emoji:x.e,kicker:"Türchen "+d+" · "+x.t,big:TEASER[d]||x.t,sub:d===24?"Danke fürs Mitmachen!":"Die Auflösung steckt im Türchen"});
+ document.body.innerHTML="";document.body.style.cssText="margin:0;background:#1d1913;overflow:hidden";c.style.cssText="width:100vw;height:100vh;display:block";document.body.appendChild(c)}
 
 // ---------- Aufnahme-Szenen für Reels (?szene=name) ----------
 // Die Seite spielt von selbst ab, damit Streuwerk sie filmen kann (es lädt und scrollt nur, klickt nicht).
