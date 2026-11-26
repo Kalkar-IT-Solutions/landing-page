@@ -162,6 +162,12 @@ input[type=range]{accent-color:var(--bronze2)}
  .door .motif{bottom:calc(14px + clamp(1.6rem,2.6vw,2.6rem))}
  .door.big .motif{bottom:calc(14px + clamp(1.6rem,2.6vw,2.6rem))}
 }
+
+.boot-stage{position:relative;height:150px;display:flex;flex-direction:column;align-items:center}
+.boot-stage .big-emoji{margin:0;transform-origin:50% 90%}
+.loot{height:60px;font-size:2.6rem;line-height:60px}
+.loot .drop{display:inline-block;animation:drop .7s cubic-bezier(.3,.1,.5,1) both}
+@keyframes drop{0%{transform:translate(18px,-70px) rotate(-30deg) scale(.4);opacity:0}25%{opacity:1}70%{transform:translate(0,4px) rotate(8deg) scale(1)}85%{transform:translate(0,-8px) rotate(-4deg)}100%{transform:none}}
 </style>
 </head>
 <body>
@@ -506,8 +512,14 @@ const W={
  crack:{html:`<p>Wie lange bräuchte ein Rechner, der 10 Milliarden Passwörter pro Sekunde ausprobiert? Probier's aus und schau, wie sehr jedes zusätzliche Zeichen zählt.</p><input type="text" id="ci" placeholder="Probier ein Beispiel" autocomplete="off"><div class="box" id="co" style="text-align:center;font-size:1.3rem;font-family:var(--serif)">–</div><p class="muted">Grobe Schätzung, nur zum Staunen. Nichts verlässt dein Gerät.</p>
    <div class="box"><b>Der Haken an der Rechnung</b><p style="margin:.4em 0 0">Meist wird gar nicht geknackt. Wird ein Shop gehackt, landen die Passwörter oft im Klartext im Netz, und Angreifer probieren sie einfach bei Mail, Amazon und Bank aus. Dann hilft auch ein Passwort nichts, das „länger als das Universum“ hält – es sei denn, es gilt nur für dieses eine Konto. Wie man sich viele davon merkt, steht in <a href="#" onclick="return goDoor(2)" style="color:var(--bronze3);font-weight:600">Türchen 2</a>.</p></div>`,
    init(){const i=document.getElementById("ci"),o=document.getElementById("co");i.oninput=()=>o.textContent=i.value?crack(i.value):"–"}},
- nikolaus:{html:`<p>Heute Nacht war der Nikolaus unterwegs. Hast du deinen Stiefel geputzt? Dann tipp drauf und schau, was drin ist.</p><div class="big-emoji" id="boot">🥾</div><p id="nt" class="muted" style="text-align:center">&nbsp;</p>`,
-   init(){const g=["🍫 Schokolade!","🍊 Eine Mandarine!","🥜 Nüsse!","🍬 Süßigkeiten!","🎁 Ein kleines Geschenk!"];document.getElementById("boot").onclick=e=>{const x=g[Math.random()*g.length|0].split(" ");e.target.textContent=x[0];document.getElementById("nt").textContent="Der Nikolaus war da: "+x.slice(1).join(" ");burst()}}},
+ nikolaus:{html:`<p>Heute Nacht war der Nikolaus unterwegs. Hast du deinen Stiefel geputzt? Dann tipp drauf und schau, was drin ist.</p><div class="boot-stage"><div class="big-emoji" id="boot">🥾</div><div class="loot" id="loot"></div></div><p id="nt" class="muted" style="text-align:center">&nbsp;</p>`,
+   // Der Stiefel bleibt stehen, wackelt und lässt die Überraschung herausfallen
+   init(){const g=["🍫 Schokolade!","🍊 Eine Mandarine!","🥜 Nüsse!","🍬 Süßigkeiten!","🎁 Ein kleines Geschenk!"],boot=document.getElementById("boot"),loot=document.getElementById("loot");let last=-1;
+    boot.onclick=()=>{let i;do{i=Math.random()*g.length|0}while(i===last&&g.length>1);last=i;const x=g[i].split(" ");
+     boot.animate([{transform:"rotate(0)"},{transform:"rotate(-14deg)"},{transform:"rotate(10deg)"},{transform:"rotate(-6deg)"},{transform:"rotate(0)"}],{duration:500});
+     setTimeout(()=>{const it=document.createElement("span");it.className="drop";it.textContent=x[0];loot.innerHTML="";loot.appendChild(it);
+      document.getElementById("nt").textContent="Der Nikolaus war da: "+x.slice(1).join(" ");burst(30)},380)}}},
+
  snow:{html:`<p>In Kalkar bleibt weiße Weihnacht meist ein Wunsch. Hier darfst du heute selbst für Schnee sorgen.</p><input type="range" id="sr" min="0" max="400" value="120" style="width:100%"><p class="muted">Schieb den Regler nach rechts – und dann genieß den Blick nach draußen.</p>`,
    init(){document.getElementById("sr").oninput=e=>setFlakes(+e.target.value)}},
  dice:{html:`<div class="big-emoji" id="die">🎲</div><p>Sechs kleine Kniffe, einer davon ist heute deiner.</p><div class="box" id="dt">Tipp auf den Würfel.</div><p style="text-align:right;margin:10px 0 0"><button class="btn" id="again" hidden>🎲 Nochmal würfeln</button></p>`,
@@ -569,11 +581,11 @@ if(SZENE){
  const S={
   async stille(){to(24,.25)},
   // Zwei Türchen in einer Aufnahme (aufsteigend), damit das Reel ohne Schnitt auskommt
-  async drei_sechs(){await open(3);await wait(1100);document.querySelectorAll(".opt")[1].click();await wait(1600);hide();await wait(500);await open(6);await wait(300);document.getElementById("boot").click();await wait(1400);document.getElementById("boot").click()},
+  async drei_sechs(){await open(3);await wait(1100);document.querySelectorAll(".opt")[1].click();await wait(1600);hide();await wait(500);await open(6);document.getElementById("boot").scrollIntoView({block:"center",behavior:"smooth"});await wait(1500);document.getElementById("boot").click();await wait(1700);document.getElementById("boot").click()},
   async neun_elf(){await open(9);await slide("sr",120,400,1800);await wait(300);hide();await wait(600);await open(11);await wait(500);document.querySelectorAll(".opt")[1].click();await wait(400);document.getElementById("gauge").scrollIntoView({behavior:"smooth",block:"center"})},
   async erste(){to(1,.08);await wait(400);await sweep([7,15,1,20,11],90);await open(1)},                                       // nur fallender Schnee auf vollen Hauben
   async hauben(){to(1,.08);await wait(500);await sweep([7,15,1,20,11,3,9,18,5,13,22,2,16,10,23,6,19,12,4,21,14,8,17],110)},
-  async nikolaus(){await open(6);await wait(300);document.getElementById("boot").click();await wait(1800);document.getElementById("boot").click()},
+  async nikolaus(){await open(6);document.getElementById("boot").scrollIntoView({block:"center",behavior:"smooth"});await wait(1500);document.getElementById("boot").click();await wait(1800);document.getElementById("boot").click()},
   async phishing(){await open(3);await wait(1400);document.querySelectorAll(".opt")[1].click();await wait(900);sheet.scrollTo({top:400,behavior:"smooth"})},
   async pegel(){await open(11);await wait(700);document.querySelectorAll(".opt")[1].click();await wait(500);document.getElementById("gauge").scrollIntoView({behavior:"smooth",block:"center"})},
   async rennen(){await open(15);document.querySelectorAll(".opt")[1].click();await wait(600);document.getElementById("race").scrollIntoView({behavior:"smooth",block:"center"});await wait(700);document.getElementById("rgo").click()},
