@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kalkar IT Solutions | Adventskalender 2026</title>
+<meta name="description" content="24 Türchen, 24 kleine Überraschungen aus Kalkar – jeden Tag ein IT-Kniff, ein Rätsel oder ein Gimmick.">
+<style>
+:root{
+  --bg:#1d1913; --bg2:#2a241b; --card:#f1f1ec; --ink:#2a241b; --muted:#8a8b84;
+  --bronze:#b8956a; --bronze2:#92785a; --bronze3:#7a6248; --line:#e3e3dc;
+  --serif:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:radial-gradient(120% 80% at 50% 0%,#3a3024 0%,var(--bg) 60%);color:var(--card);font-family:var(--sans);overflow-x:hidden}
+#snow{position:fixed;inset:0;pointer-events:none;z-index:9}
+main{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:max(28px,env(safe-area-inset-top)) 18px 60px}
+header{text-align:center;margin-bottom:28px}
+.kicker{color:var(--bronze);letter-spacing:.08em;font-size:.85rem}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,7vw,4rem);margin:.2em 0 .1em;line-height:1.05}
+h1 em{color:var(--bronze);font-style:italic}
+.lead{color:#cfc8bb;max-width:34rem;margin:0 auto;line-height:1.5}
+.count{margin-top:14px;font-size:.9rem;color:var(--bronze)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:12px}
+@media(min-width:720px){.grid{grid-template-columns:repeat(6,1fr);gap:14px}}
+.door{position:relative;aspect-ratio:3/4;perspective:800px;border:0;padding:0;background:none;cursor:pointer;font:inherit;color:inherit}
+/* Lückenlos: 24 ist 2×2, 1 ist breit → 28 Felder = 4×7; am Desktop 12 und 18 zusätzlich breit → 30 = 6×5 */
+.door.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.door.wide{grid-column:span 2;aspect-ratio:auto}
+@media(min-width:720px){.door.wide-d{grid-column:span 2;aspect-ratio:auto}}
+.door.big .motif{left:4%;right:4%;top:6%;bottom:20%;width:auto}
+.door .inner{position:absolute;inset:0;border-radius:14px;background:linear-gradient(160deg,var(--bronze3),#4d3e2d);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.door .inner::after{content:attr(data-peek);position:absolute;inset:0;display:grid;place-items:center;font-size:2rem}
+.door .leaf{position:absolute;inset:0;border-radius:14px;background:linear-gradient(155deg,var(--bronze) 0%,var(--bronze2) 100%);transform-origin:left center;transition:transform .7s cubic-bezier(.3,1.4,.5,1),box-shadow .3s;display:flex;align-items:flex-end;justify-content:flex-start;padding:10px 12px;box-shadow:0 6px 18px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.18);backface-visibility:hidden}
+.door .leaf::before{content:"";position:absolute;inset:6px;border:1px dashed rgba(255,255,255,.25);border-radius:9px}
+.door .motif{position:absolute;left:12%;right:12%;top:10%;bottom:calc(14px + clamp(1.6rem,5vw,2.4rem));display:flex;align-items:center;justify-content:center;pointer-events:none}
+.door .motif svg{width:100%;height:100%;fill:none;stroke:rgba(255,255,255,.85);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.door .motif .snow{fill:#fff;stroke:none}
+.door .num{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.4rem);color:#fff;line-height:1;text-shadow:0 1px 0 rgba(0,0,0,.2)}
+.door.locked{cursor:not-allowed}
+.door.locked .leaf{filter:saturate(.4) brightness(.75)}
+.door.locked .leaf::after{content:"🔒";position:absolute;top:8px;right:10px;font-size:.8rem;opacity:.7}
+.door.open .leaf{transform:rotateY(-105deg);box-shadow:none}
+.door.today .leaf{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 4px rgba(184,149,106,.45),0 6px 18px rgba(0,0,0,.35)}}
+@media(hover:hover){.door:not(.locked):hover .leaf{transform:rotateY(-12deg)}
+.door.open:hover .leaf{transform:rotateY(-105deg)}}
+.door:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:14px}
+footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:36px;line-height:1.6}
+footer a{color:var(--bronze)}
+
+/* modal */
+.backdrop{position:fixed;inset:0;background:rgba(15,12,8,.72);display:none;align-items:flex-end;justify-content:center;z-index:10;padding:0}
+.backdrop.show{display:flex}
+@media(min-width:600px){.backdrop{align-items:center;padding:24px}}
+.sheet{background:var(--card);color:var(--ink);width:100%;max-width:520px;border-radius:22px 22px 0 0;padding:26px 24px calc(22px + env(safe-area-inset-bottom));max-height:90vh;overflow:auto}
+@media(min-width:600px){.sheet{border-radius:22px}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sheet .day{color:var(--bronze2);font-size:.85rem;letter-spacing:.05em}
+.sheet h2{font-family:var(--serif);font-weight:400;font-size:1.7rem;margin:.15em 0 .5em;line-height:1.15}
+.sheet .emoji{font-size:3rem;line-height:1}
+.sheet p{line-height:1.55;margin:.6em 0}
+.sheet .actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+.btn{border:0;border-radius:999px;padding:11px 20px;font:600 .95rem var(--sans);cursor:pointer;background:var(--line);color:var(--ink)}
+.btn.primary{background:var(--bronze2);color:#fff}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;font:inherit;cursor:pointer}
+.opt.right{background:#e4efdf;border-color:#8fb487}
+.opt.wrong{background:#f4e1dc;border-color:#d39a8b}
+.box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:10px}
+input[type=text],input[type=password]{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);font:inherit}
+.meter{height:8px;border-radius:9px;background:var(--line);margin-top:10px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--bronze2);transition:width .3s,background .3s}
+kbd{background:#fff;border:1px solid #cfcfc6;border-bottom-width:3px;border-radius:7px;padding:2px 8px;font:600 .9rem var(--sans)}
+.big-emoji{font-size:4rem;text-align:center;margin:10px 0;cursor:pointer;user-select:none;transition:transform .15s}
+.big-emoji:active{transform:scale(.9)}
+.muted{color:var(--muted);font-size:.9rem}
+
+/* weihnachtliches Fenster: Girlande oben, Emoji als Kugel, Stern als Wasserzeichen */
+.sheet{position:relative;padding-top:44px;background:linear-gradient(180deg,#f7f3ea 0%,var(--card) 140px)}
+.sheet::before{content:"";position:absolute;left:0;right:0;top:0;height:30px;border-radius:inherit;border-bottom-left-radius:0;border-bottom-right-radius:0;
+ background:
+  radial-gradient(circle at 50% 16px,#b8323a 5px,transparent 5.5px) 0 0/48px 30px repeat-x,
+  radial-gradient(circle at 50% 16px,#e1b04a 5px,transparent 5.5px) 16px 0/48px 30px repeat-x,
+  radial-gradient(circle at 50% 16px,#2f5d45 5px,transparent 5.5px) 32px 0/48px 30px repeat-x,
+  radial-gradient(120% 22px at 50% -6px,#2f5d45 60%,transparent 62%) 0 0/24px 14px repeat-x,
+  linear-gradient(#2f5d45,#2f5d45) 0 0/100% 7px no-repeat}
+.sheet::after{content:"✦";position:absolute;right:18px;bottom:6px;font-size:7rem;line-height:1;color:var(--bronze);opacity:.08;pointer-events:none}
+.sheet .emoji{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:2.1rem;background:radial-gradient(circle at 35% 30%,#fff,#efe6d4 70%);box-shadow:0 0 0 3px var(--bronze),0 6px 14px rgba(0,0,0,.15);margin-bottom:12px;position:relative}
+.sheet .emoji::before{content:"";position:absolute;top:-9px;left:50%;width:12px;height:8px;margin-left:-6px;border-radius:3px 3px 1px 1px;background:var(--bronze2)}
+.sheet .day{color:#b8323a;font-weight:600}
+.sheet ul{padding-left:1.2em}.sheet li{margin:.3em 0;line-height:1.5}
+.sheet .box{background:#fffdf8}
+
+/* Öffnen: Licht aus der Tür, Fenster fliegt aus der Tür heraus, Inhalt kommt nacheinander */
+.door .inner::before{content:"";position:absolute;inset:0;border-radius:14px;background:radial-gradient(circle at 50% 50%,rgba(255,226,160,.95),rgba(255,200,110,.35) 45%,transparent 70%);opacity:0;transition:opacity .5s .15s}
+.door.open .inner::before{opacity:1}
+.door.glow .inner::after{animation:peek .7s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes peek{from{transform:scale(.3) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
+.door.glow{z-index:3}
+.door.glow .inner{box-shadow:0 0 30px 8px rgba(255,210,130,.55);transition:box-shadow .4s}
+.backdrop{transition:background .35s}
+.backdrop.show{background:rgba(15,12,8,.72)}
+.backdrop.fading{background:rgba(15,12,8,0)}
+.sheet .emoji.swing{animation:swing 1.4s cubic-bezier(.3,1.5,.5,1) both;transform-origin:50% -9px}
+@keyframes swing{0%{transform:translateY(-40px) rotate(-25deg);opacity:0}30%{opacity:1}55%{transform:rotate(12deg)}75%{transform:rotate(-6deg)}90%{transform:rotate(2deg)}to{transform:none}}
+.sheet .stag{animation:stag .5s ease-out both}
+@keyframes stag{from{opacity:0;transform:translateY(10px)}}
+.sheet.twinkle::before{animation:twinkle 1.6s steps(2) 2}
+@keyframes twinkle{50%{filter:brightness(1.35) saturate(1.2)}}
+input[type=range]{accent-color:var(--bronze2)}
+
+/* Schneehäubchen: liegt auf jeder Tür, fällt beim Hovern oder Öffnen herunter und wächst später nach */
+.door .cap{position:absolute;left:5px;right:5px;top:-7px;height:22px;z-index:2;pointer-events:none;transform-origin:50% 35%;--lv:0;transform:scale(calc(.55 + var(--lv)*.45),var(--lv));opacity:min(1,calc(var(--lv)*3));transition:transform .3s linear}
+.door .cap svg{width:100%;height:100%;display:block;filter:drop-shadow(0 2px 2px rgba(0,0,0,.18))}
+.door.open .cap{display:none}
+.door .cap.fall{animation:capfall .9s cubic-bezier(.5,0,.9,.6) forwards}
+@keyframes capfall{from{transform:scale(calc(.55 + var(--lv)*.45),var(--lv));opacity:1}to{transform:translateY(70px) rotate(8deg) scaleY(.6);opacity:0}}
+
+/* Wettrennen (15) */
+.race{margin-top:12px}
+.race .row{display:grid;grid-template-columns:5.5rem 1fr 4.2rem;gap:10px;align-items:center;margin:10px 0;font-size:.9rem}
+.race .track{height:18px;border-radius:9px;background:var(--line);overflow:hidden;position:relative}
+.race .bar{height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--bronze2),var(--bronze))}
+.race .bar.fast{background:linear-gradient(90deg,#2f5d45,#6f9a5e)}
+.race .t{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.pipe{display:flex;gap:3px;height:30px;border-radius:8px;overflow:hidden;background:var(--line);margin-top:8px}
+.pipe span{flex:0 0 calc(25% - 2.25px);display:grid;place-items:center;background:#e9dfcd;font-size:.95rem;opacity:0;transform:translateX(-12px);transition:.4s}
+.pipe.on span{opacity:1;transform:none}
+/* Link aufdecken (19) */
+.mail{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:10px;position:relative;font-size:.94rem}
+.fake{color:#1a5fb4;text-decoration:underline;cursor:pointer;font-weight:600}
+.status{position:relative;margin-top:12px;background:#2a241b;color:#f1f1ec;border-radius:8px;padding:8px 10px;font:500 .82rem ui-monospace,Menlo,monospace;word-break:break-all;opacity:0;transform:translateY(6px);transition:.25s}
+.status.on{opacity:1;transform:none}
+.status b{color:#ff8a7a}
+/* Nachtmodus (21) */
+#night{position:fixed;inset:0;pointer-events:none;z-index:30;background:#ff8c2a;mix-blend-mode:multiply;opacity:0;transition:opacity .15s}
+.temp{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-top:4px}
+
+/* Rheinpegel (11) */
+.gauge{display:flex;gap:16px;align-items:stretch;margin-top:12px}
+.gauge .col{position:relative;width:54px;height:150px;border-radius:10px;background:linear-gradient(#f7f3ea,#efe6d4);border:1px solid var(--line);overflow:hidden;flex:none}
+.gauge .water{position:absolute;left:0;right:0;bottom:0;height:0;background:linear-gradient(#5d8fb3,#2f5f86);transition:height 1.6s cubic-bezier(.2,.8,.3,1)}
+.gauge .water::before{content:"";position:absolute;left:-50%;width:200%;top:-6px;height:12px;background:radial-gradient(circle at 10px -2px,transparent 8px,#5d8fb3 9px) 0 0/20px 12px repeat-x;animation:wave 2.4s linear infinite}
+@keyframes wave{to{transform:translateX(20px)}}
+.gauge .ticks{position:absolute;inset:0;background:repeating-linear-gradient(to top,transparent 0 14px,rgba(42,36,27,.15) 14px 15px)}
+.gauge .info{display:flex;flex-direction:column;justify-content:center;gap:4px}
+.gauge .cm{font:400 2.2rem/1 var(--serif)}
+</style>
+</head>
+<body>
+<canvas id="snow"></canvas>
+<div id="night"></div>
+<main>
+  <header>
+    <div class="kicker">Kalkar IT Solutions | Adventskalender 2026</div>
+    <h1>24 Türchen <em>aus Kalkar</em></h1>
+    <p class="lead">Jeden Tag ein kleiner Kniff, ein Rätsel oder einfach etwas Schönes. Schau täglich vorbei – das Türchen von heute leuchtet.</p>
+    <div class="count" id="count"></div>
+  </header>
+  <div class="grid" id="grid"></div>
+  <footer>
+    Kalkar IT Solutions · IT, die vor Ort hilft<br>
+    <a href="https://kalkar-it.de/">kalkar-it.de</a> · Teil gern deine Lieblingstür in der Story<br><span id="hint"></span>
+  </footer>
+</main>
+
+<div class="backdrop" id="bd" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<script>
+// ---------- Inhalte ----------
+// type: text | quiz | widget
+const DAYS = {
+ 1:{e:"🕯️",t:"Die erste Kerze brennt",b:"<p>Schön, dass du da bist! Bis Heiligabend wartet hier jeden Tag ein kleines Türchen auf dich: ein Kniff für Handy und Computer, ein Rätsel aus Kalkar oder einfach etwas zum Schmunzeln.</p><p><b>Tipp für heute:</b> Leg dir den Kalender auf den Home-Bildschirm, dann ist er nur einen Fingertipp entfernt.</p>",sys:"home"},
+ 2:{e:"🔑",t:"Wie stark ist dein Passwort?",w:"pw"},
+ 3:{e:"🎣",t:"Phishing oder echt?",q:{f:"Diese Mail landet bei dir im Postfach:</p><div class='box' style='font-size:.92rem'><div class='muted'>Von: <b style='color:var(--ink)'>DHL Paketservice</b> &lt;noreply@dhl-zustellung-info.top&gt;</div><div class='muted'>Betreff: Ihre Sendung wartet</div><p style='margin:.6em 0 0'>Ihr Paket konnte nicht zugestellt werden. Bitte zahlen Sie die Zollgebühr von 1,99 € unter folgendem Link …</p></div><p>Echt oder Phishing?",o:["Echt, kenn ich so","Phishing"],a:1,x:"Phishing! Der Name „DHL Paketservice“ ist frei erfunden – den kann jeder Absender eintragen. Entscheidend ist die Adresse dahinter: <b>dhl-zustellung-info.top</b> gehört nicht DHL (die schreibt von dhl.de).<br><br><b>So prüfst du den Absender:</b><br>• Auf den Namen tippen bzw. klicken – erst dann zeigt das Handy die echte Adresse.<br>• Auf den Teil nach dem @ achten, vor allem auf das Ende: dhl.de ist echt, dhl.de-paket.info oder dhl-service.top nicht.<br>• Kleine Tippfehler wie paypa1.com oder arnazon.de sind ein klassischer Trick.<br>• Im Zweifel nie den Link in der Mail nutzen, sondern die App oder Webseite selbst öffnen."}},
+ 4:{e:"⛪",t:"Kalkar-Rätsel",q:{f:"Wofür ist die St.-Nicolai-Kirche in Kalkar weit über den Niederrhein hinaus bekannt?",o:["Ihre geschnitzten Altäre","Ihren schiefen Turm","Ihre gläserne Fassade"],a:0,x:"Richtig sind die Schnitzaltäre aus dem späten Mittelalter. Im Advent lohnt sich ein Besuch doppelt: drinnen still und warm beleuchtet, draußen der Duft vom Markt."}},
+ 5:{e:"⌨️",t:"Tab weg? Kein Drama",b:"<p>Beim Geschenke-Suchen aus Versehen den Tab mit dem perfekten Fund geschlossen? So holst du ihn zurück:</p><p style='text-align:center;font-size:1.15rem'><kbd>Strg</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></p><p class='muted' style='text-align:center'>Am Mac: <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></p><p>Mehrmals drücken holt nacheinander auch die Tabs davor zurück. Klappt in Chrome, Firefox, Edge und Safari.</p>"},
+ 6:{e:"🎅",t:"Was steckt im Stiefel?",w:"nikolaus"},
+ 7:{e:"💾",t:"Die 3-2-1-Regel",b:"<p>Die schönsten Weihnachtsfotos sind nur so sicher wie ihr Speicherort. Die Faustregel:</p><ul><li><b>3</b> Kopien deiner Daten,</li><li>auf <b>2</b> verschiedenen Speichern (z. B. Laptop und externe Festplatte),</li><li><b>1</b> davon außer Haus (Cloud oder bei den Eltern).</li></ul><p><b>Warum?</b> Festplatten gehen ohne Vorwarnung kaputt, Handys gehen verloren, und ein Wasserschaden erwischt alles im selben Raum. Mit drei Kopien an zwei Orten bleibt immer eine übrig.</p>",sys:"backup"},
+ 8:{e:"📶",t:"Ein WLAN für die Gäste",b:"<p>Über die Feiertage kommt Besuch, und die erste Frage lautet: „Wie ist euer WLAN-Passwort?“</p><p><b>Tipp:</b> Richte ein eigenes Gäste-WLAN ein. Bei den meisten Routern (z. B. der Fritzbox unter „WLAN → Gastzugang“) dauert das zwei Minuten.</p><p><a class='btn primary' style='text-decoration:none;display:inline-block' href='http://fritz.box' target='_blank' rel='noopener'>Fritzbox öffnen</a> <span class='muted'>(nur wenn du eine Fritzbox hast und gerade zu Hause im WLAN bist. Bei anderen Routern steht die Adresse meist auf dem Aufkleber unten am Gerät.)</span></p><p><b>Warum?</b> Gäste kommen ins Internet, aber nicht an deinen Drucker, dein NAS oder deine Kameras. Und falls ein Gerät der Gäste Schadsoftware mitbringt, bleibt sie draußen.</p>"},
+ 9:{e:"❄️",t:"Weiße Weihnacht zum Selbermachen",w:"snow"},
+ 10:{e:"🔐",t:"Doppelt hält besser",q:{f:"Was schützt dein E-Mail-Konto am wirksamsten?",o:["Ein langes Passwort","Die Zwei-Faktor-Anmeldung","Beides zusammen"],a:2,x:"Beides zusammen! Selbst wenn dein Passwort einmal bei einem Datenleck auftaucht, fehlt Angreifern noch der zweite Faktor, etwa der Code aus einer App auf deinem Handy. <br><br><b>Direkt einschalten:</b><br><a href='https://myaccount.google.com/signinoptions/two-step-verification' target='_blank' rel='noopener'>Google-Konto</a> · <a href='https://account.apple.com' target='_blank' rel='noopener'>Apple-Account</a> · <a href='https://account.microsoft.com/security' target='_blank' rel='noopener'>Microsoft-Konto</a>"}},
+ 11:{e:"🌊",t:"Kalkar-Rätsel",q:{f:"An welchem Fluss liegt Kalkar?",o:["An der Maas","Am Rhein","An der Lippe"],a:1,x:"Am Rhein natürlich! Ein Winterspaziergang am Deich mit Blick aufs Wasser ist das beste Mittel gegen Adventsstress."},fx:"pegel"},
+ 12:{e:"🖥️",t:"Der perfekte Tag für eine neue Webseite",b:"<p>Draußen ist es grau, drinnen gibt's Plätzchen – Zeit für das Projekt, das seit Jahren auf der Liste steht.</p><p>In unserer <b>Demo</b> klickst du dir eine Beispielseite zusammen: Texte ändern, Bilder tauschen, Öffnungszeiten eintragen. Ganz ohne Anmeldung, und nichts davon wird veröffentlicht.</p><p style='text-align:center;margin-top:16px'><a class='btn primary' style='text-decoration:none;display:inline-block' href='https://kalkar-it.de/kundenportal/demo' target='_blank' rel='noopener'>Demo ausprobieren</a></p><p class='muted'>Gut zu wissen: Eine eigene Webseite gehört dir – anders als ein Facebook-Profil, dessen Regeln sich jederzeit ändern können.</p>"},
+ 13:{e:"🎲",t:"Würfel dir einen Tipp",w:"dice"},
+ 14:{e:"🔄",t:"Updates sind kleine Geschenke",b:"<p>Das Update-Fenster kommt immer im falschen Moment, ja. Trotzdem lohnt es sich.</p><p><b>Warum?</b> Die meisten Angriffe nutzen Lücken, die längst bekannt und behoben sind. Wer Updates aufschiebt, lässt die Tür offen, obwohl der Schlüssel schon bereitliegt.</p><p><b>Heute:</b> Handy, Computer und Router einmal aktualisieren. Am besten automatische Updates einschalten, dann musst du nie wieder dran denken.</p>",sys:"update"},
+ 15:{e:"🧮",t:"Bit oder Byte?",q:{f:"Dein Internetanschluss hat „100 Mbit/s“. Wie viele Megabyte kommen davon ungefähr pro Sekunde an?",o:["100 MB pro Sekunde","Etwa 12,5 MB pro Sekunde","1 GB pro Sekunde"],a:1,x:"Etwa 12,5 MB! Ein Byte hat 8 Bit, also 100 ÷ 8. Darum zeigt der Download-Balken weniger an, als der Vertrag verspricht – das ist kein Fehler.<br><br><b>Was schaffen 100 Mbit/s?</b><br>• 4 Filme in 4K gleichzeitig streamen (je ca. 25 Mbit/s)<br>• rund 20 Videoanrufe gleichzeitig (je ca. 4 Mbit/s)<br>• ein Spiel mit 50 GB laden: etwa eine Stunde<br><br><b>Und 1 Gbit/s?</b> Zehnmal so schnell, das 50-GB-Spiel ist in gut 7 Minuten da. Beim Streamen oder Surfen merkst du davon kaum etwas, denn mehr als 4K gibt's nicht.<br><br><b>Worauf es oft mehr ankommt:</b> den <b>Upload</b> (wichtig fürs Homeoffice, Fotos in die Cloud, Videoanrufe) und ein gutes <b>WLAN</b> im Haus. Die schnellste Leitung bringt nichts, wenn der Router im Keller steht.<br><br><span class='muted'>Faustregel: Für die meisten Haushalte reichen 100 bis 250 Mbit/s. Mehr lohnt sich bei vielen Leuten im Haus, großen Downloads oder viel Upload.</span>"},fx:"race"},
+ 16:{e:"🍪",t:"Plätzchen-Wettessen",w:"cookie"},
+ 17:{e:"📸",t:"Fotos richtig sichern",b:"<p>Ein Handy ist kein Fotoalbum. Es fällt runter, wird gestohlen oder landet im Glühwein, und mit ihm die Bilder.</p><p><b>Tipp:</b> Schalte ein automatisches Backup ein, zum Beispiel iCloud-Fotos, Google Fotos oder dein eigenes NAS zu Hause.</p><p><b>Gut zu wissen:</b> Prüfe einmal, ob das Backup wirklich läuft. Oft ist der Speicher seit Monaten voll, und keiner hat's gemerkt.</p>",sys:"fotos"},
+ 18:{e:"🌳",t:"Kalkar-Rätsel",q:{f:"Was steht in der Mitte des Kalkarer Marktplatzes?",o:["Ein Marktbrunnen","Die Gerichtslinde","Ein Weihnachtsbaum aus Stein"],a:1,x:"Die Gerichtslinde! Unter Linden wurde früher Recht gesprochen – heute ist sie das grüne Herz des Marktes."}},
+ 19:{e:"🔗",t:"Erst schauen, dann klicken",b:"<p>Links in Mails und Nachrichten zeigen nicht immer dorthin, wo sie zu stehen scheinen. Probier's aus:</p><div class='mail'><div class='muted' style='font-size:.85rem'>Von: Paketdienst &lt;info@paket-benachrichtigung.top&gt;</div><p style='margin:.6em 0 0'>Gute Nachricht! Deine Sendung ist morgen bei dir. <span class='fake' id='fl' tabindex='0'>Sendung verfolgen</span></p><div class='status' id='fs'>https://<b>sendung-verfolgen.paketinfo-24.top</b>/track?id=DE4471</div></div><p class='muted' id='fh'></p><p><b>Warum?</b> Der Text „Sendung verfolgen“ kann zu jeder beliebigen Seite führen. Erst die Adresse verrät, wohin es wirklich geht. Passt sie nicht zum Absender: Finger weg.</p>",fx:"link"},
+ 20:{e:"🔢",t:"Wie lange zum Knacken?",w:"crack"},
+ 21:{e:"🌙",t:"Der kürzeste Tag",b:"<p>Heute ist Wintersonnenwende. Ab morgen werden die Tage wieder länger!</p><p><b>Tipp:</b> Schalte den Nachtmodus ein und stell ihn auf „Sonnenuntergang bis Sonnenaufgang“. Dann wird der Bildschirm abends von selbst wärmer. Probier mal, wie das aussieht:</p><input type='range' id='nr' min='0' max='100' value='0' style='width:100%' aria-label='Farbtemperatur'><div class='temp'><span>❄️ kühl</span><span>wärmer 🕯️</span></div><p><b>Warum?</b> Das warme Licht ist am Abend angenehmer für die Augen, und vielen fällt das Einschlafen leichter.</p>",sys:"night",fx:"night"},
+ 22:{e:"👵",t:"Technik-Check unterm Tannenbaum",b:"<p>An den Feiertagen sitzt die Familie zusammen. Eine gute Gelegenheit, bei Eltern und Großeltern kurz aufs Handy zu schauen:</p><ul><li><b>Updates aktuell?</b> Ältere Geräte bekommen sonst keine Sicherheitslücken mehr geschlossen.</li><li><b>Backup an?</b> Damit die Enkelfotos nicht mit dem Handy verloren gehen.</li><li><b>Notfallpass ausgefüllt?</b> Im Notfall sehen Rettungskräfte dann Vorerkrankungen und wen sie anrufen sollen, auch ohne Code.</li></ul><p class='muted'>Zehn Minuten, die viel Ärger ersparen – und ein schönes Geschenk, das nichts kostet.</p>",sys:"notfall"},
+ 23:{e:"🧹",t:"Digitaler Hausputz",b:"<p>Vor den Feiertagen wird geputzt, warum nicht auch auf dem Handy? Fünf Minuten genügen:</p><ul><li>Apps löschen, die du seit einem Jahr nicht geöffnet hast.</li><li>Den Download-Ordner leeren.</li><li>Newsletter abbestellen, die du nie liest.</li></ul><p><b>Warum?</b> Jede App, die du nicht nutzt, kann trotzdem Daten sammeln oder eine Lücke haben. Und mehr Speicherplatz für die Weihnachtsfotos gibt's obendrauf.</p>",sys:"speicher"},
+ 24:{e:"⭐",t:"Frohe Weihnachten!",w:"final"}
+};
+
+// ---------- Freischaltung ----------
+const YEAR=2026, params=new URLSearchParams(location.search);
+// TEST: alle Türen frei. Vor dem 1. Dezember auf false setzen!
+const ALLE_FREI=false;
+const SZENE=params.get("szene");                          // ?szene=… spielt eine Aufnahme für Social Media ab (siehe unten)
+const preview=ALLE_FREI||params.has("vorschau")||!!SZENE;                 // ?vorschau öffnet alle Türen (für Story-Aufnahmen)
+const now=params.get("datum")?new Date(params.get("datum")):new Date();
+const today=(now.getFullYear()===YEAR&&now.getMonth()===11)?now.getDate():(now>new Date(YEAR,11,24)?25:0);
+// localStorage kann fehlen (privater Modus, In-App-Browser von Instagram) – dann ohne Merken
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const opened=new Set(JSON.parse(store.get("kit-advent")||"[]"));
+const save=()=>store.set("kit-advent",JSON.stringify([...opened]));
+
+// Strichzeichnungen auf einzelnen Türen (weiße Linie, Schnee als Fläche)
+const M={
+ webseite:`<svg viewBox="0 0 120 70" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))"><rect fill="#2a241b" x="18" y="4" width="84" height="54" rx="4"/><rect fill="#f1f1ec" x="22" y="12" width="76" height="42" rx="1.5"/><circle fill="#b8323a" cx="24" cy="8" r="1.4"/><circle fill="#e1b04a" cx="28.5" cy="8" r="1.4"/><circle fill="#6f9a5e" cx="33" cy="8" r="1.4"/><rect fill="#92785a" x="26" y="16" width="68" height="14" rx="1"/><rect fill="#fff" x="30" y="20" width="26" height="3" rx="1"/><rect fill="#fff" opacity=".7" x="30" y="25" width="18" height="2" rx="1"/><rect fill="#2f5d45" x="26" y="34" width="20" height="16" rx="1"/><rect fill="#b8323a" x="50" y="34" width="20" height="16" rx="1"/><rect fill="#e1b04a" x="74" y="34" width="20" height="16" rx="1"/><path fill="#fff" d="M16 5.5c0-2 1.5-3.5 3.5-3.5h81c2 0 3.5 1.5 3.5 3.5v1.5c-8 1.5-14-1-21 .5-6-1.5-12 .5-20 0-8 .5-14-1.5-21 0-8 1-16-1-25 .5z"/><path fill="#2a241b" d="M50 58h20l4 8H46z"/><path fill="#fff" d="M2 66.5c12-1.4 24-.6 36-.8 15-.4 30-.4 44 0 12 .2 24-.6 36 .8v4H2z"/></g><g fill="#fff"><circle cx="8" cy="18" r="1.3"/><circle cx="112" cy="12" r="1.5"/><circle cx="110" cy="40" r="1"/><circle cx="6" cy="44" r="1"/></g></svg>`,
+ rathaus:`<svg viewBox="0 0 100 72" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))">
+<path fill="#4a4f57" d="M22 40l12-14h9v14zM57 26h9l12 14H57z"/>
+<path fill="#9c5136" d="M22 40h21v27H22zM57 40h21v27H57z"/>
+<path fill="#8a4630" d="M43 26h14v41H43z"/>
+<path fill="#3f444b" d="M43 22l7-18 7 18z"/>
+<rect fill="#7a3826" x="43" y="22" width="14" height="4"/>
+<circle fill="#f1f1ec" cx="50" cy="31" r="3.4"/><path stroke="#2a241b" stroke-width=".8" d="M50 31v-2.2M50 31h1.6" fill="none"/>
+<path fill="#b8323a" d="M46.5 37h7v4.5c0 2.5-3.5 3.6-3.5 3.6s-3.5-1.1-3.5-3.6z"/>
+<g fill="#f3cf7d"><rect x="26" y="45" width="5" height="7" rx="2.5"/><rect x="34" y="45" width="5" height="7" rx="2.5"/><rect x="61" y="45" width="5" height="7" rx="2.5"/><rect x="69" y="45" width="5" height="7" rx="2.5"/><rect x="26" y="56" width="5" height="6"/><rect x="34" y="56" width="5" height="6"/><rect x="61" y="56" width="5" height="6"/><rect x="69" y="56" width="5" height="6"/><path d="M46.5 67v-9a3.5 3.5 0 017 0v9z"/></g>
+<g fill="#fff"><path d="M20.5 40.6l13-15.4h10v2.6h-8.6L23.8 41.2zM56.5 25.2h10l13 15.4-3.3.6L65.1 27.8h-8.6zM42 22.6l8-20.6 8 20.6-2.6.3L50 8.6l-5.4 14.3zM21 40h22v1.8H21zM57 40h22v1.8H57z"/></g>
+<path fill="#fff" d="M2 66.5c10-1.6 20-.6 30-1 12-.6 24-.6 36 0 10 .4 20-.6 30 1v4.5H2z"/>
+</g><g fill="#fff"><circle cx="8" cy="16" r="1.3"/><circle cx="92" cy="10" r="1.5"/><circle cx="28" cy="6" r="1"/><circle cx="76" cy="18" r="1.1"/><circle cx="96" cy="32" r="1"/><circle cx="12" cy="34" r="1"/></g></svg>`,
+ kirche:`<svg viewBox="0 0 60 80" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))">
+<path fill="#9c5136" d="M8 76V49l14-8v35zM38 41l14 8v27H38z"/>
+<path fill="#4a4f57" d="M6 50l16-10v4L8 52zM38 40l16 10-2 2-14-8z"/>
+<path fill="#8a4630" d="M22 30h16v46H22z"/>
+<path fill="#3f444b" d="M21 31l9-19 9 19z"/>
+<path fill="#d9c08a" d="M29.2 3h1.6v9h-1.6zM26.5 6h7v1.5h-7z"/>
+<g fill="#f3cf7d"><rect x="27.5" y="36" width="5" height="8" rx="2.5"/><rect x="12" y="56" width="5" height="8" rx="2.5"/><rect x="43" y="56" width="5" height="8" rx="2.5"/><path d="M26.5 76v-7a3.5 3.5 0 017 0v7z"/></g>
+<g fill="#fff"><path d="M20 31.5L30 11l10 20.5-3 .3L30 16.5l-7 15.3zM5 50.5l17-10.5v2.6L8 51.5zM38 40l17 10.5-3 1L38 42.6zM21 30h18v1.8H21z"/><path d="M1 75c9-1.3 19-.6 29-.8s19-.5 29 .8v4H1z"/></g>
+</g><g fill="#fff"><circle cx="6" cy="20" r="1.2"/><circle cx="52" cy="14" r="1.4"/><circle cx="48" cy="30" r="1"/><circle cx="12" cy="6" r="1"/></g></svg>`,
+ muehle:`<svg viewBox="0 0 60 80" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))">
+<path fill="#9c5136" d="M21 76l3-40h12l3 40z"/>
+<path fill="#4a4f57" d="M21 37l9-10 9 10z"/>
+<g stroke="#5a4632" stroke-width="2.2" stroke-linecap="round"><path d="M30 27L11 8M30 27L49 8M30 27L11 46M30 27L49 46"/></g>
+<g fill="#ece6d8" stroke="#5a4632" stroke-width=".6"><path d="M28 23L14.5 9.5l-3 3L25 26zM32 23l13.5-13.5 3 3L35 26zM28 31L14.5 44.5l-3-3L25 28zM32 31l13.5 13.5 3-3L35 28z"/></g>
+<circle fill="#3f444b" cx="30" cy="27" r="2.4"/>
+<g fill="#f3cf7d"><rect x="28" y="44" width="4" height="6" rx="2"/><path d="M27 76v-8a3 3 0 016 0v8z"/></g>
+<g fill="#fff"><path d="M20 37.5l10-11.5 10 11.5-3 .4-7-8-7 8z"/><path d="M1 75c9-1.3 19-.6 29-.8s19-.5 29 .8v4H1z"/></g>
+</g><g fill="#fff"><circle cx="6" cy="58" r="1.2"/><circle cx="54" cy="60" r="1.4"/><circle cx="52" cy="26" r="1"/><circle cx="8" cy="26" r="1"/></g></svg>`,
+ baum:`<svg viewBox="0 0 60 80" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))"><rect fill="#6b4a30" x="26" y="70" width="8" height="8"/><path fill="#2f5d45" d="M30 12L14 36h7L10 56h9L6 72h48L41 56h9L39 36h7z"/><g fill="#fff"><path d="M30 12l-8 12c3 1 5-1 8 1 3-2 5 0 8-1zM18 36c4 1.5 8-.5 12 1 4-1.5 8 .5 12-1l1.5 2c-4 1-9-1-13.5.5C25.5 37 21 39 17 38zM14 56c5 1.5 10-.5 16 1 6-1.5 11 .5 16-1l1.5 2c-6 1-11-1-17.5.5C23.5 57 18 59 13 58z"/></g><g fill="#e1b04a"><path d="M30 2l2.4 5 5.3.6-4 3.6 1.1 5.2-4.8-2.7-4.8 2.7 1.1-5.2-4-3.6 5.3-.6z"/></g><g><circle fill="#b8323a" cx="24" cy="46" r="2.2"/><circle fill="#e1b04a" cx="37" cy="44" r="2"/><circle fill="#b8323a" cx="38" cy="63" r="2.2"/><circle fill="#e1b04a" cx="22" cy="65" r="2"/><circle fill="#f1f1ec" cx="31" cy="29" r="1.8"/></g></g></svg>`,
+ stern:`<svg viewBox="0 0 60 60" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))"><path fill="#e1b04a" d="M30 4l7 16.5h17.5l-14 10.5 5.3 17.5L30 38 14.2 48.5l5.3-17.5-14-10.5H23z"/><path fill="#f3cf7d" d="M30 4l7 16.5h17.5l-14 10.5L30 30z"/></g><g fill="#fff"><circle cx="6" cy="8" r="1.3"/><circle cx="54" cy="52" r="1.3"/><circle cx="8" cy="50" r="1"/><circle cx="52" cy="6" r="1"/></g></svg>`,
+ geschenk:`<svg viewBox="0 0 60 60" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))"><rect fill="#b8323a" x="8" y="26" width="44" height="30" rx="2"/><rect fill="#a02a32" x="4" y="16" width="52" height="11" rx="2"/><rect fill="#e1b04a" x="26.5" y="16" width="7" height="40"/><path fill="#e1b04a" d="M30 17c-4-9-16-12-15-4 1 5 9 5 15 4zM30 17c4-9 16-12 15-4-1 5-9 5-15 4z"/><path fill="#fff" d="M4 18c0-1 1-2 2-2h48c1 0 2 1 2 2v1c-6 1.5-12-.5-18 1-3-1-5 0-8 0-3 0-5-1-8 0-6-1.5-12 .5-18-1z"/></g></svg>`,
+ kerze:`<svg viewBox="0 0 40 70" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))"><ellipse fill="#f3cf7d" opacity=".35" cx="20" cy="15" rx="10" ry="12"/><path fill="#b8323a" d="M12 28h16v38H12z"/><path fill="#fff" d="M12 28h16v4c-2 0-2 6-4 6s-1-4-3-4-1 3-3 3-2-5-6-5z"/><path fill="#2f5d45" d="M4 64c4-4 8-2 10 0 2-3 10-3 12 0 2-2 6-4 10 0v4H4z"/><circle fill="#b8323a" cx="12" cy="63" r="1.8"/><circle fill="#b8323a" cx="28" cy="63" r="1.8"/><path fill="#2a241b" d="M19.4 24h1.2v4h-1.2z"/><path fill="#e1b04a" d="M20 8c5 7 5 12 0 16-5-4-5-9 0-16z"/><path fill="#fff7df" d="M20 15c2 3 2 6 0 8-2-2-2-5 0-8z"/></g></svg>`,
+ laterne:`<svg viewBox="0 0 40 80" style="stroke:none;overflow:visible"><g style="filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))"><path fill="none" stroke="#2a241b" stroke-width="2" d="M20 2v6"/><path fill="#2a241b" d="M12 8h16l4 8H8zM8 48h24l-4 6H12zM18.5 54h3v24h-3zM14 76h12v3H14z"/><rect fill="#f3cf7d" x="10" y="16" width="20" height="32"/><path fill="none" stroke="#2a241b" stroke-width="1.6" d="M10 16h20v32H10zM20 16v32"/><path fill="#e1b04a" d="M20 25c3.5 4.5 3.5 9 0 11.5-3.5-2.5-3.5-7 0-11.5z"/><path fill="#fff" d="M7 16h26v2.2H7zM11 8h18l1 1.6H10z"/><path fill="#b8323a" d="M24 54c4 0 7 3 5 6-2-2-3-1-5-3zM16 54c-4 0-7 3-5 6 2-2 3-1 5-3z"/></g></svg>`
+};
+const MOTIF={12:"webseite",24:"rathaus",4:"kirche",11:"muehle",18:"baum",6:"stern",23:"baum",1:"kerze",14:"laterne",20:"stern",9:"geschenk"};
+const order=[7,15,1,20,11,3,24,9,18,5,13,22,2,16,10,23,6,19,12,4,21,14,8,17];
+const CAP=()=>{const r=()=>(Math.random()*5+12).toFixed(1);return`<span class="cap" aria-hidden="true"><svg viewBox="0 0 100 22" preserveAspectRatio="none"><path fill="#fff" d="M0 10C0 3 6 1 14 2c8-2 16 1 24 0 9-2 18 1 26 0 8-1 17 0 24 1 8 0 12 3 12 8 0 4-3 5-5 4-2 5-6 ${r()}-9 ${r()}-3 0-4-4-6-5-4 1-8 1-12 0-2 4-4 9-7 9s-4-5-6-8c-5 1-10 1-15 0-2 3-3 6-6 6s-4-4-5-6C9 14 4 15 2 14 0 13 0 12 0 10z"/></svg></span>`};
+function capDrop(b){const c=b.querySelector(".cap");if(!c||c.classList.contains("fall")||(c.lv||0)<.02)return;
+  c.classList.add("fall");
+  const r=b.getBoundingClientRect();puff(r.left,r.top,r.width*c.lv);
+  setTimeout(()=>{c.lv=0;c.style.setProperty("--lv",0);c.classList.remove("fall")},900);}
+// Schnee sammelt sich erst ab dem Öffnen der Seite – je mehr Flocken fallen, desto schneller
+// (Standard ca. 2 Minuten bis zur vollen Haube; mit dem Regler in Türchen 9 entsprechend schneller)
+setInterval(()=>{const rate=(flakes.length/120)*0.0042*(SZENE?6:1);if(!rate)return;
+  document.querySelectorAll(".door .cap:not(.fall)").forEach(c=>{const v=Math.min(1,(c.lv||0)+rate*(.7+Math.random()*.6));c.lv=v;c.style.setProperty("--lv",v.toFixed(3))})},500);
+const TOUCH=matchMedia("(hover: none)").matches;
+const grid=document.getElementById("grid");
+// Am Handy gibt es kein Hovern: Mit dem Finger über die Türen wischen schüttelt den Schnee ab
+grid.addEventListener("touchmove",e=>{const t=e.touches[0],el=document.elementFromPoint(t.clientX,t.clientY)?.closest(".door");if(el)capDrop(el)},{passive:true});
+order.forEach(d=>{
+  const b=document.createElement("button");
+  b.className="door"+(d===24?" big":d===1?" wide":(d===12||d===18)?" wide-d":"");
+  const free=preview||d<=today;
+  if(!free)b.classList.add("locked");
+  if(d===today&&!opened.has(d))b.classList.add("today");
+  if(opened.has(d)&&free)b.classList.add("open");
+  b.setAttribute("aria-label",`Türchen ${d}`+(free?"":" – noch verschlossen"));
+  b.innerHTML=`<span class="inner" data-peek="${DAYS[d].e}"></span><span class="leaf">${MOTIF[d]?`<span class="motif" aria-hidden="true">${M[MOTIF[d]]}</span>`:""}<span class="num">${d}</span></span>${CAP()}`;
+  b.addEventListener("mouseenter",()=>capDrop(b));
+  b.onclick=()=>{
+    capDrop(b);
+    if(!free){shake(b);return}
+    b.classList.add("open");b.classList.remove("today");opened.add(d);save();
+    b.classList.add("glow");setTimeout(()=>{show(d,b);b.classList.remove("glow")},reduce?0:(b.dataset.seen?250:750));b.dataset.seen=1;
+  };
+  grid.appendChild(b);
+});
+document.getElementById("hint").textContent=TOUCH?"Psst: Wisch mal mit dem Finger über die Türchen ❄️":"Psst: Fahr mal mit der Maus über die Türchen ❄️";
+document.getElementById("count").textContent=
+  today===0?`Noch ${Math.ceil((new Date(YEAR,11,1)-now)/864e5)} Tage bis zum ersten Türchen`:
+  today>24?"Alle Türchen sind offen – frohes Fest!":`Heute ist Türchen ${today} dran`;
+
+function shake(el){el.animate([{transform:"translateX(0)"},{transform:"translateX(-5px)"},{transform:"translateX(5px)"},{transform:"translateX(0)"}],{duration:300})}
+
+
+// ---------- System erkennen, passende Einstellung anbieten ----------
+// iOS lässt Webseiten keine Einstellungen öffnen → dort nur der Weg als Text.
+const OS=(()=>{const u=navigator.userAgent;
+ if(/iPhone|iPad|iPod/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1))return"ios";
+ if(/Android/.test(u))return"android";if(/Windows/.test(u))return"windows";if(/Macintosh/.test(u))return"mac";return"other"})();
+const OSNAME={ios:"iPhone/iPad",android:"Android",windows:"Windows",mac:"Mac",other:"deinem Gerät"};
+const SYS={
+ night:{ios:{w:"Einstellungen → Anzeige & Helligkeit → Night Shift"},
+  android:{w:"Einstellungen → Anzeige → Augenkomfort bzw. Nachtlicht",l:"intent:#Intent;action=android.settings.DISPLAY_SETTINGS;end"},
+  windows:{w:"Einstellungen → System → Anzeige → Nachtmodus",l:"ms-settings:nightlight"},
+  mac:{w:"Systemeinstellungen → Displays → Night Shift",l:"x-apple.systempreferences:com.apple.Displays-Settings.extension"}},
+ update:{ios:{w:"Einstellungen → Allgemein → Softwareupdate"},
+  android:{w:"Einstellungen → System → Systemupdate (je nach Hersteller „Softwareupdate“)",l:"intent:#Intent;action=android.settings.SYSTEM_UPDATE_SETTINGS;end"},
+  windows:{w:"Einstellungen → Windows Update",l:"ms-settings:windowsupdate"},
+  mac:{w:"Systemeinstellungen → Allgemein → Softwareupdate",l:"x-apple.systempreferences:com.apple.Software-Update-Settings.extension"}},
+ backup:{ios:{w:"Einstellungen → [dein Name] → iCloud → iCloud-Backup"},
+  android:{w:"Einstellungen → Google → Sicherung (bei Samsung: Konten und Sicherung)"},
+  windows:{w:"Einstellungen → Konten → Windows-Sicherung",l:"ms-settings:backup"},
+  mac:{w:"Systemeinstellungen → Allgemein → Time Machine",l:"x-apple.systempreferences:com.apple.Time-Machine-Settings.extension"}},
+ fotos:{ios:{w:"Einstellungen → [dein Name] → iCloud → Fotos → „Dieses iPhone synchronisieren“"},
+  android:{w:"Google Fotos öffnen → oben rechts auf dein Profilbild → „Sicherung aktivieren“"},
+  windows:{w:"Fotos-App → Einstellungen → OneDrive-Ordner, oder Einstellungen → Konten → Windows-Sicherung",l:"ms-settings:backup"},
+  mac:{w:"Fotos-App → Einstellungen → iCloud → iCloud-Fotos"}},
+ notfall:{ios:{w:"Health-App öffnen → oben rechts auf dein Profilbild → Notfallpass → „In Notfällen anzeigen“ einschalten"},
+  android:{w:"Einstellungen → Sicherheit und Notfall → Medizinische Informationen (je nach Hersteller etwas anders)",l:"intent:#Intent;action=android.settings.EMERGENCY_SETTINGS;end"}},
+ speicher:{ios:{w:"Einstellungen → Allgemein → iPhone-Speicher"},
+  android:{w:"Einstellungen → Speicher",l:"intent:#Intent;action=android.settings.INTERNAL_STORAGE_SETTINGS;end"},
+  windows:{w:"Einstellungen → System → Speicher",l:"ms-settings:storagesense"},
+  mac:{w:"Systemeinstellungen → Allgemein → Speicher",l:"x-apple.systempreferences:com.apple.settings.Storage"}},
+ pwm:{ios:{w:"Einstellungen → Passwörter (ab iOS 18: die App „Passwörter“)"},
+  android:{w:"Einstellungen → Google → Passwort-Manager",l:"https://passwords.google.com"},
+  windows:{w:"In Edge: Einstellungen → Profile → Passwörter; in Chrome: passwords.google.com",l:"https://passwords.google.com"},
+  mac:{w:"App „Passwörter“ oder Systemeinstellungen → Passwörter"}},
+ kamera:{ios:{w:"Einstellungen → Datenschutz & Sicherheit → Kamera"},
+  android:{w:"Einstellungen → Sicherheit und Datenschutz → Berechtigungsmanager → Kamera"},
+  windows:{w:"Einstellungen → Datenschutz und Sicherheit → Kamera",l:"ms-settings:privacy-webcam"},
+  mac:{w:"Systemeinstellungen → Datenschutz & Sicherheit → Kamera",l:"x-apple.systempreferences:com.apple.preference.security?Privacy_Camera"}},
+ home:{ios:{w:"Tipp unten auf den Knopf, dann im Menü auf „Zum Home-Bildschirm“.",share:1},
+  android:{w:"Tipp unten auf den Knopf oder in Chrome oben rechts auf ⋮ → „Zum Startbildschirm hinzufügen“.",share:1},
+  windows:{w:"In Edge oder Chrome auf ☆ in der Adressleiste, dann als Favorit speichern"},
+  mac:{w:"In Safari: Ablage → „Zum Dock hinzufügen“, oder ⌘ + D für ein Lesezeichen"}}
+};
+function sysBox(k){const e=SYS[k][OS];
+ if(!e)return`<div class="box"><b>So findest du es</b><p class="muted" style="margin:.4em 0 0">${Object.entries(SYS[k]).map(([o,v])=>`<b>${OSNAME[o]}:</b> ${v.w}`).join("<br>")}</p></div>`;
+ return`<div class="box"><b>So geht's auf ${OS==="other"?"deinem Gerät":"deinem "+OSNAME[OS]}</b><p style="margin:.4em 0 0">${e.w}</p>${e.l?`<p style="margin:.8em 0 0"><a class="btn primary" style="text-decoration:none;display:inline-block" href="${e.l}">Einstellung öffnen</a></p>`:""}${e.share&&navigator.share?`<p style="margin:.8em 0 0"><button class="btn primary" onclick="navigator.share({title:'Kalkar IT Adventskalender',url:location.origin+location.pathname}).catch(()=>{})">Menü öffnen</button></p>`:""}</div>`}
+
+
+// ---------- Visualisierungen in einzelnen Karten ----------
+const FX={
+ pegel(){const q=document.getElementById("qx");if(!q||document.getElementById("gauge"))return;
+  q.insertAdjacentHTML("afterend",`<div class="box" id="gauge"><b>Wie hoch steht der Rhein gerade?</b>
+   <div class="gauge"><div class="col"><div class="ticks"></div><div class="water" id="gw"></div></div>
+   <div class="info"><div class="cm" id="gcm">…</div><div id="gst" class="muted">Pegel Rees, gleich nebenan</div><div id="gat" class="muted" style="font-size:.8rem"></div></div></div>
+   <p style="margin:12px 0 0"><a class="btn primary" style="text-decoration:none;display:inline-block" href="https://kalkar-it.de/kompakt/app/#/wetter" target="_blank" rel="noopener">Mehr in Kalkar Kompakt</a></p>
+   <p class="muted" style="margin:8px 0 0;font-size:.8rem">Daten: PEGELONLINE (WSV)</p></div>`);
+  fetch("https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/REES.json?includeTimeseries=true&includeCurrentMeasurement=true")
+   .then(r=>r.json()).then(j=>{const m=(j.timeseries||[]).find(t=>t.shortname==="W")?.currentMeasurement;if(!m)throw 0;
+    const st=m.stateNswHsw==="high"?"Hochwasser – über der Marke für die Schifffahrt":({low:"eher niedrig",normal:"normal",high:"eher hoch"})[m.stateMnwMhw]||"";
+    document.getElementById("gcm").textContent=Math.round(m.value)+" cm";
+    document.getElementById("gst").textContent="Pegel Rees, gleich nebenan"+(st?" · "+st:"");
+    document.getElementById("gat").textContent="gemessen "+new Date(m.timestamp).toLocaleString("de-DE",{weekday:"short",hour:"2-digit",minute:"2-digit"})+" Uhr";
+    requestAnimationFrame(()=>document.getElementById("gw").style.height=Math.max(4,Math.min(100,m.value/1000*100))+"%");})
+   .catch(()=>{document.getElementById("gcm").textContent="–";document.getElementById("gst").textContent="Pegel gerade nicht erreichbar. In Kalkar Kompakt siehst du ihn jederzeit."});
+ },
+ race(){const q=document.getElementById("qx");if(!q||document.getElementById("race"))return;
+  q.insertAdjacentHTML("afterend",`<div class="box race" id="race"><b>Wettrennen: ein Spiel mit 50 GB laden</b>
+   <div class="row"><span>100 Mbit/s</span><div class="track"><div class="bar" id="rb1"></div></div><span class="t" id="rt1">0 Min.</span></div>
+   <div class="row"><span>1 Gbit/s</span><div class="track"><div class="bar fast" id="rb2"></div></div><span class="t" id="rt2">0 Min.</span></div>
+   <p style="text-align:right;margin:6px 0 0"><button class="btn primary" id="rgo">Download starten</button></p>
+   <p style="margin:14px 0 0"><b>Und beim Streamen?</b> Ein Film in 4K braucht etwa 25 Mbit/s. In eine 100er-Leitung passen also vier gleichzeitig:</p>
+   <div class="pipe" id="pipe"><span>📺</span><span>📺</span><span>📺</span><span>📺</span></div>
+   <p class="muted" style="margin:6px 0 0">Ein Fünfter würde ruckeln – mit 1 Gbit/s passen vierzig.</p></div>`);
+  setTimeout(()=>document.getElementById("pipe").classList.add("on"),300);
+  [...document.querySelectorAll("#pipe span")].forEach((e,i)=>e.style.transitionDelay=(300+i*180)+"ms");
+  document.getElementById("rgo").onclick=e=>{e.target.disabled=true;
+   // 50 GB = 400 000 Mbit → 100 Mbit/s: 4000 s ≈ 67 Min., 1 Gbit/s: 400 s ≈ 7 Min.; 1 echte Sekunde = 10 Minuten
+   const T=[4000,400],t0=performance.now();
+   (function tick(n){const sim=(n-t0)/1000*600;let done=true;
+    T.forEach((tt,i)=>{const p=Math.min(1,sim/tt);if(p<1)done=false;
+     document.getElementById("rb"+(i+1)).style.width=p*100+"%";
+     document.getElementById("rt"+(i+1)).textContent=Math.round(Math.min(sim,tt)/60)+" Min."+(p>=1?" ✓":"")});
+    if(sim>=400&&!e.target.dataset.b){e.target.dataset.b=1;burst(20)}
+    if(!done)requestAnimationFrame(tick);else{e.target.disabled=false;e.target.textContent="Nochmal";delete e.target.dataset.b;e.target.onclick=ev=>{document.getElementById("race").remove();FX.race()}}})(t0)};
+ },
+ link(){const l=document.getElementById("fl"),st=document.getElementById("fs");let shown=false;
+  document.getElementById("fh").textContent=TOUCH?"Tipp auf den Link. Im echten Leben hältst du dafür den Finger lange darauf – dann zeigt das Handy die Adresse, ohne die Seite zu öffnen.":"Fahr mit der Maus über den Link, ohne zu klicken. Der Browser zeigt die echte Adresse dann unten links an.";
+  const on=()=>{if(shown)return;shown=true;st.classList.add("on");document.getElementById("fh").innerHTML="<b>Erwischt!</b> Die Adresse hat nichts mit einem echten Paketdienst zu tun. Wichtig ist das Ende vor dem ersten „/“: <b>paketinfo-24.top</b>.";};
+  l.addEventListener("mouseenter",on);l.addEventListener("focus",on);l.addEventListener("click",e=>{e.preventDefault();on()});
+  l.addEventListener("touchstart",on,{passive:true});
+ },
+ night(){const r=document.getElementById("nr"),n=document.getElementById("night");r.oninput=()=>n.style.opacity=(r.value/100*.32).toFixed(3)}
+};
+
+// ---------- Modal ----------
+const bd=document.getElementById("bd"),sheet=document.getElementById("sheet");
+let fromEl=null;
+function show(d,el){fromEl=el||null;
+  const x=DAYS[d];
+  let body=(x.b||"")+(x.sys?sysBox(x.sys):"");
+  if(x.q)body=`<p>${x.q.f}</p>`+x.q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("")+`<p id="qx" class="muted" hidden>${x.q.x}</p>`;
+  if(x.w)body=W[x.w].html;
+  sheet.innerHTML=`<div class="emoji">${x.e}</div><div class="day">Türchen ${d}</div><h2 id="mt">${x.t}</h2>${body}
+    <div class="actions"><button class="btn" id="share">Teilen</button><button class="btn primary" id="close">Schließen</button></div>`;
+  bd.classList.remove("fading");bd.classList.add("show");
+  if(!reduce){
+    // Fenster wächst aus der Tür heraus (FLIP)
+    const to=sheet.getBoundingClientRect();
+    let from={x:0,y:60,s:.9};
+    if(fromEl){const r=fromEl.getBoundingClientRect();from={x:(r.left+r.width/2)-(to.left+to.width/2),y:(r.top+r.height/2)-(to.top+to.height/2),s:Math.max(.12,r.width/to.width)}}
+    sheet.animate([{transform:`translate(${from.x}px,${from.y}px) scale(${from.s}) rotate(-6deg)`,opacity:.2,borderRadius:"14px"},
+      {transform:"translate(0,0) scale(1.03) rotate(.6deg)",opacity:1,offset:.7},{transform:"none",opacity:1}],
+      {duration:650,easing:"cubic-bezier(.2,.9,.3,1.1)"});
+    bd.animate([{background:"rgba(15,12,8,0)"},{background:"rgba(15,12,8,.72)"}],{duration:450});
+    sheet.querySelector(".emoji").classList.add("swing");
+    [...sheet.children].slice(1).forEach((c,i)=>{c.classList.add("stag");c.style.animationDelay=(280+i*70)+"ms"});
+    sheet.classList.remove("twinkle");void sheet.offsetWidth;sheet.classList.add("twinkle");
+    setTimeout(()=>burst(24),380);
+  }
+  if(x.q)sheet.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    sheet.querySelectorAll(".opt").forEach(o=>{o.disabled=true;if(+o.dataset.i===x.q.a)o.classList.add("right")});
+    if(+b.dataset.i!==x.q.a)b.classList.add("wrong");else burst();
+    document.getElementById("qx").hidden=false;
+    if(x.fx)FX[x.fx]();
+  });
+  if(x.w&&W[x.w].init)W[x.w].init();
+  if(x.fx&&!x.q)FX[x.fx]();
+  document.getElementById("close").onclick=hide;
+  document.getElementById("share").onclick=async()=>{
+    const data={title:"Kalkar IT Adventskalender",text:`Türchen ${d}: ${x.t}`,url:location.origin+location.pathname};
+    if(navigator.share)try{await navigator.share(data)}catch(e){}
+    else{await navigator.clipboard?.writeText(data.url);document.getElementById("share").textContent="Link kopiert"}
+  };
+  document.getElementById("close").focus();
+}
+function hide(){
+  document.getElementById("night").style.opacity=0;
+  if(reduce||!bd.classList.contains("show")){bd.classList.remove("show");return}
+  const to=sheet.getBoundingClientRect();let t="translateY(40px) scale(.9)";
+  if(fromEl){const r=fromEl.getBoundingClientRect();t=`translate(${(r.left+r.width/2)-(to.left+to.width/2)}px,${(r.top+r.height/2)-(to.top+to.height/2)}px) scale(${Math.max(.12,r.width/to.width)}) rotate(-4deg)`}
+  bd.classList.add("fading");
+  sheet.animate([{transform:"none",opacity:1},{transform:t,opacity:0}],{duration:380,easing:"cubic-bezier(.5,0,.8,.4)"}).onfinish=()=>{bd.classList.remove("show","fading")};
+}
+bd.onclick=e=>{if(e.target===bd)hide()};
+addEventListener("keydown",e=>{if(e.key==="Escape")hide()});
+
+// ---------- Gimmicks ----------
+const TIPS=[
+ {t:"Sperr den Bildschirm, wenn du aufstehst. So liest niemand mit und niemand schickt in deinem Namen eine Mail, während du Kaffee holst.",x:"<p class='muted' style='margin:.6em 0 0'>Windows: <kbd>Win</kbd> + <kbd>L</kbd> · Mac: <kbd>Ctrl</kbd> + <kbd>⌘</kbd> + <kbd>Q</kbd></p>"},
+ {t:"Ändere das Router-Passwort, wenn noch das vom Aufkleber gilt. Den Aufkleber sieht jeder, der mal in deinem Flur stand.",x:"<p style='margin:.8em 0 0'><a class='btn primary' style='text-decoration:none;display:inline-block' href='http://fritz.box' target='_blank' rel='noopener'>Fritzbox öffnen</a></p><p class='muted' style='margin:.4em 0 0;font-size:.85rem'>Nur mit Fritzbox und im WLAN zu Hause. Bei anderen Routern steht die Adresse auf dem Aufkleber.</p>"},
+ {t:"Nutze einen Passwort-Manager. Dann hat jedes Konto ein eigenes Passwort, und ein Datenleck bei einem Shop öffnet nicht gleich dein Mail-Postfach.",sys:"pwm"},
+ {t:"Kleb die Laptop-Kamera ab, wenn du sie nicht brauchst. Schadsoftware kann sie einschalten, ohne dass du es merkst – ein Deckel lässt sich nicht hacken. Und schau einmal nach, welche Apps die Kamera überhaupt nutzen dürfen.",sys:"kamera"},
+ {t:"Schalte die Zwei-Faktor-Anmeldung für dein Apple-, Google- oder Microsoft-Konto ein. Dort hängen Fotos, Mails und oft alle anderen Passwörter dran.",x:"<p style='margin:.6em 0 0'><b>Direkt einschalten:</b> <a href='https://myaccount.google.com/signinoptions/two-step-verification' target='_blank' rel='noopener'>Google</a> · <a href='https://account.apple.com' target='_blank' rel='noopener'>Apple</a> · <a href='https://account.microsoft.com/security' target='_blank' rel='noopener'>Microsoft</a></p>"},
+ {t:"Lade Druckertreiber nur von der Seite des Herstellers. „Treiber-Download“-Seiten aus der Suche liefern gern Werbung oder Schadsoftware mit.",x:"<p class='muted' style='margin:.6em 0 0'>Die wichtigsten: <a href='https://support.hp.com/de-de/drivers' target='_blank' rel='noopener'>HP</a> · <a href='https://www.canon.de/support/' target='_blank' rel='noopener'>Canon</a> · <a href='https://www.epson.de/de_DE/support' target='_blank' rel='noopener'>Epson</a> · <a href='https://support.brother.com/' target='_blank' rel='noopener'>Brother</a></p>"}
+];
+const W={
+ pw:{html:`<p>Tipp ein Beispiel ein (bitte nicht dein echtes – es wird nirgends gespeichert oder gesendet):</p>
+   <input type="password" id="pwi" placeholder="z. B. Glühwein-Markt-Kalkar-24" autocomplete="off"><div class="meter"><i id="pwm"></i></div><p id="pwt" class="muted">Länge schlägt Sonderzeichen.</p>
+   <div class="box"><b>So geht ein gutes Passwort</b><ul style="margin:.5em 0 0;padding-left:1.2em;line-height:1.5">
+   <li><b>Lang statt kompliziert:</b> Vier, fünf zufällige Wörter („Deich-Linde-Kaffee-Rabe“) sind sicherer als „P@ssw0rt!“ und leichter zu merken.</li>
+   <li><b>Für jedes Konto ein eigenes:</b> Wird ein Shop gehackt, probieren Angreifer die erbeuteten Passwörter automatisch bei Mail, Amazon und Bank aus.</li>
+   <li><b>Nichts Persönliches:</b> Namen, Geburtstage oder das Haustier findet man in Minuten auf Facebook.</li>
+   <li><b>Merken lassen:</b> Ein Passwort-Manager (z. B. der im iPhone oder Browser eingebaute) merkt sich alle – du brauchst nur noch eins.</li>
+   </ul><p class="muted" style="margin-bottom:0">Warum das wichtig ist: Über dein Mail-Konto lässt sich fast jedes andere Passwort zurücksetzen. Wer dort reinkommt, hat schnell alles.</p></div>`,
+   init(){const i=document.getElementById("pwi"),m=document.getElementById("pwm"),t=document.getElementById("pwt");
+    i.oninput=()=>{const s=score(i.value);m.style.width=s*25+"%";m.style.background=["#c97a65","#c97a65","#d4a75a","#9bb06a","#6f9a5e"][s];
+     t.textContent=["Leer","Schwach – schneller geknackt als ein Spekulatius","Geht so – mach es länger","Gut!","Stark – wie Kalkarer Backstein 🧱"][s]}}},
+ crack:{html:`<p>Wie lange bräuchte ein Rechner, der 10 Milliarden Passwörter pro Sekunde ausprobiert? Probier's aus und schau, wie sehr jedes zusätzliche Zeichen zählt.</p><input type="text" id="ci" placeholder="Probier ein Beispiel" autocomplete="off"><div class="box" id="co" style="text-align:center;font-size:1.3rem;font-family:var(--serif)">–</div><p class="muted">Grobe Schätzung, nur zum Staunen. Nichts verlässt dein Gerät.</p>`,
+   init(){const i=document.getElementById("ci"),o=document.getElementById("co");i.oninput=()=>o.textContent=i.value?crack(i.value):"–"}},
+ nikolaus:{html:`<p>Heute Nacht war der Nikolaus unterwegs. Hast du deinen Stiefel geputzt? Dann tipp drauf und schau, was drin ist.</p><div class="big-emoji" id="boot">🥾</div><p id="nt" class="muted" style="text-align:center">&nbsp;</p>`,
+   init(){const g=["🍫 Schokolade!","🍊 Eine Mandarine!","🥜 Nüsse!","🍬 Süßigkeiten!","🎁 Ein kleines Geschenk!"];document.getElementById("boot").onclick=e=>{const x=g[Math.random()*g.length|0].split(" ");e.target.textContent=x[0];document.getElementById("nt").textContent="Der Nikolaus war da: "+x.slice(1).join(" ");burst()}}},
+ snow:{html:`<p>In Kalkar bleibt weiße Weihnacht meist ein Wunsch. Hier darfst du heute selbst für Schnee sorgen.</p><input type="range" id="sr" min="0" max="400" value="120" style="width:100%"><p class="muted">Schieb den Regler nach rechts – und dann genieß den Blick nach draußen.</p>`,
+   init(){document.getElementById("sr").oninput=e=>setFlakes(+e.target.value)}},
+ dice:{html:`<div class="big-emoji" id="die">🎲</div><p>Sechs kleine Kniffe, einer davon ist heute deiner.</p><div class="box" id="dt">Tipp auf den Würfel.</div><p style="text-align:right;margin:10px 0 0"><button class="btn" id="again" hidden>🎲 Nochmal würfeln</button></p>`,
+   // jeder Tipp kommt erst wieder, wenn alle sechs dran waren
+   init(){const d=document.getElementById("die"),ag=document.getElementById("again");let bag=[];
+    const roll=()=>{if(!bag.length)bag=TIPS.map((_,i)=>i).sort(()=>Math.random()-.5);const tp=TIPS[bag.pop()];
+     d.animate([{transform:"rotate(0)"},{transform:"rotate(720deg)"}],{duration:500});
+     setTimeout(()=>{document.getElementById("dt").innerHTML=tp.t+(tp.x||"")+(tp.sys?sysBox(tp.sys).replace('class="box"','style="margin-top:10px"'):"");ag.hidden=false;ag.textContent=bag.length?"🎲 Nochmal würfeln":"🎲 Alle gesehen – von vorn"},450)};
+    d.onclick=roll;ag.onclick=roll}},
+ cookie:{html:`<p>Auf dem Teller liegen frische Plätzchen. Wie viele schaffst du in 10 Sekunden? Tipp so schnell du kannst!</p><div class="big-emoji" id="ck">🍪</div><p style="text-align:center;font-size:1.4rem" id="cn">0</p><p class="muted" style="text-align:center" id="cs">Erster Tipp startet die Uhr.</p>`,
+   init(){let n=0,t0=0,done=false;const c=document.getElementById("ck");c.onclick=()=>{if(done)return;if(!t0){t0=Date.now();setTimeout(()=>{done=true;const best=Math.max(n,+store.get("kit-keks")||0);store.set("kit-keks",best);document.getElementById("cs").textContent=`Zeit um! Dein Rekord: ${best} 🍪`;burst()},10000)}document.getElementById("cn").textContent=++n}}},
+ final:{html:`<p>24 Türchen, 24 kleine Überraschungen – danke, dass du jeden Tag vorbeigeschaut hast!</p><p>Wir wünschen dir und deinen Liebsten ein ruhiges, warmes Weihnachtsfest, Zeit füreinander und ein gutes neues Jahr. Und Technik, die einfach funktioniert – und sollte sie doch mal nicht machen, was du erwartest, weißt du jetzt, wo du dich melden kannst: <a href="https://www.kalkar-it.de" style="color:var(--bronze3);font-weight:600">www.kalkar-it.de</a></p><p style="font-family:var(--serif);font-size:1.15rem;margin-top:1em">Frohe Weihnachten aus Kalkar!<br><span class="muted" style="font-family:var(--sans)">Dein Team von Kalkar IT Solutions</span></p>`,
+   init(){burst(160);setFlakes(300)}}
+};
+function score(p){if(!p)return 0;let s=0;if(p.length>=8)s++;if(p.length>=12)s++;if(p.length>=16)s++;if(/[^a-zA-Z]/.test(p)&&/[a-z]/.test(p)&&/[A-Z]/.test(p))s++;return Math.max(1,Math.min(4,s))}
+function crack(p){let c=0;if(/[a-z]/.test(p))c+=26;if(/[A-Z]/.test(p))c+=26;if(/\d/.test(p))c+=10;if(/[^a-zA-Z0-9]/.test(p))c+=33;
+ const sec=Math.pow(c,p.length)/2/1e10;const u=[[31536e9,"Jahrtausende"],[31536e6,"Jahrtausend"],[31536e3,"Jahre"],[86400,"Tage"],[3600,"Stunden"],[60,"Minuten"],[1,"Sekunden"]];
+ if(sec<1)return"sofort 😬";if(sec>31536e12)return"länger als das Universum alt ist ✨";
+ for(const[d,n]of u)if(sec>=d){const v=Math.round(sec/d);return n==="Jahrtausende"||n==="Jahrtausend"?`ca. ${v.toLocaleString("de")} Jahrtausende`:`ca. ${v.toLocaleString("de")} ${n}`}}
+
+// ---------- Schnee & Konfetti ----------
+const cv=document.getElementById("snow"),cx=cv.getContext("2d");let flakes=[],sparks=[];
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function rs(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio;cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+addEventListener("resize",rs);rs();
+function setFlakes(n){while(flakes.length<n)flakes.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2.4+.6,s:Math.random()*.6+.3,d:Math.random()*6.28});flakes.length=n}
+setFlakes(reduce?0:Math.min(120,innerWidth/8|0));
+function puff(x,y,w){if(reduce)return;for(let i=0;i<26;i++)sparks.push({x:x+Math.random()*w,y:y+Math.random()*8,vx:(Math.random()-.5)*1.6,vy:Math.random()*-1.5,c:"#fff",l:70,r:0,f:1,s:Math.random()*2+1.2})}
+function burst(n=60){if(reduce)return;const c=["#b8956a","#f1f1ec","#d4b48a","#8fb487","#c97a65"];for(let i=0;i<n;i++)sparks.push({x:innerWidth/2,y:innerHeight*.45,vx:(Math.random()-.5)*12,vy:Math.random()*-12-3,c:c[i%5],l:90,r:Math.random()*360})}
+(function loop(){cx.clearRect(0,0,innerWidth,innerHeight);cx.fillStyle="rgba(255,255,255,.8)";
+ for(const f of flakes){f.y+=f.s;f.d+=.01;f.x+=Math.sin(f.d)*.4;if(f.y>innerHeight){f.y=-5;f.x=Math.random()*innerWidth}cx.beginPath();cx.arc(f.x,f.y,f.r,0,6.28);cx.fill()}
+ sparks=sparks.filter(s=>s.l-->0);for(const s of sparks){if(s.f){s.x+=s.vx;s.y+=s.vy;s.vy+=.08;cx.globalAlpha=Math.min(1,s.l/30);cx.fillStyle="#fff";cx.beginPath();cx.arc(s.x,s.y,s.s,0,6.28);cx.fill();cx.globalAlpha=1;continue}s.x+=s.vx;s.y+=s.vy;s.vy+=.35;s.r+=8;cx.save();cx.translate(s.x,s.y);cx.rotate(s.r*.017);cx.fillStyle=s.c;cx.fillRect(-4,-2,8,4);cx.restore()}
+ requestAnimationFrame(loop)})();
+
+// ---------- Aufnahme-Szenen für Reels (?szene=name) ----------
+// Die Seite spielt von selbst ab, damit Streuwerk sie filmen kann (es lädt und scrollt nur, klickt nicht).
+if(SZENE){
+ document.getElementById("hint").textContent="";
+ const wait=ms=>new Promise(r=>setTimeout(r,ms));
+ const door=d=>[...document.querySelectorAll(".door")].find(b=>b.getAttribute("aria-label").startsWith("Türchen "+d));
+ const to=(d,off=.35)=>{const r=door(d).getBoundingClientRect();scrollTo({top:scrollY+r.top-innerHeight*off,behavior:"smooth"})};
+ const open=async d=>{to(d);await wait(900);door(d).click();await wait(1300)};
+ const slide=async(id,from,to_,ms)=>{const r=document.getElementById(id),t0=performance.now();
+  while(true){const p=Math.min(1,(performance.now()-t0)/ms);r.value=from+(to_-from)*p;r.oninput&&r.oninput({target:r});if(p>=1)break;await wait(30)}};
+ const sweep=async(list,gap=160)=>{for(const d of list){capDrop(door(d));await wait(gap)}};
+ const S={
+  async stille(){to(24,.25)},                                       // nur fallender Schnee, die Hauben wachsen
+  async hauben(){to(1,.15);await wait(7000);await sweep([7,15,1,20,11,3,9,18,5,13,22,2],140)},
+  async nikolaus(){await wait(2500);await open(6);await wait(900);document.getElementById("boot").click();await wait(2600);hide();await wait(700);await sweep([6,19,12,4],200)},
+  async phishing(){await wait(2000);await open(3);await wait(2200);document.querySelectorAll(".opt")[1].click();await wait(900);sheet.scrollTo({top:400,behavior:"smooth"})},
+  async rennen(){await wait(1500);await open(15);document.querySelectorAll(".opt")[1].click();await wait(1200);document.getElementById("race").scrollIntoView({behavior:"smooth",block:"center"});await wait(1200);document.getElementById("rgo").click()},
+  async schnee(){await wait(1500);await open(9);await slide("sr",120,400,4000);await wait(800);hide();await wait(3000);await sweep([3,9,18,5,13,22],180)},
+  async nacht(){await wait(1500);await open(21);await wait(800);await slide("nr",0,100,5000);await wait(1500);await slide("nr",100,0,2500)},
+  async rathaus(){to(24,.2);await wait(6000);await open(24)}
+ };
+ (S[SZENE]||S.stille)();
+}
+</script>
+</body>
+</html>
