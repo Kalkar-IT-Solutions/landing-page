@@ -424,8 +424,6 @@ function makeCard({emoji,kicker,big,label,sub}){
   for(const w of words){const t=l?l+" "+w:w;if(g.measureText(t).width>W-160&&l){lines.push(l);l=w}else l=t}lines.push(l);
   lines.slice(0,4).forEach((t,i)=>g.fillText(t,W/2,1000+i*112+(4-Math.min(4,lines.length))*56))}
  g.fillStyle="#b8956a";g.font="italic 58px 'Iowan Old Style','Palatino Linotype',Georgia,serif";g.fillText(sub,W/2,1390);
- g.fillStyle="#b8956a";g.beginPath();g.roundRect(W/2-300,1600,600,110,55);g.fill();
- g.fillStyle="#fff";g.font="600 50px -apple-system,Segoe UI,Roboto,sans-serif";g.fillText("kalkar-it.de/advent",W/2,1673);
  return c}
 async function shareCard(o){const c=makeCard(o),file=o.file;
  const blob=await new Promise(r=>c.toBlob(r,"image/png"));const f=new File([blob],file,{type:"image/png"});
