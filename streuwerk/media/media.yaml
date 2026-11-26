@@ -1,0 +1,57 @@
+# Media Streuwerk may use in posts (docs: Streuwerk, docs/product-media.md).
+media:
+  - id: hero-1
+    path: streuwerk/media/social/kalkar-it-hero-1-von-3.png
+    kind: photo
+    size: [1080, 1440]
+    alt: "Schriftzug „IT-Lösungen vom Niederrhein für den Niederrhein.“ über einem Holztisch, daneben zwei Menschen am Schreibtisch als Zeichnung."
+  - id: hero-2
+    path: streuwerk/media/social/kalkar-it-hero-2-von-3.png
+    kind: photo
+    size: [1080, 1440]
+    alt: Ein aufgeklappter Laptop auf einem Holztisch, auf dem Bildschirm das Kalkarer Rathaus als Zeichnung.
+  - id: hero-3
+    path: streuwerk/media/social/kalkar-it-hero-3-von-3.png
+    kind: photo
+    size: [1080, 1440]
+    alt: "Was hier entsteht: Software, Web, Betrieb und 3D-Druck, darunter kalkar-it.de und hi@kalkar-it.de."
+  - id: hero-panorama
+    path: streuwerk/media/social/kalkar-it-hero-panorama.png
+    kind: photo
+    size: [3240, 1440]
+    alt: Die drei Hero-Bilder als ein Panorama, Schriftzug, Laptop mit Rathaus und das Angebot nebeneinander.
+  - id: profilbild
+    path: streuwerk/media/social/kalkar-it-profilbild-1024.png
+    kind: logo
+    size: [1024, 1024]
+    alt: Profilbild von Kalkar IT Solutions, ein Laptop mit dem Kalkarer Rathaus auf einem Holztisch.
+  - id: kompakt-start
+    path: assets/kompakt/start-light.png
+    kind: screenshot
+    device: phone
+    size: [780, 1688]
+    alt: Kalkar Kompakt auf dem Telefon, die Startseite mit Straßensperrungen, Wetter, Abfall, Terminen und Hofläden.
+  - id: kompakt-karte
+    path: assets/kompakt/karte-light.png
+    kind: screenshot
+    device: phone
+    size: [780, 1688]
+    alt: Kalkar Kompakt auf dem Telefon, die Karte mit Kategorien wie Hofläden, Haltestellen und Museen.
+  - id: kompakt-termine
+    path: assets/kompakt/termine-light.png
+    kind: screenshot
+    device: phone
+    size: [780, 1688]
+    alt: Kalkar Kompakt auf dem Telefon, die Termine in Kalkar nach Tagen.
+  - id: kompakt-wetter
+    path: assets/kompakt/wetter-light.png
+    kind: screenshot
+    device: phone
+    size: [780, 1688]
+    alt: Kalkar Kompakt auf dem Telefon, Wetter und Rheinpegel mit Warnungen und den nächsten Tagen.
+  - id: kompakt-abfall
+    path: assets/kompakt/abfall-light.png
+    kind: screenshot
+    device: phone
+    size: [780, 1688]
+    alt: Kalkar Kompakt auf dem Telefon, der Abfallkalender mit Straßensuche und den nächsten Abfuhren.
