@@ -114,7 +114,6 @@ input[type=range]{accent-color:var(--bronze2)}
 /* Schneehäubchen: liegt auf jeder Tür, fällt beim Hovern oder Öffnen herunter und wächst später nach */
 .door .cap{position:absolute;left:5px;right:5px;top:-7px;height:22px;z-index:2;pointer-events:none;transform-origin:50% 35%;--lv:0;transform:scale(calc(.55 + var(--lv)*.45),var(--lv));opacity:min(1,calc(var(--lv)*3));transition:transform .3s linear}
 .door .cap svg{width:100%;height:100%;display:block;filter:drop-shadow(0 2px 2px rgba(0,0,0,.18))}
-.door.open .cap{display:none}
 .door .cap.fall{animation:capfall .9s cubic-bezier(.5,0,.9,.6) forwards}
 @keyframes capfall{from{transform:scale(calc(.55 + var(--lv)*.45),var(--lv));opacity:1}to{transform:translateY(70px) rotate(8deg) scaleY(.6);opacity:0}}
 
@@ -403,6 +402,35 @@ const FX={
  night(){const r=document.getElementById("nr"),n=document.getElementById("night");r.oninput=()=>n.style.opacity=(r.value/100*.32).toFixed(3)}
 };
 
+
+const TEASER={1: "Die erste Kerze brennt", 2: "Hält dein Passwort, was es verspricht?", 3: "Würdest du auf diese Mail reinfallen?", 4: "Kennst du Kalkars größten Schatz?", 5: "Ein Tastendruck, der Nerven rettet", 6: "Was hat der Nikolaus dir gebracht?", 7: "Damit kein Weihnachtsfoto verloren geht", 8: "Ein WLAN nur für die Gäste", 9: "Weiße Weihnacht zum Selbermachen", 10: "Was schützt dein Postfach wirklich?", 11: "Wie hoch steht der Rhein gerade?", 12: "Eine Webseite zum Ausprobieren", 13: "Ein Tipp, ausgewürfelt", 14: "Warum Updates kleine Geschenke sind", 15: "67 Minuten oder 7?", 16: "Wie viele Plätzchen schaffst du?", 17: "Fotos, die nicht mit dem Handy verschwinden", 18: "Was steht mitten auf dem Marktplatz?", 19: "Wohin führt dieser Link wirklich?", 20: "Wie lange bräuchte man für dein Passwort?", 21: "Der kürzeste Tag des Jahres", 22: "Zehn Minuten Technik-Check für die Familie", 23: "Digitaler Hausputz vor dem Fest", 24: "Frohe Weihnachten aus Kalkar"};
+// ---------- Ergebnis als Story-Bild (1080×1920) ----------
+// Wird nur im Browser gezeichnet; geteilt über das Teilen-Menü des Geräts, sonst als Download.
+async function shareCard({emoji,kicker,big,label,sub,file}){
+ const W=1080,H=1920,c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");
+ g.fillStyle="#1d1913";g.fillRect(0,0,W,H);
+ const col=["#b8323a","#e1b04a","#2f5d45"];g.fillStyle="#2f5d45";g.fillRect(0,0,W,22);
+ for(let x=24,i=0;x<W;x+=48,i++){g.fillStyle=col[i%3];g.beginPath();g.arc(x,40,13,0,6.28);g.fill()}
+ g.fillStyle="rgba(255,255,255,.85)";for(let i=0;i<160;i++){const x=Math.random()*W,y=90+Math.random()*(H-90);if(y>160&&y<1460&&x>90&&x<W-90)continue;g.beginPath();g.arc(x,y,Math.random()*4+1.5,0,6.28);g.fill()}
+ g.textAlign="center";g.fillStyle="#b8956a";g.font="500 40px -apple-system,Segoe UI,Roboto,sans-serif";g.fillText("Kalkar IT Solutions | Adventskalender 2026",W/2,220);
+ g.fillStyle="#f1f1ec";g.font="44px -apple-system,Segoe UI,Roboto,sans-serif";g.fillText(kicker,W/2,290);
+ g.beginPath();g.arc(W/2,620,210,0,6.28);g.fillStyle="#efe6d4";g.fill();g.lineWidth=14;g.strokeStyle="#b8956a";g.stroke();
+ g.fillStyle="#92785a";g.fillRect(W/2-26,385,52,34);
+ g.font="230px 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";g.textBaseline="middle";g.fillText(emoji,W/2,640);g.textBaseline="alphabetic";
+ g.fillStyle="#fff";
+ if(/^\d+$/.test(big)){g.font="300px 'Iowan Old Style','Palatino Linotype',Georgia,serif";g.fillText(big,W/2,1170);
+  g.font="64px 'Iowan Old Style','Palatino Linotype',Georgia,serif";g.fillText(label,W/2,1270)}
+ else{g.font="92px 'Iowan Old Style','Palatino Linotype',Georgia,serif";const words=big.split(" "),lines=[];let l="";
+  for(const w of words){const t=l?l+" "+w:w;if(g.measureText(t).width>W-160&&l){lines.push(l);l=w}else l=t}lines.push(l);
+  lines.slice(0,4).forEach((t,i)=>g.fillText(t,W/2,1000+i*112+(4-Math.min(4,lines.length))*56))}
+ g.fillStyle="#b8956a";g.font="italic 58px 'Iowan Old Style','Palatino Linotype',Georgia,serif";g.fillText(sub,W/2,1390);
+ g.fillStyle="#b8956a";g.beginPath();g.roundRect(W/2-300,1600,600,110,55);g.fill();
+ g.fillStyle="#fff";g.font="600 50px -apple-system,Segoe UI,Roboto,sans-serif";g.fillText("kalkar-it.de/advent",W/2,1673);
+ const blob=await new Promise(r=>c.toBlob(r,"image/png"));const f=new File([blob],file,{type:"image/png"});
+ if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:"Kalkar IT Adventskalender"})}catch(e){}return}
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=file;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+}
+
 // ---------- Modal ----------
 const bd=document.getElementById("bd"),sheet=document.getElementById("sheet");
 let fromEl=null;
@@ -412,7 +440,7 @@ function show(d,el){fromEl=el||null;
   if(x.q)body=`<p>${x.q.f}</p>`+x.q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("")+`<p id="qx" class="muted" hidden>${x.q.x}</p>`;
   if(x.w)body=W[x.w].html;
   sheet.innerHTML=`<div class="emoji">${x.e}</div><div class="day">Türchen ${d}</div><h2 id="mt">${x.t}</h2>${body}
-    <div class="actions"><button class="btn" id="share">Teilen</button><button class="btn primary" id="close">Schließen</button></div>`;
+    <div class="actions"><button class="btn" id="share">Für die Story</button><button class="btn primary" id="close">Schließen</button></div>`;
   bd.classList.remove("fading");bd.classList.add("show");
   if(!reduce){
     // Fenster wächst aus der Tür heraus (FLIP)
@@ -437,11 +465,7 @@ function show(d,el){fromEl=el||null;
   if(x.w&&W[x.w].init)W[x.w].init();
   if(x.fx&&!x.q)FX[x.fx]();
   document.getElementById("close").onclick=hide;
-  document.getElementById("share").onclick=async()=>{
-    const data={title:"Kalkar IT Adventskalender",text:`Türchen ${d}: ${x.t}`,url:location.origin+location.pathname};
-    if(navigator.share)try{await navigator.share(data)}catch(e){}
-    else{await navigator.clipboard?.writeText(data.url);document.getElementById("share").textContent="Link kopiert"}
-  };
+  document.getElementById("share").onclick=()=>shareCard({emoji:x.e,kicker:"Türchen "+d+" · "+x.t,big:TEASER[d]||x.t,sub:d===24?"Danke fürs Mitmachen!":"Die Auflösung steckt im Türchen",file:"adventskalender-tuerchen-"+d+".png"});
   document.getElementById("close").focus();
 }
 // Verweis von einem Türchen auf ein anderes: aktuelles Fenster schließen, das andere öffnen
@@ -460,7 +484,7 @@ addEventListener("keydown",e=>{if(e.key==="Escape")hide()});
 // ---------- Gimmicks ----------
 const TIPS=[
  {t:"Sperr den Bildschirm, wenn du aufstehst. So liest niemand mit und niemand schickt in deinem Namen eine Mail, während du Kaffee holst.",x:"<p class='muted' style='margin:.6em 0 0'>Windows: <kbd>Win</kbd> + <kbd>L</kbd> · Mac: <kbd>Ctrl</kbd> + <kbd>⌘</kbd> + <kbd>Q</kbd></p>"},
- {t:"Ändere das Router-Passwort, wenn noch das vom Aufkleber gilt. Den Aufkleber sieht jeder, der mal in deinem Flur stand.",x:"<p style='margin:.8em 0 0'><a class='btn primary' style='text-decoration:none;display:inline-block' href='http://fritz.box' target='_blank' rel='noopener'>Fritzbox öffnen</a></p><p class='muted' style='margin:.4em 0 0;font-size:.85rem'>Nur mit Fritzbox und im WLAN zu Hause. Bei anderen Routern steht die Adresse auf dem Aufkleber.</p>"},
+ {t:"Ändere das Router-Passwort, wenn noch das vom Aufkleber gilt. Den Aufkleber sieht jeder, der mal in deinem Flur stand. Router gebraucht gekauft? Dann setz ihn einmal auf Werkseinstellungen zurück: Der Vorbesitzer kennt sonst womöglich noch das Passwort oder hat sich einen Fernzugang eingerichtet.",x:"<p style='margin:.8em 0 0'><a class='btn primary' style='text-decoration:none;display:inline-block' href='http://fritz.box' target='_blank' rel='noopener'>Fritzbox öffnen</a></p><p class='muted' style='margin:.4em 0 0;font-size:.85rem'>Nur mit Fritzbox und im WLAN zu Hause. Bei anderen Routern steht die Adresse auf dem Aufkleber.</p>"},
  {t:"Nutze einen Passwort-Manager. Dann hat jedes Konto ein eigenes Passwort, und ein Datenleck bei einem Shop öffnet nicht gleich dein Mail-Postfach.",sys:"pwm"},
  {t:"Kleb die Laptop-Kamera ab, wenn du sie nicht brauchst. Schadsoftware kann sie einschalten, ohne dass du es merkst – ein Deckel lässt sich nicht hacken. Und schau einmal nach, welche Apps die Kamera überhaupt nutzen dürfen.",sys:"kamera"},
  {t:"Schalte die Zwei-Faktor-Anmeldung für dein Apple-, Google- oder Microsoft-Konto ein. Dort hängen Fotos, Mails und oft alle anderen Passwörter dran.",x:"<p style='margin:.6em 0 0'><b>Direkt einschalten:</b> <a href='https://myaccount.google.com/signinoptions/two-step-verification' target='_blank' rel='noopener'>Google</a> · <a href='https://account.apple.com' target='_blank' rel='noopener'>Apple</a> · <a href='https://account.microsoft.com/security' target='_blank' rel='noopener'>Microsoft</a></p>"},
@@ -492,8 +516,13 @@ const W={
      d.animate([{transform:"rotate(0)"},{transform:"rotate(720deg)"}],{duration:500});
      setTimeout(()=>{document.getElementById("dt").innerHTML=tp.t+(tp.x||"")+(tp.sys?sysBox(tp.sys).replace('class="box"','style="margin-top:10px"'):"");ag.hidden=false;ag.textContent=bag.length?"🎲 Nochmal würfeln":"🎲 Alle gesehen – von vorn"},450)};
     d.onclick=roll;ag.onclick=roll}},
- cookie:{html:`<p>Auf dem Teller liegen frische Plätzchen. Wie viele schaffst du in 10 Sekunden? Tipp so schnell du kannst!</p><div class="big-emoji" id="ck">🍪</div><p style="text-align:center;font-size:1.4rem" id="cn">0</p><p class="muted" style="text-align:center" id="cs">Erster Tipp startet die Uhr.</p>`,
-   init(){let n=0,t0=0,done=false;const c=document.getElementById("ck");c.onclick=()=>{if(done)return;if(!t0){t0=Date.now();setTimeout(()=>{done=true;const best=Math.max(n,+store.get("kit-keks")||0);store.set("kit-keks",best);document.getElementById("cs").textContent=`Zeit um! Dein Rekord: ${best} 🍪`;burst()},10000)}document.getElementById("cn").textContent=++n}}},
+ cookie:{html:`<p>Auf dem Teller liegen frische Plätzchen. Wie viele schaffst du in 10 Sekunden? Tipp so schnell du kannst!</p><div class="big-emoji" id="ck">🍪</div><p style="text-align:center;font-size:1.4rem" id="cn">0</p><p class="muted" style="text-align:center" id="cs">Erster Tipp startet die Uhr.</p><p style="text-align:center;margin:10px 0 0" id="cshare" hidden><button class="btn primary" id="cbtn">Ergebnis für die Story</button> <button class="btn" id="cagain">Nochmal</button></p>`,
+   init(){let n=0,t0=0,done=false;const c=document.getElementById("ck"),cn=document.getElementById("cn"),cs=document.getElementById("cs");
+    c.onclick=()=>{if(done)return;if(!t0){t0=Date.now();setTimeout(()=>{done=true;const best=Math.max(n,+store.get("kit-keks")||0);store.set("kit-keks",best);
+      cs.textContent=n>=best&&n>0?`Zeit um! Neuer Rekord: ${n} 🍪`:`Zeit um! Dein Rekord: ${best} 🍪`;burst();document.getElementById("cshare").hidden=false;
+      document.getElementById("cbtn").onclick=()=>shareCard({emoji:"🍪",kicker:"Türchen 16 · Plätzchen-Wettessen",big:String(n),label:n===1?"Plätzchen in 10 Sekunden":"Plätzchen in 10 Sekunden",sub:"Schaffst du mehr?",file:"plaetzchen-"+n+".png"});
+      document.getElementById("cagain").onclick=()=>{n=0;t0=0;done=false;cn.textContent="0";cs.textContent="Erster Tipp startet die Uhr.";document.getElementById("cshare").hidden=true}},10000)}cn.textContent=++n}}},
+
  final:{html:`<p>24 Türchen, 24 kleine Überraschungen – danke, dass du jeden Tag vorbeigeschaut hast!</p><p>Wir wünschen dir und deinen Liebsten ein ruhiges, warmes Weihnachtsfest, Zeit füreinander und ein gutes neues Jahr. Und Technik, die einfach funktioniert – und sollte sie doch mal nicht machen, was du erwartest, weißt du jetzt, wo du dich melden kannst: <a href="https://www.kalkar-it.de" style="color:var(--bronze3);font-weight:600">www.kalkar-it.de</a></p><p style="font-family:var(--serif);font-size:1.15rem;margin-top:1em">Frohe Weihnachten aus Kalkar!<br><span class="muted" style="font-family:var(--sans)">Dein Team von Kalkar IT Solutions</span></p>`,
    init(){burst(160);setFlakes(300)}}
 };
