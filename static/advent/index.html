@@ -521,6 +521,7 @@ function burst(n=60){if(reduce)return;const c=["#b8956a","#f1f1ec","#d4b48a","#8
 // Die Seite spielt von selbst ab, damit Streuwerk sie filmen kann (es lädt und scrollt nur, klickt nicht).
 if(SZENE){
  document.getElementById("hint").textContent="";
+ document.getElementById("count").textContent="Ab 1. Dezember jeden Tag ein Türchen";
  const wait=ms=>new Promise(r=>setTimeout(r,ms));
  const door=d=>[...document.querySelectorAll(".door")].find(b=>b.getAttribute("aria-label").startsWith("Türchen "+d));
  const to=(d,off=.35)=>{const r=door(d).getBoundingClientRect();scrollTo({top:scrollY+r.top-innerHeight*off,behavior:"smooth"})};
