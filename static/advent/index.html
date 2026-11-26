@@ -569,7 +569,7 @@ if(SZENE){
  const S={
   async stille(){to(24,.25)},                                       // nur fallender Schnee, die Hauben wachsen
   async hauben(){to(1,.15);await wait(7000);await sweep([7,15,1,20,11,3,9,18,5,13,22,2],140)},
-  async nikolaus(){await wait(2500);await open(6);await wait(900);document.getElementById("boot").click();await wait(2600);hide();await wait(700);await sweep([6,19,12,4],200)},
+  async nikolaus(){await wait(1200);await open(6);await wait(1200);document.getElementById("boot").click();await wait(2200);document.getElementById("boot").click()},
   async phishing(){await wait(2000);await open(3);await wait(2200);document.querySelectorAll(".opt")[1].click();await wait(900);sheet.scrollTo({top:400,behavior:"smooth"})},
   async rennen(){await wait(1500);await open(15);document.querySelectorAll(".opt")[1].click();await wait(1200);document.getElementById("race").scrollIntoView({behavior:"smooth",block:"center"});await wait(1200);document.getElementById("rgo").click()},
   async schnee(){await wait(1500);await open(9);await slide("sr",120,400,4000);await wait(800);hide();await wait(3000);await sweep([3,9,18,5,13,22],180)},
