@@ -14,6 +14,9 @@ hero:
     bald. 
 
     Ich freue mich schon jetzt, von euren Anliegen zu hören.
+
+    Schon da: [Heimnetz sicher in 30 Minuten](/heimnetz/), zehn Handgriffe
+    zum Abhaken.
   button: Anfrage senden
   factsKennung: Was hier entsteht
   address: kalkar-it.de · [hi@kalkar-it.de](mailto:hi@kalkar-it.de)

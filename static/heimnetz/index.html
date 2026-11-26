@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heimnetz sicher in 30 Minuten · Kalkar IT Solutions</title>
+<link rel="canonical" href="https://kalkar-it.de/heimnetz/">
+<meta name="description" content="Zehn Handgriffe, mit denen Sie Router, WLAN und smarte Geräte zu Hause absichern. Ein Schnellstart von Kalkar IT Solutions.">
+<style>
+@font-face{font-family:"Literata";src:url("fonts/Literata-Light.woff2") format("woff2");font-weight:300}
+@font-face{font-family:"Mona Sans";src:url("fonts/MonaSans-Regular.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Mona Sans";src:url("fonts/MonaSans-Medium.woff2") format("woff2");font-weight:500}
+@font-face{font-family:"Mona Sans";src:url("fonts/MonaSans-SemiBold.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"Monaspace Argon";src:url("fonts/MonaspaceArgon-Regular.woff2") format("woff2")}
+@page{size:A4;margin:0}
+:root{--bg:#FAFAF7;--surface:#FFFFFF;--line:#E3E3DC;--strong:#8A8B84;--text:#1B1C19;--muted:#5C5E57;--accent:#2F5D45;--tint:#E4EEE7;--warn:#B8323A;--wtint:#F6E6E6}
+*{box-sizing:border-box}
+html,body{margin:0;background:#D9D9D2}
+body{font-family:"Mona Sans",system-ui,sans-serif;color:var(--text);font-size:10pt;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;min-height:297mm;margin:0 auto;background:var(--bg);padding:13mm 16mm 10mm;display:flex;flex-direction:column}
+@media print{html,body{background:var(--bg)}.page{height:297mm;overflow:hidden}}
+header{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:3mm;border-bottom:1px solid var(--line)}
+header b{font-weight:600}
+.k{font-family:"Monaspace Argon",monospace;font-size:7.5pt;letter-spacing:.06em;color:var(--muted)}
+h1{font:300 25pt/1.12 Literata,Georgia,serif;letter-spacing:-.01em;margin:5mm 0 0}
+.lead{font:300 11pt/1.45 Literata,Georgia,serif;margin:2.5mm 0 0;max-width:165mm}
+.list{margin-top:5mm;display:grid;grid-template-columns:1fr 1fr;gap:2.5mm}
+.it{background:var(--surface);border:1px solid var(--line);border-radius:2mm;padding:3mm 4mm 3mm 11mm;position:relative}
+.it::before{content:"";position:absolute;left:4mm;top:3.6mm;width:3.6mm;height:3.6mm;border:1.2px solid var(--accent);border-radius:.8mm}
+.it h3{font-size:10.5pt;line-height:1.3;font-weight:600;margin:0}
+.it p{margin:1mm 0 0;color:var(--muted);font-size:9pt;line-height:1.45}
+.it .t{font-family:"Monaspace Argon",monospace;font-size:7.5pt;color:var(--accent);margin-top:1.2mm}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm;margin-top:4mm}
+.box{border-radius:2mm;padding:3.5mm 4.5mm}
+.box h2{font:300 13pt/1.2 Literata,Georgia,serif;margin:0 0 1.5mm}
+.box ul{margin:0;padding:0;list-style:none;font-size:9pt;line-height:1.45}
+.box li{padding:.4mm 0 .4mm 4mm;position:relative}
+.box li::before{content:"";position:absolute;left:0;top:2.2mm;width:1.6mm;height:1px;background:currentColor}
+.warn{background:var(--wtint);border:1px solid #E7C9CB}
+.warn h2{color:var(--warn)}
+.help{background:var(--tint);border:1px solid #C9DBCF}
+.help h2{color:var(--accent)}
+.pdf{display:inline-block;margin-top:3mm;font-size:9.5pt;color:var(--accent)}
+@media print{.pdf{display:none}}
+footer{margin-top:auto;padding-top:3mm;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:8.5pt;color:var(--muted)}
+@media screen and (max-width:800px){
+  html,body{background:var(--bg)}
+  .page{width:auto;min-height:0;padding:20px 18px}
+  h1{font-size:30px}
+  .list,.row{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:4px;margin-top:24px}
+  header .k{display:none}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header><b>Kalkar IT Solutions</b><span class="k">schnellstart heimnetz-sicherheit</span></header>
+
+  <h1>Heimnetz sicher in 30 Minuten.</h1>
+  <p class="lead">Zehn Handgriffe, die jeder selbst schafft. Die meisten erledigen Sie in der Oberfläche Ihres Routers, bei einer Fritzbox unter fritz.box im Browser. Haken Sie ab, was schon erledigt ist.</p>
+  <a class="pdf" href="heimnetz-sicher.pdf">Als PDF zum Ausdrucken</a>
+
+  <div class="list">
+    <div class="it"><h3>Router-Kennwort ändern</h3><p>Das Kennwort für die Router-Oberfläche, nicht das WLAN-Kennwort. Lang und nur dafür benutzt.</p><div class="t">5 minuten</div></div>
+    <div class="it"><h3>Automatische Updates einschalten</h3><p>Im Router meist unter „Update“. Ein Router ohne Updates ist die größte Lücke im Haus.</p><div class="t">2 minuten</div></div>
+    <div class="it"><h3>WLAN mit WPA3 oder WPA2</h3><p>Verschlüsselung prüfen und ein WLAN-Kennwort mit mindestens 16 Zeichen setzen. Ein Satz ist leichter zu merken.</p><div class="t">5 minuten</div></div>
+    <div class="it"><h3>Gäste-WLAN einrichten</h3><p>Für Besuch und für Fernseher, smarte Steckdosen und Kameras. So kommen sie nicht an Ihre Computer.</p><div class="t">5 minuten</div></div>
+    <div class="it"><h3>WPS ausschalten</h3><p>Die Knopfdruck-Kopplung ist bequem, aber angreifbar. Geräte lieber einmal mit Kennwort verbinden.</p><div class="t">1 minute</div></div>
+    <div class="it"><h3>Fernzugriff und Freigaben prüfen</h3><p>Portfreigaben, UPnP und Fernzugang aus dem Internet ausschalten, wenn Sie sie nicht bewusst nutzen.</p><div class="t">3 minuten</div></div>
+    <div class="it"><h3>Geräteliste durchsehen</h3><p>Im Router alle verbundenen Geräte ansehen. Was Sie nicht kennen, entfernen und das WLAN-Kennwort ändern.</p><div class="t">3 minuten</div></div>
+    <div class="it"><h3>Smarte Geräte absichern</h3><p>Kameras, Türklingel und Steckdosen: Standardkennwort ändern, App aktuell halten, nicht genutzte Geräte abschalten.</p><div class="t">5 minuten</div></div>
+    <div class="it"><h3>Zwei-Faktor fürs E-Mail-Konto</h3><p>Wer Ihre E-Mail hat, kann fast alle Kennwörter zurücksetzen. Ein zweiter Faktor per App schützt davor.</p><div class="t">5 minuten</div></div>
+    <div class="it"><h3>Sicherung an zwei Orten</h3><p>Fotos und Dokumente zusätzlich auf einer Festplatte, die nicht ständig angeschlossen ist, oder in einer Cloud.</p><div class="t">einmal einrichten</div></div>
+  </div>
+
+  <div class="row">
+    <div class="box warn">
+      <h2>Vorsicht, typische Maschen</h2>
+      <ul>
+        <li>Anruf vom „Microsoft-Support“ oder „Ihrer Bank“: auflegen, nie Fernzugriff erlauben</li>
+        <li>SMS mit Paket- oder Zahlungslink: nicht antippen, beim Anbieter selbst nachsehen</li>
+        <li>„Hallo Mama, das ist meine neue Nummer“: erst unter der alten Nummer zurückrufen</li>
+      </ul>
+    </div>
+    <div class="box help">
+      <h2>Lieber nicht selbst?</h2>
+      <ul>
+        <li>Kalkar IT Solutions baut gerade Hilfe für Haushalte hier im Ort auf, mehr dazu bald auf kalkar-it.de</li>
+        <li>Bis dahin: Fragen gern per Mail an hi@kalkar-it.de oder unter 0157 81286921</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer><span>Kalkar IT Solutions · Inhaber Daniel Bocksteger · kalkar-it.de · hi@kalkar-it.de · 0157 81286921</span><span>Stand November 2026</span></footer>
+</div>
+</body>
+</html>
