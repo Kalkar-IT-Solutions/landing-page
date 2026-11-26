@@ -444,6 +444,8 @@ function show(d,el){fromEl=el||null;
   };
   document.getElementById("close").focus();
 }
+// Verweis von einem Türchen auf ein anderes: aktuelles Fenster schließen, das andere öffnen
+function goDoor(d){const b=[...document.querySelectorAll(".door")].find(x=>x.getAttribute("aria-label").startsWith("Türchen "+d+" ")||x.getAttribute("aria-label")==="Türchen "+d);hide();setTimeout(()=>show(d,b),reduce?0:420);return false}
 function hide(){
   document.getElementById("night").style.opacity=0;
   if(reduce||!bd.classList.contains("show")){bd.classList.remove("show");return}
@@ -476,7 +478,8 @@ const W={
    init(){const i=document.getElementById("pwi"),m=document.getElementById("pwm"),t=document.getElementById("pwt");
     i.oninput=()=>{const s=score(i.value);m.style.width=s*25+"%";m.style.background=["#c97a65","#c97a65","#d4a75a","#9bb06a","#6f9a5e"][s];
      t.textContent=["Leer","Schwach – schneller geknackt als ein Spekulatius","Geht so – mach es länger","Gut!","Stark – wie Kalkarer Backstein 🧱"][s]}}},
- crack:{html:`<p>Wie lange bräuchte ein Rechner, der 10 Milliarden Passwörter pro Sekunde ausprobiert? Probier's aus und schau, wie sehr jedes zusätzliche Zeichen zählt.</p><input type="text" id="ci" placeholder="Probier ein Beispiel" autocomplete="off"><div class="box" id="co" style="text-align:center;font-size:1.3rem;font-family:var(--serif)">–</div><p class="muted">Grobe Schätzung, nur zum Staunen. Nichts verlässt dein Gerät.</p>`,
+ crack:{html:`<p>Wie lange bräuchte ein Rechner, der 10 Milliarden Passwörter pro Sekunde ausprobiert? Probier's aus und schau, wie sehr jedes zusätzliche Zeichen zählt.</p><input type="text" id="ci" placeholder="Probier ein Beispiel" autocomplete="off"><div class="box" id="co" style="text-align:center;font-size:1.3rem;font-family:var(--serif)">–</div><p class="muted">Grobe Schätzung, nur zum Staunen. Nichts verlässt dein Gerät.</p>
+   <div class="box"><b>Der Haken an der Rechnung</b><p style="margin:.4em 0 0">Meist wird gar nicht geknackt. Wird ein Shop gehackt, landen die Passwörter oft im Klartext im Netz, und Angreifer probieren sie einfach bei Mail, Amazon und Bank aus. Dann hilft auch ein Passwort nichts, das „länger als das Universum“ hält – es sei denn, es gilt nur für dieses eine Konto. Wie man sich viele davon merkt, steht in <a href="#" onclick="return goDoor(2)" style="color:var(--bronze3);font-weight:600">Türchen 2</a>.</p></div>`,
    init(){const i=document.getElementById("ci"),o=document.getElementById("co");i.oninput=()=>o.textContent=i.value?crack(i.value):"–"}},
  nikolaus:{html:`<p>Heute Nacht war der Nikolaus unterwegs. Hast du deinen Stiefel geputzt? Dann tipp drauf und schau, was drin ist.</p><div class="big-emoji" id="boot">🥾</div><p id="nt" class="muted" style="text-align:center">&nbsp;</p>`,
    init(){const g=["🍫 Schokolade!","🍊 Eine Mandarine!","🥜 Nüsse!","🍬 Süßigkeiten!","🎁 Ein kleines Geschenk!"];document.getElementById("boot").onclick=e=>{const x=g[Math.random()*g.length|0].split(" ");e.target.textContent=x[0];document.getElementById("nt").textContent="Der Nikolaus war da: "+x.slice(1).join(" ");burst()}}},
@@ -518,6 +521,7 @@ function burst(n=60){if(reduce)return;const c=["#b8956a","#f1f1ec","#d4b48a","#8
 // Die Seite spielt von selbst ab, damit Streuwerk sie filmen kann (es lädt und scrollt nur, klickt nicht).
 if(SZENE){
  document.getElementById("hint").textContent="";
+ document.getElementById("count").textContent="Ab 1. Dezember jeden Tag ein Türchen";
  const wait=ms=>new Promise(r=>setTimeout(r,ms));
  const door=d=>[...document.querySelectorAll(".door")].find(b=>b.getAttribute("aria-label").startsWith("Türchen "+d));
  const to=(d,off=.35)=>{const r=door(d).getBoundingClientRect();scrollTo({top:scrollY+r.top-innerHeight*off,behavior:"smooth"})};
